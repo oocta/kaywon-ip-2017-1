@@ -3,11 +3,108 @@
    <head>
      <meta charset="utf-8">
      <title> Do Javascript!</title>
+     <!-- 21661035 김희선의 과제 -->
    </head>
    <body>
      <script>
-        var num = 100;
-        console.log(num);
+        var nul = null
+        //Null : 의도적으로 비운 값
+        var num = 1234;
+        //숫자 : number
+        var str = '문자';
+        //문자 : string ('작은 따옴표 사용')
+        /*
+        alert (nul);
+        alert (num);
+        alert (str);
+         */
+        var stnu1 = '문자' + 1234 ;
+        //문자+숫자는 그대로 이어서 출력
+        var stnu2 ='1234' + 1234 ;
+        /*
+        더하기 싫으면 숫자를 문자처리 해버리자.
+        숫자는 숫자 단독으로 쓰일때만 숫자로 인식되고
+        문자와 함께있으면 문자로 인식된다고 한다.(엑셀에서의 경험)
+        */
+        /*
+        alert (stnu1);
+        alert (stnu2);
+        */
+        var stst1 = 1234 + 1234 ;
+        /*
+        숫자+숫자는 계산!
+        더하기는 출력될때 사라지니까 +가 보이길 바라면 문자처리해서 사이에 넣어야하나?
+         */
+        var stst2 =1234 +"+"+ 1234 ;
+        /*
+        하지만 사이에 +를 넣어버리면 더하기가 안된다. 문자로 인식되나보다.
+        계산 값를 출력할때 +도 보였으면 좋겠다.
+        */
+        /*
+        alert (stst1);
+        alert (stst2);
+        */
+        var num1=1;
+        var num2=2;
+        var num3=0;
+        num3=num1+num2;
+       /*
+       alert (num1+"+"+num2+"="+num3);
+       출력 : 1+2=3
+       */
+       /*
+       이럴때는 변수마다 숫자를 부여하고 alert 에서 계산해 버리자.
+       *액션스크립트3 응용*
+        var num1:Number=6;
+        var num2:Number=8;
+        var num3:Number=0;
+        num3=num1+num2;
+        trace(num1+"+"+num2+"="+num3);
+        자바 스크립트에서는   trace가 안먹혀서(내가 잘못쓴것일수도)
+        alert에 넣어봤더니 되었다. 다른건 응용을 못하겠다.
+       */
+        var boo1 =true;
+        //불리언 : boolean 참
+        var boo2 =false;
+        //불리언 : boolean 거짓
+        var boo3 ='yes'==='no';
+        //불리언 : boolean 다른 값 거짓
+        var boo4 ='me'==='me';
+        //불리언 : boolean 같은 값 참
+        /*
+        alert (boo1);
+        alert (boo2);
+        alert (boo3);
+        alert (boo4);
+        */
+        var objme = {type:'person', gender:'female', age:22};
+        /*
+        오브젝트 :  Object 여러가지를 담을 수 있다.
+        부를때 오브젝트이름.내용 으로 해야 정확한 값이 나온다.
+        alert (objme.type);
+        출력 = person
+        */
+
+        var objmylove = {type:'computer', brand:'Dell', age:1};
+        /*
+        오브젝트의 이름만 부르면 이상한게 뜬다.
+        alert (objmylove);
+        출력 = [object Object]
+        오브젝트 전체의 내용이 나오게하려면 각각 불러오는 수밖에 없나?
+        한번에 오브젝트의이름만으로 모든 값을 가져오는 방법이없을까?
+        */
+        var objundefined = {type:'type'};
+        /*
+        오브젝트에서 없는것을 부르면 undefined이 뜬다
+        alert (objundefined.타입);
+        출력 = undefined
+        */
+
+
+
+
+
+
      </script>
    </body>
 </html>
