@@ -2,13 +2,50 @@
 <html>
  <head>
   <meta charset="utf-8">
-  <title>hello?</title>
+  <title> 21661086 이서진 (0310_과제) </title>
   </head>
   <body>
-   Hello!!
    <script>
-   var num = 100;
-   console.log(num);
+   var name = 'Lee Seo Jin';
+   var age = 22;
+   var month = 'September.', day = 9;
+   /* var를 앞에 한번 써주고 뒤에 쉼표를 써서 이어 적을 수 있다.
+   Number : 따옴표 없이 기술 */
+   var text = '  It is my birthday! ';
+
+   // 테스트를 위한 console //
+   console.log(name); // Lee Seo Jin
+   console.log(age); // 22
+   console.log(month); // September
+   console.log(day); // 9
+   console.log(text); // It's my birthday !
+
+   alert(month + day + text +'yeah~');
+    /* -> 문자열(string)을 합치고,뒤에 또다른 문자를 넣어봤다.
+    - 결과 : September.9 It is my  birthday! yeah~ */
+
+   var obj = {
+     name: ' gold kiwi',
+     color: 'greenish yellow',
+     type : 'fruit'
+   }
+   /* 오브젝트 생성 (검색결과 이런 방식을 리터럴방식이라고 부른다고 한다)
+    -> 과일명 &컬러 &타입 */
+
+   var obj2 = new Object();
+    // 빈 객체 생성
+   obj2['name'] ="rose"// 프로퍼티 추가
+   console.log(obj2['name'])//rose
+
+   var bool = false;
+   var bool2 = true;
+   var bool3 = 10;
+   console.log(bool3>0);//true
+   //Boolean : true와 false만을 값으로 가진다.
+
+   var a = null; //명시적으로 값이 비었음
+   var b ;//값이 등록되어있지 않는 undefined
+
    </script>
   </body>
  </html>
