@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>인터렉션프로그래밍_2주차 과제</title>
+ </head>
+ <body>
+  <script>
+
+  var num1 = 100; //이건 100이라는 숫자
+  var num2 = 50;  //이건 50이라는 숫자
+  var num3 = num1 + num2; //num1과 num2를 더한게 num3
+  console.log(num3); //이건 num3을 콘솔부분에 표시해준다
+
+
+  var text1 = '문자와 '; //'문자와 '라는 문자
+  var text2 = '문자를 '; //'문자를 '라는 문자
+  var text3 = text1 + text2 + '더하다'; //text1과 text2를 더하고 '더하다'라는 문자도 더해준다.
+  console.log(text3); //이건 text3을 콘솔부분에 표시해준다
+
+
+  //참과거짓에대해 알아보자
+  var bool1 = true; //이거는 참이야
+  var bool2 = false; //이거는 거짓이래
+  var c; //c라는 변수를 하나 만들었어.
+  var bool3 = (c === c); //c가있는데 c랑 일치한지 확인해보자!
+  console.log(bool3); //c와 c가 일치한다면 ture가 뜰거야!
+
+  //null(아무것도아닌거)는 뭘까?
+  var a = '까꿍'; //a에게 까꿍이라는 문자가있는데
+  var a = null; //a가 null이니깐 까꿍이라는 문자가 이제 사라질꺼야!
+  console.log(a);   //a를 보면 까꿍이 안보이고 null이 나타난다!
+    /* 교수님 궁금한게있는데 위에는 var a = null; 이라고 적었는데
+    a = null;이라고 해도 문제가없나요?*/
+
+
+  //undefined(선언되지않은 데이터)는 무엇일까?
+  var ju;  //ju라는 변수를 만들었는데..
+  console.log(ju); // ju의 값이 없으니깐 undefined
+
+  var ju = { //ju라는 변수안에
+  name: 'Leeseungju', //name이라는 오브젝트?
+  birthday: '941111'  //birthday이라는 오브젝트?를 넣자
+  }
+  console.log(ju.gender); //undefined
+   /* ju안에 gender의 값을 나타내는건데 ju안에는 name, birthday값만있으니깐
+   정의되지않은 undefined 이 된다. */
+
+   /*다른건 어느정도 이해를 했는데 오브젝트가 정확하게 뭔지 잘모르겠다*/
+  </script>
+ </body>
+</html>
