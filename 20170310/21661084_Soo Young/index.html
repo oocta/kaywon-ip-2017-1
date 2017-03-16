@@ -6,10 +6,67 @@
   </head>
   <body>
     <script>
-    /* 21661084 윤수영 */
-      /* 완전 어려워서 나중에 과제 제출을 할 수 있을까?...*/
+    /* 21661084 윤수영 2주차 과제 제출*/
     var num = 100;
-    console.log(num);
+    console.log(num); //출력값 : 100
+
+    var a = '안녕';
+    var b = '하세요';
+    c = a+b;
+    alert(c); //출력값 : 안녕하세요
+
+    var num = 30;
+    //number : 숫자
+    var str = '어렵다';
+    //string : 문자
+       /*
+       alert (num); 출력값 = 30
+       alert (str); 출력값 = 어렵다
+        */
+
+    //null 타입 변수 생성
+    var nullVar = null;
+
+    console.log(typeof nullVar === null); //출력값 : false
+    console.log(nullVar === null);//출력값 : true
+
+
+    var num1 = 30;
+    var num2 = 20;
+    num3=num1*num2;
+      /*
+      alert (num1+"*"+num2+"="+num3);
+      출력 : 30*20=600
+      */
+
+    var boo1 = true;
+       //불리언 : 참
+    var boo2 = false;
+       //불리언 : 거짓
+    var boo3 ='yes'==='no';
+       //불리언 : 다른 값 거짓
+    var boo4 ='yes'==='yes';
+       //불리언 : 같은 값 참
+       /*
+       alert (boo1);
+       alert (boo2);
+       alert (boo3);
+       alert (boo4);
+       */
+    var person = {firstName:"Soo Young", lastName:"Yoon", age:22};
+       /*
+       오브젝트 :  Object는 여러가지를 담을 수 있다.
+       alert (person.firstName);
+       출력 = Soo Young
+       */
+
+    var obj = {type:'yes or no'};
+       /*
+       오브젝트에서 없는 값을 입력하면 undefined가 뜬다.
+       alert (obj.yes);
+       출력 = undefined
+       */
+
     </script>
   </body>
 </html>
