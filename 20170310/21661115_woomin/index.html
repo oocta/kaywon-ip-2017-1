@@ -6,8 +6,44 @@
   </head>
   <body>
     <script>
-    var num = 100;
-    console.log(num);
+    var num1 = 50; //num1을 50으로 선언
+    var num2 = 200; //num2를 200으로 선언
+    var num3 = num2-num1; //num2 값에서 num1 값을 빼는 변수를 num3으로 선언
+    console.log(num1); //별도의 창 없이 num1 출력
+    console.log(num3); //별도의 창 없이 num3 출력
+    alert(num2); //별도의 창에 num2를 출력
+    /*console 창에 num1 값인 50과 num3 값인 150이 출력되고
+    별도의 창에 num2 값인 200이 출력된다.*/
+
+    var str1 = '저는 '; //str1을 '저는'이라는 문자열로 선언
+    var str2 = '정우민입니다.'; //str2를 '정우민입니다.'라는 문자열로 선언
+    var str3 = str1+str2; //str1과 str2를 연결해주는 str3이라는 변수를 선언
+    alert(str3); //str3를 별도의 창에 출력
+    /*별도의 창에 '저는'과 '정우민입니다.'를 합친 str3 값을 출력하게 되어
+    '저는 정우민입니다.'라는 문자열이 출력된다.*/
+
+    var woomin = {
+      name:'정우민',
+      id:'WHAMOOP',
+      age:21,
+      hometown:'안성'
+    }
+    /*name이 '정우민', id는 'WHAMOOP', age는 21, hometown은 '안성'으로 선언한
+    woomin이라는 오브젝트 선언.*/
+    var bool1 = ('안성' === woomin.hometown); //문자열 '안성'과 오브젝트 woomin의 hometown항목을 비교
+    console.log(bool1);
+    /*오브젝트 woomin의 hometown항목과 문자열 '안성'을 비교한 값을 출력.
+    두 객체가 같기 때문에 true 값이 출력.*/
+    var bool2 = (20 == woomin.age); //20과 오브젝트 woomin의 age 항목의 변수값을 비교
+    console.log(bool2);
+    /*오브젝트 woomin의 age항목과 문자열 '정우민'을 비교한 값을 출력.
+    두 객체가 다르기 때문에 false 값이 출력.*/
+    alert(woomin.id); //별도의 창에서 오브젝트 woomin의 id 값 출력 = 'WHAMOOP'이 출력
+    alert(woomin.hobby); //오브젝트 woomin의 hobby라는 변수는 선언되지 않았기 때문에 별도의 창에서 undefined가 출력
+
+    var brain = 'smart'; //brain이라는 변수를 'smart'라는 문자열로 선언
+    var brain = null; //brain이라는 변수를 다시 null 값으로 선언
+    alert(brain); //null이 출력.
     </script>
   </body>
 </html>
