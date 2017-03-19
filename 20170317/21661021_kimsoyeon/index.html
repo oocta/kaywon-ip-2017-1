@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Do Jacascript</title>
+  </head>
+  <body>
+    <script>
+    var b = 29;
+    var c = b + 2;
+    var z = b%=9;
+
+    if((c%=z)==1){
+          console.log('일치합니다!');
+          }
+    //맞게 쓴 건지 잘 모르겠습니다.
+
+    var arr = ['a','b','c','d','e','f','z'];
+    console.log(arr);
+    //몇번쨰 숫자를 출력하라는 얘기가 없으면 한번에 뽑아도 되는 건가요?
+
+    for(var i = 1; i<=50; i++){
+        console.log(i);
+        if(i%2===1){
+            console.log(i+'은/는 홀수입니다.')
+        }
+        else if(i%2===0){
+            console.log(i+'은/는 짝수입니다.')
+        }
+    }
+    /*
+     나눗셈 대입을 통해 해볼려고 했는데 되지를 않습니다. '/'를 넣으면 오류가 나거나
+     아예 '홀수입니다.'만 뜨더라구요. 나눈셉 대입은 또다른 변수를 대입해야 가능 한건가요?
+    */
+    </script>
+  </body>
+</html>
