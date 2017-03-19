@@ -1,0 +1,40 @@
+<!DOCTYPE.html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21661013 김명유</title>
+  </head>
+  <body>
+    <script>
+      var a = 29;
+      var b = a+2;
+      var c = a%=3;
+
+      if((b%=c)===1){
+        console.log('일치합니다');
+      }
+      /*else{
+        console.log('일치하지 않습니다');
+      }*/
+
+      var arr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+      console.log(arr);//혹시 알파벳도 반복문을 사용해서 출력할 수 있나요?
+
+      for(var i = 1; i<=50; i++){
+        console.log(i);
+        if(i%2===1){
+          console.log(+i+'은/는 홀수')
+        }else if(i%2===0){
+          console.log(+i+'은/는 짝수')
+        }
+      }
+
+       /*
+       교수님, 마지막 문제를 처음에는
+       if((i%=2)==1)로 시도 했는데 렉이 너무 걸립니다ㅠㅠ
+       익스에서는 '콘솔에 표시할 수 있는 것보다 더 많은 메시지를 기록하고 있습니다. 초당 처음 1000개의 메시지만 표시됩니다.'라고 뜨는데
+       계산 방식 때문에 문제가 있는 건가요?
+       */
+    </script>
+  </body>
+</html>
