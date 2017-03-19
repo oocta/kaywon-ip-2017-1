@@ -6,32 +6,27 @@
   </head>
   <body>
     <script>
-    var b = 29;
-    var c = b + 2;
-    var z = b%=9;
-
-    if((c%=z)==1){
-          console.log('일치합니다!');
-          }
-    //맞게 쓴 건지 잘 모르겠습니다.
-
-    var arr = ['a','b','c','d','e','f','z'];
-    console.log(arr);
-    //몇번쨰 숫자를 출력하라는 얘기가 없으면 한번에 뽑아도 되는 건가요?
-
-    for(var i = 1; i<=50; i++){
-        console.log(i);
-        if(i%2===1){
-            console.log(i+'은/는 홀수입니다.')
-        }
-        else if(i%2===0){
-            console.log(i+'은/는 짝수입니다.')
-        }
-    }
-    /*
-     나눗셈 대입을 통해 해볼려고 했는데 되지를 않습니다. '/'를 넣으면 오류가 나거나
-     아예 '홀수입니다.'만 뜨더라구요. 나눈셉 대입은 또다른 변수를 대입해야 가능 한건가요?
-    */
+    var num = 50;//숫자
+    var str = '저는 김소연 입니다.';//문자(작은 따음표로 표기)
+    var a= true;/*boolean은 참과 거짓을 나타낼떄 쓰는 것인가?
+                잘은 모르겠지만 a= 참이다.*/
+    var b= false;//boolean(b는 거짓이다.)
+    var person={ firstName:'soyeon',
+                 lastName:'kim',
+                 age:22
+                 };/*오브젝트= 어떻게 하는 것인지 잘은 모르겠지만
+     객체형 이라는 것은 알겠다.*/
+    console.log(c);//출력되지 않음(undefind)
+    var obj={ name:'object1',
+              id:'ob1',
+              size:50
+             };//오프젝트(객체형)
+    var strNum='100';//숫자를 문자로 표기
+    var num1=23;//숫자형 표기(제일 쉬운 것 같다.)
+    console.log(date);/*입력된 값이 아니라
+                      출력되지 않음*/
+    var name=null;/*null은 아무것도 아닌 값이다. 하지만
+                 나는 이것이 가장 이해가 되지 않는다.*/
     </script>
   </body>
 </html>
