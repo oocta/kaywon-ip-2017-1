@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>		</title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+		var num1 = 29;
+		// 1. 변수 선언 숫자 29 할당
+		var num2 = num1 + 2;
+		// 2. 변수 1에 2를 더하여 31 할당
+		var num3 = num1 % 3;
+		/* 3. 1에서 선언한 변수와 **나머지연산대입**을 이용하여 2를 할당
+		 		 29 나누기 3은 27 (냐머지 2)*/
+		var num4 = num2 % num3;
+		if (num4 == 1) {
+			console.log('일치합니다! ^^');
+		}
+		/* 4. 만약 변수 2를 변수 3으로 나누었을때 나머지가 1인경우 일치합니다.
+	 				31 나누기 2 = 15 (나머지 1)
+					== 값 비교 num4의할당 값이 1일시 출력 */
+		var str5 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+		console.log (str5);
+		// 5. a~z까지 순서대로 출력
+		for (var num6 = 1; num6 < 51; num6++){
+				if(num6 % 2 == 0){
+				console.log(num6 + '짝짝!');
+				}else{
+				console.log(num6 + '홀ㅠㅠ');
+			  }
+		}
+		// 1~50까지 숫자를 출력하고 홀수와 짝수를 구분하기
+
+		</script>
+	</body>
+</html>
