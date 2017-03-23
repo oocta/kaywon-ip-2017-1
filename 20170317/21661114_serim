@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+  <html>
+     <head>
+       <meta charset="utf-8">
+        <title>21661114_jeongserim_Do Javascript!</title>
+     </head>
+   <body>
+     <script>
+      //2주차_수업
+     var num = 100;
+     console.log(num);
+     </script>
+
+       <script>
+        //3주차
+
+        /*1번 과제*/
+        var a = 29; //변수를 선언하고 숫자 29를 할당합니다.
+        var b = a + 2; //a에 **덧셈대입**을 하여 31을 할당합니다.
+        var c = a % 9; //a의 변수와 **나머지 연산대입**을 이용하여 2를 할당합니다.
+
+        //나머지가 `1`인 경우 '일치합니다.' 라는 문자열이 console에 출력
+        var d = b % c;
+        if(d=1){
+          console.log('일치합니다!')
+        }
+       //-----------------------------------------------------------//
+
+       /*2번 과제*/
+       //'a' 부터 'z'까지 순서대로 console에 출력되도록 작성.
+
+       //1번 타입
+       var arr =['a','b','c','d','e','f','g','h','i','j','z','l','m','n','o',
+       'p','q','r','s','t','u','v','w','x','y','z']
+       console.log(arr);
+
+       //2번타입
+       var alpa = ['a','b','c','d','e','f','g','h','i','j','z','l','m','n','o',
+       'p','q','r','s','t','u','v','w','x','y','z']
+       for(var bet=0; bet<26; bet++){
+       console.log(alpa[bet]);
+       }
+
+       /*3번 과제*/
+       // `1` 부터 `50`까지 순서대로 출력, 출력된 값의 **짝/홀수** 여부를 함께 표시.
+       //(콘솔 출력 예시: **1은 홀수!** )
+
+       //1번 타입
+       for(var num = 1; num<51; num++){
+         console.log(num);
+         if(num % 2)
+         console.log('홀수입니다!');
+         else
+         console.log('짝수입니다!');
+       }
+
+       //2번타입
+       for(var num =1; num<51; num++){
+         console.log(num);
+         if(num%2==0)
+         console.log('짝수입니다!');
+         else
+         console.log('홀수입니다!');
+       }
+       </script>
+    </body>
+  </html>
