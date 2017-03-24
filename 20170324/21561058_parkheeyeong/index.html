@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>		</title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+		 var a =27;
+		 var b = 'zelda';
+		 var c = null;
+		 var d = a;
+		 var arr = [ a, b, c, d];
+		 console.log(arr[3]);
+
+     var arr = [ 'a', 'b', 'c', 'd'];
+     for (var i = 0; i < 4; ++i ){
+       console.log(arr[i]);
+     }
+
+     var a = 23;
+     var b = 24;
+     var c = 0;//함수선언
+     function addNumbers() {
+       c=a+b;
+     }
+     //함수호출
+     addNumbers();
+     console.log(c);
+
+     function printMessage(msg){
+         console.log(msg);
+       }
+       printMessage('phy');
+
+
+      var printMessage =function (msg){
+       console.log(msg);
+      }
+       printMessage('phy');
+       printMessage('a');
+       printMessage('b');
+       printMessage('c');
+       printMessage('d');
+       printMessage('g');
+       printMessage('j');
+
+       var callme = function(name, id){
+         console.log(name,id);
+       }
+
+       callme('to','hae');
+
+
+      function getSize(width,heigth){
+        return width *heigth;
+      }
+      var getSize(10,20);
+      console.log(getSize);
+
+		</script>
+	</body>
+</html>
