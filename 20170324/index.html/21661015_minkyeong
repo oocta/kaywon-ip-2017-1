@@ -14,6 +14,13 @@
  
 <script> 
 
+
+var a = 19;
+var b = 0;
+if (b || a) {
+	console.log('Left!')
+}
+
 var a = 27;
 var b = 'zelda';
 var c = null;
@@ -22,8 +29,8 @@ var arr = [a,b,c,d];
 console.log(arr[3]); // ==> ???
 
 var arr = ['a','b.'c','d'];
-for (var i = 0; i < ??; ++i) {
-	console.log(??);
+for (var i = 0; i < 4; ++i) {
+	console.log(4);
 }
 // 'a'
 // 'b'
