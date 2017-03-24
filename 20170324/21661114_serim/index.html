@@ -35,12 +35,69 @@
     console.log(c);//답은 47
 
     //ex4
-    var global='global';
+    var global='global';//global scope시작
     function local(){
       var locA='Hello';//local scope 시작
       var locB='World';
       console.log(locA+''+locB);//local scope 끝
-    }
+    }//global scope끝
+
+      /*함수*/
+
+      //명시적함수_선언식
+      function printHello(){
+        console.log('Hello!');
+      }
+      printHello();//함수호출(실행)
+
+      //함수 리터럴(익명함수)_표현식
+      var printHello= function(){
+        console.log();
+      }
+      printHello('Hello');
+
+      //매서드
+      var obj={
+        printHello: function(){
+          console.log('Hello');
+        }
+      };
+      obj.printHello()
+
+      /*매개변수, 전달인자*/
+
+      //1.선언식으로
+      function printMessage(malang){
+        console.log(malang);
+      }
+      printMessage('malangismine');//malang인 매개변수가 malangismine인 전달인자로 치환된다.
+      //malang은 매개변수, malangismine은 전달인자.
+
+      //2.표현식으로
+      var printMessage= function(malang){
+        console.log(malang);
+      }
+      printMessage('malangismine');//malang인 매개변수가 malangismine인 전달인자로 치환된다.
+      //malang은 매개변수, malangismine은 전달인자.
+
+
+      //ex6
+
+      //1.선언식으로
+      function printMessage(name,id){
+        console.log(name,id);
+      }
+      printMessage('to','hae');
+      //2.표현식으로
+      var printMessage= function(name,id){
+        console.log(name,id);
+      }
+      printMessage('to','hae');
+
+
+
+
+
 
       var gogo='aaaaaaa';
  		</script>
