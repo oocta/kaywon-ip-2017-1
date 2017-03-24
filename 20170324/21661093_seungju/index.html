@@ -22,7 +22,33 @@
       for (var i = 0; i <4; ++i){
         console.log(arr[i]);//배열의 i번째 목록을 출력하라.
       }
+      
+      function WooMin(aa){
+      console.log(aa);  
+      }
+      WooMin('나는 와뭅!');
+
+      var WooMin = function(aa){
+      console.log(aa);
+      }
+      WooMin('나는 와뭅!');
+
+      var callMe = function(name, id){
+      console.log(name, id);
+      }
+      callMe('to','hae');
                     
+      function suPrices(price1,price2){
+        console.log('start');
+        return price1 + price2; //리턴문 아래코드는실행하지않는다
+      }
+      
+      
+      function getSize(width,height){
+        return width * height
+      }
+      var size = getSize(120,300);
+      console.log(size);
 </script>
 </body>
 </html>
