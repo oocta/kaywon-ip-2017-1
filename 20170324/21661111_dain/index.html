@@ -13,7 +13,68 @@
    var c = null;
    var d = a;
    var arr = [a, b, c, d];
-   console.log(arr[3]);//>>27
+    console.log(arr[3]);//>>27
+
+   //반복문
+   var arr = ['a', 'b', 'c', 'd'];
+   for (var i = 0; i < 4; ++i) {
+     console.log(arr[i]);
+   }//>>i를 넣으므로 0123대신 abcd출력
+
+   //과제:3
+   var arr = ['Hello', 'My', 'Name', 'Is', 'Siri'];
+
+   //함수(Function)>> 재사용, 유효범위(scope)
+   var a = 23;
+   var b = 24;
+   var c = 0;
+   console.log(c);
+   //함수선언
+   function addNumbers(){
+     c = a + b;
+   }
+   //함수호출>> 'blahblah();'함수를 실행시켜달라
+   addNumbers();
+   console.log(c);
+
+   /*함수의 종류
+   1.명시적 함수
+    function이라는 키워드로 함수를 만든 형태
+   2.익명 함수
+    new Function(별로 추천하지 않는 패턴)과 같이 선언할 당시에 이름이 없는 형태
+   3.함수 리터럴(함수식, 익명함수)
+    var helloMaker = function (name) {
+    return 'Hello' + name;
+  };*/
+
+  function printMessage(msg){
+    conosle.log(msg);
+  }
+  printmessage('Hello!');
+  //msg가 매개변수
+
+  var printmessage = function(msg){
+    console.log(msg)
+  }
+  printmessage('Hello!');
+//-------------------------------------
+  function callMe(name, id){
+    console.log(name, id)
+  }
+  callMe('to', 'hae');
+
+  var callMe = function(name, id){
+    console.log(name, id)
+  }
+  callMe('to', 'hae');
+  //매개변수는 최대 2개 그이상으로 갈 때는 obj로!
+  //return문 뒤는 작동X
+  function getsize (width, height){
+    return width * height;
+  }
+  var size = getsize(120, 420);
+  console.log(size);
+
     </script>
   </body>
 </html>
