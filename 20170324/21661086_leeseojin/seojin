@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<head>
+ <meta charset="utf-8">
+ <title> </title>
+ <style type="text/css">
+ </style>
+</head>
+<body>
+  <script type = "text/javascipt">
+  var a = 27;
+  var b = 'zelda';
+  var c = null;
+  var d = a;
+  var arr = [a,b,c,d];
+  console.log(arr[3]);
+  alert(9);
+
+  var arr  = ['a','b','c','d'];
+  for (var i = 0; i < 4; ++i){
+    console.log(arr[3]);
+  }
+  //a;
+  //b;
+  //c;
+  //d;
+  </script>
+</body>
+</html>
 
