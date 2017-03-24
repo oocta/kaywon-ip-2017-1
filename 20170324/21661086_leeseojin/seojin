@@ -17,7 +17,7 @@
 
   var arr  = ['a','b','c','d'];
   for (var i = 0; i < 4; ++i){
-    console.log(arr[3]);
+    console.log(arr[i]);
   }
   //a;
   //b;
