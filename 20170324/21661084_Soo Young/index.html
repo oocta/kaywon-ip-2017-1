@@ -1,13 +1,69 @@
 <!DOCTYPE html>
-<haed>
-  <title></title>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title> 17.03.24 실습 </title>
 </head>
 <body>
+  <script type="text/javascript">
   var a = 27;
   var b = 'zelda';
   var c = null;
   var d = a;
   var arr = [a,b,c,d];
   console.log(arr[3]);
+
+  var arr = ['a','b','c','d'];
+  for (var i = 0; i < 4; i++){
+    console.log(arr[i]); //
+  }
+
+  var a = 23;
+  var b = 24;
+  var c = 0;
+  console.log(c);
+  // 함수선언
+  function addNumbers(){
+    c = a + b;
+  }
+  //함수 호출
+  addNumbers();
+  console.log(c);
+
+ // 매개변수 작성해보기
+  function string(str){
+    console.log(str);
+  }
+  string('배고프다');
+
+  // 표현식으로 작성
+  var string = function(str){
+    console.log(str);
+  }
+  string('배고프다공');
+
+  //매개변수의 수가 늘어났을 때
+  function callMe(name,id){
+    console.log(naem,id);
+  }
+  callMe('to','has');
+
+  //위의 내용 표현식으로 작성
+  var callMe = function(name,id){
+    console.log(name,id);
+  }
+  callMe('몰랑','배고파');
+
+  //정사각형 넓이 구하기
+  function getSize(width,height){
+
+    return width * height;
+  }
+  var size = getSize(120,420);
+  console.log(size);
+
+  </script>
+
+
 </body>
 </html>
