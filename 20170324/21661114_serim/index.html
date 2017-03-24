@@ -87,7 +87,7 @@
       //malang은 매개변수, malangismine은 전달인자.
 
 
-      //ex6
+      //ex6_매개변수의 갯수가 2가지 이상일 경우.
 
       //1.선언식으로
       function printMessage(name,id){
@@ -99,6 +99,29 @@
         console.log(name,id);
       }
       printMessage('to','hae');
+
+      //매개변수는 주어지고, 전달인자가 주어지지 않았을 떼,
+      function printMessage(msg){
+        if(typeof msg === 'undefined'){
+        console.log('you have no message');
+        }
+        else {
+        console.log(msg);
+        }
+      }
+      printMessage();// 조건문으로 세운 you have no message가 콘솔창에 뜸.
+
+      //매개변수>전달인자, 매개변수의 수만큼만 인지하고 나머지 정의한 전달인자는 무시.화면에도 안뜸
+      //매개변수<전달인자, 매개변수의 수만큼만 인지하고 나머지는 undefined.
+      //return값이 지정되지 않으면, undefined.
+      /*return문은 종결문이다. return문다음의 코드들은 실행되지 않으니 주의.*/
+
+      //ex
+      function getSize(width,height,length){
+        return width*height*length;
+      }
+      var size =getSize(120,300,100)
+      console.log(size);
 
 
 
