@@ -9,29 +9,33 @@
  	</head>
  	<body>
  		<script type="text/javascript">
+
     //ex1
       var a=27;
       var b='zelda'
       var c=null;
       var d=a;
       var arr=[a,b,c,d];
-      console.log(arr[3]);
+      console.log(arr[3]);//d의 값인 27이 나옴.
     //ex2
       var arr=['a','b','c','d'];
       for(var i=0; i<4; ++i){
-        console.log[i];
+        console.log(arr[i]);
       }
-    //ex3 함수
+      //a
+      //b
+      //c
+      //d
+
+    //ex3
     var a=23;
     var b=24;
     var c=0;
     console.log(c);
-      //함수 선언
     function addNumbers(){
       c=a+b;
-    }
-      //함수호출
-    addNumbers();
+    }//함수 선언
+    addNumbers();//함수호출
     console.log(c);//답은 47
 
     //ex4
@@ -39,8 +43,10 @@
     function local(){
       var locA='Hello';//local scope 시작
       var locB='World';
-      console.log(locA+''+locB);//local scope 끝
+      console.log(locA+''+locB); //console.log(locA+locB)로도 값이 나오는데 차이가 뭔가요?.?
+    //local scope 끝
     }//global scope끝
+    local();//답은 HelloWold
 
       /*함수*/
 
