@@ -10,13 +10,27 @@
 	<body>
 		<script type="text/javascript">
 		
-		      	var a = 27;
-		      	var b = 'zelda'
-		     	var c = null;
-		   	var d = a;
-		     	var arr = [a,b,c,d];
-			console.log(arr[3]);
-			//3==>27 2==>null 1==>zelda 0==>27
+		      //논리 연산자
+		      var a = 19;
+		      var b = 0;
+		      if (b || a) {
+			console.log('Left!')
+		      }
+
+		      //배열 조건문
+		      var a = 27;
+		      var b = 'zelda'
+		      var c = null;
+		      var d = a;
+		      var arr = [a,b,c,d];
+		      console.log(arr[0]);   //3==>27 2==>null 1==>zelda 0==>27
+
+		      //반복문
+		      var arr = ['a','b','c','d']
+		      for (var i = 0; i < 5; ++i) {
+			console.log(arr[i]);
+		      }
+
 			
 		</script>
 	</body>
