@@ -1,41 +1,37 @@
-+<!DOCTYPE html> 
+<!DOCTYPE html> 
 
+<html> 
 
+<head> 
  
-+  <html> 
-
-
+<meta charset = "uft-8"> 
  
-+    <head> 
-
-
+<title>20170324</title> 
  
-+      <meta charset = "uft-8"> 
+</head> 
 
-
+<body>
  
-+      <title>20170324</title> 
+<script> 
 
+var a = 27;
+var b = 'zelda';
+var c = null;
+vat d = a;
+var arr = [a,b,c,d];
+console.log(arr[3]); // ==> ???
 
+var arr = ['a','b.'c','d'];
+for (var i = 0; i < ??; ++i) {
+	console.log(??);
+}
+// 'a'
+// 'b'
+// 'c'
+// 'd'
  
-+    </head> 
+</script> 
 
+</body> 
 
- 
-+    <body> 
-
-
- 
-+      <script> 
-
-
- 
-+      </script> 
-
-
- 
-+    </body> 
-
-
- 
-+  </html> 
+</html>
