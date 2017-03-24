@@ -21,6 +21,78 @@
         //'b'
         //'c'
         //'d'
+        
+        /*
+        //선언식
+        function fname(iwgh) {
+          console.log(iwgh);
+        }
+
+        fname('I wanna go home.'); //'I wanna go home' 출력
+
+        //표현식
+        var fname = function(iwgh) {
+          console.log(iwgh);
+        }
+
+        fname('I wanna go home'); //'I wanna go home' 출력
+
+        //선언식
+        function callMe(name, id) {
+          console.log(name, id);
+        }
+
+        callMe('in','to'); //'in' 'to' 출력
+
+        //표현식
+        var callMe2 = function(name, id){
+          console.log(name, id);
+        }
+
+        callMe2('in','to'); //'in' 'to' 출력
+        */
+
+
+
+        /*function printMessage(msg){
+          //msg = 'I want to go home';
+
+          if (typeof msg === 'undefined'){
+            console.log('You have no message.');
+          } else{
+            console.log(msg);
+          }
+        }
+        printMessage();*/
+
+
+        /*function plusNumbers(num1, num2){
+          console.log(num1 + num2);
+        }
+        plusNumbers(10, 20, 30, 40); //30 출력 (30, 40은 무시)
+        */
+        /*
+        function plusNumbers(num1, num2){
+          console.log(num1 + num2);
+        }
+        plusNumbers(10); //'undefined' 출력
+        */
+
+        function sumPrice(price1, price2){
+          console.log('start');
+          return price1 + price2;
+          console.log('end'); //return문 아래 console값은 출력되지 않음.
+        }
+
+        var totalPrice = sumPrice(1000, 2000);
+        console.log(totalPrice);
+
+        function getSize(garo, sero){
+          return garo * sero;
+        }
+
+        var size = getSize(120, 420);
+        console.log(size);
       </script>
     </body>
   </html>
