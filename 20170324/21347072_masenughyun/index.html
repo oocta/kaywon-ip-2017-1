@@ -96,17 +96,17 @@
 
 
   //4. 배열의 타입으로 재배열하기
-      //배열로 다시 출력하기가 좀 어렵습니다. 값을 이리저리 전달하는게 익숙치가 않네요.
-
+      //수정 했습니다. 굳이 배열을 더 만들 필요가 없었네요.
+      
       var typeOf = function(arr){
-      var typeBox = '';
-        for(var i =0; i<arr.length; ++i){
-          typeBox += typeof arr[i] + ', ';
+        for(var i = 0; i < arr.length; ++i){
+          arr[i] = typeof arr[i];
         }
-        console.log(typeBox);
+            console.log(arr)
       }
       //실행 문구
-      typeOf([1, 'icon', 'z', 20, 1,]);
+      typeOf([1, 'icon', 'z', 20, 1]);
+      
 
 
     </script>
