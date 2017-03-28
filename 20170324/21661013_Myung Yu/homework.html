@@ -1,0 +1,65 @@
+<!DOCTYPE.html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21661013 김명유</title>
+  </head>
+  <body>
+    <script>
+      //1//
+      var names = ['아이언맨','헐크','토르','배트맨'];
+        for(var i = 3; 0<=i; --i){
+         console.log(names[i]);
+       }
+       /*배열을 바꾸는 거는 성공했는데요
+       배트맨
+       토르
+       헐크
+       아이언맨
+       이렇게가 아니라
+
+      //2//
+      var num = [100,1,500,600,200];
+      if(num[0]>num[1]&&num[0]>num[2]&&num[0]>num[3]&&num[0]>num[4]){
+        console.log(num[0]);
+      }else if(num[1]>num[0]&&num[1]>num[2]&&num[1]>num[3]&&num[1]>num[4]){
+        console.log(num[1]);
+      }else if(num[2]>num[0]&&num[2]>num[1]&&num[2]>num[3]&&num[2]>num[4]){
+        console.log(num[2]);
+      }else if(num[3]>num[0]&&num[3]>num[1]&&num[3]>num[2]&&num[3]>num[4]){
+        console.log(num[3]);
+      }else if(num[4]>num[0]&&num[4]>num[1]&&num[4]>num[2]&&num[4]>num[3]){
+        console.log(num[4]);
+      }
+
+      //3//
+      var index = function(num1,num2){
+        for(var i=0; i<4; ++i){
+          if(num1[i] === num2){
+            console.log(i);
+          }
+        }
+      }
+      index([1,2,3,4],3);
+
+      //4//
+      var logType = function(type){
+        for (var i = 0; i < 5; ++i) {
+          type[i] = typeof type[i];
+        }return type;
+      }
+      logType([1, 'icon', 'z', 20, 1]);
+
+
+      var logType = function(type){
+        for (var i = 0; i < 5; ++i){
+          if(typeof type[i] === 'number'){
+            type[i] = 'Number';
+          }else if(typeof type[i] === 'string'){
+            type[i] = 'String';
+          }
+        }console.log(type);
+      }
+
+  </body>
+</html>
