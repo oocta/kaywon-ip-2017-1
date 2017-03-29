@@ -2,16 +2,28 @@
 <html>
  <head>
   <meta charset="utf-8">
-  <title>Do Javascript!</title>
+  <title>Function</title>
  </head>
 <body>
   <script>
-  var a = 27;
-  var b = 'zelda'
-  var c = null;
-  var d = a;
-  var arr = [a,b,c,d];
-  console.log(arr[3]);//==> ???
-  </script>
-</body>
-</html>
+ /*
+   1. 다음 names 배열을 이용해서 console에 아래 결과물과 같은 내용이 출력되도록
+   코드를 작성해 주세요.
+   => '배트맨, 토르, 헐크, 아이언맨'
+ */
+  var names = ['배트맨 ','토르',' 헐크',' 아이언맨'];
+  var names = function(){
+    console.log(names[0]+names[1]+names[2]+names[3]);
+  }
+  names1();
+  //이게 맞는 건지는 잘 모르겠지만 한번 활용해 봤습니다.
+
+  /*
+    2. 숫자로 이루어진 배열을 입력하면, 그 배열의 원소 중 가장 큰 숫자가 출력되도록
+    코드를 작성해주세요.
+    ex) func([1, 6, 2, 9, 3]); => 9
+ */
+ var num = [1,6,2,9,3];
+ Math.max.apply(null, num);
+ //구글 참조.
+ 
