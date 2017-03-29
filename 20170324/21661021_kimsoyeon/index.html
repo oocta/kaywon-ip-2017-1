@@ -2,38 +2,64 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>function</title>
   </head>
   <body>
     <script type="text/javascript">
+ /*
+   1. 다음 names 배열을 이용해서 console에 아래 결과물과 같은 내용이 출력되도록
+   코드를 작성해 주세요.
+   => '배트맨, 토르, 헐크, 아이언맨'
+ */
+  var names = ['배트맨 ','토르',' 헐크',' 아이언맨'];
+  var names1 = function(){
+    console.log(names[0]+names[1]+names[2]+names[3]);
+  }
+  names1();
+  //이게 맞는 건지는 잘 모르겠지만 한번 활용해 봤습니다.
 
-    var a1 = 27;
-    var b1 = 'zelda'
-    var c1 = null;
-    var d1 = 'a';
-    var arr1 = [a1,b1,c1,d1];
-    console.log(arr1[3]);
-    //3==>27 2==>null 1==>zelda 0==>27
-    //논리 연산자
-    var a2 = 19;
-    var b2 = 0;
-    if (b2 || a2) {
-    console.log('Left!')
-    }
+ /*
+    2. 숫자로 이루어진 배열을 입력하면, 그 배열의 원소 중 가장 큰 숫자가 출력되도록
+    코드를 작성해주세요.
+    ex) func([1, 6, 2, 9, 3]); => 9
+ */
+ var num = [1,6,2,9,3];
+ Math.max.apply(null, num);
+ //구글 참조.
 
-    //배열 조건문
-    var a3 = 27;
-    var b3 = 'zelda'
-    var c3 = null;
-    var d3 = 'a';
-    var arr3 = [a3,b3,c3,d3];
-    console.log(arr3[0]);   //3==>27 2==>null 1==>zelda 0==>27
+ /*
+     3. 첫번째 매개변수로 주어진 배열에서 두번째 매개변수의 index 를 출력하는 함수를 작성하세요.
+     ex) func([1, 3, 4, 5], 5); => 3
+ */
+ var func = function(arr,num){
+        for(var i=0; i<4; ++i){
+          if(arr[i] === num){
+            console.log(i);
+          }
+        }
+      }
+      func([1,3,4,5],5);
+      //for 구문 부분이 잘이해가 되지를 않아 힘듬
+      //함수에 너무 약한 것같음
 
-    //반복문
-    var arr4 = ['a','b','c','d']
-    for (var i = 0; i < 5; ++i) {
-    console.log(arr4[i]);
-    }
+ /*
+      4. 숫자와 문자가 혼합되어 있는 배열을 매개변수로 전달하면, 각 원소의 타입을 원소로 가진
+      새로운 배열이 출력되도록 함수를 작성하세요.
+      ex) func([1, 'icon', 'z', 20, 1]); => ['Number', 'String', 'String', 'Number', 'Number']
+ */
+ var arr = function(type){
+        for (var i = 0; i < type.length; ++i) {
+          type[i] = typeof type[i];
+        }
+           console.log(type)
+      }
+      arr([1, 'icon', 'z', 20, 1]);
+      /*
+      인터넷에서 찾아 봄. 하지만 type.legth라는 부분이 이해가 잘 되지  않는다.
+      그리고 함수 부분에서 많이 약한 것 같아 과제는 다 했지만 더 공부 해 봐야 할 것 같다.
+      3,4번 문제가 너무 어려웠음.
+      */
+
 
     </script>
   </body>
