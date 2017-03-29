@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Do Javascript!</title>
+  </head>
+  <body>
+    <script>
+//4주차과제시작!
+  /*
+    1. 다음 names 배열을 이용해서 console에 아래 결과물과 같은 내용이 출력되도록
+    코드를 작성해 주세요.
+    => '배트맨, 토르, 헐크, 아이언맨'
+  */
+  var names = ['아이언맨', '헐크', '토르', '배트맨'];
+  for (var i = 3; 0 <= i; --i) {
+    console.log(names[i]);
+   }
+  /*
+  교수님
+  var x = 3;
+  var y = ++x;
+  >> x = 4, y = 3
+
+  var x = 3;
+  var y = x++;
+  >> x = 4, y = 4
+  이런식으로 ++의 위치에 따라 값이 달라지는데요. for문에서 --의 위치는 크게 상관이 없나요..?
+  */
+
+
+  /*
+   2. 숫자로 이루어진 배열을 입력하면, 그 배열의 원소 중 가장 큰 숫자가 출력되도록
+   코드를 작성해주세요.
+   ex) func([1, 6, 2, 9, 3]); => 9
+  */
+  //첫번째방법
+  var numb = [1, 6, 2, 9, 3];
+  var max = Math.max.apply(null, numb);
+  console.log(max);
+
+  //or
+  var numb = [1, 6, 2, 9, 3];
+  console.log(Math.max.apply(null, numb));
+  /*
+  교수님 인터넷을 찾아서 최댓값을 구하는 함수(?)max를 알게 되었는데요.
+  Math.max.apply(null, numb)에서 null은 왜 써주는건가요..?
+
+  var numb = [1, 6, 2, 9, 3];
+  var max = Math.max.apply(numb);
+  console.log(max);
+  null이 왜 필요한지 이해가 안되서 이런식으로 null을 없애주면 console창에는
+  -Infinity라고 뜨네요ㅜ
+
+  근데 또 신기한건 굳이 null아니더라도 어떤 값(?)을 주어주면 제대로 작동해요.
+  undefined도 되고 null도 되서 문자도 상관없나 하고 해봤는데 문자도 되더라구요:3
+  console.log(Math.max.apply("thanks", numb));
+  console.log(Math.max.apply(100, numb));
+  console.log(Math.max.apply(null, numb));
+  console.log(Math.max.apply(undefined, numb));
+  console.log(Math.max.apply(numb, numb));
+  console.log(Math.max.apply(Math, numb));
+  ..이거 다 9나오는 것들이에요..
+  */
+  
+  //두번째방법
+  Math.max(1, 6, 2, 9, 3);
+
+
+  /*
+   3. 첫번째 매개변수로 주어진 배열에서 두번째 매개변수의 index 를 출력하는 함수를 작성하세요.
+   ex) func([1, 3, 4, 5], 5); => 3
+  */
+  var second = function(guess){
+    for (var i = 0; 5 > i; ++i){
+      console.log(guess[1])}
+  }
+  second([1, 3, 4, 5], 5);
+  /*
+  교수님 3이 나오기는 하는데 3이 다섯개가 떠요... 그리고 사실 문제를 이해하지 못 했어요ㅠ
+  그래서 그냥 어떻게든 3을 나오게 하긴 했는데 본 출제의도는 이게 아니시죠?:(
+  */
+
+
+  /*
+    4. 숫자와 문자가 혼합되어 있는 배열을 매개변수로 전달하면, 각 원소의 타입을 원소로 가진
+    새로운 배열이 출력되도록 함수를 작성하세요.
+    ex) func([1, 'icon', 'z', 20, 1]); => ['Number', 'String', 'String', 'Number', 'Number']
+  */
+  var guess = [1, 'icon', 'z', 20, 1];
+  for (var i = 0; 5 > i; ++i) {
+    console.log(typeof guess[i]);
+  }
+
+  var guess = function(guess){
+    for (var i = 0; 5 > i; ++i){
+      console.log(typeof guess[i])}
+  }
+  guess([1, 'icon', 'z', 20, 1]);
+    </script>
+  </body>
+</html>
