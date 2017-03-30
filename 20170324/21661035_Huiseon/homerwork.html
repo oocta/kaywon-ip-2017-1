@@ -18,7 +18,7 @@
     for (var i  =  3 ;  i  >= 0 ;  i--){
         console.log(names2 [i]);
     }
-    //배운 내용으로 하는 방법
+    //배운 내용으로 하는 방법. 한번에 출력되지 않는다.
 
     /*
     2. 숫자로 이루어진 배열을 입력하면, 그 배열의 원소 중 가장 큰 숫자가 출력되도록
@@ -59,24 +59,61 @@
     /*
     3. 첫번째 매개변수로 주어진 배열에서 두번째 매개변수의 index 를 출력하는 함수를 작성하세요.
     */
-    function fun1 (매개변수){
-      console.log(매개변수);
-    }
-    함수이름(전달인자);
-    //선언식
-    var 변수이름 = function (매개변수) {
-  	        console.log(매개변수)
-  	}
-    변수이름(전달인자);
-    //표현식
-    //이해를 못해서 푸는 중 입니다.
 
+    var fun1 = function (f1,f2) {
+         console.log(f2)
+    }
+  	fun1([1, 3, 4, 5], 5);
+    //실패 두번째 매개변수???? 5? 출력
+
+    var fun2 = function (f1,f2) {
+       console.log(f1[1])
+    }
+    fun2([1, 3, 4, 5], 5);
+    //첫번째 매개변의 두번째숫자 3출력
      /*
     4. 숫자와 문자가 혼합되어 있는 배열을 매개변수로 전달하면, 각 원소의 타입을 원소로 가진
     새로운 배열이 출력되도록 함수를 작성하세요.
     */
-    func([1, 'icon', 'z', 20, 1]);
-    //이해를 못해서 푸는 중 입니다.
+    var  fun3 = function (type1)
+    {
+      for (var i = 0; i < 5; i++)
+      {
+        if (type1[i] == true){
+          type1[i] = 'String'
+        }else{
+          type1[i] = 'Number';
+        }
+      }console.log(type1);
+    }
+    fun3 ([1, 'icon', 'z', 20, 1]);
+    // 실패 (문자는 무조건 true인 점을 활용하려 했으나 불리언타입일때 였고. 1이 트르로 인식되었다)
+
+    var  func4 = function (type2){
+      for (var i = 0; i < 5; ++i)
+      {
+          type2[i] = typeof type2[i];
+      }
+      return type2;
+    }
+    func4 ([1, 'icon', 'z', 20, 1]);
+    //검색
+
+    var  func5 = function (type3)
+    {
+      for (var i = 0; i < 5; ++i)
+      {
+        if (typeof type3[i] === 'string'){
+          type3[i] = 'String';
+        }else if(typeof type3[i] === 'number'){
+            type3[i] = 'Number';
+        }
+      }console.log(type3);
+    }
+    func5 ([1, 'icon', 'z', 20, 1]);
+    //typeof 연산자 활용
+
+
     </script>
   </body>
 </html>
