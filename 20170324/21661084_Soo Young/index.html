@@ -63,18 +63,16 @@
   var size = getSize(120,420);
   console.log(size);
   */
-
 // 1. names 배열을 이용해서 console에 '배트맨, 토르, 헐크, 아이언맨'와 같은 내용 출력.
 
   var hero = //hero라는 변수를 하나 생성
        function(){
             //배열
             var names = ['아이언맨','헐크','토르','배트맨'];
-            //다른 배열 하나 설정 (왜 하나를 더 만들어야하는지 모르겠다.)
-   	        var string = '';
+   	        var string = ' ';
             //배열 3에서 시작해서 -1까지 --i 를 통해 하나씩 줄면서 출력 : - 3,2,1,0
    		      for(var i = 3; i>-1; i--){
-              // string =  naems[i]와 ''를 더해서 출력
+              // name[i](name에 속해있는 내용) + ''
    		      	string += names[i] + ' ';
              }
    			console.log(string);
@@ -85,34 +83,43 @@
 
         var arr = [1,6,2,9,3];
         var max = arr.reduce(function(a,b) { //max : 최대값  (a,b)를 써야만 최대값이 출력되는지 잘 모르곘다.
-                                                          //둘중하나만 작성하면 1이 나온다.
-          //return : 최대값 출력 수식어?
+                                                          //둘중하나만 작성하면 최소값1이 나온다.
         return Math.max(a,b);
           });
         console.log(max);
 
 //3. 첫번째 매개변수로 주어진 배열에서 두번째 매개변수의 index 를 출력하는 함수를 작성하세요.
-
+      //1)
       var number = [1, 3, 4, 5];
          //값을 찾지 못하면 -1로 출력
          //indexOf 메서드는 가장 처음에 찾은 값의 인덱스를 반환
       console.log(number.indexOf(5));
 
+      //2)
+      var func = function(arr,num){
+          for(var i=0; i<4; i++){//4가 되기 전까지 반복
+            if(arr[i] === num){ //arr[i]의 값이(배열속에 있는 값)num에 선언한 값과 같을 때
+              console.log(i);//i를 출력한다.
+            }
+          }
+        }
+        func([1,3,4,5],5);//배열중 5의 index값을 출력
 
 //4. 숫자와 문자가 혼합되어 있는 배열을 매개변수로 전달하면, 각 원소의 타입을 원소로 가진 새로운 배열이 출력되도록 함수를 작성
 
-    //function에 type을 선언? type이라는 매개변수 설정?
     var no = function(type){
           //i가 5가 되기 전까지 반복, i++ : 하나씩 증가
         for (var i = 0; i < 5; i++) {
-          // 이 부분이 이해가 안간다. 무슨 말인지 모르겠다.
+          //type[i](배열속에 있는 값)을 typeof를 사용하여 각각의 타입으로 출력
           type[i] = typeof type[i];
           //type을 출력
         }return type;
       }
-      // 마지막에 출력하기 위한 내용을 작성?
+      // type[i]의 내용을 작성 (맞나요?)
       no([1, 'icon', 'z', 20, 1]);
-      //검색을 했다. 그냥 4번내용은 전체적으로 이해가 안간다. 4번이 제일 어렵다.
+
+      //마지막에 조금 이해를 했다. 사실 맞게 이해를 했는지는 모르겠다.
+      //결론은 함수는 전체적으로 어렵다.
 
 
   </script>
