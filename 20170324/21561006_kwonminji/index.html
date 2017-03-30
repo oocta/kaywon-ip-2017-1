@@ -11,7 +11,49 @@
     var c = null;
     var d = a;
     var arr = [a, b, c, d];
-    console.log(arr[3]); //
+    console.log(arr[3]); // 27 출력
+
+    var arr = ['a', 'b', 'c', 'd'];
+    for (var i = 0; i < 4; ++i) {
+      console.log(arr[i]);
+    }
+    //for을 이용한 반복문 연습
+
+    var a = 23;
+    var b = 24;
+    var c = 0;
+    console.log(c);
+    //함수선언
+    function addNumbers(){
+      c = a + b;
+    }
+    //함수호출
+    addNumbers();
+    console.log(c);
+
+    function printMessage(msg) {
+      console.log(msg);
+    }
+    printMessage('Hi');
+
+    var printMessage = function (msg) {
+      console.log(msg);
+    }
+    printMessage('Hi');
+    //표현식
+
+    function callMe(name, id) {
+      console.log(name, id);
+    }
+    callMe('to', 'hae');
+    //선언식
+
+    var callMe = function (name, id) {
+      console.log(name, id);
+    }
+    callMe('to', 'hae');
+    //표현식
+
     </script>
   </body>
 </html>
