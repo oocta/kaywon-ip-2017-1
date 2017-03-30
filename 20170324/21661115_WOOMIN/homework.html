@@ -7,27 +7,86 @@
   <body>
     <script>
       /*
-      1. 다음 names 배열을 이용해서 console에 아래 결과물과 같은 내용이 출력되도록
-      코드를 작성해 주세요.
+      1. 다음 names 배열을 이용해서 console에 아래 결과물과 같은 내용이 출력.
+      var names = ['아이언맨', '헐크', '토르', '배트맨']
       => '배트맨, 토르, 헐크, 아이언맨'
       */
       
-      /*
-      2. 숫자로 이루어진 배열을 입력하면, 그 배열의 원소 중 가장 큰 숫자가 출력되도록
-      코드를 작성해주세요.
-      ex) func([1, 6, 2, 9, 3]); => 9
-      */
+      //1 - (1)
+      function heroes1(){                                                  //heroes1이라는 함수 선언.
+        var names1 = ['아이언맨', '헐크', '토르', '배트맨'];                 //names1이라는 변수에 배열 할당.
+        console.log(names1.reverse());                                     //배열 메서드 reverse()를 이용해 names1이라는 변수를 역순으로 콘솔창에 출력.
+      }
+      heroes1();                                                           //함수 호출. (실행)
+      
+      //['배트맨', '토르', '헐크', '아이언맨']
+      
+      //1 - (2)
+      function heroes2(){                                                  //heroes2라는 함수 선언.
+        var names2 = ['아이언맨','헐크','토르','배트맨'];                    //names2라는 변수에 배열 할당.
+        var arr1 = '';                                                     //arr1이라는 변수에 문자열 ''할당.
+        for(var a = 3; a>=1; --a){                                         //a라는 변수에 3 할당. a가 1보다 크거나 같으면 a에 -1씩 반복.
+          arr1 += names2[a] += ', ';                                       //arr1에 덧셈 대입 연산자를 이용해 for문 반복 실행. 
+        }
+        console.log(arr1 + names2[0]);                                     //arr1에 names2[0]를 따로 덧셈 산술 연산자를 이용해 콘솔창에 출력.
+       };
+       heroes2();                                                          //함수 호출. (실행)
+      
+      //'배트맨, 토르, 헐크, 아이언맨'
+      
+      
       
       /*
-      3. 첫번째 매개변수로 주어진 배열에서 두번째 매개변수의 index 를 출력하는 함수를 작성하세요.
-      ex) func([1, 3, 4, 5], 5); => 3
+      2. 숫자로 이루어진 배열을 입력하면, 그 배열의 원소 중 가장 큰 숫자가 출력.
       */
       
+      //2
+      function biggest(arr2){                                               //biggest라는 함수와 arr2라는 매개변수 선언.
+        for(var b = 0; b < arr2.length; b++){                               //b라는 변수에 0 할당. b가 arr2의 항목의 갯수보다 작으면 b에 +1씩 반복.
+          if(arr2[b] > arr2[b+1]){                                          //만약 arr2의 [b]번째 항목이 [b+1]번째 항목보다 크
+            if(arr2[b] > arr2[b+2]){                                        //만약 arr2의 [b]번째 항목이 [b+2]번째 항목보다 크다면
+              console.log(arr2[b]);                                         //arr2의 [b]번째 항목 출력.
+            }
+          }
+        }
+      }
+      biggest([2, 43, 99, 60, 5, 75, 13]);                                  //함수 호출. arr2에 배열 대입.
+      
+      //99
+      
+      
       /*
-      4. 숫자와 문자가 혼합되어 있는 배열을 매개변수로 전달하면, 각 원소의 타입을 원소로 가진
-      새로운 배열이 출력되도록 함수를 작성하세요.
-      ex) func([1, 'icon', 'z', 20, 1]); => ['Number', 'String', 'String', 'Number', 'Number']
+      3. 첫번째 매개변수로 주어진 배열에서 두번째 매개변수의 index 를 출력.
       */
+      
+      //3
+      function second(arr3, num){                                           //second라는 함수와 arr3과 num이라는 매개변수 선언. 
+            console.log(arr3[1]);                                           //arr3의 배열의 [1]번째 항목 = 두번째 항목 출력.
+      }
+      second([11, 22, 33, 44, 55, 66, 77, 88], 99);                         //함수 호출. arr3에 배열 대입.
+      
+      //22
+      
+      //문제에 대한 원하시는 코드가 이게 맞는지 잘 모르겠습니다.
+      
+      
+      /*
+      4. 숫자와 문자가 혼합되어 있는 배열을 매개변수로 전달하면, 
+      각 원소의 타입을 원소로 가진 새로운 배열이 출력.
+      */
+
+      //4
+      function type(arr4){                                                  //type이라는 함수와 arr4라는 매개변수 선언.
+        for(var d = 0; d < arr4.length; d++){                               //d라는 변수에 0 할당. d가 arr4의 항목의 갯수보다 작으면 d에 +1씩 반복.
+          arr4[d] = typeof arr4[d]                                          //arr4의 [d]번째 항목을 그 항목의 데이터타입으로.
+        }
+        console.log(arr4);                                                  //arr4를 출력.
+      }
+      type(['WHAMOOP', 21, 'Anseong', 1997, 3, 31, true, 'Kaywon', 'programming']);       //함수 호출. arr4에 배열 대입.
+      
+      //['string', 'number', 'string', 'number', 'number', 'number', 'boolean', 'string', 'string']
+      
+      
     </script>
   </body>
 </html>
