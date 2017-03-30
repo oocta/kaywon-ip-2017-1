@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interaction Programming : week4 - Function</title>
+  </head>
+  <body>
+    <script>
+
+     /*
+    1. 다음 names 배열을 이용해서 console에 아래 결과물과 같은 내용이 출력되도록
+    코드를 작성해 주세요.
+    => '배트맨, 토르, 헐크, 아이언맨'
+    */
+    var names = ['아이언맨', '헐크', '토르', '배트맨'];
+    for (var i = 3; i >= 0; --i)
+    {
+    console.log(names[i]);
+    }
+    /*
+    2. 숫자로 이루어진 배열을 입력하면, 그 배열의 원소 중 가장 큰 숫자가 출력되도록
+    코드를 작성해주세요.
+    ex) func([1, 6, 2, 9, 3]); => 9
+    */
+
+
+    var func = [1, 6, 2, 9, 3];
+    var max_func = Math.max.apply( Math,func);
+         console.log(max_func);
+         //인터넷에서 찾아봤습니다. 죄송합니다.
+
+    /*
+    3. 첫번째 매개변수로 주어진 배열에서 두번째 매개변수의 index 를 출력하는 함수를 작성하세요.
+    ex) func([1, 3, 4, 5], 5); => 3
+    */
+
+
+    var func = function(arr,index){
+       for(var i = 0; i<4; ++i){
+         if(arr[i] === index) {
+          console.log(i);
+        }
+       }
+      }
+      func([1, 3, 4, 5], 5);
+      //사실 모르겠어요..
+
+
+
+
+    /*
+    4. 숫자와 문자가 혼합되어 있는 배열을 매개변수로 전달하면, 각 원소의 타입을 원소로 가진
+    새로운 배열이 출력되도록 함수를 작성하세요.
+    ex) func([1, 'icon', 'z', 20, 1]); => ['Number', 'String', 'String', 'Number', 'Number']
+    */
+
+
+    //실패했습니다...
+    function printMessage(msg,msg,msg,msg,msg){
+    for (){
+      var a =true;
+       if(a=true){
+       console.log('Number');
+        }
+       else(a=false){
+       console.log('String');
+       }
+
+     }
+    printMessage(1, 'icon', 'z', 20, 1);
+
+
+
+
+
+    /* 먹먹문..
+    교수님...사실상 1번빼고는 모르겠습니다...참고도 많이했고요..
+    제가 원하는것은 조건문과..참거짓과..함수와...이것저것 활용하고 싶었지만 3일내내 끝없는 오류 끝에 어쩔수 없었습니다..
+    수업시간에 열심히 듣겠습니다. 죄송합니다.
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
