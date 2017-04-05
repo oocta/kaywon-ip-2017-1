@@ -7,5 +7,3 @@ function createH2tag(text) {
   h2.innerText = text;
   document.body.appendChild(h2);
 }
-
-createH2tag('yolo!');
