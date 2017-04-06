@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interaction Programming : Week5 - DOM </title>
+    <style media="screen">
+      .row { display: block; margin: 20px 10px; }
+      .col { display: inline-block; margin: 10px 5px; }
+      .red { color: red; }
+      .blue { color: blue; }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <form id="signin" action="index.html">
+      <div id="wrapper">
+        <div class="row">
+          <label for="inputId">
+            <span>아이디 : </span>
+            <input name="inputId" id="inputId" type="text" />
+          </label>
+        </div>
+        <div class="row">
+          <label for="inputPassword">
+            <span>패스워드 : </span>
+            <input name="inputPassword" id="inputPassword" type="text" />
+          </label>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button id="buttonCancel">취소</button>
+          </div>
+          <div class="col">
+            <button id="buttonSignin">가입</button>
+          </div>
+          <div class="col">
+            <button id="buttonReset">초기화</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul id="city">
+              <li>Seoul</li>
+              <li>Tokyo</li>
+              <li>beijing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
