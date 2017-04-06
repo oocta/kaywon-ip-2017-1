@@ -8,16 +8,22 @@
     <script>
       //1//
       var names = ['아이언맨','헐크','토르','배트맨'];
-        for(var i = 3; 0<=i; --i){
-         console.log(names[i]);
-       }
-       /*배열을 바꾸는 거는 성공했는데요
-       배트맨
-       토르
-       헐크
-       아이언맨
-       이렇게가 아니라
-       ['배트맨','토르','헐크','아이언맨'] <- 이렇게 출력하는 법을 알고싶습니다!*/
+      function reverse(arr){
+        var arrClone = [];
+        for(var i = arr.length-1; i>-1; --i){
+          arrClone[arr.length-i-1] = arr[i];
+        }return(arrClone);
+      }
+      console.log(reverse(names));
+
+
+      var names = ['아이언맨','헐크','토르','배트맨'];
+      function reverse(arr){
+        var arrClone = arr.reverse();
+        return arrClone;
+      }
+      console.log(reverse(names));
+
 
       //2//
       var num = [100,1,500,600,200];
@@ -33,6 +39,19 @@
         console.log(num[4]);
       }
 
+
+      function max(arr){
+        var maxNumber = 0;
+        for(var i =0; i<arr.length; ++i){
+          if(maxNumber<arr[i]){
+            maxNumber = arr[i];
+          }
+        }
+        return maxNumber;
+      }
+      max([7,2,3,8]);
+
+
       //3//
       var index = function(num1,num2){
         for(var i=0; i<4; ++i){
@@ -42,6 +61,20 @@
         }
       }
       index([1,2,3,4],3);
+
+
+      function whoIs2(arr,target){
+        var index = -1;
+        for(var i = 0; i < arr.length; ++i){
+          if(arr[i]===target){
+            index = i;
+          }
+        } return index;
+      }
+      whoIs2([1,2,3,4],3);
+      var index = [1,2,3,4].indexOf(3);
+      console.log(index);
+
 
       //4//
       var logType = function(type){
@@ -62,6 +95,15 @@
         }console.log(type);
       }
       logType([1, 'icon', 'z', 20, 1]);
+
+
+      function getTypes(arr){
+        var newArr = [];
+        for (var i = 0; i<arr.length; ++i){
+          newArr[i] = typeof arr[i]
+        }return newArr;
+      }
+      getTypes([1,2,'z'])
 
   </body>
 </html>
