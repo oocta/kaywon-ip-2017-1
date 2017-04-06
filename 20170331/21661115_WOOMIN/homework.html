@@ -140,11 +140,13 @@
     */
         
       document.getElementById('addCity').onclick = function(){
-        if(prompt('도시명을 입력하세요.') === typeof 'string'){
+        var cityname = prompt('도시명을 입력하세요.');
+        if(cityname){
           var citylist = document.createElement('li');
+          citylist.innerHTML = cityname;
           document.getElementById('city').appendChild(citylist);
         }
-      }
+      };
         
     /*
     10. button#goTop 클릭 시 스크롤이 현재 화면의 제일 상단으로 이동하도록 이벤트 핸들러를 할당해주세요.
