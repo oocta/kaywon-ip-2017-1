@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interaction Programming : Week5 - DOM </title>
+    <style media="screen">
+      .row { display: block; margin: 20px 10px; }
+      .col { display: inline-block; margin: 10px 5px; }
+      .red { color: red; }
+      .blue { color: blue; }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <form id="signin" action="index.html">
+      <div id="row">
+        <div class="col">
+          <h1 id="title"></h1>
+        </div>
+      </div>
+      <div id="wrapper">
+        <div class="row">
+          <div class="row">
+            <button id="windowSize">윈도우 사이즈 호출!</button>
+          </div>
+        </div>
+        <div class="row">
+          <label for="inputId">
+            <span>아이디 : </span>
+            <input name="inputId" id="inputId" type="text" value="" />
+          </label>
+        </div>
+        <div class="row">
+          <label for="inputPassword">
+            <span>패스워드 : </span>
+            <input name="inputPassword" id="inputPassword" type="text" value="" type="password" />
+          </label>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button id="buttonCancel">취소</button>
+          </div>
+          <div class="col">
+            <button id="buttonSignin">가입</button>
+          </div>
+          <div class="col">
+            <button id="buttonReset">초기화</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ul id="city">
+              <li>Seoul</li>
+              <li>Tokyo</li>
+              <li>beijing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <button id="addCity">도시 추가하기</button>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col">
+        <button id="goTop">맨 위로 가기</button>
+      </div>
+    </div>
+    <script>
+    /*
+    1. id가 title인 element에 'Hello World' 문자열이 포함되도록 코드를 작성해주세요.
+    */
+
+    var a =document.getElementById('title').innerHTML='Hello World!';
+
+
+    /*
+    2. button#windowSize element를 클릭했을 때 window 컨텐츠 영역의 높이와 넓이를 alert으로 출력하도록 작성해주세요.
+    */
+
+    //교수님 왜 + " X " +넣지 않으면 넓이 하나만 출력이 되죠..?ㅠㅠ
+    function a2(){
+    document.getElementById('windowSize');
+    }
+
+    windowSize.onclick = function(){
+    alert(window.innerWidth + " X " + window.innerHeight);
+    }
+  //풀이
+  익명함수를 주고 그 함수를 제어할 수 있도록
+
+
+
+    /*
+    3. class 속성에 'row'가 포함되어 있는 element의 수를 출력하는 함수를 작성하세요.
+    */
+    function a3(){
+     var c = document.getElementsByClassName('row');
+    return (c.length);
+    }
+    a3();
+
+
+  //풀이
+
+
+
+    /*교수님 얘는 왜 안되죠,,?ㅠㅠ
+    function a3(){
+     var c = document.element.classList.contains('row');
+    return (c.length);
+    }
+    a3();
+   */
+
+
+
+
+    /*
+    4. id 속성의 값이 'inputId'인 element를 찾고 그 value 속성의 값을 출력하는 함수를 작성하세요.
+    */
+    //1번시도 - 왜 null?????
+    function a4(){
+     var d = document.getElementById('inputId');
+    return inputId.getAttribute(d);
+    var d1= inputId.getAttribute(value);
+    }
+    a4();
+    //2번시도 - 왜 undefined?????
+    function a4(){
+     var d = document.getElementById('inputId');
+    return d.getAttribute.value;
+    }
+    a4();
+    //3번시도
+    function a4(){
+     var d = document.getElementById('inputId');
+    return inputId.getAttribute(d);
+    var d1= inputId.getAttribute('value');
+    }
+    a4();
+
+    //4번시도
+    function d(){
+    var a4 = document.getElementById('inputId');
+    return a4.getAttribute(value);
+    console.log(a4);
+    }
+
+   //5번시도
+    var msg = document.getElementById('inputId');
+    function a4(){
+    aa  = msg.getAttribute(value);
+    }
+    a4();
+
+
+
+
+    /*
+    5. 10초마다 'check!!' 라는 문자열이 console 창에 출력되도록 코드를 작성해주세요. (console.log 사용)
+    */
+
+    var count = 0;
+    function start(){
+        setInterval(function(){
+            console.log("check!");
+            count++;
+        }, 10000);
+    }
+    start();
+
+
+    /*
+    6. button#buttonCancel 클릭 시 현재 창이 새로고침 되도록 이벤트를 할당해주세요.
+    */
+    //1번째
+    var a6 = document.getElementById('buttonCancel');
+
+     a6.onclick = function(){
+     window.location.reload( );
+     }
+
+    //2번째
+     var a6 = document.getElementById('buttonCancel');
+       var aa = function{
+         if(buttonCancel.onclick();){
+          window.location.reload();
+         }
+       return;
+    }
+
+    //3번째
+   var a = document.getElementById('buttonCancel');
+   document.buttonCancel.addEventListener(onclick();){
+     location.reload();
+   }
+
+   //4
+   var a = document.getElementById('buttonCancel');
+   document.buttonCancel.addEventListener(onclick();){
+     location.reload();
+   }
+   //5
+   var a = document.getElementById('buttonCancel');
+   a.addEventListener(onclick(window.location.reload(););)
+
+   //6
+   var a6 =function(){
+   document.getElementById('buttonCancel');
+    buttonCancel.onclick= function(){
+     window.location.reload();
+    }
+    return;
+   }
+   //7
+   var a6 = document.getElementById('buttonCancel');
+   a6.addEventListener('click',function(){
+     window.location.reload();
+   });
+
+
+
+
+
+
+    /*
+    7. button#buttonSignin 클릭 시 '정말 가입하시겠습니까?' 라는 메시지를 포함하고 있는 확인 창(confirm)를 출력하고 사용자가 확인을 누를 경우
+    '가입을 환영합니다!' 문구가 alert으로 출력되도록 작성해주세요.
+    */
+    var a7 =function(){
+      document.getElementById('buttonSignin');
+      }
+
+      buttonSignin.onclick= function(){
+        if ( confirm('정말 가입하시겠습니까?') === true){
+          alert('가입을 환영합니다!')
+           }
+      }
+
+    /*
+    8. button#buttonReset 클릭 시 '초기화 하시려면 99 를 입력하세요.' 라는 메시지를 포함하고 있는 prompt를 출력하고, 사용자가 99를 정확하게 입력하면, input#inputId 과 input#inputPassword 두 element의 value 속성이 빈 값으로 초기화하도록 작성해주세요.
+    */
+
+    var a8 = document.getElementById('buttonReset');
+
+      buttonReset.onclick = function(){
+        var a= prompt('초기화 하시려면 99 를 입력하세요.')
+        if (a===99){
+          var idd = document.getElementById('inputId');
+          var psd = document.getElementById('inputPassword');
+          idd.attributes.value('');
+          psd.attributes.value('');
+        }
+        }
+
+
+    /*
+    9. button#addCity 버튼을 클릭 시 '도시명을 입력하세요.' 메시지를 담고 있는 prompt를 출력하고, 사용자가 입력한 도시명을 ul#city 하위의 li 엘리먼트로 추가되도록 작성해주세요.
+    */
+    var a9 = document.getElementById('addCity');
+    addCity.onclick = function(){
+      var a= prompt('도시명을 입력하세요.')
+    }
+    var a9a = document.classList.add();
+
+
+
+//풀이
+  var buttonAddCity = document.getElementById('addCity');//버튼을불러온다
+  //번외)만약에 대상을 addCity에 고정하지 않고싶으면 function addCity(containerId, cityName)
+  function addCity(cityName){
+    // 번외)만약에 대상을 addCity에 고정하지 않고싶으면 var ul = document.getElementById(containerId);//넣을대상을불러옴
+    var ul = document.getElementById('city');//넣을대상을불러옴
+    var li = document.createElement('li');
+    li.innerHTML= cityName;//반환
+    ul.appendChild(li);//ul태그인데 city에 넣을 수 있는 한정이 되어있음
+    //appendChild에 담을 애들, 뒤에 매개변수가 담길애들
+  }//특정 element에 넣을 li를 찾음
+  addCity('넣을도시');
+  // 번외)만약에 대상을 addCity에 고정하지 않고싶으면 addCity('city','suwon');
+  //클릭했을때 이만큼 나오게한다, 어떻게 하면 변경이되도 재사용 할 수 있을까??
+  //prompt,li가 바뀔 수 있음
+
+//풀이
+var buttonAddCity = document.getElementById('addCity');//버튼을불러온다
+function addCity(cityName){
+function addCity(cityName){
+  var ul = document.getElementById('city');//넣을대상을불러옴
+  var li = document.createElement('li');
+  li.innerHTML= cityName;//반환
+  ul.appendChild(li);//ul태그인데 city에 넣을 수 있는 한정이 되어있음
+  //appendChild에 담을 애들, 뒤에 매개변수가 담길애들
+}//특정 element에 넣을 li를 찾음
+buttonAddCity.addEventListener('click',function(){
+  addcity('suwon');//함수 addCity를 불러오는데 매개변수는 수원이다.
+ if (prompt('도시명')){
+
+ }
+
+});
+
+
+var buttonAddCity = document.getElementById('addCity');
+function addCity(cityName){
+  var ul = document.getElementById('city');
+  var li = document.createElement('li');
+  li.innerHTML= cityName;
+  ul.appendChild(li);
+}
+
+buttonAddCity.addEventListener('click',function()){
+  addcity('suwon');//함수 addCity를 불러오는데 매개변수는 수원이다.
+  var input = prompt('도시명');
+ if (input){
+   addCity(input);
+ }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//클릭했을때 이만큼 나오게한다, 어떻게 하면 변경이되도 재사용 할 수 있을까??
+//prompt,li가 바뀔 수 있음
+
+
+    /*
+    10. button#goTop 클릭 시 스크롤이 현재 화면의 제일 상단으로 이동하도록 이벤트 핸들러를 할당해주세요.
+    */
+
+    var a10 = document.getElementById('goTop');
+    a10.addEventListener('click',function(){
+      window.scrollTo(0,0);
+    });
+
+    </script>
+  </body>
+</html>
