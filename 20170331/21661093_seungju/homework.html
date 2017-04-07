@@ -82,7 +82,20 @@
         function () {
         window.alert (b); 
       };
-
+      
+      
+      var winButton = document.getElementById('windowSize');
+      function windowSizeCilck () {
+        alert(window.innerHeight);
+      }
+      function windowSizeCilck2 () {
+        alert(window.innerHeight);
+      }
+      
+      winButton.addEventListener('Click',function(){
+        winSizeClick();
+         winSizeClick2();
+        });
     /*
     3. class 속성에 'row'가 포함되어 있는 element의 수를 출력하는 함수를 작성하세요.
     */
@@ -152,6 +165,21 @@
       };
       
      
+      
+      
+      var buttonAddCity = document.GetElementById('addcity');
+      function addCity(cityName){
+        var ul = document.getElementById('city');
+        var li = document.creatElement('li');
+        li.innerHTML = cityName;
+        ul.appendChild(li);
+      }
+      buttonAddCity.addEventListener('clcik', function(){
+        var input = prompt('도시명?');
+        if (input) {
+         addCity(input);
+        }
+      });
       
       
       
