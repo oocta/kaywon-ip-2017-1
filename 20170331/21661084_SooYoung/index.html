@@ -41,10 +41,10 @@
             <button id="buttonCancel">취소</button>
           </div>
           <div class="col">
-            <button id="buttonSignin">가입</button>
+            <button id="buttonSignin" onclick='window_confirm();'>가입</button>
           </div>
           <div class="col">
-            <button id="buttonReset">초기화</button>
+            <button id="buttonReset" onclick = 'window_re();'>초기화</button>
           </div>
         </div>
         <div class="row">
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="row">
-          <button id="addCity">도시 추가하기</button>
+          <button id="addCity" onclick='window_city();' value='추가'>도시 추가하기</button>
         </div>
       </div>
     </form>
@@ -71,44 +71,126 @@
     1. id가 title인 element에 'Hello World' 문자열이 포함되도록 코드를 작성해주세요.
     */
 
-    var id = document.getElementById('title');
+    var hello = document.getElementById('title').innerHTML = 'Hello World';
+
 
     /*
     2. button#windowSize element를 클릭했을 때 window 컨텐츠 영역의 높이와 넓이를 alert으로 출력하도록 작성해주세요.
     */
+    //id = windowSize
+    var button = document.getElementById('windowSize');
+    //addEventListener:이벤트 속성 click하면 함수안에 입력된 내용들이 실행
+    button.addEventListener('click',function(){
+      alert('넓이 : ' + window.innerWidth + ',' + ' 높이 : ' + window.innerHeight);
+    });
 
     /*
     3. class 속성에 'row'가 포함되어 있는 element의 수를 출력하는 함수를 작성하세요.
     */
 
+     function cheak(){
+       // return : 출력, r에 담긴내용을 출력
+       var r = document.getElementByClassName('row');
+       // return : 출력, r에 담긴내용을 출력
+       return(r.length);
+     }
+     //값 확인
+     cheak();
+
     /*
     4. id 속성의 값이 'inputId'인 element를 찾고 그 value 속성의 값을 출력하는 함수를 작성하세요.
     */
 
+    //inputId라는 id, getAttribute: 요소의 속성값을 가져오는 속성
+    var j = document.getElementById( 'inputId' ).getAttribute( 'value' );
+      document.write(j);
+
     /*
     5. 10초마다 'check!!' 라는 문자열이 console 창에 출력되도록 코드를 작성해주세요. (console.log 사용)
     */
+        var count = 0;
+				function callMe(){
+					console.log('check!!');
+					count++;
+				}
+        //1000 : 1초, 10000 : 10초
+				var timer = setInterval(callMe, 10000);
 
     /*
     6. button#buttonCancel 클릭 시 현재 창이 새로고침 되도록 이벤트를 할당해주세요.
     */
+
+    var but = document.getElementById('buttonCancel');
+    //click과 동시에 함수안에 작성한 내용 실행
+    //window.location.reload(); : 새로고침
+    but.addEventListener('click',function(){
+      window.location.reload();
+    });
 
     /*
     7. button#buttonSignin 클릭 시 '정말 가입하시겠습니까?' 라는 메시지를 포함하고 있는 확인 창(confirm)를 출력하고 사용자가 확인을 누를 경우
     '가입을 환영합니다!' 문구가 alert으로 출력되도록 작성해주세요.
     */
 
+    //<button id="buttonSignin" onclick='window_confirm();'>가입</button>으로 수정하여 실행하였다.
+    function window_confirm(){
+      	  /* 윈도우 확인창 => confirm(문자열, 초기값)*/
+      	  var check = confirm("정말 가입하시겠습니까?");
+      	  if(check === true){
+            alert('가입을 환영합니다!');
+          } else {
+            alert("취소하셨군요....");
+          }
+      	  document.getElementById("window_confirm").innerHTML = "확인창";
+      	}
+
     /*
     8. button#buttonReset 클릭 시 '초기화 하시려면 99 를 입력하세요.' 라는 메시지를 포함하고 있는 prompt를 출력하고, 사용자가 99를 정확하게 입력하면, input#inputId 과 input#inputPassword 두 element의 value 속성이 빈 값으로 초기화하도록 작성해주세요.
     */
+
+    function window_re(){
+          var chec = prompt('초기화 하시려면 99 를 입력하세요.');
+          //99를 '99'로 입력해야지 인식했다.
+          if (chec === '99'){
+            var id = document.getElementById('inputId');
+            var pw = document.getElementById('inputPassword');
+            id.attributes.value('');
+            pw.attributes.value('');
+          }else{
+            alert('잘못입력하셨습니다');
+          }
+          document.getElementById("window_re").innerHTML = "초기화";
+        }
 
     /*
     9. button#addCity 버튼을 클릭 시 '도시명을 입력하세요.' 메시지를 담고 있는 prompt를 출력하고, 사용자가 입력한 도시명을 ul#city 하위의 li 엘리먼트로 추가되도록 작성해주세요.
     */
 
+        //도저히 모르겠다. 작성할 수 있는만큼 했는데 맞게 한건지 모르겠다. 결과는 안나왔다.
+       function window_city(){
+          var pr = prompt('도시명을 입력하세요.');
+            if(pr){
+            var list = document.createElement('li');
+            var node = document.createTextNode('pr');
+            list.appendChild(node);
+
+            var element = document.getElementById('city');
+            element.appendChild(list);
+          }
+        document.getElementById('window_city').innerHTML = '추가';
+      }
+
     /*
     10. button#goTop 클릭 시 스크롤이 현재 화면의 제일 상단으로 이동하도록 이벤트 핸들러를 할당해주세요.
     */
+
+    var top = document.getElementById('goTop');
+    top.addEventListener('click',function(){
+      window.scrollTo(0,0);
+    });
+
+    //9번이 제일 어려웠다.
+
     </script>
   </body>
 </html>
