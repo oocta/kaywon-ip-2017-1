@@ -76,6 +76,11 @@
      //1. id가 title인 element에 'Hello World' 문자열이 포함되도록 코드를 작성해주세요.
      var a = document.getElementById('title').innerHTML = ('Hello World');
 
+     var a = document.getElementById('title').textContent = ('Hello World');//단순 문자
+
+     /*innerHTML와 textContent의 차이 */
+
+
      /*function title(){
        return 'Hello World'
      }
@@ -116,7 +121,7 @@
      /*
      5. 10초마다 'check!!' 라는 문자열이 console 창에 출력되도록 코드를 작성해주세요. (console.log 사용)
      */
-
+     var count=0;
      function MoonBokischeck(){
        console.log('check!!');
        count++;
@@ -142,7 +147,7 @@
      //??????????????????????????????????????????????????????????????????????????이건 뭐 어찌해야할꼬...
 
 
-     
+
      /*
      7. button#buttonSignin 클릭 시 '정말 가입하시겠습니까?' 라는 메시지를 포함하고 있는 확인 창(confirm)를 출력하고 사용자가 확인을 누를 경우
      '가입을 환영합니다!' 문구가 alert으로 출력되도록 작성해주세요.
@@ -179,6 +184,21 @@
      /*
      9. button#addCity 버튼을 클릭 시 '도시명을 입력하세요.' 메시지를 담고 있는 prompt를 출력하고, 사용자가 입력한 도시명을 ul#city 하위의 li 엘리먼트로 추가되도록 작성해주세요.
      */
+     var buttonAddCity=document.getElementById('addCity');
+
+     function addCity(cityName) {
+       var ul =document.getElementById('city');
+       var li =document.createElement('li');
+       li.innerHTML=cityName;
+       ul.appendchild(li);
+     }
+     buttonAddCity.addEventListener('click', function () {
+       //alert(window.innerHeight);
+       var input =prompt('도시명?');
+       if(input) {
+         addCity(input);
+       }
+     })
 
      //다른분들껄 봐도 뭔소린지 모르겠어서 깔끔히 포기☆★
 
