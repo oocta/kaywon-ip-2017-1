@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intercation Programming - Week6</title>
+  </head>
+  <body>
+    <button id="buttonRandom" onclick="randomBtnClick(10)">Random!</button>
+    <button id="buttonStart" onclick="startBtnClick()">start!</button>
+    <button id="buttonStop" onclick="stopBtnClick()">stop!</button>
+    <!-- ul을 버튼들 밑으로 이동 -->
+    <ul id="numberList">
+
+    </ul>
+
+    <script>
+
+    // 1. #buttonRandom 을 클릭할 때 마다, 랜덤한 순서대로 li 태그를 추가하는
+    // 메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.
+
+    // 1번문제가 이게 아닌걸 알고있지만 답처럼 만들기가 너무 어렵습니다 ㅠㅠ
+    // 그래도 math관련 메소드들을 사용해서.. 제출합니다.
+
+      var randomBtnClick = function(num) {
+        var $ul = document.getElementById('numberList');
+        //Math.random() 0 ~ 1 까지의 랜덤한 실수를 뽑음 거기에 num값을 곱하고 1을 더해서 최소값을 1로 만듬
+        //Math.floor() 소수점 이하의 값을 버림 .
+        var ranNum = Math.floor((Math.random() * num)) + 1;
+        var liAdd = document.createElement('li');
+
+        for(var i = 0; i < ranNum; i++) {
+            var liTxt = document.createTextNode(ranNum);
+            liAdd.appendChild(liTxt); //li태그 안에 랜덤한 숫자(가 입력된 텍스트 노드)를 넣는다
+            $ul.appendChild(liAdd); //ul에 li(랜덤한숫자가 입력된 텍스트노드를 포함한 li태그)를 넣는다....
+        }
+      }
+
+    // 2. #buttonStart 클릭시 500밀리 세컨즈 주기로 1에서 만든 함수를 반복 실행하도록 작성하고, #buttonStop 클릭시에 반복 실행이 중지되어야 합니다.
+
+    // 이것도너무 꼼수같아서 ..정화가 필요합니다
+
+    var timer;
+
+    function startBtnClick(){
+      timer = setInterval("randomBtnClick(10)", 500);
+    }
+
+    function stopBtnClick(){
+      clearInterval(timer);
+    }
+
+    // * 구현 코드내에 반드시 object 가 최소 한개 이상 포함되어 있어야 합니다.
+    // * 작성되는 함수의 매개변수는 li 태그를 추가할 대상 엘리먼트와 li의 수를 입력받습니다.
+    // * 매 함수 동작시 li 추가 대상엘리먼트의 내용은 초기화 되어야 합니다.
+    // * 참조할 메서드는 "Math.random()" 입니다.
+
+    // ex)
+    // func(document.body, 3); 실행시
+
+    // <ul>
+    //   <li>3</li>
+    //   <li>1</li>
+    //   <li>2</li>
+    // </ul>
+    // 랜덤한 순서로 li 태그가 추가되면 됩니다.
+
+    </script>
+  </body>
+</html>
