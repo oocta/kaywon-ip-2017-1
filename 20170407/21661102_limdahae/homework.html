@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4353</title>
+</head>
+<body>
+ 
+    <ul id="numberList">
+    </ul>
+    <button id="buttonRandom">Random!</button>
+</body>
+    <script>
+    //1번
+        //1.ul안에 list 추가하기
+        //2. 랜덤 List 함수??? 생성
+        //3. 버튼을 누르면 랜덤으로 list가 나오도록, 
+        
+        var buttonAddNumber = document.getElementById('buttonRandom');
+        
+        function addList(){
+            var ul = document.getElementById('numberList');
+            var li = document.createElement('li');
+            li.innerHTML = num;
+            ul.appendChild(li);
+            var num = Math.floor((Math.random()*3)+1);
+           
+        }
+        buttonAddNumber.addEventListener('click',function(){
+            addList();
+        });
+        
+        //처음에 math.random()사용해도 되는지 몰랐어서 뻘짓하다가 그만ㅜ.ㅜ.. 앞으로 열심히 하겠습니다..
+        //이걸로 어떻게 해보려다가ㅎㅎ시간이 ㅎㅎㅎ
+        /*
+        var buttonAddNumber = document.getElementById('buttonRandom');
+        
+        function addList(num1,num2,num3){
+            var ul = document.getElementById('numberList');
+            
+            var li1 = document.createElement('li');
+            li1.innerHTML = num1;
+            ul.appendChild(li1);
+            var li2 = document.createElement('li');
+            li2.innerHTML = num2;
+            ul.appendChild(li2);
+            var li3 = document.createElement('li');
+            li3.innerHTML = num3;
+            ul.appendChild(li3);
+        }
+         buttonAddNumber.addEventListener('click',function(){
+            addList('1','2','3'); 
+        }); 
+        
+        */
+        
+        //
+        
+        
+    </script>
+
+</html>
