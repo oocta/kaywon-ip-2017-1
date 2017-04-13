@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intercation Programming - Week6</title>
+  </head>
+  <body>
+    <ul id="numberList">
 
+    </ul>
+    <button id="buttonRandom">Random!</button>
+    <button id="buttonStart">Random!</button>
+    <button id="buttonStop">Random!</button>
+
+  </body>
+
+  <script>
+  /* 1. #buttonRandom 을 클릭할 때 마다, 랜덤한 순서대로 li 태그를 추가하는
+  메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.
+    랜덤한 순서로 li 태그가 추가되면 됩니다.  */
+
+document.getElementById('buttonRandom');
+buttonRandom.onclick = function(){
+  var ul = document.getElementById('numberList');
+  var number = Math.floor((Math.random() * 50) +1);
+  var li = document.createElement('li');
+
+  var add = li.innerHTML = number;
+  ul.appendChild(li);
+  }
+
+
+
+  /*   2. #buttonStart 클릭시 500밀리 세컨즈 주기로 1에서 만든 함수를 반복 실행하도록 작성하고, #buttonStop 클릭시에 반복 실행이 중지되어야 합니다. */
+
+
+
+document.getElementById('buttonStart');
+
+function add(){
+  var timer;
+  var ul = document.getElementById('numberList');
+  var number = Math.floor((Math.random() * 50) +1);
+  var li = document.createElement('li');
+  li.innerHTML = number;
+  ul.appendChild(li);
+}
+  buttonStart.onclick = function(){
+
+  setInterval(function(){
+     add() }, 500);
+}
+
+document.getElementById('buttonStop');
+buttonStop.onclick = function(){
+clearInterval(timer);
+}
+
+
+  </script>
+</html>
