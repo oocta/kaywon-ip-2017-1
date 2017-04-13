@@ -38,9 +38,36 @@
       var li = document.createElement('li');
       var textnode = document.createTextNode(num);
       li.appendChild(textnode);
-      document.getElementById('numberList').appendChild(node);
+      document.getElementById('numberList').appendChild(li);
       }
       //버튼 생성과 순서는 어느정도 이해가 됬으나 메서드를 작성하는 과정에서 많은 어려움을 겪어 다른 사람들 것을 보고 참고해 보았습니다.
+      /*
+      document.getElementById('buttonStart');
+      buttonRandom.onclick = function(){
+      startBtn();
+    }
+
+     function startBtn(){
+       var timer;
+       var num = Math.floor((Math.random() * 100) + 1);
+       var li = document.createElement('li');
+       var textnode = document.createTextNode(num);
+       li.appendChild(textnode);
+       document.getElementById('numberList').appendChild(li);
+       }
+       buttonStart.onclick = function(){
+       timer = setInterval(function(){ startList() }, 500);
+      }
+
+      window.onload = function()
+      { document.getElementById('buttonStop');}
+      buttonStop.onclick = function(){
+      clearInterval(timer);
+      }
+      교수님 이것 말고도 여러 방법으로 시도를 해보았으나 작동을 하지 않습니다.
+      저가 많이 부족한 것 같습니다.
+      */
+
 
 
 
