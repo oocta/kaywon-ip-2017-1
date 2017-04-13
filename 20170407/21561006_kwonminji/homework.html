@@ -18,13 +18,13 @@
     1. #buttonRandom 을 클릭할 때 마다, 랜덤한 순서대로 li 태그를 추가하는
     메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.
     순서 1. onclick 2. 함수 실행 3. Math.randon() , appendChild
-    1에서 100 사이의 임의의 숫자를 반환하는 랜덤값
-    여러 예제문 이용해서 실행되긴 했는데 너무 어렵습니다...ㅠㅠ
+    1에서 100 사이의 임의의 숫자를 반환하는 랜덤값(10은 너무 중복된 값으로 출력되어서요)
+    여러 예제문 참고해서 실행되긴 했는데 너무 어렵습니다...ㅠㅠ
     */
 
     //1.
     document.getElementById('buttonRandom').onclick = function () {
-    random();
+      random();
     }
 
     function random() {
@@ -35,9 +35,10 @@
     document.getElementById('numberList').appendChild(node);
     }
 
-    //2.
+    //2.window.onload 이용
+    /*
     window.onload = function(){
-    document.getElementById('buttonRandom');
+     document.getElementById('buttonRandom');
     }
     buttonRandom.onclick = function(){
       var num = Math.floor((Math.random() * 100) + 1);
@@ -47,7 +48,7 @@
       document.getElementById('numberList').appendChild(node);
     }
 
-   /*
+    /*
     2. #buttonStart 클릭시 500밀리 세컨즈 주기로 1에서 만든 함수를 반복 실행하도록 작성하고,
     #buttonStop 클릭시에 반복 실행이 중지되어야 합니다.
     //object 한개 이상 포함,
@@ -55,18 +56,48 @@
     * 작성되는 함수의 매개변수는 li 태그를 추가할 대상 엘리먼트와 li의 수를 입력받습니다.
     * 매 함수 동작시 li 추가 대상엘리먼트의 내용은 초기화 되어야 합니다.
     * 참조할 메서드는 "Math.random()" 입니다.
-    순서 1. #buttonStart onclick 2. timer...? 3. 오브젝트는 어떻게
-*/
-    document.getElementById('buttonStart').onclick = function () {
-      start();}
 
+    순서 1. #buttonStart onclick 2. setInterval, clearInterval 3. 오브젝트는 어떻게...?
+    object 어떻게 포함시킬지 모르겠습니다. 초기화도 하지 못했습니다ㅜㅜ죄송합니다
+    buttonStop이 안되는데 지역변수 그런 것과 관련이 있는건가요?
+    */
+
+    //1.
+    document.getElementById('buttonStart').onclick = function () {
+      start();
+    }
     function start() {
-      v
+      var timer = setInterval('random()',500);
+    }
+
+    document.getElementById('buttonStop').onclick = function () {
+    stop();
+    }
+    function stop() {
+      clearInterval(timer);
     }
 
 
 
-/*
+
+    /*
+    2.
+    window.onload = function(){
+     document.getElementById('buttonStart');
+    }
+    buttonStart.onclick = function (){
+      var timer = setInterval('random()',500);
+    }
+
+    window.onload = function(){
+      document.getElementById('buttonStop');
+    }
+    buttonStop.onclick = function() {
+      clearInterval(timer);
+    }
+    */
+
+    /*
     ex)
     func(document.body, 3); 실행시
 
