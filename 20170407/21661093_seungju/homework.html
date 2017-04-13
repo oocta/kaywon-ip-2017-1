@@ -46,7 +46,22 @@
     </ul>
     랜덤한 순서로 li 태그가 추가되면 됩니다.
     --*/
-    
+     var timer;
+     var start = document.getElementById('buttonStart').onclick = 
+       function() {
+       timer = setInterval(function(){
+          var plusli = document.createElement('li');
+          //ramdom에 소수점 이하를 버리고 랜덤으로 0~9까지 출력에 +1을한다 = 1~10 출력
+          var random = Math.floor(Math.random() * 10) + 1; 
+          plusli.innerHTML = random;   
+          document.getElementById('numberList').appendChild(plusli);
+        }, 500);
+        };
+      
+     var stop = document.getElementById('buttonStop').onclick =
+        function() {
+          clearInterval(timer);
+     };
    
     </script>
   </body>
