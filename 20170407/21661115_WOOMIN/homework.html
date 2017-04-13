@@ -5,30 +5,67 @@
     <title>Intercation Programming - Week6</title>
   </head>
   <body>
+    
+    <button id="buttonRandom">Random!</button>
+    <button id="buttonStart">Random Start!</button>
+    <button id="buttonStop">Random Stop!</button>
+    
     <ul id="numberList">
 
     </ul>
-    <button id="buttonRandom">Random!</button>
-    <button id="buttonStart">Random!</button>
-    <button id="buttonStop">Random!</button>
-    <!--
-    1. #buttonRandom 을 클릭할 때 마다, 랜덤한 순서대로 li 태그를 추가하는
-    메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.
-    2. #buttonStart 클릭시 500밀리 세컨즈 주기로 1에서 만든 함수를 반복 실행하도록 작성하고, #buttonStop 클릭시에 반복 실행이 중지되어야 합니다.
-    * 구현 코드내에 반드시 object 가 최소 한개 이상 포함되어 있어야 합니다.
-    * 작성되는 함수의 매개변수는 li 태그를 추가할 대상 엘리먼트와 li의 수를 입력받습니다.
-    * 매 함수 동작시 li 추가 대상엘리먼트의 내용은 초기화 되어야 합니다.
-    * 참조할 메서드는 "Math.random()" 입니다.
-    ex)
-    func(document.body, 3); 실행시
-    <ul>
-      <li>3</li>
-      <li>1</li>
-      <li>2</li>
-    </ul>
-    랜덤한 순서로 li 태그가 추가되면 됩니다.
-    -->
+
     <script>
+      /*
+      1. #buttonRandom 을 클릭할 때 마다, 랜덤한 순서대로 li 태그를 추가하는
+      메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.
+      */
+      
+      //001
+      var btRanNum = document.getElementById('buttonRandom');
+      
+      var random = {
+        add: function (num){
+          var ul = document.getElementById('numberList');
+          var li = document.createElement('li');
+          li.innerHTML = num;
+          ul.appendChild(li);
+        }
+      }
+      
+      btRanNum.addEventListener('click', function(){
+        var ranNum = Math.floor(Math.random() * 10) + 1;
+        random.add(ranNum);
+      });
+      
+      
+      /*
+      2. #buttonStart 클릭시 500밀리 세컨즈 주기로 1에서 만든 함수를 
+      반복 실행하도록 작성하고, #buttonStop 클릭시에 반복 실행이 중지되어야 합니다.
+      * 구현 코드내에 반드시 object 가 최소 한개 이상 포함되어 있어야 합니다.
+      * 작성되는 함수의 매개변수는 li 태그를 추가할 대상 엘리먼트와 li의 수를 입력받습니다.
+      * 매 함수 동작시 li 추가 대상엘리먼트의 내용은 초기화 되어야 합니다.
+      * 참조할 메서드는 "Math.random()" 입니다.
+      */
+      
+      //002
+      var randomStart = document.getElementById('buttonStart');
+      
+      function repeat(){
+        var ranNum = Math.floor(Math.random() * 10) + 1;
+        random.add(ranNum);
+      }
+      
+      var timer;
+      
+      randomStart.addEventListener('click', function(){
+        timer = setInterval(repeat, 500);
+      });
+      
+      var randomStop = document.getElementById('buttonStop');
+      
+      randomStop.addEventListener('click', function(){
+        clearInterval(timer);
+      });
       
     </script>
   </body>
