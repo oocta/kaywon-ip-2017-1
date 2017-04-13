@@ -28,5 +28,23 @@
     </ul>
     랜덤한 순서로 li 태그가 추가되면 됩니다.
     -->
+    <script>
+    document.getElementById('buttonRandom');
+    buttonRandom.onclick = function(){
+      randomBtn();
+    }
+    function randomBtn(){
+      var num = Math.floor((Math.random() * 50) + 1);
+      var li = document.createElement('li');
+      var textnode = document.createTextNode(num);
+      li.appendChild(textnode);
+      document.getElementById('numberList').appendChild(node);
+      }
+      //버튼 생성과 순서는 어느정도 이해가 됬으나 메서드를 작성하는 과정에서 많은 어려움을 겪어 다른 사람들 것을 보고 참고해 보았습니다.
+
+
+
+
+   </script>
   </body>
-</html>
+ </html>
