@@ -22,16 +22,29 @@
     여러 예제문 이용해서 실행되긴 했는데 너무 어렵습니다...ㅠㅠ
     */
 
+    //1.
     document.getElementById('buttonRandom').onclick = function () {
-      random();}
+    random();
+    }
 
     function random() {
-
     var num = Math.floor((Math.random() * 100) + 1);
     var node = document.createElement('li');
     var textnode = document.createTextNode(num);
     node.appendChild(textnode);
     document.getElementById('numberList').appendChild(node);
+    }
+
+    //2.
+    window.onload = function(){
+    document.getElementById('buttonRandom');
+    }
+    buttonRandom.onclick = function(){
+      var num = Math.floor((Math.random() * 100) + 1);
+      var node = document.createElement('li');
+      var textnode = document.createTextNode(num);
+      node.appendChild(textnode);
+      document.getElementById('numberList').appendChild(node);
     }
 
    /*
@@ -42,7 +55,14 @@
     * 작성되는 함수의 매개변수는 li 태그를 추가할 대상 엘리먼트와 li의 수를 입력받습니다.
     * 매 함수 동작시 li 추가 대상엘리먼트의 내용은 초기화 되어야 합니다.
     * 참조할 메서드는 "Math.random()" 입니다.
+    순서 1. #buttonStart onclick 2. timer...? 3. 오브젝트는 어떻게
 */
+    document.getElementById('buttonStart').onclick = function () {
+      start();}
+
+    function start() {
+      v
+    }
 
 
 
