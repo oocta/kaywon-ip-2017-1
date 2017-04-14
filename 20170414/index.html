@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Interaction Programming - week7</title>
+</head>
+<body>
+  <button id="buttonRandom">Random</button>
+  <button id="buttonStart">Start</button>
+  <button id="buttonStop">Stop</button>
+  <ul id="answer">0</ul>
+  <script>
+    //coding here.
+    function randomAction() {
+      var ul = document.getElementById('answer');
+      var ran = Math.random() * 10;
+      var ran2 = Math.floor(ran) + 1;
+
+      ul.innerHTML = '';
+
+      for (var i = 1; i <= ran2; ++i) {
+        var li = document.createElement('li');
+        li.innerHTML = i;
+        ul.appendChild(li);
+      }
+
+      //h1.innerHTML = ran2;
+    }
+    var button = document.getElementById('buttonRandom');
+    button.addEventListener('click', function () {
+
+      clearTimer();
+
+      randomAction();
+
+    });
+
+    var buttonStart = document.getElementById('buttonStart');
+    var buttonStop = document.getElementById('buttonStop');
+    var timer = 0;
+
+    buttonStart.addEventListener('click', function () {
+      timer = setInterval(function () {
+        randomAction();
+      }, 500);
+    });
+    buttonStop.addEventListener('click', function () {
+      clearTimer();
+    });
+
+    function clearTimer() {
+      if (timer > 0) {
+        clearInterval(timer);
+        timer = 0;
+      }
+    }
+
+  </script>
+</body>
+</html>
