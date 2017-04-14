@@ -16,13 +16,14 @@
       var ul = document.getElementById('answer');
       var ran = Math.random() * 10;
       var ran2 = Math.floor(ran) + 1;
+      var liArray = [];
 
       ul.innerHTML = '';
 
       for (var i = 1; i <= ran2; ++i) {
         var li = document.createElement('li');
         li.innerHTML = i;
-        ul.appendChild(li);
+        liArray.push(li);
       }
 
       //h1.innerHTML = ran2;
