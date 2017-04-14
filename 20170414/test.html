@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Interaction Programming - week7</title>
+</head>
+<body>
+  <button id="buttonRandom">Random</button>
+  <button id="buttonStart">Start</button>
+  <button id="buttonStop">Stop</button>
+  <ul id="answer"></ul>
+  <script>
+
+
+
+    // var ul = document.getElementById('answer');
+    // console.log('a', ul.children.length);
+    //
+    //
+    //
+    // var li = document.createElement('li');
+    // li.innerHTML = 'aaaaa';
+    // ul.appendChild(li);
+    // console.log('b', ul.children.length);
+    //
+    // var li2 = document.createElement('li');
+    // li2.innerHTML = 'bbbbbb';
+    // ul.appendChild(li2);
+    // console.log('c', ul.children.length);
+
+
+
+
+
+
+
+
+    //coding here.
+    function randomAction(liNumber) {
+      var ul = document.getElementById('answer');
+
+
+      ul.innerHTML = '';
+
+      for (var i = 1; i <= liNumber; ++i) {
+        var li = document.createElement('li');
+        li.innerHTML = i;
+        //ul.appendChild(li);
+        var random = Math.floor(Math.random() * ul.children.length);
+        ul.insertBefore(li, ul.children[random]);
+      }
+
+    }
+    var button = document.getElementById('buttonRandom');
+    button.addEventListener('click', function () {
+
+      clearTimer();
+
+      randomAction(6);
+
+    });
+
+    var buttonStart = document.getElementById('buttonStart');
+    var buttonStop = document.getElementById('buttonStop');
+    var timer = 0;
+
+    buttonStart.addEventListener('click', function () {
+      timer = setInterval(function () {
+        randomAction(6);
+      }, 500);
+    });
+    buttonStop.addEventListener('click', function () {
+      clearTimer();
+    });
+
+    function clearTimer() {
+      if (timer > 0) {
+        clearInterval(timer);
+        timer = 0;
+      }
+    }
+
+  </script>
+</body>
+</html>
