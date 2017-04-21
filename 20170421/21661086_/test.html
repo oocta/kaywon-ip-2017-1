@@ -1,1 +1,119 @@
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interaction Programming - week8</title>
+  </head>
+  <body>
+    <section>
+      <h1>Quest 2.</h1>
+      <button id="firstButton">이름출력</button>
+      <p id="first"></p>
+    </section>
+    <section>
+      <h1>Quest 3.</h1>
+      <button id="secondButton">짝수를 출력합니다.</button>
+      <p id="second"></p>
+    </section>
+    <script>
+    /*
+    1.
+    입력된 매개변수의 타입이 문자열일 경우에는 true를,
+    문자열이 아닌 경우 false를 반환하는 함수를 작성하세요. (배점 4점)
+    ex)
+    func(0); ==> false 반환.
+    func('text') ==> true 반환
+    */
+
+    function type(msg) {
+   if (typeof msg === 'string') {
+    console.log('true');
+    } else {
+    console.log('false');
+    }
+    }
+    type();
+
+    /*
+    2.
+    button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
+    입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
+    */
+  document.getElementById('firstButton').onclick = function(){
+     var input = prompt('이름을 입력하세요');
+     if(input){
+       var name = document.getElementById('first');
+       name.innerHTML = input;
+     }
+   };
+
+    /*
+    3.
+    다음의 요건을 만족하도록 코드를 작성하세요.
+    button#secondButton 을 클릭할 경우, "숫자를 입력하세요."라는 문구와 함께 prompt를 출력합니다.
+    사용자가 입력한 숫자를 기준으로 0부터 해당 숫자까지의 숫자 중 짝수인 숫자만 p#second 안에 표시되도록
+    합니다.
+    ex)
+    func(5); =>
+    <p class="second">2, 4</p>
+
+    func(6);
+    <p class="second">2,4,6</p>
+    </p>
+    */
+    document.getElementById('secondButton').onclick = function(){
+      if(i%2)
+       var input2 = prompt('숫자를 입력하세요');
+       if(input2){
+         var num = document.getElementById('second');
+         num.innerHTML = input2;
+       }
+     };
+    /*
+    4.
+    다음 조건을 만족하는 함수를 작성하세요.
+    1). 하나의 Number 타입 매개변수를 입력받습니다.
+    2). 입력된 전달인자가 Number 가 아닌 경우 실행되지 않고, "숫자만 입력가능합니다." 경고창을 출력합니다.
+    3). '>' 문자열을 전달인자의 수만큼 반복한 문자열을 반환합니다.
+    ex)
+    func(4); => '>>>>'
+    func(7); => '>>>>>>>'
+    */
+    function num(number) {
+   if (typeof number === 'Number') {
+
+  } else {
+    alert('숫자만 입력가능합니다.')
+   }
+ }
+  }
+
+    /*
+    5.
+    아래와 같은 결과물을 출력하도록 함수를 작성하세요.
+    * 4번에서 작성한 함수를 활용하셔도 됩니다.
+    * 출력은 console.log를 이용합니다.
+
+    (배점 7점)
+    ex)
+    func(5); =>
+
+    >
+    >>
+    >>>
+    >>>>
+    >>>>>
+    >>>>
+    >>>
+    >>
+    >
+
+    */
+    function(){
+
+    }
+
+    </script>
+  </body>
+</html>
