@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Interaction Programming - week8</title>
   </head>
+
   <body>
     <section>
       <h1>Quest 2.</h1>
@@ -25,11 +26,34 @@
     func('text') ==> true 반환
     */
 
-    /*
+    function printMessage(Number,string){
+      for(var i=0; i<7; i++){
+      if(typeof Number[i] === 'number'){
+           console.log('false');} else{ console.log('true');}
+         }
+       }
+    printMessage([4, '집에', '가고', 20,'싶어요', 1, '엉엉']);
+
     2.
     button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
     입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
     */
+    /*document.getElementById('firstButton').onclick = function(){
+             var firstname = prompt('당신의 이름은?');
+             if(firstname){
+               var firstlist = document.createElement('li');
+               firstlist.innerHTML = firstname;
+               document.getElementById('first').appendChild(firstlist);
+             }
+           };*/
+           document.getElementById('firstButton').onclick = function(){
+                    var firstname = prompt('당신의 이름은?');
+                    if(firstname){
+                      var firstlist = document.createElement('li');
+                      firstlist.innerHTML = firstname;
+                      document.getElementById('first').appendChild(firstlist);
+                    }
+                  };
 
     /*
     3.
@@ -45,9 +69,21 @@
     <p class="second">2,4,6</p>
     </p>
     */
+    document.addElementbyId('secondButton').onclick = function(){
+             var addNumber = prompt('숫자를 입력하세요.');
+             for(var num =1; num<51; num++){
+                   console.log(num);
+             if(addNumber%2==0){
+               var addNumber = document.createElement('Number');
+               secondButton.innerHTML= secondButton;
+               document.getElementById('second').
+              }
+             };
 
     /*
-    4.
+*/
+
+    /*4.
     다음 조건을 만족하는 함수를 작성하세요.
     1). 하나의 Number 타입 매개변수를 입력받습니다.
     2). 입력된 전달인자가 Number 가 아닌 경우 실행되지 않고, "숫자만 입력가능합니다." 경고창을 출력합니다.

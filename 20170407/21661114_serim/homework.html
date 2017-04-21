@@ -9,65 +9,60 @@
 
     </ul>
     <button id="buttonRandom">Random!</button>
-    <button id="buttonStart">Random!</button>
-    <button id="buttonStop">Random!</button>
+    <button id="buttonStart">Start</button>
+    <button id="buttonStop">Stop</button>
+    <ul id="answer">0</ul>
     <!--
     1. #buttonRandom 을 클릭할 때 마다, 랜덤한 순서대로 li 태그를 추가하는
     메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.-->
 
     <script>
 
-    //이번주것도 넘나 어렵...ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ
+     function randomAction(){
+       var ul = document.getElementById('answer');
+       /*var ran = Math.random()*10;
+       var ran2= Math.floor(ran)+1;*/
+       var liArray=[];
 
-    //지난주 도시명 추가하는걸 거의 그대로 썻네요...그래서 그런가 Li가 계속 추가만 되요...엉엉
+       ul.innerHTML='';
 
-    //1,2번 같이 만들다가 꼬여버렸어요....ㅜ.ㅠ.ㅜ.ㅜ.ㅜ.ㅜ)/3번은 풀지도 못허네
-      function addnumber(numberList){
-      var numberList = Math.floor((Math.random() * 3) + 1);
-      var ul = document.getElementById('numberList');
-      var li = document.createElement('li');
-      li.innerHTML = numberList;
-      ul.appendChild(li);
-      }
-       var random1 = document.getElementById('buttonRandom');
-       random1.addEventListener('click',function(){
-         addnumber();
+       for(var i =1; i <= ran2; ++i){
+         var li = document.createElement('li');
+         li.innerHTML=i;
+         liArray.push(li);
+       }
+
+       for(var ai=0; ai<liArray.length; ++ai){
+         var liRandom = (Math.random()*(10 + liArray.length));
+         var li2 = liArray[];
+       }
+       //h1.innerHTML = ran2;
+       }
+       var button = document.getElementById('buttonRandom');
+       button.addEventListener('click',function(){
+         if(timer>0){
+           clearInterval(timer);
+           timer =0;
+         }
+        randomAction();
        });
 
-     var random2 = document.getElementById('buttonStart');
-     random2.addEventListener('click',function(){
-       var e = function randombutton(){
-         addnumber();
-       }
-       var timer = setInterval(e,500)
-     })
+       var buttonStart=document.getElementById('buttonStart');
+       var buttonStop=document.getElementById('buttonStop');
+       var timer=0;
 
+       buttonStart.addEventListener('click', function(){
+         timer=setInterval(function(){
+           randomAction();
+         },500);
+       });
 
-     //문제도 이해가 안가는 1人....
-
-    /*2. #buttonStart 클릭시 500밀리 세컨즈 주기로 1에서 만든 함수를 반복 실행하도록 작성하고, #buttonStop 클릭시에 반복 실행이 중지되어야 합니다.
-
-    * 구현 코드내에 반드시 object 가 최소 한개 이상 포함되어 있어야 합니다.
-    * 작성되는 함수의 매개변수는 li 태그를 추가할 대상 엘리먼트와 li의 수를 입력받습니다.
-    * 매 함수 동작시 li 추가 대상엘리먼트의 내용은 초기화 되어야 합니다.
-    * 참조할 메서드는 "Math.random()" 입니다.*/
-
-
-    function randombutton(){
-      addnumber();
-    }
-    var timer = setInterval(randombutton,500)
-
-  /*  ex)
-    func(document.body, 3); 실행시
-
-    <ul>
-      <li>3</li>
-      <li>1</li>
-      <li>2</li>
-    </ul>
-    랜덤한 순서로 li 태그가 추가되면 됩니다.
-    */
+       buttonStop.addEventListener('click', function(){
+         if(timer>0){
+           clearInterval(timer);
+           timr =0;
+         }
+       });
 
     </script>
   </body>
