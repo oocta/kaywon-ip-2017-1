@@ -24,13 +24,29 @@
     func(0); ==> false 반환.
     func('text') ==> true 반환
     */
-
+   var a=prompt();
+   if(isNaN(a)){
+   consol.log('true')
+   }
+  else{
+  consol.log('false')
+ };
     /*
     2.
     button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
     입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
     */
-
+      
+      
+     document.getElementById('firstButton').onclick = 
+        function(){
+       var b = prompt('이름을 적어주세요')
+       var c = document.getElementById('first');
+      c.innerText = b;
+        };  
+      
+      
+ 
     /*
     3.
     다음의 요건을 만족하도록 코드를 작성하세요.
@@ -40,34 +56,43 @@
     ex)
     func(5); =>
     <p class="second">2, 4</p>
-
     func(6);
     <p class="second">2,4,6</p>
     </p>
     */
+      
+    
+   document.getElementById('secondButton').onclick = 
+     function(){
+     var d = prompt('숫자를 입력하세요.')
+     if (d%2 == 0){
+      var e = document.getElementById('second');
+      e.innerText = d;
 
+    }else{
+      var e = document.getElementById('second');
+      e.innerText = d;
+    }
+  };
+      
     /*
     4.
     다음 조건을 만족하는 함수를 작성하세요.
     1). 하나의 Number 타입 매개변수를 입력받습니다.
     2). 입력된 전달인자가 Number 가 아닌 경우 실행되지 않고, "숫자만 입력가능합니다." 경고창을 출력합니다.
     3). '>' 문자열을 전달인자의 수만큼 반복한 문자열을 반환합니다.
-
     ex)
     func(4); => '>>>>'
     func(7); => '>>>>>>>'
     */
-
     /*
     5.
     아래와 같은 결과물을 출력하도록 함수를 작성하세요.
     * 4번에서 작성한 함수를 활용하셔도 됩니다.
     * 출력은 console.log를 이용합니다.
-
     (배점 7점)
     ex)
     func(5); =>
-
     >
     >>
     >>>
@@ -77,9 +102,8 @@
     >>>
     >>
     >
-
     */
-
+    
     </script>
   </body>
 </html>

@@ -24,12 +24,25 @@
     func(0); ==> false 반환.
     func('text') ==> true 반환
     */
+    var n = function(typ){
+      if(typeof typ === 'string'){
+      console.log(true);}
+      else {console.log(false);
+      }
+    }
 
     /*
     2.
     button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
     입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
     */
+    var a = document.getElementById('firstButton');
+    var p = document.getElementById('first');
+    a.addEventListener('click',function (){
+    var input = prompt('이름?');
+    p.textContent = input;
+  })
+
 
     /*
     3.
@@ -45,6 +58,16 @@
     <p class="second">2,4,6</p>
     </p>
     */
+      var button = document.getElementById('secondButton');
+      var p = document.getElementById('second');
+      button.addEventListener('click',function(){
+      var aa = prompt('숫자를 입력하세요.');
+      for (i = 1; i < aa ; i++){
+       if (i % 2 === 0){
+        p.textContent = i;
+       }
+     }
+    })
 
     /*
     4.
@@ -57,6 +80,12 @@
     func(4); => '>>>>'
     func(7); => '>>>>>>>'
     */
+
+//var b = function(Num){
+//    if(typeof Num !=== Number)
+//  {}
+//
+//  }
 
     /*
     5.
