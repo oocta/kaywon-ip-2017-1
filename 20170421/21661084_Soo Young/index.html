@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,27 +25,37 @@
     func('text') ==> true 반환
     */
 
-    function type(msg) {
-   if (typeof msg === 'string') {
-    console.log('true');
-    } else {
-    console.log('false');
+    function call(msg){
+        if(typeof msg === 'string'){
+          console.log('true');
+        }else{
+          console.log('false');
+        }
     }
-    }
-    type();
+    call();
+
 
     /*
     2.
     button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
     입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
     */
-  document.getElementById('firstButton').onclick = function(){
-     var input = prompt('이름을 입력하세요');
-     if(input){
-       var name = document.getElementById('first');
-       name.innerHTML = input;
-     }
-   };
+
+    var button = document.getElementById('firstButton');
+
+    function firstButton(name){
+      var p1 = document.getElementById('first');
+      var p2 = document.createElement('p');
+      p2.innerHTML=name;
+      p1.appendChild(p2);
+    }
+
+    button.addEventListener('click', function(){
+      var input = prompt('이름을 작성해주세요');
+      if(input){
+        firstButton(input);
+      }
+    })
 
     /*
     3.
@@ -61,34 +70,48 @@
     func(6);
     <p class="second">2,4,6</p>
     </p>
-    */
-    document.getElementById('secondButton').onclick = function(){
-      if(i%2)
-       var input2 = prompt('숫자를 입력하세요');
-       if(input2){
-         var num = document.getElementById('second');
-         num.innerHTML = input2;
-       }
-     };
+  */
+
+var btt = document.getElementById('secondButton');
+
+function two(num){
+  var vt = document.getElementById('second');
+  var vtt = document.createElement('p');
+  vtt.innerHTML=num;
+  vt.appendChild(vtt);
+    if(i%2 == 0){
+        for(var i = 1; i <= num; ++i){
+          num(i);
+        }
+    }
+}
+  var bt = document.getElementById('secondButton');
+  bt.addEventListener('click',function(){
+    var one = prompt('숫자 작성');
+    if(one){
+      two(one);
+    }
+  })
+
     /*
     4.
     다음 조건을 만족하는 함수를 작성하세요.
     1). 하나의 Number 타입 매개변수를 입력받습니다.
     2). 입력된 전달인자가 Number 가 아닌 경우 실행되지 않고, "숫자만 입력가능합니다." 경고창을 출력합니다.
     3). '>' 문자열을 전달인자의 수만큼 반복한 문자열을 반환합니다.
+    consoleㅊ출력
+
     ex)
     func(4); => '>>>>'
     func(7); => '>>>>>>>'
     */
-    function num(number) {
-   if (typeof number === 'Number') {
 
-  } else {
-    alert('숫자만 입력가능합니다.')
-   }
- }
-  }
-
+        function call5(msgt){
+            if(typeof msgt === 'number'){
+              
+            }
+        }
+        call5();
     /*
     5.
     아래와 같은 결과물을 출력하도록 함수를 작성하세요.
@@ -110,9 +133,6 @@
     >
 
     */
-    function(){
-
-    }
 
     </script>
   </body>

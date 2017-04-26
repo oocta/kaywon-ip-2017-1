@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +8,9 @@
     <section>
       <h1>Quest 2.</h1>
       <button id="firstButton">이름출력</button>
-      <p id="first"></p>
+      <p id="first">
+
+      </p>
     </section>
     <section>
       <h1>Quest 3.</h1>
@@ -25,29 +26,33 @@
     func(0); ==> false 반환.
     func('text') ==> true 반환
     */
+    var  q1= function (type)
+    {
+      for (var i = 0; i < 5; ++i)
+      {
+        if (typeof type[i] === 'string'){
+          type[i] = true;
+        }else if(typeof type[i] === 'number'){
+            type[i] = 'false';
+        }
+      }console.log(type);
+    }
+    q1 ([1, 'a', 'c', 20, 1]);
 
-    function type(msg) {
-   if (typeof msg === 'string') {
-    console.log('true');
-    } else {
-    console.log('false');
-    }
-    }
-    type();
 
     /*
     2.
     button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
     입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
     */
-  document.getElementById('firstButton').onclick = function(){
-     var input = prompt('이름을 입력하세요');
-     if(input){
-       var name = document.getElementById('first');
-       name.innerHTML = input;
-     }
-   };
-
+    document.getElementById('firstButton').onclick = function(){
+       var q2name = prompt('이름을 입력하세요.');
+       if(q2name){
+         var q2list = document.createElement('p');
+         q2list.innerHTML = q2name;
+         document.getElementById('first').appendChild(q2list);
+       }
+     };
     /*
     3.
     다음의 요건을 만족하도록 코드를 작성하세요.
@@ -57,19 +62,11 @@
     ex)
     func(5); =>
     <p class="second">2, 4</p>
-
     func(6);
     <p class="second">2,4,6</p>
     </p>
     */
-    document.getElementById('secondButton').onclick = function(){
-      if(i%2)
-       var input2 = prompt('숫자를 입력하세요');
-       if(input2){
-         var num = document.getElementById('second');
-         num.innerHTML = input2;
-       }
-     };
+
     /*
     4.
     다음 조건을 만족하는 함수를 작성하세요.
@@ -80,25 +77,14 @@
     func(4); => '>>>>'
     func(7); => '>>>>>>>'
     */
-    function num(number) {
-   if (typeof number === 'Number') {
-
-  } else {
-    alert('숫자만 입력가능합니다.')
-   }
- }
-  }
-
     /*
     5.
     아래와 같은 결과물을 출력하도록 함수를 작성하세요.
     * 4번에서 작성한 함수를 활용하셔도 됩니다.
     * 출력은 console.log를 이용합니다.
-
     (배점 7점)
     ex)
     func(5); =>
-
     >
     >>
     >>>
@@ -108,11 +94,7 @@
     >>>
     >>
     >
-
     */
-    function(){
-
-    }
 
     </script>
   </body>

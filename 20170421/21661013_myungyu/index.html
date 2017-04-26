@@ -24,13 +24,25 @@
     func(0); ==> false 반환.
     func('text') ==> true 반환
     */
-
+    function stringType (type){
+      if(typeof type === 'string'){
+        type = true;
+      }else{
+        type = false;
+      }return type;
+    }
+    stringType();
     /*
     2.
     button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
     입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
     */
-
+    var button = document.getElementById('firstButton');
+    button.addEventListener('click', function(){
+      var name = prompt('이름을 입력하세요.');
+      var p = document.getElementById('first');
+      p.innerHTML = name;
+    })
     /*
     3.
     다음의 요건을 만족하도록 코드를 작성하세요.
@@ -45,7 +57,18 @@
     <p class="second">2,4,6</p>
     </p>
     */
-
+    var button2 = document.getElementById('secondButton');
+    button2.addEventListener('click', function(){
+      var num = prompt('숫자를 입력하세요.');
+      var second = document.getElementById('second');
+      for(var i = 2; i <= num; ++i){
+        if(num%2 === 1){
+          second.innerHTML = ;
+        }else if(num%2 === 0){
+          second.innerHTML = ;
+        }
+      }
+    })
     /*
     4.
     다음 조건을 만족하는 함수를 작성하세요.
@@ -57,7 +80,17 @@
     func(4); => '>>>>'
     func(7); => '>>>>>>>'
     */
-
+    function onlyNumber(number){
+      for(var i = 0; i <= number; ++i){
+        if(typeof number === 'number'){
+          var s = '>';
+          console.log(s*i);
+        }else{
+          alert('숫자만 입력 가능합니다');
+        }
+      }
+    }
+    onlyNumber(5);
     /*
     5.
     아래와 같은 결과물을 출력하도록 함수를 작성하세요.
