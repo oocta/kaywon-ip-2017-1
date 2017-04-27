@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .row { padding: 10px; }
+    </style>
+    <script src="./function.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <lable for="userId">아이디 : </lable>
+      <input type="text" id="userId" />
+    </div>
+    <div class="row">
+      <lable for="userName">성명 : </lable>
+      <input type="text" id="userName" />
+    </div>
+    <div class="row">
+      <lable for="userEngName">영문이름 : </lable>
+      <input type="text" id="userEngName" />
+    </div>
+    <div class="row">
+      <span>성별 : </span>
+      <label>
+        <input type="radio" name="gender" value="male" />남자
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female" />여자
+      </label>
+    </div>
+    <section>
+      <div style="padding-top: 40px;">
+        <button id="validString">문자타입검사</button>
+        <button id="validEmpty">빈문자검사</button>
+        <button id="validValue">유효성검사</button>
+        <button id="validGender">성별값검사</button>
+      </div>
+    </section>
+  </body>
+</html>
