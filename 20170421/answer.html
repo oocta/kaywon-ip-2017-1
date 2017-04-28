@@ -25,26 +25,59 @@
     func('text') ==> true 반환
     */
 
-    function isString(str) {
-      return typeof str === 'string';
+    // function isString(str) {
+    //   return typeof str === 'string';
+    // }
+
+    function q1(p1) {
+      if (typeof p1 === 'string') {
+        return true;
+      } else {
+        return false;
+      }
     }
+
+    function q11(p2) {
+      if (typeof p2 === 'number') {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+
+
+    q1(10);
+    q1('1');
+    q1(false);
 
     /*
     2.
-    button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
-    입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
+    button#firstButton을 클릭할 경우 // 사용자가 이름을 입력할 수 있도록
+    입력창을 표시하고//, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
     */
-    var firstButton = document.getElementById('firstButton');
-    var first = document.getElementById('first');
 
-    firstButton.addEventListener('click', function () {
-      var name = prompt('이름을 입력하세요.');
-      first.innerHTML = name;
-    });
+    var fButton = document.getElementById('firstButton');
+
+    function whatname () {
+      var name = prompt('What?');
+      var p = document.getElementById('first');
+      p.innerHTML = name;
+    }
+
+    fButton.addEventListener('click', whatname);
+
+    // var firstButton = document.getElementById('firstButton');
+    // var first = document.getElementById('first');
+    //
+    // firstButton.addEventListener('click', function () {
+    //   var name = prompt('이름을 입력하세요.');
+    //   first.innerHTML = name;
+    // });
     /*
     3.
     다음의 요건을 만족하도록 코드를 작성하세요.
-    button#secondButton 을 클릭할 경우, "숫자를 입력하세요."라는 문구와 함께 prompt를 출력합니다.
+    button#secondButton 을 클릭할 경우, // "숫자를 입력하세요."라는 문구와 함께 prompt를 출력합니다.
     사용자가 입력한 숫자를 기준으로 0부터 해당 숫자까지의 숫자 중 짝수인 숫자만 p#second 안에 표시되도록
     합니다.
     ex)
@@ -56,19 +89,34 @@
     </p>
     */
 
-    var secondButton = document.getElementById('secondButton');
-    var second = document.getElementById('second');
+    var sButton = document.getElementById('secondButton');
 
-    secondButton.addEventListener('click', function () {
-      var num = +(prompt('숫자를 입력하세요'));
-      var odd = '';
-      for (var i = 1; i <= num; ++i) {
-        if (!(i % 2)) {
-          odd += i + ',';
+    //sButton 클릭시 실행되는 함수.
+    function checkNumber() {
+      var number = prompt('숫자를 입력하세요.');
+      var p = document.getElementById('second');
+      var content = '';
+      for (var i = 0; i <= number; ++i) {
+        if (i%2 === 0 && i !== 0) {
+          content = content + ', ' + i;
         }
       }
-      second.innerHTML = odd;
-    });
+      p.innerHTML = content;
+    }
+
+    // var secondButton = document.getElementById('secondButton');
+    // var second = document.getElementById('second');
+    //
+    // secondButton.addEventListener('click', function () {
+    //   var num = +(prompt('숫자를 입력하세요'));
+    //   var odd = '';
+    //   for (var i = 1; i <= num; ++i) {
+    //     if (!(i % 2)) {
+    //       odd += i + ',';
+    //     }
+    //   }
+    //   second.innerHTML = odd;
+    // });
 
     /*
     4.
@@ -81,17 +129,31 @@
     func(4); => '>>>>'
     func(7); => '>>>>>>>'
     */
-    function printLT(num) {
-      if (typeof num !== 'number') {
-        alert("숫자만 입력가능합니다.");
-        return false;
+
+    function q4(num) {
+      if (typeof num === 'number') {
+        var text = '';
+        for (var i = 0; i < num; ++i) {
+          text = text + '>';
+        }
+        return text;
+      } else {
+        alert('숫자만 입력가능합니다.');
       }
-      var print = '';
-      for (var i = 0; i < num; ++i) {
-        print += '>';
-      }
-      return print;
     }
+
+
+    // function printLT(num) {
+    //   if (typeof num !== 'number') {
+    //     alert("숫자만 입력가능합니다.");
+    //     return false;
+    //   }
+    //   var print = '';
+    //   for (var i = 0; i < num; ++i) {
+    //     print += '>';
+    //   }
+    //   return print;
+    // }
     /*
     5.
     아래와 같은 결과물을 출력하도록 함수를 작성하세요.
@@ -114,15 +176,14 @@
 
     */
     function q5(num) {
-      var print = '';
       for (var i = 0; i <= num; ++i) {
-        console.log(printLT(i));
+        console.log(q4(i));
       }
       for (var o = num; o >= 0; --o) {
-        console.log(printLT(o));
+        console.log(q4(o));
       }
     }
-    q5(10);
+    // q5(10);
     </script>
   </body>
 </html>
