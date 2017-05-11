@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interaction Programming - week8</title>
+  </head>
+  <body>
+    <section>
+      <h1>소수 나열하기</h1>
+      <button id="secondButton">나열해보자!!!!</button>
+      <p id="first"></p>
+      <p id="second"></p>
+      <p id="third"></p>
+    </section>
+    <script>
+      //선택
+      var $secondButton = document.getElementById('secondButton');
+      // 체크넘버 함수
+      var checkNumber = function(){
+        // 프롬프트 값
+        var number = prompt('숫자를 입력하세요');
+        //선택
+        var $second = document.getElementById('second');
+        var $first = document.getElementById('first');
+        var $third = document.getElementById('third');
+        // 빈 객체 생성
+        var content = '';
+        // 빈 불리언 값 생성
+        var tf;
+        // 입력한 넘버의 값을 0부터 넘버의 값까지 모두 분류 하는 역할의 for문
+        for(var i = 0; i<=number; ++i){
+          //분류된 넘버의 값 하나를 가져와서 그것보다 작은 수들(2보다큰)로 모두 나눔
+          for(var k = 2; k<i; ++k){
+            if(i%k === 0){
+              // 작은수로 나눠지는 순간 불리언값을 false로 전환
+              tf = false;
+              //그리고 for문의 동작을 중지시킴
+              break;
+            }
+            //중지되지 않는다면 불리언은 트루값을 가지고 이것은 소수가됨.
+            tf = true;
+          }
+          //불리언이 트루라면 소수이기때문에 content에 i값을 더해줌
+          if(tf){
+            content = content + ' ,' + i;
+          }
+        }
+        // innerHTML
+        $first.innerHTML = number + '안의 소수는 바로~';
+        $second.innerHTML = content;
+        $third.innerHTML = '입니다~';
+      }
+      // 버튼 클릭시 체크넘버 실행
+      $secondButton.addEventListener('click',checkNumber);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Counter</title>
+    <style>
+    html, body { width: 100%; height: 100%; }
+    .center { position: relative; display: inline-block; left: 50%; width: 200px; margin-left: -100px; text-align: center; padding: 50px 0; }
+    .counter { font-size: 60px; font-weight: bold; }
+    .increment { padding: 10px 0; vertical-align: middle; line-height: 20px; }
+    </style>
+    <script src="./script.js">
+    /*소수구하기 */
+    function getPrimeNumber() {
+        var number = prompt('숫자를 입력하세요');
+        var isPrime = '';
+        var prime;
+        for (var i = 2; i <= number; i++) {
+            prime = true;
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+            if (prime) {
+                isPrime = isPrime + ', ' + i;
+            }
+        }
+        console.log(isPrime);
+    }
+
+    /*교수님....2주동안.....열시미 까먹었습니다....헤헤...
+    다른 언니오빠들이나 친구들꺼 봐도 1도 모르겠어요....내일 수업때 차근차근 풀이 보면서 풀겠습니다ㅠ.ㅠ)/*/
+    </script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="counter">
+        0
+      </div>
+      <div class="buttonList">
+        <button>+</button>
+        <button>-</button>
+      </div>
+      <div class="increment">
+        <label>
+          <input type="radio" name="increment" value="1" checked="checked" />1
+        </label>
+        <label>
+          <input type="radio" name="increment" value="2" />2
+        </label>
+        <label>
+          <input type="radio" name="increment" value="3" />3
+        </label>
+        <label>
+          <input type="radio" name="increment" value="4" />4
+        </label>
+        <label>
+          <input type="radio" name="increment" value="5" />5
+        </label>
+      </div>
+    </div>
+  </body>
+</html>

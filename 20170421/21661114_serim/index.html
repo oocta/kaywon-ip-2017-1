@@ -37,15 +37,7 @@
     2.
     button#firstButton을 클릭할 경우 사용자가 이름을 입력할 수 있도록
     입력창을 표시하고, 입력된 이름을 p#first 의 내부에 이름이 표시되도록 작성해주세요.(배점 4점)
-    */
-    /*document.getElementById('firstButton').onclick = function(){
-             var firstname = prompt('당신의 이름은?');
-             if(firstname){
-               var firstlist = document.createElement('li');
-               firstlist.innerHTML = firstname;
-               document.getElementById('first').appendChild(firstlist);
-             }
-           };*/
+
            document.getElementById('firstButton').onclick = function(){
                     var firstname = prompt('당신의 이름은?');
                     if(firstname){
@@ -54,6 +46,15 @@
                       document.getElementById('first').appendChild(firstlist);
                     }
                   };
+
+                  document.getElementById('firstButton');
+
+                    function whatname(){
+                        var name = prompt('what?');}
+                        var p =document.getElementById('first');
+                        p.innerHTML name;
+                      }
+                  fbutton.addEventListener('click',function(){});
 
     /*
     3.
@@ -66,23 +67,47 @@
     <p class="second">2, 4</p>
 
     func(6);
-    <p class="second">2,4,6</p>
+    <p class="second">2,4,6</p+
     </p>
     */
-    document.addElementbyId('secondButton').onclick = function(){
-             var addNumber = prompt('숫자를 입력하세요.');
-             for(var num =1; num<51; num++){
-                   console.log(num);
-             if(addNumber%2==0){
-               var addNumber = document.createElement('Number');
-               secondButton.innerHTML= secondButton;
-               document.getElementById('second').
-              }
-             };
+    //ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ..ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ.ㅠ..ㅠㅠ.ㅠ.ㅠ)꼬였...da.../
+      /*var secondButton =document.getElementById('secondButton');*/
 
-    /*
-*/
+      document.getElementById('secondButton').onclick=function clickNumber(){
+        var number = prompt('숫자를 입력하세요.');
+        var p= document.getElementById('second');
+        var content='';
+        for (var i = 1; i<= number; ++i){
+          if(i%2 === 0 && i !==0){
+            content =content+ ',' +i; //
+          }
+        }
+        p.innerHTML =content;
+      }
 
+      document.getElementById('secondButton').onclick=function clickNumber(){
+        var number = prompt('숫자를 입력하세요.');
+        var p= document.getElementById('second');
+        var content='';
+        for (var i = 2; i < num; i++){
+          if(num < 2){
+            content =content+ ',' +i; //
+          }
+        }
+        p.innerHTML =content;
+      }
+
+      document.getElementById('secondButton').onclick=function isPrime(num) {
+        var num = prompt('숫자를 입력하세요.');
+        var p= document.getElementById('second');
+          var content='';
+          if(num < 2) return false;
+          for (var i = 2; i < num; i++) {
+              if(num%i==0)
+                content = content+''+i;
+          }
+          p.innerHTML=content;
+      }
     /*4.
     다음 조건을 만족하는 함수를 작성하세요.
     1). 하나의 Number 타입 매개변수를 입력받습니다.
@@ -93,7 +118,17 @@
     func(4); => '>>>>'
     func(7); => '>>>>>>>'
     */
-
+    function printLT(num) {
+      if (typeof num !== 'number') {
+        alert("숫자만 입력가능합니다.");
+        return false;
+      }
+      var print = '';
+      for (var i = 0; i < num; ++i) {
+        print += '>';
+      }
+      return print;
+    }
     /*
     5.
     아래와 같은 결과물을 출력하도록 함수를 작성하세요.
@@ -113,8 +148,21 @@
     >>>
     >>
     >
-
     */
+    function q5(num) {
+      var print = '';
+      for (var i = 0; i <= num; ++i) {
+        console.log(printLT(i));
+      }
+      for (var o = num; o >= 0; --o) {
+        console.log(printLT(o));
+      }
+    }
+    q5(10);
+
+
+
+
 
     </script>
   </body>
