@@ -1,0 +1,24 @@
+/* ------------------------------------ 소수 구하기
+검색을 해서 맞춰보기는 했는데 
+완벽하게 이해는 되지 않습니다 ㅠ.ㅠ 이걸 응용해서 또 하라고 하면 못할거같습니다..
+
+  function check(){
+    var number = prompt('숫자');
+    var content = '';
+    var count;
+    for (var i = 2; i <= number; i++){
+      count = true;
+      for (var c = 2; c < i; c++){
+        if (i%c === 0){
+          count = false;
+          break;
+        }
+      }
+      if (count === true){
+        content = content + ',' + i;
+      }
+    }
+    console.log(content);
+  }
+
+  */
