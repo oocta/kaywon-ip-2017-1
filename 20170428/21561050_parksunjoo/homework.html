@@ -1,1 +1,43 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="./script.js"></script>
+    <meta charset="utf-8">
+    <title>Counter</title>
+    <style>
+    html, body { width: 100%; height: 100%; }
+    .center { position: relative; display: inline-block; left: 50%; width: 200px; margin-left: -100px; text-align: center; padding: 50px 0; }
+    .counter { font-size: 60px; font-weight: bold; }
+    .increment { padding: 10px 0; vertical-align: middle; line-height: 20px; }
+    </style>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="counter">
+        0
+      </div>
+      <div class="buttonList">
+        <button id="plusbt">+</button>
+        <button id="minubt">-</button>
+      </div>
+      <div class="increment">
+        <label>
+          <input type="radio" name="increment" value="1" checked="checked" />1
+        </label>
+        <label>
+          <input type="radio" name="increment" value="2" />2
+        </label>
+        <label>
+          <input type="radio" name="increment" value="3" />3
+        </label>
+        <label>
+          <input type="radio" name="increment" value="4" />4
+        </label>
+        <label>
+          <input type="radio" name="increment" value="5" />5
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
