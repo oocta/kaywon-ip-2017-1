@@ -1,4 +1,4 @@
-//6. 라디오버튼의 선택된 값 찾기
+//7. 라디오버튼의 선택된 값 적용하기
 var init = function () {
   var counter = document.getElementById('counter');
   var plusButton = document.getElementById('plusButton');
@@ -13,13 +13,13 @@ var init = function () {
 
   //플러스 버튼 클릭시 실행되는 함수
   function clickPlusButton() {
-    counterNumber = counterNumber + 1;
+    counterNumber = counterNumber + getRadioValue();
     counterHandler(counterNumber);
   }
 
   //마이너스버튼 클릭시 실행되는 함수
   function clickMinusButton() {
-    counterNumber = counterNumber - 1;
+    counterNumber = counterNumber - getRadioValue();
     counterHandler(counterNumber);
   }
 
@@ -29,7 +29,7 @@ var init = function () {
     for(var i = 0; i < radios.length; ++i) {
       var radio = radios[i];
       if (radio.checked === true) {
-        return radio.value;
+        return parseInt(radio.value, 10);
       }
     }
   }
