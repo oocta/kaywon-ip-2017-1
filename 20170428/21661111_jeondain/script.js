@@ -8,6 +8,8 @@ var init = function(){
 var counter = document.getElementById('counter');
 var plusButton = document.getElementById('plusButton');
 var minusButton = document.getElementById('minusButton');
+var starButton = document.getElementById('starButton');
+var leftButton = document.getElementById('leftButton');
 var counterNumber = 0;
 
  //카운터를 제어하는 함수
@@ -32,6 +34,18 @@ var counterNumber = 0;
    counterHandler(counterNumber);
  }
 
+ //곱하기 버튼 클릭시 실행되는 함수
+ function clickstarbutton(){
+   counterNumber = counterNumber * parseInt(getRadioValue(), 10);
+   counterHandler(counterNumber);
+ }
+
+ //나머지 버튼 클릭시 실행되는 함수
+ function clickleftbutton(){
+   counterNumber = counterNumber % parseInt(getRadioValue(), 10);
+   counterHandler(counterNumber);
+ }
+
 //라디오 버튼의 선택되는 값을 찾는 기능
 //getElement's'ByName-같은 이름을 가지고 있는개 여러개이기 때문에 복수형으로
 function getRadioValue(){
@@ -48,6 +62,8 @@ getRadioValue();
 
 plusButton.addEventListener('click', clickplusbutton);
 minusButton.addEventListener('click', clickminusbutton);
+starButton.addEventListener('click', clickstarbutton);
+leftButton.addEventListener('click', clickleftbutton);
 };
 
 document.addEventListener('DOMContentLoaded', init);
