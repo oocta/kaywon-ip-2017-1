@@ -1,4 +1,4 @@
-//5. 증감기능 추가
+//6. 라디오버튼의 선택된 값 찾기
 var init = function () {
   var counter = document.getElementById('counter');
   var plusButton = document.getElementById('plusButton');
@@ -22,6 +22,18 @@ var init = function () {
     counterNumber = counterNumber - 1;
     counterHandler(counterNumber);
   }
+
+  //라디오버튼의 선택된 값을 찾는 기능
+  function getRadioValue() {
+    var radios = document.getElementsByName('increment');
+    for(var i = 0; i < radios.length; ++i) {
+      var radio = radios[i];
+      if (radio.checked === true) {
+        return radio.value;
+      }
+    }
+  }
+  console.log(getRadioValue());
 
   plusButton.addEventListener('click', clickPlusButton);
   minusButton.addEventListener('click', clickMinusButton);
