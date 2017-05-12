@@ -7,6 +7,7 @@ var init = function () {
   var minusBt = document.getElementById('minusBt');
   var multiplyBt = document.getElementById('multiplyBt');
   var divisionBt = document.getElementById('divisionBt');
+  var reset = document.getElementById('reset');
   var counterNumber = 0;
 
 //2. 카운터 제어 기능 만들기
@@ -37,6 +38,11 @@ var init = function () {
     counterNumber = counterNumber / getRadioValue();
     counterHandler(counterNumber);
   }
+  //리셋해버려
+  function clickreset() {
+    counterNumber = counterNumber*0 ;
+    counterHandler(counterNumber);
+  }
 
 
 //5. 라디오 버튼 제어
@@ -55,6 +61,7 @@ var init = function () {
   minusBt.addEventListener('click',clickminusBt);
   multiplyBt.addEventListener('click',clickmultiplyBt);
   divisionBt.addEventListener('click',clickdivisionBt);
+  reset.addEventListener('click',clickreset);
 
 };
 
