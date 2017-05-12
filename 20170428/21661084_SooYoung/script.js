@@ -1,3 +1,4 @@
+/*
 var button = document.getElementsByClassName('buttonList');
 
 //plus버튼을 누르면 함수가 실행된다.
@@ -87,3 +88,75 @@ for(var i = 0; i < rates.length; i++){
 
 
 //그리고 사실 검색해보고 했는데 어떻게 해야할지모르겠습니다..도저히 모르겠습니다..
+
+
+
+
+/*****************************/
+
+
+var init = function(){
+  var counter = document.getElementById('counter');
+  var plus = document.getElementById('plus');
+  var minus = document.getElementById('minus');
+  var multi = document.getElementById('multi');
+  var division = document.getElementById('division');
+
+  var counterNumber = 0;
+
+  //counter control
+  function counterHandler(num){
+    counter.innerHTML = num;
+    console.log(counterHandler);
+  }
+
+  //plus button control
+  function clickPlusButton(){
+    //함수가 문자로 출력되기 때문에 숫자로 변환한 후 10진수로 바꿈
+    //getRadioValue의 if문에서 return parseInt(radio.value,10); 작성안하고 return radio.value;로 작성했을 때 사용
+    //counterNumber = counterNumber + parseInt(getRadioValue(), 10);
+    counterNumber = counterNumber + getRadioValue();
+    counterHandler(counterNumber);
+  }
+
+  //minus button control
+  function clickMinusButton(){
+    //함수가 문자로 출력되기 때문에 숫자로 변환한 후 10진수로 바꿈
+    //getRadioValue의 if문에서 return parseInt(radio.value,10); 작성안하고 return radio.value;로 작성했을 때 사용
+    //counterNumber = counterNumber - parseInt(getRadioValue(), 10);
+    counterNumber = counterNumber - getRadioValue();
+    counterHandler(counterNumber);
+  }
+
+  function clickMultiButton(){
+    counterNumber = counterNumber * getRadioValue();
+    counterHandler(counterNumber);
+  }
+
+  function clickDivisionButton(){
+    counterNumber = counterNumber % getRadioValue();
+    counterHandler(counterNumber);
+  }
+
+  //radio button click
+  function getRadioValue(){
+    var radios = document.getElementsByName('increment');
+    for(var i=0; i < radios.length; ++i){
+      var radio = radios[i];
+      if (radio.checked === true){
+        //함수가 문자로 출력되기 때문에 숫자로 변환한 후 10진수로 바꿈
+        return parseInt(radio.value,10);
+      }
+    }
+    //선택안된애들이 있을 떄 0으로 실행해라
+    return 0;
+  }
+  getRadioValue();
+
+  plus.addEventListener('click',clickPlusButton);
+  minus.addEventListener('click',clickMinusButton);
+  multi.addEventListener('click',clickMultiButton);
+  division.addEventListener('click',clickDivisionButton);
+};
+
+document.addEventListener('DOMContentLoaded', init);
