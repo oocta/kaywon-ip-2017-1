@@ -9,39 +9,15 @@
     .counter { font-size: 60px; font-weight: bold; }
     .increment { padding: 10px 0; vertical-align: middle; line-height: 20px; }
     </style>
-    <script src="./script.js">
-    /*소수구하기 */
-    function getPrimeNumber() {
-        var number = prompt('숫자를 입력하세요');
-        var isPrime = '';
-        var prime;
-        for (var i = 2; i <= number; i++) {
-            prime = true;
-            for (var j = 2; j < i; j++) {
-                if (i % j == 0) {
-                    prime = false;
-                    break;
-                }
-            }
-            if (prime) {
-                isPrime = isPrime + ', ' + i;
-            }
-        }
-        console.log(isPrime);
-    }
-
-    /*교수님....2주동안.....열시미 까먹었습니다....헤헤...
-    다른 언니오빠들이나 친구들꺼 봐도 1도 모르겠어요....내일 수업때 차근차근 풀이 보면서 풀겠습니다ㅠ.ㅠ)/*/
-    </script>
   </head>
   <body>
     <div class="center">
-      <div class="counter">
+      <div id="counter" class="counter">
         0
       </div>
       <div class="buttonList">
-        <button>+</button>
-        <button>-</button>
+        <button id="plusbutton">+</button>
+        <button id="minusbutton">-</button>
       </div>
       <div class="increment">
         <label>
@@ -61,5 +37,27 @@
         </label>
       </div>
     </div>
+        <script src="./script.js">
+        /*소수구하기 */
+        /*function getPrimeNumber() {
+            var number = prompt('숫자를 입력하세요');
+            var isPrime = '';
+            var prime;
+            for (var i = 2; i <= number; i++) {
+                prime = true;
+                for (var j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+                if (prime) {
+                    isPrime = isPrime + ', ' + i;
+                }
+            }
+            console.log(isPrime);
+        }*/
+
+        </script>
   </body>
 </html>

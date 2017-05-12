@@ -9,17 +9,18 @@
     .counter { font-size: 60px; font-weight: bold; }
     .increment { padding: 10px 0; vertical-align: middle; line-height: 20px; }
     </style>
-    <script src="./script.js"></script>
+
   </head>
   <body>
     <div class="center">
-      <div class="counter">
+      <div id="counter" class="counter">
         0
       </div>
       <div class="buttonList">
         <button id="plusButton">+</button>
         <button id="minusButton">-</button>
-         <!--자식 엘리먼트 적용이 안되어 id 값으로 지정했습니다.-->
+        <button id="starButton">*</button>
+        <button id="leftButton">%</button>
       </div>
       <div class="increment">
         <label>
@@ -39,5 +40,6 @@
         </label>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
