@@ -9,16 +9,15 @@
     .counter { font-size: 60px; font-weight: bold; }
     .increment { padding: 10px 0; vertical-align: middle; line-height: 20px; }
     </style>
-    <script src="./script.js"></script>
   </head>
   <body>
     <div class="center">
-      <div class="counter">
+      <div id="counter" class="counter">
         0
       </div>
       <div class="buttonList">
-        <button>+</button>
-        <button>-</button>
+        <button id="plusButton">+</button>
+        <button id="minusButton">-</button>
       </div>
       <div class="increment">
         <label>
@@ -38,37 +37,6 @@
         </label>
       </div>
     </div>
-    <!--교수님, 스크립트 파일에 따로 작성하면 이상하게 적용이 안돼서 html에다가 넣었습니다.-->
-    <script>
-      var number = document.getElementsByName('increment');
-      var plus = document.getElementsByClassName('buttonList')[0].firstElementChild;
-      var minus = document.getElementsByClassName('buttonList')[0].lastElementChild;
-      var counter = document.getElementsByClassName('counter')[0];
-
-      plus.addEventListener('click',function(){
-        for(var i = 0; i<number.length; ++i){
-          if (number[i].checked == true){
-            var textP = counter.innerHTML;
-            var countnum = number[i].value;
-            countnum = textP+'+'+number[i].value;
-          }
-        }
-         counter.innerHTML = countnum;
-      })
-      minus.addEventListener('click',function(){
-        for(var i = 0; i<number.length; ++i){
-          if (number[i].checked == true){
-            var textM = counter.innerHTML;
-            var countnum2 = number[i].value;
-            countnum2 = textM+'-'+number[i].value;
-          }
-        }counter.innerHTML = countnum2;
-      })
-
-      /* 숫자를 다 더한 최종 값 출력하는 걸 정말 모르겠습니다..ㅠ
-      +를 이용했는데 문자 더할 때 처럼 01111 이렇게 쌓이더라고요...
-      그래서 '+', '-' 이용해서 수가 증가됐는지 감소됐는지만 표시했습니다 8ㅅ8 */
-
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
