@@ -1,4 +1,4 @@
-
+/*
 //불러오기
 var counter = document.getElementsByClassName('counter');
 var increment = document.getElementsByClassName('increment');
@@ -94,3 +94,50 @@ radio2.addEventListener('click', checking2);
 radio3.addEventListener('click', checking3);
 radio4.addEventListener('click', checking4);
 radio5.addEventListener('click', checking5);
+*/
+//1. element 찾기
+var init = function () {
+  //code here 함수를 이용하여 코드를 작성하라고 할때 제일 기본 코드.
+  var counter = document.getElementById('counter');
+  var plusbt = document.getElementById('plusbt');
+  var minubt = document.getElementById('minubt');
+  var counterNumber = 0;
+
+//카운터를 제어하는 함수
+function counterHandler(num) {
+  counter.innerHTML = num;
+}
+
+//플러스 버튼 클릭시 실행되는 함수
+function clickplusbt(num) {
+  counterNumber = counterNumber + parseInt(getRadioValue(), 10);
+  counterHandler(counterNumber);
+}
+
+//마이너스 버튼 클릭시 실행되는 함수
+function clickminubt() {
+  counterNumber = counterNumber - parseInt(getRadioValue(), 10);
+  counterHandler(counterNumber);
+}
+
+//라디오버튼의 선택된 값을 찾는 기능
+function getRadioValue() {
+  //함수 내부의 우리가 접근해야하는 라이오 값을 세팅해주어야 한다.
+  var radios = document.getElementsByName('increment');
+for(var i = 0; i < radios.length; ++i) {
+    var radio = radios[i];
+    if (radio.checked === true){
+      return radio.value;
+    }
+  }
+}
+
+plusbt.addEventListener('click', clickplusbt);
+minubt.addEventListener('click', clickminubt);
+
+};
+document.addEventListener('DOMContentLoaded', init);
+/*document.body.addEventListener('DOMContentLoaded', function (){
+var counter = document.getElementById('counter');
+console.log(counter);
+});*/
