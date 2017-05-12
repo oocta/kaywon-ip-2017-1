@@ -99,6 +99,8 @@ var init = function(){
   var counter = document.getElementById('counter');
   var plus = document.getElementById('plus');
   var minus = document.getElementById('minus');
+  var multi = document.getElementById('multi');
+  var division = document.getElementById('division');
 
   var counterNumber = 0;
 
@@ -126,6 +128,16 @@ var init = function(){
     counterHandler(counterNumber);
   }
 
+  function clickMultiButton(){
+    counterNumber = counterNumber * getRadioValue();
+    counterHandler(counterNumber);
+  }
+
+  function clickDivisionButton(){
+    counterNumber = counterNumber % getRadioValue();
+    counterHandler(counterNumber);
+  }
+
   //radio button click
   function getRadioValue(){
     var radios = document.getElementsByName('increment');
@@ -143,6 +155,8 @@ var init = function(){
 
   plus.addEventListener('click',clickPlusButton);
   minus.addEventListener('click',clickMinusButton);
+  multi.addEventListener('click',clickMultiButton);
+  division.addEventListener('click',clickDivisionButton);
 };
 
 document.addEventListener('DOMContentLoaded', init);
