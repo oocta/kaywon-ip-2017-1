@@ -7,17 +7,23 @@ var init = function () {
   var secNumber = '0';
 
   function hourHandler(){
-
+    hour.innterHTML = hourNumber;
   }
 
   function minHandler() {
-
+    min.innterHTML = minNumber;
   }
 
   function secHandler() {
-    sec.innterHTML = secNumber;
+    if(secNumber === 60){
+      secNumber = 0;
+    }
+    hour.innterHTML = secNumber;
   }
-secHandler();
+
+  function intervalHandler() {
+  secHandler();
+  }
 };
 
 document.addEventListener('DOMContentLoded', init);
