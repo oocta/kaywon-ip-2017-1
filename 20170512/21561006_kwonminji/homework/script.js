@@ -5,7 +5,11 @@
 //<내용 변수 + 1; 시분초 id 변수에 내용 추가하기 위해 innerHTML 만들기
 //4. 초 -> 분 -> 시 올라갈 수 있게 if문 추가
 //5. 한자리일 경우 0 추가해주는 함수 만들기
-
+//secHandler 실행 함수 만들기
+//버튼 id 가져오는 변수 만들기
+//버튼에 addEventListener 클릭 실행
+//start 안에 secHandler 실행 시키기
+//타이머 주기
 
 //참고
 //init 함수 적기
@@ -25,6 +29,11 @@ var init = function () {
   var hourNumber = 0;
   var minNumber = 0;
   var secNumber = 0;
+
+  var startButton = document.getElementById('startButton');
+  var stopButton = document.getElementById('stopButton');
+  var resetButton = document.getElementById('resetButton');
+  var timer = 0;
 
   function hourHandler() {
     hourNumber = hourNumber + 1;
@@ -62,8 +71,18 @@ var init = function () {
   function intervalHandler() {
     secHandler();
   }
-  setInterval(intervalHandler, 1000);
-};
+
+    startButton.addEventListener('click', function(){
+      timer = setInterval(intervalHandler,1000);
+    })
+    stopButton.addEventListener('click', function(){
+      clearInterval(timer);
+    })
+    resetButton.addEventListener('click', function() {
+
+    })
+  }
+
 
 
 document.addEventListener('DOMContentLoaded', init)
