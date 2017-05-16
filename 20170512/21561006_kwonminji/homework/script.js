@@ -4,7 +4,7 @@
 //3. 각 핸들러 함수 만들기
 //<내용 변수 + 1; 시분초 id 변수에 내용 추가하기 위해 innerHTML 만들기
 //4. 초 -> 분 -> 시 올라갈 수 있게 if문 추가
-//5.
+//5. 한자리일 경우 0 추가해주는 함수 만들기
 
 
 //참고
@@ -28,12 +28,12 @@ var init = function () {
 
   function hourHandler() {
     hourNumber = hourNumber + 1;
-    hour.innerHTML = hourNumber;
+    hour.innerHTML = addZero(hourNumber);
   }
 
   function minHandler() {
     minNumber = minNumber + 1;
-    min.innerHTML = minNumber;
+    min.innerHTML = addZero(minNumber);
     if(minNumber === 60){
       hourHandler();
       minNumber = 0;
@@ -42,14 +42,28 @@ var init = function () {
 
   function secHandler() {
     secNumber = secNumber + 1;
-    sec.innerHTML = secNumber;
-    if(secNumbr === 60){
+    sec.innerHTML = addZero(secNumber);
+    if(secNumber === 60){
       minHandler();
       secNumber = 0;
     }
   }
 
-}
+//매개변수가 10보다 작을 경우 앞에 0을 추가해서 매개변수를 반환해주세요.
+//이 함수가 실행되는 시점은 값이 나온 최종에 실행
+  function addZero(number) {
+    if(number < 10){
+      return '0' + number;
+    }
+    return number;
+  }
+
+//secHandler 실행 함수 만들기
+  function intervalHandler() {
+    secHandler();
+  }
+  setInterval(intervalHandler, 1000);
+};
 
 
 document.addEventListener('DOMContentLoaded', init)
