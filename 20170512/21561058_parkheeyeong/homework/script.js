@@ -38,9 +38,12 @@ var init = function(){
   function intervalHandler(){secHandler();}
   //초기화 해주기
   function resetTimer(){
-    sec.innerHTML = '00';
-    min.innerHTML = '00';
-    hour.innerHTML = '00';
+    secNumber = 0;
+    minNumber = 0;
+    hourNumber = 0;
+    sec.innerHTML = secNumber+'0';
+    min.innerHTML = minNumber+'0';
+    hour.innerHTML = hourNumber+'0';
   }
  //버튼제어하기
   function timer(){
@@ -53,10 +56,6 @@ var init = function(){
     stopbtn.addEventListener('click',stop);
     resetbtn.addEventListener('click',reset);
   }
-
   startbtn.addEventListener('click',timer);
-
-
-
 };
 document.addEventListener('DOMContentLoaded',init);
