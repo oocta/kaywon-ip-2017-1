@@ -1,14 +1,16 @@
 var init = function(){
+  //가져오기
   var hour = document.getElementById('hour');
   var min = document.getElementById('min');
   var sec = document.getElementById('sec');
   var startbtn = document.getElementById('startButton');
   var stopbtn = document.getElementById('stopButton');
   var resetbtn = document.getElementById('resetButton');
+  //카운트 값 선언
   var hourNumber = 0;
   var minNumber = 0;
   var secNumber = 0;
-
+  //1씩 더해주기 + 60초되면 0만들어주고 상위함수실행
   function hourHandler(){
     hourNumber = hourNumber +1;
     hour.innerHTML = addZero(hourNumber);
@@ -29,6 +31,7 @@ var init = function(){
     }
     sec.innerHTML = addZero(secNumber);
   }
+  //00으로 표시할 수 있도록
   function addZero(num){
     if(num<10){
       return '0'+num;
@@ -53,9 +56,10 @@ var init = function(){
       clearInterval(start);
       resetTimer();
     }
+    //setInterval을 멈출 수 있도록
     stopbtn.addEventListener('click',stop);
     resetbtn.addEventListener('click',reset);
   }
   startbtn.addEventListener('click',timer);
-};
+}
 document.addEventListener('DOMContentLoaded',init);
