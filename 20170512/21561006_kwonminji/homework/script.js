@@ -31,7 +31,7 @@ var init = function () {
   var startButton = document.getElementById('startButton');
   var stopButton = document.getElementById('stopButton');
   var resetButton = document.getElementById('resetButton');
-  var timer = 0;
+  var timer;
 
   function hourHandler() {
     hourNumber = hourNumber + 1;
@@ -66,9 +66,12 @@ var init = function () {
   }
 
 //secHandler 실행 함수 만들기
+// function intervalHandler() {
+//   secHandler();
+// }
 
 
-  function resetHandler() {
+  function resetHandler(fn) {
     var hourNumber = 0;
     var minNumber = 0;
     var secNumber = 0;
