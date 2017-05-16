@@ -4,6 +4,7 @@ var init = function(){
   var sec = document.getElementById('sec');
   var startbtn = document.getElementById('startButton');
   var stopbtn = document.getElementById('stopButton');
+  var resetbtn = document.getElementById('resetButton');
   var hourNumber = 0;
   var minNumber = 0;
   var secNumber = 0;
@@ -34,13 +35,13 @@ var init = function(){
         }
       return num;
     }
-
   function intervalHandler(){secHandler();}
+  //start를 제어하는 변수
 
-  var startTimer =setInterval(intervalHandler,1000);
-
+  function startTimer(){var start = setInterval(intervalHandler,1000);};
+    //setInterval을 멈추는 게 어려움 start는 지역변수기 때문에(?)ㅠㅠ
   startbtn.addEventListener('click',startTimer);
-  stopbtn.addEventListener('click',function(){clearInterval(startTimer);});
+  stopbtn.addEventListener('click',clearInterval(start));
 
 
 };
