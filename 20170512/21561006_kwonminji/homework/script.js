@@ -18,8 +18,6 @@
 //element 가져오고 제대로 가져오는지 확인해보기
 //각 세가지 엘리먼트를 담당해주는 기능 세개 만들기
 //가장 작은 단위부터 제어 순서
-//초기 변수명 string은 html 내 그대로 가져온다고 생각해서 -> 숫자로 변환해야 함
-
 
 var init = function () {
   var hour = document.getElementById('hour');
@@ -68,18 +66,26 @@ var init = function () {
   }
 
 //secHandler 실행 함수 만들기
-  function intervalHandler() {
-    secHandler();
+
+
+  function resetHandler() {
+    var hourNumber = 0;
+    var minNumber = 0;
+    var secNumber = 0;
+    hour.innerHTML = addZero(hourNumber);
+    min.innerHTML = addZero(minNumber);
+    sec.innerHTML = addZero(secNumber);
   }
 
     startButton.addEventListener('click', function(){
-      timer = setInterval(intervalHandler,1000);
+      timer = setInterval(secHandler, 1000);
     })
     stopButton.addEventListener('click', function(){
       clearInterval(timer);
     })
     resetButton.addEventListener('click', function() {
-
+      clearInterval(timer);
+      resetHandler();
     })
   }
 
