@@ -71,19 +71,19 @@ var init = function () {
 // }
 
 
-  function resetHandler(fn) {
-    var hourNumber = 0;
-    var minNumber = 0;
-    var secNumber = 0;
+  function resetHandler() {
+    hourNumber = 0;
+    minNumber = 0;
+    secNumber = 0;
     hour.innerHTML = addZero(hourNumber);
     min.innerHTML = addZero(minNumber);
     sec.innerHTML = addZero(secNumber);
   }
 
-    startButton.addEventListener('click', function(){
+    startButton.addEventListener('click', function() {
       timer = setInterval(secHandler, 1000);
     })
-    stopButton.addEventListener('click', function(){
+    stopButton.addEventListener('click', function() {
       clearInterval(timer);
     })
     resetButton.addEventListener('click', function() {
