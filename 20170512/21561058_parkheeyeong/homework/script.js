@@ -48,18 +48,27 @@ var init = function(){
     min.innerHTML = minNumber+'0';
     hour.innerHTML = hourNumber+'0';
   }
+
  //버튼제어하기
+  var state=0;
   function timer(){
+    state = 1;
+    console.log(state);
     var start = setInterval(intervalHandler,1000);
-    function stop(){clearInterval(start)}
+    function stop(){clearInterval(start);state = 0;}
     function reset(){
       clearInterval(start);
       resetTimer();
+      state = 0;
     }
     //setInterval을 멈출 수 있도록
     stopbtn.addEventListener('click',stop);
     resetbtn.addEventListener('click',reset);
+    return state;
   }
-  startbtn.addEventListener('click',timer);
+  startbtn.addEventListener('click',function(){
+    if(state===0){timer()}
+  });
+
 }
 document.addEventListener('DOMContentLoaded',init);
