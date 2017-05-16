@@ -36,12 +36,23 @@ var init = function(){
       return num;
     }
   function intervalHandler(){secHandler();}
-
- function timer(){
-   var start = setInterval(intervalHandler,1000);
-   function stop(){clearInterval(start)}
-   stopbtn.addEventListener('click',stop);
- }
+  //초기화 해주기
+  function resetTimer(){
+    sec.innerHTML = '00';
+    min.innerHTML = '00';
+    hour.innerHTML = '00';
+  }
+ //버튼제어하기
+  function timer(){
+    var start = setInterval(intervalHandler,1000);
+    function stop(){clearInterval(start)}
+    function reset(){
+      clearInterval(start);
+      resetTimer();
+    }
+    stopbtn.addEventListener('click',stop);
+    resetbtn.addEventListener('click',reset);
+  }
 
   startbtn.addEventListener('click',timer);
 
