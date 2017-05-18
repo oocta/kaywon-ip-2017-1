@@ -1,4 +1,3 @@
-
 var init = function () {
   var hour =document.getElementById('hour');
   var min =document.getElementById('min');
@@ -7,6 +6,11 @@ var init = function () {
   var hourNumber = 0;
   var minNumber = 0;
   var secNumber = 0;
+
+  //버튼 추가
+  var startBT = document.getElementById('startButton');
+  var stopBT= document.getElementById('stopButton');
+  var resetBT = document.getElementById('resetButton');
 
   function hourHandler() {
     hourNumber = hourNumber + 1;
@@ -39,21 +43,25 @@ function addZero(num) {
 //초
   function intervalHandler() {
     secHandler();
-  }
-  setInterval(intervalHandler, 1000);
-//실행
-
-//리셋
-function resetBT() {
-  resetBT = document.getElementById('resetButton');
-  sec.innerHTML = 0;
-  min.innerHTML = 0;
-  hour.innerHTML = 0;
-  resetButton();
 }
+var time = 0;
+
+startBT.addEventListener('click', function startBT(){
+  time = setInterval(intervalHandler, 1000);
+})
+stopBT.addEventListener('click', function stopBT(){
+  clearInterval(time);
+})
+
+resetBT.addEventListener('click', function resetBT(){
+  clearInterval(time);
+  var hourNumber = 0;
+  var minNumber = 0;
+  var secNumber = 0;
+//왜... 0이... 안될까요...
+})
+//실행
 
 };
 document.addEventListener('DOMContentLoaded',init);
 
-
-/*--------------------------------------------------리셋*/
