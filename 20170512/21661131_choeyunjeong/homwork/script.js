@@ -2,9 +2,13 @@ var init = function(){
   var hour = document.getElementById('hour');
   var min = document.getElementById('min');
   var sec = document.getElementById('sec');
+  var start = document.getElementById('startButton');
+  var stop = document.getElementById('stopButton');
+  var reset = document.getElementById('resetButton');
   var hourNumber = 0;
   var minNumber = 0;
   var secNumber = 0;
+  var time;
 
   console.log(hour, min, sec);
 
@@ -44,7 +48,25 @@ var init = function(){
     secHandler();
   }
 
-  setInterval(intervalHandler, 100);
-};
+  var time = 0;
+
+  start.addEventListener('click', function start(){
+    time = setInterval(intervalHandler, 1000);
+  })
+  stop.addEventListener('click', function stop(){
+    clearInterval(time);
+  })
+  
+  reset.addEventListener('click', function reset(){
+    clearInterval(time);
+    var hourNumber = 0;
+    var minNumber = 0;
+    var secNumber = 0;
+    //
+    hour.innerHTML = addZero(hourNumber);
+    min.innerHTML = addZero(minNumber);
+    sec.innerHTML = addZero(secNumber);
+  })
+}
 
 document.addEventListener('DOMContentLoaded', init);
