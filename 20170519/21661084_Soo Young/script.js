@@ -5,8 +5,11 @@ var init = function(){
   var min = document.getElementById('min');
   var sec = document.getElementById('sec');
   var startButton = document.getElementById('startButton');
+  var lapButton = document.getElementById('lapButton');
   var stopButton = document.getElementById('stopButton');
   var resetButton = document.getElementById('resetButton');
+  //lap에 대한담을 변수 생성
+  var lapTimes = [];
 
   var hourNumber= 0;
   var minNumber= 0;
@@ -61,10 +64,23 @@ var init = function(){
     min.innerHTML = minNumber;
     hourNumber = 0;
     hour.innerHTML = hourNumber;
+    //랩 타임 초기화
+    lapTimes =[];
+  }
+  //lapButton click시 실행되는 함수
+  function lapButton(){
+    if(isRunning === true){
+      //{hour:0, min:0,sec:10};
+      var time = { hour: hourNumber, min : minNumber, sec : secNumber };
+      //push : 배열에 원소를 넣겠다
+      lapTimes.push(time);
+      console.log(lapTimes);
+    }
   }
 
   startButton.addEventListener('click', startAction);
   stopButton.addEventListener('click',stopAction);
+  lapButton.addEventListener('click',lapButton);
   resetButton.addEventListener('click',resetAction);
 
 };
