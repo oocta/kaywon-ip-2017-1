@@ -6,6 +6,7 @@ var init = function () {
   var startbtn = document.getElementById('startButton');
   var stopbtn = document.getElementById('stopButton');
   var resetbtn = document.getElementById('resetButton');
+  var lapbtn = document.getElementById('lapButton');
   //카운트 값 선언
   var hourNumber = 0;
   var minNumber = 0;
@@ -13,6 +14,7 @@ var init = function () {
   var secInterval;
   //초시계 동작 상태를 담고 있는 변수, 동작중이면 true, 멈춘상태면 false
   var isRunning = false;
+  var lapTimes = [];
 
   //스타트 버튼 클릭시 실행되는 setInterval함수
   function startInterval(){
@@ -51,8 +53,18 @@ var init = function () {
     min.innerHTML = minNumber;
     secNumber = 0;
     sec.innerHTML = secNumber;
+    lapTimes=[];
   }
-  
+  function lapAction(){
+    if(isRunning ===true){
+      var time = { hour:hourNumber,min:minNumber, sec:secNumber};
+      lapTimes.push(time);
+      console.log(lapTimes);
+    }
+
+  }
+
+  lapButton.addEventListener('click',lapAction);
   startbtn.addEventListener('click',startAction);
   stopbtn.addEventListener('click',stopAction);
   resetbtn.addEventListener('click',resetAction);
