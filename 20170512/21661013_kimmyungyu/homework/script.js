@@ -43,13 +43,18 @@ var init = function(){
   var start = document.getElementById('startButton');
   var stop = document.getElementById('stopButton');
   var reset = document.getElementById('resetButton');
+  var isRunning = false;
 
   var timer = 0;
   function watchStart(){
-    timer = setInterval(intervalHandler, 1000);
+    if(isRunning === false){
+      timer = setInterval(intervalHandler, 1000);
+      isRunning = true;
+    }
   }
   function watchStop(){
     clearInterval(timer);
+    isRunning = false;
   }
   function watchReset(){
     clearInterval(timer);
@@ -59,6 +64,7 @@ var init = function(){
     hourNumber = 0;
     minNumber = 0;
     secNumber = 0;
+    isRunning = false;
   }
   start.addEventListener('click',watchStart);
   stop.addEventListener('click',watchStop);

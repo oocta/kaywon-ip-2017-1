@@ -138,19 +138,32 @@
         pwd.value="";
       }
     })
-
     /*
     9. button#addCity 버튼을 클릭 시 '도시명을 입력하세요.' 메시지를 담고 있는 prompt를 출력하고, 사용자가 입력한 도시명을 ul#city 하위의 li 엘리먼트로 추가되도록 작성해주세요.
     */
-    var add = document.getElementById('addCity')
+    /*var add = document.getElementById('addCity');
     add.addEventListener('click',function(){
       var cityname = prompt('도시명을 입력하세요');
       var list = document.createElement('li');
-      var node = document.createTextNode(cityname);//
+      var node = document.createTextNode(cityname);
       list.appendChild(node);
       document.getElementById('city').appendChild(list);
-    })
+    })*/
     //도시가 추가 되긴 하는데, 잠깐만 화면에 보여졌다가 금방 사라지는데 왜 그럴까요?
+
+    var buttonAddCity = document.getElementById('addCity');
+    function addCity(cityName){
+      var ul = document.getElementById('city')
+      var li = document.createElement('li');
+      li.innerHTML = cityName;
+      ul.appendChild(li);
+    }
+    buttonAddCity.addEventListener('click',function(){
+      var input = prompt('도시명을 입력하세요')
+      if(input){
+        addCity(input);
+      }
+    })
     /*
     10. button#goTop 클릭 시 스크롤이 현재 화면의 제일 상단으로 이동하도록 이벤트 핸들러를 할당해주세요.
     */

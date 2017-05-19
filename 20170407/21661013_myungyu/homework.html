@@ -5,12 +5,11 @@
     <title>Intercation Programming - Week6</title>
   </head>
   <body>
-    <ul id="numberList">
-
-    </ul>
     <button id="buttonRandom">Random!</button>
-    <button id="buttonStart">Random!</button>
-    <button id="buttonStop">Random!</button>
+    <button id="buttonStart">Start!</button>
+    <button id="buttonStop">Stop!</button>
+    <ul id="numberList">
+    </ul>
     <!--
     1. #buttonRandom 을 클릭할 때 마다, 랜덤한 순서대로 li 태그를 추가하는
     메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.
@@ -32,41 +31,39 @@
     랜덤한 순서로 li 태그가 추가되면 됩니다.
     -->
     <script>
+      function randomAction(linum){
+        var ul = document.getElementById('numberList');
 
-      var func = {
-        randomLi: function(linum){
-          var ul = document.getElementById('numberList');
+        ul.innerHTML='';
+
+        for (var i = 1; i <= linum; ++i){
           var li = document.createElement('li');
-          li.innerHTML = linum;
-          ul.appendChild(li);
-        },
-        liRandom: function(){
-          var a = Math.floor(Math.random()*3)+1;
-          func.randomLi(a);
-          //엘리먼트 초기화를 removeChild를 사용해서 해보려고 했는데 randomLi안에 ul불러오는 방법을.........모릅니다....
-        },
-        startfunc: function(){
-          loop=function(){
-            func.liRandom();
-          }
-          var timer = setInterval(loop,1000);
-        },
-        stopfunc: function(){
-          clearInterval(func.timer);
-        } //startfunc안의 timer를 불러오고 싶은데 방법을 모르겠습니다 8ㅅ8
-          //더 수정해보도록 하겠습니다
+          li.innerHTML = i;
+          var random = Math.floor(Math.random() * ul.children.length);
+          ul.insertBefore(li, ul.children[random]);
+        }
       }
       var random = document.getElementById('buttonRandom');
       random.addEventListener('click',function(){
-        func.liRandom();
+        if(timer > 0){
+          clearInterval(timer);
+          timer = 0;
+        }
+        randomAction(10);
       })
+      var timer = 0;
       var start = document.getElementById('buttonStart');
       start.addEventListener('click',function (){
-        func.startfunc();
+        timer = setInterval(function(){
+          randomAction(10);
+        },500)
       })
       var stop = document.getElementById('buttonStop');
       stop.addEventListener('click',function(){
-        func.stopfunc();
+        if(timer > 0){
+          clearInterval(timer);
+          timer = 0;
+        }
       })
     </script>
   </body>
