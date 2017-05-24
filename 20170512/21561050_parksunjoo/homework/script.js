@@ -11,7 +11,6 @@ var resetbtn = document.getElementById('resetButton');
 var hourNumber = 0;
 var minNumber = 0;
 var secNumber = 0;
-//현재 상태값 멈추었는지 움직이는지 체크
 
 //1씩 증가하며 60이 되면 다시 0이되게 한다.
 function hourHandler(){

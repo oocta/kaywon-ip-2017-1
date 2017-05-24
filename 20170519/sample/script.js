@@ -38,7 +38,7 @@ var init = function () {
   Math.max(1, 3.4, 7); // 매개변수 중 가장 큰 숫자 출력.
   Math.min(1, 3.4, 7); // 매개변수 중 가장 작은 숫자 출력.
   Math.random(); // 난수 생성
-  
+
 };
 
 document.addEventListener('DOMContentLoaded', init);
