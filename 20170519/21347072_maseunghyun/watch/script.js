@@ -1,5 +1,3 @@
-다
-
 //전체 문서내용
 var init = function(){
 console.log('START : 1페이즈');
