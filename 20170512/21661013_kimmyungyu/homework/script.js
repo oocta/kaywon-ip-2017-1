@@ -42,8 +42,10 @@ var init = function(){
 
   var start = document.getElementById('startButton');
   var stop = document.getElementById('stopButton');
+  var lap = document.getElementById('lapButton');
   var reset = document.getElementById('resetButton');
   var isRunning = false;
+  var lapTimes = [];
 
   var timer = 0;
   function watchStart(){
@@ -56,8 +58,16 @@ var init = function(){
     clearInterval(timer);
     isRunning = false;
   }
+  function watchLap(){
+    var time = {hour : hourNumber, min : minNumber, sec : secNumber};
+    lapTimes.push(time);
+    //push : 배열에 원소를 넣음
+    console.log(lapTimes);
+  }
   function watchReset(){
+    //초시계 중지
     clearInterval(timer);
+    //초시계 초기화
     hour.innerHTML = '00';
     min.innerHTML = '00';
     sec.innerHTML = '00';
@@ -65,9 +75,12 @@ var init = function(){
     minNumber = 0;
     secNumber = 0;
     isRunning = false;
+    //랩타임 초기화
+    lapTimes = [];
   }
   start.addEventListener('click',watchStart);
   stop.addEventListener('click',watchStop);
+  lap.addEventListener('click',watchLap);
   reset.addEventListener('click',watchReset);
 }
 document.addEventListener('DOMContentLoaded', init);
