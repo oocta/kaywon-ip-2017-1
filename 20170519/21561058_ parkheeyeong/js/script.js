@@ -1,5 +1,19 @@
 var init = function () {
+  // 시계
+  var timesec = document.getElementById('timesec');
+  var timemin = document.getElementById('timemin');
+  var timehour = document.getElementById('timehour');
+  var clocktime;
 
+  function intervalHandeler(){
+  clocktime = new Date();
+  timesec.innerHTML = clocktime.getSeconds();
+  timemin.innerHTML = clocktime.getMinutes();
+  timehour.innerHTML = clocktime.getHours();
+  }
+  setInterval(intervalHandeler,1000);
+
+  // 타이머
   var hour = document.getElementById('hour');
   var min = document.getElementById('min');
   var sec = document.getElementById('sec');
@@ -35,7 +49,7 @@ var init = function () {
   //스타트버튼을 클릭 시 실행되는 함수
   function startAction(){
     if(isRunning ===false){
-      secInterval = setInterval(startInterval,1);
+      secInterval = setInterval(startInterval,1000);
       isRunning =true;
     }
   }
@@ -69,17 +83,6 @@ var init = function () {
   stopbtn.addEventListener('click',stopAction);
   resetbtn.addEventListener('click',resetAction);
 
-
-
-
-
-
-
-
-
-
-
-
-};
+  };
 
 document.addEventListener('DOMContentLoaded', init);
