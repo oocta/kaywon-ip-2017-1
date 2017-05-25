@@ -5,11 +5,21 @@ var init = function () {
   var timehour = document.getElementById('timehour');
   var clocktime;
 
+  function addZero(num){
+    if(num<10){
+      return '0'+num;
+        }
+      return num;
+    }
   function intervalHandeler(){
   clocktime = new Date();
-  timesec.innerHTML = clocktime.getSeconds();
-  timemin.innerHTML = clocktime.getMinutes();
-  timehour.innerHTML = clocktime.getHours();
+  secIs=clocktime.getSeconds();
+  minIs=clocktime.getMinutes();
+  hourIs=clocktime.getHours();
+
+  timesec.innerHTML = addZero(secIs)
+  timemin.innerHTML = addZero(minIs)
+  timehour.innerHTML = addZero(hourIs)
   }
   setInterval(intervalHandeler,1000);
 
@@ -21,6 +31,7 @@ var init = function () {
   var stopbtn = document.getElementById('stopButton');
   var resetbtn = document.getElementById('resetButton');
   var lapbtn = document.getElementById('lapButton');
+  var lapedtimes = document.getElementById('lapedTimes');
   //카운트 값 선언
   var hourNumber = 0;
   var minNumber = 0;
@@ -39,17 +50,17 @@ var init = function () {
         if(minNumber>59){
           minNumber=0;
           hourNumber++;
-          hour.innerHTML = hourNumber;
+          hour.innerHTML = addZero(hourNumber);
         }
-      min.innerHTML = minNumber;
+      min.innerHTML = addZero(minNumber);
     }
-    sec.innerHTML = secNumber;
+    sec.innerHTML = addZero(secNumber);
   }
 
   //스타트버튼을 클릭 시 실행되는 함수
   function startAction(){
     if(isRunning ===false){
-      secInterval = setInterval(startInterval,1000);
+      secInterval = setInterval(startInterval,10);
       isRunning =true;
     }
   }
@@ -62,18 +73,24 @@ var init = function () {
   function resetAction(){
     stopAction();
     hourNumber = 0;
-    hour.innerHTML = hourNumber;
+    hour.innerHTML = addZero(hourNumber);
     minNumber = 0;
-    min.innerHTML = minNumber;
+    min.innerHTML = addZero(minNumber);
     secNumber = 0;
-    sec.innerHTML = secNumber;
+    sec.innerHTML = addZero(secNumber);
     lapTimes=[];
   }
   function lapAction(){
+      var lapplus = document.createElement('p');
+      var time = document.createTextNode(
+        addZero(hourNumber) + ':' +
+        addZero(minNumber) + ':'+
+        addZero(secNumber)
+      );
+      // var time = { hour:addZero(hourNumber),min:addZero(minNumber),sec:addZero(secNumber)};
     if(isRunning ===true){
-      var time = { hour:hourNumber,min:minNumber, sec:secNumber};
-      lapTimes.push(time);
-      console.log(lapTimes);
+      lapplus.appendChild(time);
+      lapedtimes.push(lapplus);
     }
 
   }

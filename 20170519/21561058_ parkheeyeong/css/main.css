@@ -56,7 +56,7 @@ section {}
 article {
   float: left;
   width: 400px;
-  height: 400px;
+  height: 400px;margin-bottom:50px;
 }
 article:nth-child(2n){float: right;}
 
@@ -72,13 +72,13 @@ article:nth-child(2n){float: right;}
 
 .timer {
   background: url(image/stopwatch.png) no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-size: contain;background-position: center;
 }
 
 .timewrp {
-  margin-top: 200px;
-  margin-left: 10px;
+  width: 400px;
+ font-size: 30px;padding-top: 200px;
+ padding-left: 10px;
   text-align: center;
 }
 
@@ -88,10 +88,16 @@ article:nth-child(2n){float: right;}
   background-position: center;
 }
 
+.alarmwrp{text-align: center;padding-top: 160px;}
+.alrambuttons{display: block;margin-top: -30px;}
+.alarmsettime{padding-top: 20px;font-size:20px;}
+
 .world {
   background: url(image/world.png) no-repeat;
   background-size: contain;
   background-position: center;
+
 }
-.alrambuttons{height: 100px;}
-.alrambuttons>button{margin-bottom: 20px;float:left;}
+.worlds{margin: 0 auto;width: 170px;height: 100px;overflow-y: scroll;font-size: 35px;}
+.worldwrp{margin-top: 100px;text-align: center;}
+.worldsettime{color: #fff;font-size: 40px;margin-top: 140px;}
