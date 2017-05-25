@@ -105,7 +105,7 @@ var init = function () {
   var timer = 0;
   function watchStart(){
     if(isRunning === false){
-      timer = setInterval(stopwatchintervalHandler, 1000);
+      timer = setInterval(stopwatchintervalHandler, 10);
       isRunning = true;
     }
   }
@@ -165,16 +165,18 @@ var init = function () {
     if(setHour>23 || setMin>59){
       alert.innerHTML = 'range number in input';
     }
-    if(typeof setHour === 'number' && typeof setMin === 'number'){
+    /*if(typeof setHour === 'number' && typeof setMin === 'number'){
       alert.innerHTML = 'setup is complete';
-    } /*<--이거 왜 안 될까요..?*/
+    } /*<--이거 왜 안 될까요..?
+    else if(typeof setHour === 'string' || typeof setMin === 'string'){
+      alert.innerHTML = 'input only number';
+    }<--얘는 숫자 넣어도 뜹니다..*/
     else{
       alert.innerHTML = 'input only number';
     }
     function please(){
       var hour2 = time.getHours();
       var min2 = time.getMinutes();
-
       if(setHour == hour2 && setMin == min2){
         effect.style.display = 'block';
         circle.style.display = 'none';

@@ -140,8 +140,7 @@ article{float: left;width: 33.3333%;}
 #stopwatch .box{background-color: rgba(246,148,142,0.08); position: absolute;}
 #stopwatch>div:first-child{width: 660px; height: 520px; top: 50%; margin-top: -300px;}
 #stopwatch div div:first-child{width: 510px; height: 325px; bottom:0; left: 40px;}
-#stopwatch div div:nth-child(2){width: 580px; height: 380px; top:50%; right: -225px; margin-top: -190px;}
-#stopwatch div div:nth-child(3){width: 390px; height: 70px; top:50%; right: -430px;}
+#stopwatch div div:nth-child(2){width: 580px; height: 380px; top:50%; right: -270px; margin-top: -220px;}
 #stopwatch div span{position: absolute;}
 #stopwatch #stop_hour{color: #F62459; font-size: 300px; right: 20px; top: 40px;}
 #stopwatch #stop_min{color: #fff; font-size: 210px; bottom: 140px; right: -240px;}
@@ -238,7 +237,7 @@ article{float: left;width: 33.3333%;}
 	margin: -150px 0 0 -250px;
 	display: none;
 	animation-name: effect;
-	animation-duration: 4s;
+	animation-duration: 3s;
 	animation-iteration-count: infinite;
 }
 @keyframes effect {
