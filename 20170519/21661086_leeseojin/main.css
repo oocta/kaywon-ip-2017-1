@@ -1,0 +1,217 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body{
+    font-family: 'Montserrat','NanumGothic';
+    background-image: url(../images/background1.jpg);
+    background-repeat: no-repeat;
+}
+
+div{
+    margin: 0 auto;
+    width: 480px;
+    height: 440px;
+    background-size: 100% 100%;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+div:nth-child(3){
+    clear: both;
+}
+
+#clock{
+    position: relative;
+    z-index: 100;
+    margin-top: 170px;
+    background-image: url(../images/clock.jpg);
+    padding-top: 60px;
+    font-size: 70px;
+    font-weight: lighter;
+    text-shadow: 0px 1px 20px rgba(11,12,12,0.2);
+    box-shadow: 0px 1px 20px rgba(11,12,12,0.2);
+}
+#clock #circle{
+    border-radius: 100%;
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    opacity: 0.3;
+    position: relative;
+    z-index: 0;
+}
+#clock span{
+    display: inline-block;
+    margin-top: 10px;
+    color: black;
+    position: relative;
+    z-index: 10;
+}
+#clock #sec{
+    font-size: 11px;
+
+}
+#clock #month
+,#clock #date{
+    font-size: 15px;
+    letter-spacing: 9px;
+
+}
+#clock ul{
+    margin-left: -80px;
+    width: 400px;
+    height: 50%;
+    margin-top: 150px;
+
+}
+#clock ul li{
+    margin: 0 auto;
+    float: left;
+    border-radius: 100%;
+    margin-left: 60px; 
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 1px 20px rgba(11,12,12,0.4);
+    font-size: 10px;
+}
+#clock ul li.alarm span{
+    display: inline-block;
+    margin-top: -200px;
+}
+#clock ul li.alarm:hover{
+    box-shadow: 0px 1px 35px rgba(96,10,174,0.6);
+    transform: scale(1.2);
+}
+#clock ul li.sw:hover{
+    box-shadow: 0px 1px 35px rgba(7,130,103,0.8);
+    transform: scale(1.2);
+}
+#clock ul li img{
+    width: 55px;
+    height: 55px;
+}
+
+#clock ul li.sw{
+    height: 50px;
+    padding-top: 10px;
+}
+
+#clock ul li.no{
+    height: 50px;
+    padding-top: 10px;
+    font-size: 30px;
+}
+#clock ul li.no:hover{
+    box-shadow: 0px 1px 35px rgba(96,10,174,0.6);
+    transform: scale(1.2);
+}
+
+/*-----------------------alarm-------------------------*/
+#alarm_box{
+    padding-top: 100px;
+    height: 400px;
+    position: relative;
+    z-index: 10;
+    background-image: url(../images/alarm.jpg);
+    margin-top: -500px;
+    box-shadow: 0px 1px 20px rgba(11,12,12,0.2);
+    font-size: 45px;
+    font-weight: lighter;
+
+}
+
+#alarm_box span#hour{
+    display: inline-block;
+    margin-top: 100px;
+}
+
+#alarm_box #circle2{
+    border-radius: 100%;
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    opacity: 0.3;
+    box-shadow: 0px 1px 20px rgba(11,12,12,0.2);
+}
+#alarm_box ul{
+    margin: 0 0 0 30px;
+    width: 400px;
+    height: 50%;
+
+}
+#alarm_box ul li{
+    margin: 0 auto;
+    margin-top: -50px;
+    float: left;
+    border-radius: 100%;
+    margin-left: 60px; 
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: white;
+    box-shadow: 0px 1px 20px rgba(11,12,12,0.3);
+    font-size: 10px;
+}
+
+/*----------------------stopwatch------------------------*/
+
+#stopwatch{
+    display: none;
+    padding-top: 100px;
+    height: 400px;
+    background-image: url(../images/three.jpg);
+    position: relative;
+    z-index: 1000;
+}
+#stopwatch #circle3{
+    border-radius: 100%;
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    opacity: 0.3;
+    box-shadow: 0px 1px 20px rgba(11,12,12,0.2);
+}
+
+#four{
+    display: none;
+}
+
