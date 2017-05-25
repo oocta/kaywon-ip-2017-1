@@ -71,7 +71,7 @@ body {
 #time{font-size: 8.5em;}
 #time span{margin: 0 5px; }
 #ampm{font-size: 20px; text-transform: uppercase; display: inline-block;}
-#button div{ margin:30px 0;}
+#button div{ margin:30px 0;  color:transparent; font-size: 0; }
 #nowTime{ width:62px ; height: 62px; background:url(images/now_off.png);}
 #nowTime:hover { width:62px ; height: 62px; background:url(images/now_on.png);}
 #alram{ width:62px ; height: 62px; background:url(images/alram_off.png);}
