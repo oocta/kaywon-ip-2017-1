@@ -165,9 +165,9 @@ var init = function () {
     if(setHour>23 || setMin>59){
       alert.innerHTML = 'range number in input';
     }
-    /*else if(typeof setHour === 'number' && typeof setMin === 'number'){
+    if(typeof setHour === 'number' && typeof setMin === 'number'){
       alert.innerHTML = 'setup is complete';
-    } --이거 하고 싶은데 방법이 잘못된건가요ㅠㅠ*/
+    } /*<--이거 왜 안 될까요..?*/
     else{
       alert.innerHTML = 'input only number';
     }

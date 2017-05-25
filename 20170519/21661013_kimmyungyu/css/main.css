@@ -50,6 +50,9 @@ section{
 #slideshow-wrap{width: 100%; height: 100%; overflow: hidden;background: url('../images/background.jpg');}
 #slideshow-inner{width: 100%;position: relative; height: 100%; overflow: hidden;}
 article{float: left;width: 33.3333%; min-height: 700px;}
+
+/*clock*/
+
 #clock{
 	background-size: cover;
 	position: relative;
@@ -125,6 +128,7 @@ article{float: left;width: 33.3333%; min-height: 700px;}
 #clock ul li{float: left; letter-spacing: 10px; font-size: 30px; height: 30px; font-style: italic; color:#fff;}
 #clock ul li:first-child{border-bottom: 1px solid #fff; width: 200px; height: 14px; margin-right: 20px;}
 
+/*stopwatch*/
 
 #stopwatch{
 	/*background-color: #47f0f6;*/
@@ -134,7 +138,7 @@ article{float: left;width: 33.3333%; min-height: 700px;}
 	background-size: cover;
 }
 #stopwatch .box{background-color: rgba(246,148,142,0.08); position: absolute;}
-#stopwatch>div:first-child{width: 660px; height: 520px; top: 12%;}
+#stopwatch>div:first-child{width: 660px; height: 520px; top: 50%; margin-top: -300px;}
 #stopwatch div div:first-child{width: 510px; height: 325px; bottom:0; left: 40px;}
 #stopwatch div div:nth-child(2){width: 580px; height: 380px; top:50%; right: -225px; margin-top: -190px;}
 #stopwatch div div:nth-child(3){width: 390px; height: 70px; top:50%; right: -430px;}
@@ -142,7 +146,7 @@ article{float: left;width: 33.3333%; min-height: 700px;}
 #stopwatch #stop_hour{color: #F62459; font-size: 300px; right: 20px; top: 40px;}
 #stopwatch #stop_min{color: #fff; font-size: 210px; bottom: 140px; right: -240px;}
 #stopwatch #stop_sec{
-	color: #ffdfdd;
+	color: #ffe5e3;
 	font-size: 80px;
 	width: 120px; height: 120px;
 	font-weight: 300;
@@ -179,6 +183,9 @@ article{float: left;width: 33.3333%; min-height: 700px;}
 	font-style:italic;
 	color:#fff;
 }
+
+/*alarm*/
+
 #alarm{position: relative;}
 #alarm div:first-child{
 	position: absolute;
@@ -244,6 +251,7 @@ article{float: left;width: 33.3333%; min-height: 700px;}
 		z-index: 100;
 		display: none;
 }
+
 /*라벨*/
 #slideshow-wrap label {
 		position: absolute;
