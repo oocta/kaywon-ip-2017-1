@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+    <meta charset="utf-8">
+    <title>Interaction Programmin - week 10</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- <script src="./script2.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        /*버튼 클릭*/
+        var HYGGE = {
+          _aniBool:false,
+          _cuNum:0,
+          _max:6,
+          init:function(){
+            var _this = this;
+            _this.layout();
+            _this.reset();
+            _this.resetInit();
+          },
+          layout:function(){
+            var _this = this;
+            _this.$win = $(window);
+            _this.$nav = $('nav');
+            _this.$navEl = _this.$nav.find('a');
+          },
+          reset:function(){
+            //reset.
+          },
+          resetInit:function(){
+            var _this = this;
+            _this.$win.on('mousewheel', _this.onMouseWheelPage);
+            _this.$navEl.on('click.nav', _this.onClickNavEl);
+          },
+          //페이지 스크롤
+          onMouseWheelPage:function(e){
+            e.preventDefault();
+            var _this = HYGGE, delta = e.originalEvent.wheelDelta
+            if(_this._aniBool) return;
+            if(delta < 0){
+              _this._cuNum++;
+              if(_this._cuNum > _this._max - 1){
+                _this._cuNum = _this._max - 1;
+              }
+            }else{
+              _this._cuNum--;
+              if(_this._cuNum < 0){
+                _this._cuNum = 0;
+              }
+            }
+            _this.$navEl.eq(_this._cuNum).trigger('click.nav');
+          },
+          onClickNavEl:function(e){
+            e.preventDefault();
+            var _this = HYGGE, $el = $(this), id = $el.attr('href'), top = Math.floor($(id).offset().top);
+            _this.$navEl.removeClass('selected');
+            $el.addClass('selected');
+            _this._aniBool = true;
+            $('html, body').stop(true).animate({scrollTop:top}, {duration: 500, complete:function(){
+              _this._aniBool = false;
+            }});
+          }
+        }
+        $(document).ready(function(){
+          HYGGE.init();
+        });
+        </script>
+  </head>
+  <header>
+    <nav id="menu">
+      <ul>
+        <li data-menuanchor="page1"><a href="#mainvisual" class="selected"><b>&nbsp;</b></a></li>
+        <li data-menuanchor="page2"><a href="#alram"><b>&nbsp;</b></a></li>
+        <li data-menuanchor="page3"><a href="#clock"><b>&nbsp;</b></a></li>
+      <!--   <li data-menuanchor="page4"><a href="#"><b>&nbsp;</b></a></li>
+        <li data-menuanchor="page5"><a href="#"><b>&nbsp;</b></a></li>
+        <li data-menuanchor="page6"><a href="#"><b>&nbsp;</b></a></li> -->
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <!-- <div id="todayInfo">
+    </div> -->
+    <div id="mainvisual">
+      <p>HELLO MALANG97 WORLD</p>
+    </div>
+    <div id="alram">
+      <div class="watch">
+        <script src="./watch.js"></script>
+        <p>STOP WATCH</p>
+        <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+        <div class="button">
+          <button id="startButton">Start</button>
+          <button id="stopButton">Stop</button>
+          <button id="resetButton">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div id="clock">
+      <div class="watch2">
+        <script>
+          var init = function () {
+            var hour =document.getElementById('hour1');
+            var min =document.getElementById('min1');
+            var sec =document.getElementById('sec1');
+            var time;
+            function intervalHandler() {
+              time = new Date();
+              hour.innerHTML = time.getHours();
+              min.innerHTML = time.getMinutes();
+              sec.innerHTML = time.getSeconds();
+            }
+            setInterval(intervalHandler,1000);
+          };
+
+          document.addEventListener('DOMContentLoaded',init);
+        </script>
+        <p>WHAT TIME IS IT?</p>
+        <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span>
+        <div clas="button"><button id="resetButton">Alram</button></div>
+      </div>
+    </div>
+  </body>
+</html>
