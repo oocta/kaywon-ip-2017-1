@@ -49,7 +49,7 @@ section{
 }
 #slideshow-wrap{width: 100%; height: 100%; overflow: hidden;background: url('../images/background.jpg');}
 #slideshow-inner{width: 100%;position: relative; height: 100%; overflow: hidden;}
-article{float: left;width: 33.3333%; min-height: 700px;}
+article{float: left;width: 33.3333%;}
 
 /*clock*/
 
@@ -61,31 +61,31 @@ article{float: left;width: 33.3333%; min-height: 700px;}
 	position: absolute;
 	background: url('../images/big_circle.png')no-repeat center;
 	background-size: cover;
-	width: 600px; height: 600px;
+	width:550px; height: 550px;
 	border-radius: 50%;
 	top: 50%; left: 50%;
-	margin: -300px 0 0 -300px;
+	margin: -275px 0 0 -275px;
 }
 #clock div span{display: inline-block;}
 #clock div #circle_sec{
 	display: block;
 	position: absolute;
-	width: 670px; height: 670px;
+	width: 610px; height: 610px;
 	top:50%; left: 50%;
-	margin: -335px 0 0 -335px;
+	margin: -305px 0 0 -305px;
 }
 #clock div #circle_sec #clock_sec{
 	background: url('../images/circle_sec.png')no-repeat center;
-	background-size: 70px 70px;
+	background-size: 60px 60px;
 	position: absolute;
 	top:0; left:50%;
-	margin-left: -35px;
+	margin-left: -30px;
 	text-align: center;
-	line-height: 70px;
+	line-height: 60px;
 	font-size: 25px;
 	color:#000;
 	font-weight: bold;
-	width: 70px; height: 70px;
+	width: 60px; height: 60px;
 	border-radius: 50%;
 }
 #clock div #circle_min{
@@ -124,7 +124,7 @@ article{float: left;width: 33.3333%; min-height: 700px;}
 	font-weight: bold;
 	color: #fff;
 }
-#clock ul{position: absolute; top: 50%; left: 50%; margin-left: 300px;}
+#clock ul{position: absolute; top: 50%; left: 50%; margin-left: 275px;}
 #clock ul li{float: left; letter-spacing: 10px; font-size: 30px; height: 30px; font-style: italic; color:#fff;}
 #clock ul li:first-child{border-bottom: 1px solid #fff; width: 200px; height: 14px; margin-right: 20px;}
 
