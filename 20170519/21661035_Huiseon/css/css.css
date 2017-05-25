@@ -1,0 +1,180 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*border: 1px solid #000;*/
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	           content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+	text-decoration: none;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+/*-----------------------------------------------------------------------------*/
+html, body, .Visual{height: 100%; }
+/*유동적인 크기의 한화면 전체를 채워주기*/
+body{background-color: #000; overflow: hidden;}
+
+
+.localWatch {
+  width: 100%; height: 100%;
+  background: url('../img/CLB.png') no-repeat;
+  background-position:bottom center;
+}
+#clockL { text-align: center;}
+.stopwatch{
+  width: 100%; height: 100%;text-align: center;
+}
+#clockS{
+  display: inline-block; margin-top: 10%; width: 900px;height: 250px;
+  color:#cdad72; font-family: 'Limelight', cursive; font-size: 150px;line-height: 250px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 5px solid #cdad72;  border-radius: 20px;
+}
+#clockA{}
+.alarmwatch{}
+
+
+#BtS{margin-top: 50px;}
+#BtS button {
+  padding: 10px 20px; margin: 0 20px;
+   background-color: inherit;color: #818181;
+   border: 0px;
+   font-family: 'Limelight', cursive;font-size: 40px; cursor: pointer;}
+#BtS button:hover{
+  color: #cdad72;font-size:
+  border: 1px solid #818181; border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+nav {position: fixed; top:0; width: 100%; height: 100px; z-index: 9999;font-family: 'KumarOne' ,cursive; line-height: 100px;}
+nav h1{font-size: 30px;color: #cdad72; float: left;margin:0 20px;}
+nav ul {text-align: right; }
+nav ul li {display: inline-block; margin:0 20px;}
+nav ul li a {float: left; color: #818181;  text-decoration:none; }
+nav ul li a:visited{ color: #818181;}
+nav ul li a:hover{ color: #cdad72;}
+footer{position: fixed; bottom: 0; width: 100%; height: 30px;line-height: 30px;color: #cdad72; z-index: 9999;margin:0 20px;}
+
+ .main{width: 100%;height: 100%; /*background: url('../img/') no-repeat;*/ text-align: center; z-index: -9999;}
+/*-----------------------------------------------*/
+
+
+/*-----------------------------------------------*/
+
+figure > h2 {
+  animation:glow 10s ease-in-out infinite;
+
+
+
+/* For less laggy effect, uncomment this:
+
+  animation:none;
+  -webkit-text-stroke:1px #fff;
+
+=========== */
+
+}
+
+* { box-sizing:border-box; }
+
+figure {
+  animation:wobble 5s ease-in-out infinite;
+  transform-origin:center center;
+  transform-style:preserve-3d;
+}
+
+@keyframes wobble {
+  0%,100%{ transform:rotate3d(1,1,0,40deg); }
+  25%{ transform:rotate3d(-1,1,0,40deg); }
+  50%{ transform:rotate3d(-1,-1,0,40deg); }
+  75%{ transform:rotate3d(1,-1,0,40deg); }
+}
+
+figure > h2 {
+  position:fixed ; padding-top: 10%;
+  width:100%;
+  font:900 8em 'KumarOne', sans-serif;
+  text-transform:uppercase;
+  position:absolute;
+  color:#fff;
+}
+
+@keyframes glow {
+  0%,100%{ text-shadow:0 0 30px #72ebcd; }
+/*  25%{ text-shadow:0 0 30px orange; }
+  50%{ text-shadow:0 0 30px forestgreen; }
+  75%{ text-shadow:0 0 30px cyan; }*/
+}
+
+figure > h2:nth-child(2){ transform:translateZ(5px); }
+figure > h2:nth-child(3){ transform:translateZ(10px);}
+figure > h2:nth-child(4){ transform:translateZ(15px); }
+figure > h2:nth-child(5){ transform:translateZ(20px); }
+figure > h2:nth-child(6){ transform:translateZ(25px); }
+figure > h2:nth-child(7){ transform:translateZ(30px); }
+figure > h2:nth-child(8){ transform:translateZ(35px); }
+figure > h2:nth-child(9){ transform:translateZ(40px); }
+figure > h2:nth-child(10){ transform:translateZ(45px); }
+
+/*------------------------------------------------------*/
+@font-face {
+    font-family: 'KumarOne';
+    font-style: normal;
+    font-weight: 400;
+    src: local('KumarOne Regular'), local('KumarOne-Regular'),
+    url(../font/KumarOne-Regular.ttf);
+}
+@font-face {
+    font-family: 'Limelight';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Limelight Regular'), local('Limelight-Regular'),
+    url(../font/Limelight-Regular.ttf);
+}
