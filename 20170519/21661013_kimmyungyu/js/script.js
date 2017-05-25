@@ -105,7 +105,7 @@ var init = function () {
   var timer = 0;
   function watchStart(){
     if(isRunning === false){
-      timer = setInterval(stopwatchintervalHandler, 10);
+      timer = setInterval(stopwatchintervalHandler, 1000);
       isRunning = true;
     }
   }
