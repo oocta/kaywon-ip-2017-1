@@ -83,7 +83,28 @@
     <!-- <div id="todayInfo">
     </div> -->
     <div id="mainvisual">
-      <p>HELLO MALANG97 WORLD</p>
+      <script>
+      var init = function(){
+        //현재 시각 화면에 표시 (초시계)
+        var year = document.getElementById('year');
+        var month = document.getElementById('month');
+        var date = document.getElementById('date');
+
+        var time;
+        function intervalHandler(){
+        time = new Date();
+        year.innerHTML = time.getFullYear()+'.';
+        month.innerHTML = time.getMonth()+1+'.';
+        date.innerHTML = time.getDate()+'.';
+        }
+        setInterval(intervalHandler,1000);
+
+      };
+      document.addEventListener('DOMContentLoaded',init);
+      </script>
+      <h1>HELLO MALANG97 WORLD</h1>
+      <h2>TODAY IS..</h2>
+      <span id="year"></span><span id="month"></span><span id="date"></span>
     </div>
     <div id="alram">
       <div class="watch">
