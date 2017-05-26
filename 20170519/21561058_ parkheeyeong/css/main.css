@@ -1,0 +1,176 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*start*/
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #d7dbe7;
+  font-size: 50px;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.wrp {
+  width: 900px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+section {}
+
+article {
+  float: left;
+  width: 400px;
+  height: 400px;
+  margin-bottom: 50px;
+}
+
+article:nth-child(2n) {
+  float: right;
+}
+
+.clock {
+  color: #fff;
+  font-size: 70px;
+}
+
+.clock div {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.timer {
+  background: url(image/stopwatch.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.timewrp {
+  width: 400px;
+  font-size: 30px;
+  padding-top: 200px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.alarm {
+  background: url(image/alarm.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.alarmwrp {
+  text-align: center;
+  padding-top: 160px;
+}
+
+.alrambuttons {
+  display: block;
+  margin-top: -30px;
+}
+
+.alarmsettime {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.world {
+  background: url(image/world.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.worlds {
+  margin: 0 auto;
+  width: 170px;
+  height: 100px;
+  overflow-y: scroll;
+  font-size: 35px;
+}
+
+.worldwrp {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.worldsettime {
+  color: #fff;
+  font-size: 40px;
+  margin-top: 140px;
+}
+
+.cal {
+  background: url(image/calculator.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.calbuttons {
+  margin-left: 62px;
+  padding-top: 110px;
+  font-size: 34px;
+  width: 320px;
+}
+
+.notnum li {
+  margin-left: 15px;
+  float: left;
+  text-align: center;
+  line-height: 58px;
+  background-color: #8ca8ab;
+  width: 50px;
+  height: 40px;
+  border-radius: 45%;
+}
+
+.calnums>ul {
+  padding-top: 40px;
+  width: 240px
+}
+
+.calnums ul li {
+  margin-top: 5px;
+  margin-left: 15px;
+  float: left;
+  text-align: center;
+  line-height: 58px;
+  background-color: #8ca8ab;
+  width: 50px;
+  height: 50px;
+  border-radius: 48%;
+}

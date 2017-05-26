@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mmyuuu</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div id="slideshow-wrap">
+      <input type="radio" id="button-1" name="controls" checked="checked" />
+      <label for="button-1"></label>
+      <input type="radio" id="button-2" name="controls" />
+      <label for="button-2"></label>
+      <input type="radio" id="button-3" name="controls" />
+      <label for="button-3"></label>
+      <div id="slideshow-inner">
+        <section>
+          <article id="clock">
+            <div>
+              <div id="circle_sec"><span id="clock_sec">00</span></div>
+              <div id="circle_min"><span id="clock_min">00</span></div>
+              <span id="clock_hour">00</span>
+            </div>
+            <ul>
+              <li></li>
+              <li><p id="ampm">AM</p></li>
+            </ul>
+          </article>
+          <article id="stopwatch">
+            <div class="box">
+              <div class="box"></div>
+              <div class="box"></div>
+              <span id="stop_hour">00</span>
+              <span id="stop_min">00</span>
+              <span id="stop_sec">00</span>
+            </div>
+            <ul id="button">
+              <li>
+                <button id="startButton">Start</button>
+                <button id="stopButton">Stop</button>
+                <button id="lapButton">Lap</button>
+                <button id="resetButton">Reset</button>
+              </li>
+            </ul>
+            <ul id="lapbox">
+            </ul>
+          </article>
+          <article id="alarm">
+            <div>
+              <span id="alarm_hour">00</span>
+              <span id="alarm_min">00</span>
+            </div>
+            <button id="set">Set Alarm</button>
+            <div id="message">
+              <ul>
+                <h2 id="alert">please set alarm</h2>
+              </ul>
+              <div id="effect"></div>
+              <div id="before"></div>
+            </div>
+
+          </article>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

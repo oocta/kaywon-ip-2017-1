@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Week10 - Homework</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/index.js"></script>
+  </head>
+  <body>
+
+<div class="container">
+   <div id="nowTime_box" class="box">
+       <h3>현재시간</h3>
+        <div id="nowTime">
+        </div>
+   </div>
+   <div id="stopWatch_box" class="box">
+       <h3>스톱워치</h3>
+        <div id="stopWatch">
+           <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+            <div id="controls">
+                <a href="#" id="startButton" class="button" onclick="stopWatch.strat();">Start</a>
+                <a href="#" id="" class="button" onclick="stopWatch.lap();">Lap</a>
+                <a href="#" id="" class="button" onclick="stopWatch.stop();">Stop</a>
+                <a href="#" id="" class="button" onclick="stopWatch.restart();">Restart</a>
+                <a href="#" id="" class="button" onclick="stopWatch.clear();">ClearLaps</a>
+            </div>
+            <div class="stopWatch"></div>
+            <ul class="results"></ul>
+        </div>
+    </div>
+    <div id="alramWatch_box" class="box">
+       <h3>알람시계</h3>
+        <div id="alramWatch">
+            <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+        </div>
+    </div>
+</div>   
+  </body>
+</html>

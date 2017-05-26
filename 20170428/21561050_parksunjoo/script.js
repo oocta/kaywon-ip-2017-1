@@ -101,6 +101,8 @@ var init = function () {
   var counter = document.getElementById('counter');
   var plusbt = document.getElementById('plusbt');
   var minubt = document.getElementById('minubt');
+  var multibt = document.getElementById('multi');
+  var divisionbt = document.getElementById('division');
   var counterNumber = 0;
 
 //카운터를 제어하는 함수
@@ -109,7 +111,8 @@ function counterHandler(num) {
 }
 
 //플러스 버튼 클릭시 실행되는 함수
-function clickplusbt(num) {
+function clickplusbt() {
+  //숫자 10진수로 반환, parseInt는 문자를 숫자로 변환
   counterNumber = counterNumber + parseInt(getRadioValue(), 10);
   counterHandler(counterNumber);
 }
@@ -117,6 +120,18 @@ function clickplusbt(num) {
 //마이너스 버튼 클릭시 실행되는 함수
 function clickminubt() {
   counterNumber = counterNumber - parseInt(getRadioValue(), 10);
+  counterHandler(counterNumber);
+}
+
+//곱하기 버튼 클릭시 실행되는 함수
+function clickmultibt() {
+  counterNumber = counterNumber * parseInt(getRadioValue(), 10);
+  counterHandler(counterNumber);
+}
+
+//나누기 버튼 클릭시 실행되는 함수
+function clickdivisionbt() {
+  counterNumber = counterNumber % parseInt(getRadioValue(), 10);
   counterHandler(counterNumber);
 }
 
@@ -134,7 +149,8 @@ for(var i = 0; i < radios.length; ++i) {
 
 plusbt.addEventListener('click', clickplusbt);
 minubt.addEventListener('click', clickminubt);
-
+multibt.addEventListener('click', clickmultibt);
+divisionbt.addEventListener('click', clickdivisionbt);
 };
 document.addEventListener('DOMContentLoaded', init);
 /*document.body.addEventListener('DOMContentLoaded', function (){

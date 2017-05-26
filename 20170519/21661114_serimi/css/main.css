@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+/*@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+a{text-decoration: none; color:#000;}
+/*--------------------------------------------------*/
+body{
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+	font-size: 100px;
+	color: #fff;
+}
+nav{position:fixed;z-index:10000;top:0;bottom:0;right:50px}
+nav ul{position:absolute;top:50%;margin-top:-56px;}
+nav li{display:inline-block;;padding-top:6px;padding-bottom:6px}
+nav li a{display:block;width:10px;height:10px;background-color:#a8a8a8;border-radius:50%;-webkit-transition:background-color 180ms ease}
+nav li a:hover, nav li a.selected{background-color:#fff}
+
+.watch{
+	/*position: absolute;
+	top: 50%;
+	margin:-100px 0 0 -100px;
+	left: 50%;*/
+	position: relative;
+	top: 40%;
+}
+.watch2{
+	position: relative;
+	top: 40%;
+}
+#alram{
+  height: 100vh;
+  background-image: linear-gradient(-225deg, #3740e7 0%, #37e5e7 72%, #37e77e 100%);
+}
+p{
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+#mainvisual{
+	height: 100vh;
+	background-image: linear-gradient(-225deg, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%);
+}
+#mainvisual h1{
+	display: inline-block;
+	font-size: 100px;
+	font-weight: bold;
+	margin-top: 20%;
+}
+#mainvisual h2{
+	font-size: 50px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+#clock{
+	height: 100vh;
+	background-image: linear-gradient(-225deg, #e73765 0%, #e7bc37 52%, #e77137 100%);
+}
