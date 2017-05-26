@@ -72,12 +72,12 @@ body {
 #time span{margin: 0 5px; }
 #ampm{font-size: 20px; text-transform: uppercase; display: inline-block;}
 #button div{ margin:30px 0;  color:transparent; font-size: 0; }
-#nowTime{ width:62px ; height: 62px; background:url(images/now_off.png);}
-#nowTime:hover { width:62px ; height: 62px; background:url(images/now_on.png);}
-#alram{ width:62px ; height: 62px; background:url(images/alram_off.png);}
-#alram:hover{ width:62px ; height: 62px; background:url(images/alram_on.png);}
-#lapTime{ width:62px ; height: 62px; background:url(images/lap_off.png);}
-#lapTime:hover{ width:62px ; height: 62px; background:url(images/lap_on.png);}
+#nowTime{ width:62px ; height: 62px; background:url(/now_off.png);}
+#nowTime:hover { width:62px ; height: 62px; background:url(/now_on.png);}
+#alram{ width:62px ; height: 62px; background:url(/alram_off.png);}
+#alram:hover{ width:62px ; height: 62px; background:url(/alram_on.png);}
+#lapTime{ width:62px ; height: 62px; background:url(/lap_off.png);}
+#lapTime:hover{ width:62px ; height: 62px; background:url(/lap_on.png);}
 
 #addBt{ }
 #addBt button{background: #e6e6e6; border:none; padding: 10px 20px; margin: -10px 15px; }
