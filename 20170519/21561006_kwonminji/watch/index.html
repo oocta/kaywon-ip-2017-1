@@ -17,6 +17,7 @@
     </nav>
     <div id="clock">
       <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+      <span id="ampm"></span>
     </div>
   </div>
 
@@ -31,8 +32,8 @@
       <button id="stopButton">Stop</button>
       <button id="lapButton">Lap</button>
       <button id="resetButton">Reset</button>
+      <ul id="lapTimes"></ul>
     </div>
-    <ul id="lapTimes"></ul>
   </div>
 
   <div class="section" id="section2">
@@ -40,9 +41,38 @@
       <a>ALARM</a>
       <span>21561006 KWONMINJI</span>
     </nav>
-    <h1>알람 들어갈 페이지</h1>
-  </div>
-
+    <div id="alarm">
+      <select name="hours" id="hourValue">
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select name="minutes" id="minValue">
+        <option value="00">00</option>
+        <option value="05">05</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+        <option value="30">30</option>
+        <option value="35">35</option>
+        <option value="40">40</option>
+        <option value="45">45</option>
+        <option value="50">50</option>
+        <option value="55">55</option>
+      </select>
+      <button id="set">SET</button>
+    </div>
+</div>
 
 </body>
 
