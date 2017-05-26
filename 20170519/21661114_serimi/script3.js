@@ -7,9 +7,9 @@ getID = function(value){ return document.getElementById( value ); };
 
 // List of all my objects im working with, and variables
 function init() {
-  var  min = getElementById("min"),
-  var  sec = getElementById("sec"),
-  var  hour = getElementById("hour"),
+  var minute = getID("minute"),
+  var  second = getID("second"),
+  var  aHour = getID("aHour"),
   var  aMinute = getID("aMinute"),
   var  aSecond = getID("aSecond"),
   var  aSwitch = getID("aSwitch"),
@@ -69,9 +69,9 @@ function alarmSet(){
     var tomo = false;// tomorrow.
     if( aHour.value < hour.value )
         {tomo = true;}
-    else if( aHour.value == hour.value && aMinute.value < min.value )
+    else if( aHour.value == hour.value && aMinute.value < minute.value )
         {tomo = true;}
-    else if( aHour.value == hour.value && aMinute.value == min.value
+    else if( aHour.value == hour.value && aMinute.value == minute.value
             && aSecond.value < second.value )
         {tomo = true;}
 
@@ -94,8 +94,8 @@ timeRefresh = function(){
     date = new Date();
     hour.innerHTML = date.getHours();
     hour.value = hour.innerHTML;
-    min.innerHTML = date.getMinutes();
-    min.value = min.innerHTML;
+    minute.innerHTML = date.getMinutes();
+    minute.value = minute.innerHTML;
     second.innerHTML = date.getSeconds();
     second.value = second.innerHTML;
 

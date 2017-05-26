@@ -33,7 +33,7 @@
             _this.$win.on('mousewheel', _this.onMouseWheelPage);
             _this.$navEl.on('click.nav', _this.onClickNavEl);
           },
-          //페이지 스크롤
+          // 페이지 스크롤
           onMouseWheelPage:function(e){
             e.preventDefault();
             var _this = HYGGE, delta = e.originalEvent.wheelDelta
@@ -65,7 +65,7 @@
         $(document).ready(function(){
           HYGGE.init();
         });
-        </script>
+    </script>
   </head>
   <header>
     <nav id="menu">
@@ -89,33 +89,35 @@
         var year = document.getElementById('year');
         var month = document.getElementById('month');
         var date = document.getElementById('date');
-
         var time;
+
         function intervalHandler(){
         time = new Date();
         year.innerHTML = time.getFullYear()+'.';
         month.innerHTML = time.getMonth()+1+'.';
         date.innerHTML = time.getDate()+'.';
         }
-        setInterval(intervalHandler,1000);
 
+        setInterval(intervalHandler,1000);
       };
       document.addEventListener('DOMContentLoaded',init);
       </script>
-      <h1>HELLO MALANG97 WORLD</h1>
-      <h2>TODAY IS..</h2>
-      <span id="year"></span><span id="month"></span><span id="date"></span>
+        <h1>HELLO MALANG97 WORLD</h1>
+        <h2>TODAY IS..</h2>
+        <span id="year"></span><span id="month"></span><span id="date"></span>
     </div>
     <div id="alram">
       <div class="watch">
         <script src="./watch.js"></script>
-        <p>STOP WATCH</p>
-        <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
-        <div class="button">
-          <button id="startButton">Start</button>
-          <button id="stopButton">Stop</button>
-          <button id="resetButton">Reset</button>
-        </div>
+          <p>STOP WATCH</p>
+          <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+            <div class="button">
+              <button id="startButton">Start</button>
+              <button id="stopButton">Stop</button>
+              <button id="resetButton">Reset</button>
+              <button id="lapButton">Lap</button>
+            </div>
+        <ul id="lap"></ul>
       </div>
     </div>
     <div id="clock">
@@ -126,20 +128,22 @@
             var min =document.getElementById('min1');
             var sec =document.getElementById('sec1');
             var time;
+
             function intervalHandler() {
               time = new Date();
               hour.innerHTML = time.getHours();
               min.innerHTML = time.getMinutes();
               sec.innerHTML = time.getSeconds();
             }
-            setInterval(intervalHandler,1000);
-          };
 
-          document.addEventListener('DOMContentLoaded',init);
-        </script>
-        <p>WHAT TIME IS IT?</p>
-        <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span>
-        <div clas="button"><button id="resetButton">Alram</button></div>
+            setInterval(intervalHandler,1000);
+            };
+
+            document.addEventListener('DOMContentLoaded',init);
+         </script>
+          <p>WHAT TIME IS IT?</p>
+          <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span>
+          <div clas="button"><button id="resetButton">Alram</button></div>
       </div>
     </div>
   </body>

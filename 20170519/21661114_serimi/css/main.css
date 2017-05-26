@@ -43,6 +43,19 @@ nav li{display:inline-block;;padding-top:6px;padding-bottom:6px}
 nav li a{display:block;width:10px;height:10px;background-color:#a8a8a8;border-radius:50%;-webkit-transition:background-color 180ms ease}
 nav li a:hover, nav li a.selected{background-color:#fff}
 
+button{
+	font-family: 'Amatic SC', cursive;
+	    text-align: center;
+	    font-size: 30px;
+	    border-radius: 20px;
+	    padding: 0 20px;
+			color: #fff;
+	    background-color: transparent;
+	    border: solid 3px #fff;
+}
+.hover{
+	 	hover,background-color: red;
+}
 .watch{
 	/*position: absolute;
 	top: 50%;
@@ -55,6 +68,7 @@ nav li a:hover, nav li a.selected{background-color:#fff}
 	position: relative;
 	top: 40%;
 }
+#lap{font-size: 20px;}
 #alram{
   height: 100vh;
   background-image: linear-gradient(-225deg, #3740e7 0%, #37e5e7 72%, #37e77e 100%);

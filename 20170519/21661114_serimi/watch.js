@@ -4,7 +4,6 @@ var init =function functionName() {
  var sec = document.getElementById('sec');
  //new
  // var time;
- // var lapbutton =document.getElementById('lap');
  //
  var hourString = '00';
  var minString = '00';
@@ -16,6 +15,12 @@ var init =function functionName() {
  var stopButton = document.getElementById('stopButton');
  var resetButton = document.getElementById('resetButton');
 
+ var lapbutton =document.getElementById('lap');
+ var li = document.createElement('li');
+ var lapBox = document.getElementById('lap');
+ var lapTime = [];
+
+ var isRunning = false;
 //시계함수
  // function intervalHandler() {
  //   time = new Date();
@@ -29,7 +34,7 @@ var init =function functionName() {
 //초시계
  function hourHandler(){
    hourNumber = hourNumber + 1;
-   hour.innerHTML = hourNumber;
+   hour.innerHTML = addZero(hourNumber);
  }
  function minHandler(){
    minNumber =minNumber+1;
@@ -37,7 +42,7 @@ var init =function functionName() {
      hourHandler();
      minNumber=0;
    }
-   min.innerHTML = minNumber;
+   min.innerHTML = addZero(minNumber);
  }
  function secHandler(){
    secNumber =secNumber+1;
@@ -45,8 +50,14 @@ var init =function functionName() {
      minHandler();
      secNumber=0;
    }
-   sec.innerHTML = secNumber;
+   sec.innerHTML = addZero(secNumber);
  }
+ function startAction(){
+   if(isRunning === false){
+       secInterval = setInterval(startInterval,10);
+       isRunning = true;
+      }
+}
  function addZero(num) {
    if (num<10) {
      return '0'+num;
@@ -62,12 +73,20 @@ var init =function functionName() {
    hourNumber = 0;
    minNumber = 0;
    secNumber = 0;
+   lapHandler = 0;
    hour.innerHTML = addZero(hourNumber);
    min.innerHTML = addZero(minNumber);
    sec.innerHTML = addZero(secNumber);
  }
+ function lapHandler(){
+     var lapTime = addZero(hourNumber)+':'+addZero(minNumber)+':'+addZero(secNumber);
+     var li =document.createElement('li');
+     li.innerHTML = lapTime;
+     lap.appendChild(li);
+   }
+
    startButton.addEventListener('click', function() {
-     watchtime = setInterval(secHandler, 1000);
+     watchtime = setInterval(secHandler, 10);
    })
    stopButton.addEventListener('click', function() {
      clearInterval(watchtime);
@@ -76,5 +95,6 @@ var init =function functionName() {
      clearInterval(watchtime);
      resetHandler();
    })
+   lapButton.addEventListener('click',lapHandler);
  }
 document.addEventListener('DOMContentLoaded',init);
