@@ -55,7 +55,7 @@ section {}
 
 article {
   float: left;
-  width: 400px;
+  width: 410px;
   height: 400px;
   margin-bottom: 50px;
 }
@@ -63,7 +63,8 @@ article {
 article:nth-child(2n) {
   float: right;
 }
-
+.date{margin-top:0;}
+.date span{font-size: 35px;}
 .clock {
   color: #fff;
   font-size: 70px;
@@ -71,8 +72,8 @@ article:nth-child(2n) {
 
 .clock div {
   text-align: center;
-  margin-top: 150px;
 }
+.clo{padding-top: 200px;}
 
 .timer {
   background: url(image/stopwatch.png) no-repeat;
@@ -87,27 +88,34 @@ article:nth-child(2n) {
   padding-left: 10px;
   text-align: center;
 }
+#lapTimes{width: 160px;margin: 0 auto;overflow-y: scroll;margin-top: 10px;height: 60px;}
+#lapTimes li {font-size: 20px;}
 
 .alarm {
   background: url(image/alarm.png) no-repeat;
   background-size: contain;
   background-position: center;
 }
+.alarms{font-size: 17px;}
 
 .alarmwrp {
   text-align: center;
-  padding-top: 160px;
+  padding-top: 170px;
 }
-
-.alrambuttons {
-  display: block;
-  margin-top: -30px;
-}
+.alarmbtn{margin-left: 65px;width: 270px;margin-top: -20px;}
 
 .alarmsettime {
-  padding-top: 20px;
-  font-size: 20px;
+  padding-top: 7px;
 }
+.alarmwrp a{font-size: 11px;background-color:#ffe400; border: 1px solid #ffe400;border-radius: 50%;padding: 9px;}
+
+#setbtns{
+  margin-top: 70px;
+}
+#setbtns a{
+  background-color: #ffe400; border: 3px solid red;
+}
+
 
 .world {
   background: url(image/world.png) no-repeat;
