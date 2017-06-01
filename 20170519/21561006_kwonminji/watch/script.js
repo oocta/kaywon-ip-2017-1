@@ -231,6 +231,7 @@ var init3 = function() {
   var set = document.getElementById('set');
   var ap = document.getElementById('ap');
   var abb = document.getElementById('setAlarm');
+  var audio = new Audio('alarm.mp3');
   var now;
 
   function setTime() {
@@ -244,11 +245,11 @@ var init3 = function() {
       abb.innerHTML = setap + ' ' + setH + '시 ' + setM + '분 알람이 설정되었습니다' ;
 
       if(setap == '오후'){
-        setH = parseInt(setH,10) + 12;
+        setH = parseInt(setH, 10) + 12;
       }
       if(setM == nowMin & setH == nowHour){
-      alert('!!!!!');
-    }
+        audio.play();
+      }
 
     setInterval(setTime, 1000);
 }
