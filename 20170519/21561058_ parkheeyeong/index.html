@@ -10,8 +10,11 @@
     <div class="wrp">
       <section>
         <article class="clock">
-          <div>
-            <span id="timehour">00</span>:<span id="timemin">00</span>:<span id="timesec">00</span>
+          <div class="clo">
+            <span id="timehour">00</span>:<span id="timemin">00</span>:<span id="timesec">00</span><span id="ampm">pm</span>
+          </div>
+          <div class="date">
+            <span id="year">2017</span>.<span id="month">00</span>.<span id="date">00</span>.<span id="day">ghk</span><span>요일</span>
           </div>
         </article>
 
@@ -24,8 +27,10 @@
               <button id="lapButton">lap</button>
               <button id="resetButton">Reset</button>
             </div>
-            <div class="lapTimes">
-              <p></p>
+            <div>
+            <ul id="lapTimes">
+              <li id="lapedtimes"></li>
+            </ul>
             </div>
           </div>
         </article>
@@ -33,40 +38,71 @@
         <article class="alarm">
           <div class="alarmwrp">
             <div class="alarms">
-              <span id="alarmhour">00</span>:<span id="alarmmin">00</span>
-            </div>
-
-            <div class="alrambuttons">
-              <button id="up">up</button>
-              <button id="down">down</button>
-              <button id="set">set</button>
-            </div>
-            <div class="alrambuttons">
-              <button id="am">am</button>
-              <button id="pm">pm</button>
+                <span id="sethour">00</span>:<span id="setmin">00</span><span id="alarmtxt">에 알람이 울립니다</span>
             </div>
             <div class="alarmsettime">
-              <span id="sethour">00</span>:<span id="setmin">00</span>에 알람이 울립니다
+              <span id="alarmhour">00</span>:<span id="alarmmin">00</span><span id="alarmampm">am</span>
             </div>
-          </div>
+
+            <div class="alarmbtn">
+                <a id="hourup">hourup</a>
+                <a id="minup">minup</a><br />
+                <a id="hourdown">hourdown</a>
+                <a id="mindown">mindown</a><br />
+                <div id="setbtns">
+                  <a id="am">am</a>
+                  <a id="pm">pm</a>
+                  <a id="set">set</a>
+                </div>
+              </div>
+              </div>
+
+
+
         </article>
         <article class="world">
           <div class="worldwrp">
             <div class="worlds">
-              <a id="china">china</a>
-              <a id="china">china</a>
-              <a id="china">china</a>
-              <a id="china">china</a>
-              <a id="china">china</a>
-              <a id="china">china</a>
+              <a id="china">베이징</a>
+              <a id="tiwan">방콕</a>
+              <a id="ger">베를린</a>
+              <a id="england">런던</a>
+              <a id="france">파리</a>
+              <a id="sau">사우디</a>
+              <a id="newy">뉴욕</a>
+              <a id="canada">벤쿠버</a>
+              <a id="mex">멕시코</a>
+              <a id="aus">시드니</a>
             </div>
             <div class="worldsettime">
-              <span id="worldhour">00</span>:<span id="worldmin">00</span>
+              <span id="worldhour">00</span>:<span id="worldmin">00</span>:<span id="worldsec">00</span>
             </div>
           </div>
         </article>
+        <article class="lotto">
+          <span>이번주 로또 예상 번호</span>
+          <ul class="lottoNums">
+            <li id="lotto1">1</li>
+            <li id="lotto2">2</li>
+            <li id="lotto3">3</li>
+            <li id="lotto4">4</li>
+            <li id="lotto5">5</li>
+            <li id="lotto6">6</li>
+            <li id="lotto">+</li>
+            <li id="lotto7">7</li>
+          </ul>
+          <span id="nooo">인생은 한방이다!</span>
+
+          <ul class="lottoBtn">
+            <li><a id=lottogobtn>추첨!</a></li>
+            <li><a id=lottoresetbtn>리셋!</a></li>
+          </ul>
+        </article>
+
+
         <article class="cal">
           <div class="calbuttons">
+            <p id="calIs">e</p>
             <div class="notnum">
               <ul>
                 <li><a id="calplus">+</a></li>
@@ -91,6 +127,12 @@
                 <a id="AC">AC</a></div>
               </ul>
           </div>
+        </article>
+        <article class="s">
+
+        </article>
+        <article class="s">
+          21561058_박희영
         </article>
       </section>
     </div>

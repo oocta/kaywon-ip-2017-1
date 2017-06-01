@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>World Time</title>
+    <style type="text/css">
+        body {
+            font-weight: lighter;
+            text-align: center;
+        }
+
+        body{
+            text-decoration: none;
+            color: #fff;
+            background: url('../img/background.jpg'); no-repeat;
+        }
+
+        .wrap{
+            margin-top: 100px;
+        }
+
+        div {
+            font-size: 40px;
+            display: inline-block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: lighter;
+        }
+
+        span {
+            display: inline-block;
+            width: 50px;
+        }
+
+        img {
+            width: 200px;
+            height: 130px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        #korea img {
+            width: 250px;
+            height: 170px;
+            position: relative;
+            top: 20px;
+        }
+        .ampm{
+            font-size: 25px;
+        }
+        .time{
+            padding: 15px;
+            border: 2px solid #fff;
+        }
+        button{
+            margin: 0 auto;
+            min-width: 100px;
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(0, 0, 255, 0);
+            border: 3px solid #fff;
+            color: #fff;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+        button:hover{
+            background-color: #ca9be9;
+            border: 3px solid #ca9be9;
+            color: #fff;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <a href="../index.html"><button id="home">HOME</button></a>
+        <div id="korea">
+            <h1>스위스</h1>
+            <div class="time">
+                <span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span> <span class="ampm">AM</span>
+            </div>
+        </div>
+
+        <div id="mos">
+            <h1>모스크바</h1>
+            <div class="time">
+                <span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span> <span class="ampm">AM</span>
+            </div>
+        </div>
+
+        <div id="newyork">
+            <h1>뉴욕</h1>
+            <div class="time">
+                <span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span> <span class="ampm">AM</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="worldtime.js"></script>
+</body>
+
+</html>

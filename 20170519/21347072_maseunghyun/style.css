@@ -8,6 +8,7 @@ body{
 a{
   text-decoration: none;
 }
+
 h1{
   font-size: 50px;
   font-weight: lighter;
@@ -39,9 +40,16 @@ li{
   background-color: #e7e7e7;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.57);
+  border-radius: 5px;
 }
 li:first-child{
-  background-color: #22d2f1;
+  background-color: #78e0f2;
+}
+li:nth-child(2){
+  background-color: #facc73;
+}
+li:nth-child(3){
+  background-color: #90ebb7;
 }
 li:nth-of-type(3n){
   margin-right: 0;
@@ -55,7 +63,7 @@ li > a > h2{
   width: 100%;
   font-size: 30px;
   position: absolute;
-  line-height: 2em;
+  line-height: 1.5em;
   padding: 10px;
   padding-left: 20px;
   font-weight: lighter;

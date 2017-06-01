@@ -50,21 +50,24 @@ abbr,acronym { border: 0;}
    margin-top: 200px;
    color: #fff;
  }
- .worldTime{
-   color: #d9e1ef;
+ #setTimeButton{
+     display: block;
+ }
+ #worldTime{
+   color: #fff;
    top: 30px;
    right: 15px;
    position: absolute;
    font-size: 20px;
  }
- .worldTime li{
-   border: 1px solid #e9bcf0;
-   margin: 10px;
-   padding: 5px;
+ .alarm{
+   color: #d9e1ef;
+   top: 30px;
+   left: 15px;
+   position: absolute;
+   font-size: 20px;
  }
- .worldTime li dd{
-   font-size: 15px;
- }
+
  .time{
    position: relative;
  }
@@ -92,50 +95,16 @@ abbr,acronym { border: 0;}
    border-bottom: 2px solid #fff;
    padding-bottom: 15px;
  }
- #startButton{
-   cursor: pointer;
-   padding: 10px;
-   background-color: #8daaf0;
-   border: 3px solid #fff;
-   color: #fff;
+ button{
+      cursor: pointer;
+      padding: 10px;
+      background-color: rgba(0, 0, 255, 0);
+      border: 3px solid #fff;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 2px;
  }
- #startButton:hover{
-   background-color: #ca9be9;
-   border: 3px solid #ca9be9;
-   color: #fff;
- }
- #stopButton{
-   cursor: pointer;
-   padding: 10px;
-   background-color: #8daaf0;
-   border: 3px solid #fff;
-   color: #fff;
- }
- #stopButton:hover{
-   background-color: #ca9be9;
-   border: 3px solid #ca9be9;
-   color: #fff;
- }
- #resetButton{
-   cursor: pointer;
-   padding: 10px;
-   background-color: #8daaf0;
-   border: 3px solid #fff;
-   color: #fff;
- }
- #resetButton:hover{
-   background-color: #ca9be9;
-   border: 3px solid #ca9be9;
-   color: #fff;
- }
- #lapButton{
-   cursor: pointer;
-   padding: 10px;
-   background-color: #8daaf0;
-   border: 3px solid #fff;
-   color: #fff;
- }
- #lapButton:hover{
+ button:hover{
    background-color: #ca9be9;
    border: 3px solid #ca9be9;
    color: #fff;
@@ -144,6 +113,7 @@ abbr,acronym { border: 0;}
    font-size: 40px;
  }
  .time{
+   padding-bottom: 15px;
    margin: 0 auto;
    width: 1000px;
    border: 10px solid #fff;
@@ -158,7 +128,6 @@ abbr,acronym { border: 0;}
   width: 100px;
   margin-top: 20px;
   font-size: 20px;
-  border: 2px solid #fff;
 }
 #laplist li:nth-child(2n+1){
   padding: 5px;
@@ -166,7 +135,6 @@ abbr,acronym { border: 0;}
   width: 100px;
   margin-top: 20px;
   font-size: 20px;
-  border: 2px solid #ca95e6;
 }
 #hour2{
   padding: 10px;

@@ -4,16 +4,39 @@
     <meta charset="utf-8">
     <title>21347072 마승현</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
       $('article > ul > li').mouseover(function(){
         var bgColor = $(this).css('background-color');
-        $('section').css('background-color',bgColor);
+        var color = $(this).css('color');
+        // $('section').css('background-color',bgColor);
+        $('section').css({
+          background:bgColor,
+        });
+        $(this).css({
+          border:'6px solid rgba(255, 255, 255, 0.57)'
+        });
+        $(this).find('h2').css({
+          fontWeight:'normal',
+          fontSize:'35px'
+        });
       })
       $('article > ul > li').mouseout(function(){
         $('section').css('background-color','#fff');
+        $(this).css({
+          fontWeight:'lighter',
+          border: '1px solid rgba(255, 255, 255, 0.57)'
+        });
+        $(this).find('h2').css({
+          fontWeight:'lighter',
+          fontSize:'30px'
+        });
+        $(this).find('a').css({
+          color:'#fff'
+        });
       })
     });
   </script>
@@ -30,18 +53,20 @@
         <ul>
           <li>
             <a href="watch/index.html">
-              <h2>Stop Watch <br>& Alram</h2>
+              <h2>Stop <br>Watch</h2>
               <p>2017.05.24</p>
             </a>
           </li>
           <li>
-            <a href="#">
-              <h3>Commng Soon</h3>
+            <a href="alram/index.html">
+              <h2>Alram</h2>
+              <p>2017.05.27</p>
             </a>
           </li>
           <li>
-            <a href="#">
-              <h3>Commng Soon</h3>
+            <a href="worldtime/index.html">
+              <h2>World <br>Time</h2>
+              <p>2017.05.29</p>
             </a>
           </li>
           <li>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>World Time</title>
+    <style type="text/css">
+        body {
+            font-weight: lighter;
+            text-align: center;
+        }
+
+        body * {
+            color: #969696;
+        }
+
+        .cwrp {}
+
+        div {
+            font-size: 40px;
+            display: inline-block;
+            text-align: center;
+            margin: 80px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: lighter;
+        }
+
+        span {
+            display: inline-block;
+            width: 50px;
+        }
+
+        img {
+            width: 200px;
+            height: 130px;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        #korea img {
+            width: 250px;
+            height: 170px;
+            position: relative;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cwrp">
+        <div id="korea">
+            <img src="img/korea.gif" alt="">
+            <h1>대한민국</h1>
+            <span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span> <span class="ampm">AM</span>
+        </div>
+
+        <div id="berlin">
+            <img src="img/ger.png" alt="">
+            <h1>Berlin</h1>
+            <span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span> <span class="ampm">AM</span>
+        </div>
+
+        <div id="newyork">
+            <img src="img/usa.png" alt="">
+            <h1>New York</h1>
+            <span class="hour">00</span>:<span class="min">00</span>:<span class="sec">00</span> <span class="ampm">AM</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
