@@ -78,7 +78,7 @@ var init = function() {
         if (hourDu >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
-        bbb.innerHTML = addZero(hour) + ':' + addZero(getm) + ':' + addZero(gets);
+        bbb.innerHTML = addZero(hourDu) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
     }
 
@@ -95,7 +95,7 @@ var init = function() {
         if (hourSh >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
-        bbb.innerHTML = addZero(hour2) + ':' + addZero(getm) + ':' + addZero(gets);
+        bbb.innerHTML = addZero(hourSh) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
     }
 
