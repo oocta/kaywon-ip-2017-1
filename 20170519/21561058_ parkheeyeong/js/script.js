@@ -13,22 +13,8 @@ var init = function () {
   var sethourIs = 0;
   var setminIs = 0;
 
-  // //날짜
-  // var year = document.getElementById('year');
-  // var month = document.getElementById('month');
-  // var day = document.getElementById('day');
-  // var date = document.getElementById('date');
-  //
-  // var monthIs = 0;
-  // var dayIs = 0;
-  // var dateIs = 0;
-
-  //알람상태, 시계상태를 정하기
-
   function addZero(num){
-    if(num<10){
-      return '0'+num;
-        }
+    if(num<10){return '0'+num;}
       return num;
     }
 
@@ -61,6 +47,27 @@ var init = function () {
     day.innerHTML = daywhat;
   }
 
+  var worldhour = document.getElementById('worldhour');
+  var worldmin = document.getElementById('worldmin');
+  var worldsec = document.getElementById('worldsec');
+
+  var china = document.getElementById('china');
+  var tiwan = document.getElementById('tiwan');
+  var ger = document.getElementById('ger');
+  var gris = document.getElementById('gris');
+  var england = document.getElementById('england');
+  var france = document.getElementById('france');
+  var sau = document.getElementById('sau');
+  var kena = document.getElementById('kena');
+  var newy = document.getElementById('newy');
+  var canada = document.getElementById('canada');
+  var mex = document.getElementById('mex');
+  var aus = document.getElementById('aus');
+
+  var worldhourIs = 0;
+  var worldminIs = 0;
+  var worldsecIs = 0;
+  var worldDifferent = 0;
 
   function intervalHandeler(){
   clocktime = new Date();
@@ -73,7 +80,6 @@ var init = function () {
     ampm.innerHTML=' PM'}
   else{ampm.innerHTML=' AM'
     timehour.innerHTML =addZero(hourIs);}
-
   timesec.innerHTML = secIs;
   timemin.innerHTML = minIs;
     var alarmNow = false;
@@ -86,7 +92,83 @@ var init = function () {
     }else {
       alarmtxt.innerHTML='에 알람이 울립니다';
     }
+
+  worldhourIs=clocktime.getHours();
+  worldminIs=clocktime.getMinutes();
+  worldsecIs=clocktime.getSeconds();
+
+  //여기까지intervalhandeler
   }
+ var worldtimer;
+ // var worldIsrunning=false;
+ function chinas(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(chinaClickHandler,1000)
+ }
+ function tiwans(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(tiwanClickHandler,1000)
+ }
+ function gers(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(gerClickHandler,1000)
+ }
+ function englands(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(englandClickHandler,1000)
+ }
+ function frances(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(franceClickHandler,1000)
+ }
+ function saus(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(sauClickHandler,1000)
+ }
+ function newys(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(newyClickHandler,1000)
+ }
+ function canadas(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(canadaClickHandler,1000)
+ }
+ function mexs(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(mexClickHandler,1000)
+ }
+ function auss(){
+   clearInterval(worldtimer);
+   worldtimer=setInterval(ausClickHandler,1000)
+ }
+
+  function chinaClickHandler(){write(1);}
+  function tiwanClickHandler(){write(7);}
+  function gerClickHandler(){write(8);}
+  function englandClickHandler(){write(9);}
+  function franceClickHandler(){write(8);}
+  function sauClickHandler(){write(6);}
+  function newyClickHandler(){write(14);}
+  function canadaClickHandler(){write(15);}
+  function mexClickHandler(){write(15);}
+  function ausClickHandler(){write(-1);}
+
+
+  function write(a){worldhour.innerHTML=addZero(worldhourIs-a);
+  worldmin.innerHTML=addZero(worldminIs);
+  worldsec.innerHTML=addZero(worldsecIs);}
+
+  china.addEventListener('click',chinas);
+  tiwan.addEventListener('click',tiwans);
+  ger.addEventListener('click',gers);
+  england.addEventListener('click',englands);
+  france.addEventListener('click',frances);
+  sau.addEventListener('click',saus);
+  newy.addEventListener('click',newys);
+  canada.addEventListener('click',canadas);
+  mex.addEventListener('click',mexs);
+  aus.addEventListener('click',auss);
+
 
   setInterval(intervalHandeler,1000);
   getDate();
@@ -211,12 +293,25 @@ var init = function () {
         alarmhour.innerHTML=12;
         alarmampm.innerHTML='pm';
       }
-      console.log(alarmedhour);
   }
   function hourdownBtnAct(){
       if(alarmedhour>0){
-      alarmedhour--;
+        alarmedhour=alarmedhour-1;
+        alarmhour.innerHTML=addZero(0);
       }
+      if(alarmedhour<12){
+        alarmhour.innerHTML=addZero(alarmedhour);
+        alarmampm.innerHTML='am';
+      }
+      else {
+        alarmhour.innerHTML=addZero(alarmedhour-12);
+        alarmampm.innerHTML='pm';
+      }
+      if(alarmedhour===12){
+        alarmhour.innerHTML=12;
+        alarmampm.innerHTML='pm';
+      }
+      console.log(alarmedhour);
   }
   hourup.addEventListener('click',hourupBtnAct)
   hourdown.addEventListener('click',hourdownBtnAct)
@@ -270,8 +365,6 @@ var init = function () {
       }
 
   //알람시간=지금시간일때 글씨가 나오는 함수
-
-
 
 
 

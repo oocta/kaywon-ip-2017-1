@@ -130,7 +130,8 @@ article:nth-child(2n) {
   overflow-y: scroll;
   font-size: 35px;
 }
-
+.worlds a{color:#fff;display: block;cursor: pointer;font-size: 18px;padding: 2px;}
+.worlds>a:hover{font-size: 19px;color:#f4deff;}
 .worldwrp {
   margin-top: 100px;
   text-align: center;
