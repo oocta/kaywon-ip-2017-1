@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Week10 - Homework</title>
+    <link rel="stylesheet" type="text/css" href="../css/stop.css">
+    <script type="text/javascript" src="../js/stop.js"></script>
+  </head>
+  <style>
+      @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  </style>
+  <body>
+<div id="wrapper">
+    <div class="vid-container">
+        <video class="bgvid" autoplay="true" loop>
+            <source src="../css/Sequence.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+            <source src="../css/Sequence.mp4">
+        </video>
+        <div class="box">
+          <div id="nav-box">
+           <a href="#">STOPWATCH</a>
+           <span id="line1"></span>
+           <span id="line2"></span>
+           <span id="line3"></span>
+           <span id="line4"></span>
+           <a href="../index.html">NOWTIME</a>
+          </div>
+                 <div class="wrapper">
+                      <div id="stopWatch">
+                           <div id="time">
+                                <span id="hour">00</span>:<span id="minute">00</span>:<span id="sec">00</span>
+                           </div>
+                           <div id="lap">
+                                <span id="lapHour">00</span>:<span id="lapMinute">00</span>:<span id="lapSec">00</span>
+                           </div>
+                      </div>
+                      <div id="st_container">  
+                            <div id="controls">
+                               <button id="start">Start</button>
+                               <button id="stop">Stop</button>
+                               <button id="reset">Reset</button>
+                            </div>
+                      </div> 
+                </div>
+        </div>
+    </div>
+</div>
+  </body>
+</html>
