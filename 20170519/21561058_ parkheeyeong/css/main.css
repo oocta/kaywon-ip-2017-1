@@ -110,7 +110,7 @@ article:nth-child(2n) {
 .alarmwrp a{font-size: 11px;background-color:#ffe400; border: 1px solid #ffe400;border-radius: 50%;padding: 9px;}
 
 #setbtns{
-  margin-top: 70px;
+  margin-top: 40px;
 }
 #setbtns a{
   background-color: #ffe400; border: 3px solid red;
@@ -151,11 +151,11 @@ article:nth-child(2n) {
 
 .calbuttons {
   margin-left: 62px;
-  padding-top: 110px;
+  padding-top:23px;
   font-size: 34px;
   width: 320px;
 }
-
+#calIs{text-align: right;height:50px;margin-left:13px;margin-bottom: 37px;width: 260px;overflow:hidden;line-height: 50px;}
 .notnum li {
   margin-left: 15px;
   float: left;
@@ -172,7 +172,7 @@ article:nth-child(2n) {
   width: 240px
 }
 
-.calnums ul li {
+/*.calnums ul li {
   margin-top: 5px;
   margin-left: 15px;
   float: left;
@@ -182,4 +182,47 @@ article:nth-child(2n) {
   width: 50px;
   height: 50px;
   border-radius: 48%;
+}*/
+.calnums ul li a{
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 15px;
+  float: left;
+  text-align: center;
+  line-height: 58px;
+  background-color: #8ca8ab;
+  width: 50px;
+  height: 50px;
+  border-radius: 48%;
+}
+
+
+/*로또*/
+.lotto{display: block;padding-top: 100px;}
+.lotto span{
+  display:block;text-align: center;margin: 0 auto;
+  font-size: 25px;
+}
+#nooo {padding-top:13px;display:block;text-align: center;margin: 0 auto;font-size: 15px;color: #5b5b5b;}
+.lottoNums{display: block;height: 50px;margin-top: 30px;}
+.lottoNums li{
+  font-size: 20px;text-align: center;line-height: 45px;
+  float: left;margin-right: 5px;
+  width: 43px;height: 43px;
+  border-radius: 50%;
+}
+.lottoBtn{margin-top: 50px;text-align: center;}
+.lottoBtn li{display:inline-block;text-align: center;}
+.lottoBtn li a{
+  background-color: #fff;
+  font-size: 20px;text-align: center;line-height: 62px;
+  float: left;margin-right: 5px;
+  width: 60px;height: 60px;
+  border-radius: 50%;
+}
+#lotto1 , #lotto4 ,#lotto7{background-color: #fbc34b;}
+#lotto2 , #lotto5{background-color: #8ec6e5;}
+#lotto3 , #lotto6{background-color: #ef8d82;}
+.lottoBtn li a:hover{
+  background-color: #fff3ca;
 }

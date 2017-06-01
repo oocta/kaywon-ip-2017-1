@@ -99,6 +99,8 @@ var init = function () {
 
   //여기까지intervalhandeler
   }
+
+
  var worldtimer;
  // var worldIsrunning=false;
  function chinas(){
@@ -313,6 +315,7 @@ var init = function () {
       }
       console.log(alarmedhour);
   }
+
   hourup.addEventListener('click',hourupBtnAct)
   hourdown.addEventListener('click',hourdownBtnAct)
 
@@ -366,9 +369,92 @@ var init = function () {
 
   //알람시간=지금시간일때 글씨가 나오는 함수
 
+  var lotto1 =document.getElementById('lotto1');
+  var lotto2 =document.getElementById('lotto2');
+  var lotto3 =document.getElementById('lotto3');
+  var lotto4 =document.getElementById('lotto4');
+  var lotto5 =document.getElementById('lotto5');
+  var lotto6 =document.getElementById('lotto6');
+  var lotto7 =document.getElementById('lotto7');
+  var lottogo =document.getElementById('lottogobtn');
+  var lottoreset =document.getElementById('lottoresetbtn');
+
+//빈 배열 만들기
 
 
+  var lottonum=[];
 
+  function luckyIs(){
+    lotto1.innerHTML='';
+    lotto2.innerHTML='';
+    lotto3.innerHTML='';
+    lotto4.innerHTML='';
+    lotto5.innerHTML='';
+    lotto6.innerHTML='';
+    lotto7.innerHTML='';
+    randomAction();
+  }
+  function luckyreset(){
+    lotto1.innerHTML='1';
+    lotto2.innerHTML='2';
+    lotto3.innerHTML='3';
+    lotto4.innerHTML='4';
+    lotto5.innerHTML='5';
+    lotto6.innerHTML='6';
+    lotto7.innerHTML='7';
+  }
+
+  function randomAction() {
+    for(var a=0; a<7; a++) {
+     lottonum[a] = 0;
+    }
+    for(var i=0; i<7; i++) {
+     for(var j=0; j<=i; j++) {
+      var aaa = Math.floor(Math.random() * 45) + 1;
+      if(aaa == lottonum[j]) {
+       aaa = Math.floor(Math.random() * 45) + 1;
+      }
+      else {
+       lottonum[i] = aaa;
+      }
+     }
+    }
+    lotto1.innerHTML=lottonum[0];
+    lotto2.innerHTML=lottonum[1];
+    lotto3.innerHTML=lottonum[2];
+    lotto4.innerHTML=lottonum[3];
+    lotto5.innerHTML=lottonum[4];
+    lotto6.innerHTML=lottonum[5];
+    lotto7.innerHTML=lottonum[6];
+    }
+
+
+  lottogo.addEventListener('click',luckyIs)
+  lottoreset.addEventListener('click',luckyreset)
+
+  // 계산기
+  var cal1 =document.getElementById('cal1');
+  var cal2 =document.getElementById('cal2');
+  var cal3 =document.getElementById('cal3');
+  var cal4 =document.getElementById('cal4');
+  var cal5 =document.getElementById('cal5');
+  var cal6 =document.getElementById('cal6');
+  var cal7 =document.getElementById('cal7');
+  var cal8 =document.getElementById('cal8');
+  var cal9 =document.getElementById('cal9');
+  var cal0 =document.getElementById('cal0');
+  var cal00 =document.getElementById('cal00');
+  var ac =document.getElementById('AC');
+  var calIs =document.getElementById('calIs');
+  calNum=0;
+  caltotal=0;
+
+  function calwhat(a){
+    calNum=calNum+a;
+    calIs.innerHTML=calNum;
+  }
+  function calthe1(){calwhat(1)}
+  cal1.addEventListener('click',calthe1)
 
 
 
