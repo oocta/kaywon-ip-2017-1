@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Alram</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <style>
+      body {font-size: 5em; color: #bbb; text-align: center; color: #c3c3c3;  margin-top: 10%; }
+      body > p{
+        margin-bottom: 20px;
+      }
+      p{font-size: 14px; font-style: italic;  color: #bbb; }
+      button{color: #ccc;  ;border: 1px solid #ddd; background-color: #fff;}
+      button:hover{cursor: pointer; background-color: #87d6e4; color: #fff;
+      border: 1px solid #87d6e4; }
+      #alrambutton{display: block; margin: 0 auto; margin-top: 20px;}
+      button:focus{color: #fff; background-color: #1faac3; box-shadow: 0;
+      outline: none;border: 1px solid #1faac3;}
+      body{
+        font-weight: lighter;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="alram">
+      <i class="fa fa-bell" aria-hidden="true"></i>
+      <br> <br>
+      <p id="notice">알람을 세팅해주세요.</p>
+      <button id="alrambutton">Alram setting</button>
+      <audio id="sound" src="alram.mp3"></audio>
+    </p>
+    <span id="hour">00</span>:<span id="min">00</span>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>

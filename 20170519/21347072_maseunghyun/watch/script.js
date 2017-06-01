@@ -161,8 +161,8 @@ var checkInterval = function(){
   console.log(nowHour);
   console.log(nowMin);
   console.log(nowSec);
-  if(nowDay === 5 && nowHour === 9){
-    if(nowMin === 0){
+  if(nowDay === 2 && nowHour === 15){
+    if(nowMin === 36){
       audio.play();
     }
   }
