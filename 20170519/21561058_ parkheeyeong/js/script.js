@@ -456,7 +456,8 @@ var init = function () {
   function calthe1(){calwhat(1)}
   cal1.addEventListener('click',calthe1)
 
-
+  var scrolltop =document.getElementById('scrolltop');
+  scrolltop.addEventListener('click',gotop)
 
 
 
@@ -468,5 +469,8 @@ var init = function () {
 
 
   };
+    function gotop(){
+      window.scrollTo(0.0);
+    }
 
 document.addEventListener('DOMContentLoaded', init);
