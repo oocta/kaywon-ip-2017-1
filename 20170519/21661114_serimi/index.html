@@ -89,6 +89,10 @@
         var year = document.getElementById('year');
         var month = document.getElementById('month');
         var date = document.getElementById('date');
+
+        var hour =document.getElementById('hour1');
+        var min =document.getElementById('min1');
+        var sec =document.getElementById('sec1');
         var time;
 
         function intervalHandler(){
@@ -96,6 +100,10 @@
         year.innerHTML = time.getFullYear()+'.';
         month.innerHTML = time.getMonth()+1+'.';
         date.innerHTML = time.getDate()+'.';
+
+        hour.innerHTML = time.getHours();
+        min.innerHTML = time.getMinutes();
+        sec.innerHTML = time.getSeconds();
         }
 
         setInterval(intervalHandler,1000);
@@ -104,7 +112,10 @@
       </script>
         <h1>HELLO MALANG97 WORLD</h1>
         <h2>TODAY IS..</h2>
-        <span id="year"></span><span id="month"></span><span id="date"></span>
+        <div class="wts">
+          <span id="year"></span><span id="month"></span><span id="date"></span><br>
+          <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span><br>
+        </div>
     </div>
     <div id="alram">
       <div class="watch">
@@ -123,27 +134,78 @@
     <div id="clock">
       <div class="watch2">
         <script>
-          var init = function () {
-            var hour =document.getElementById('hour1');
-            var min =document.getElementById('min1');
-            var sec =document.getElementById('sec1');
-            var time;
+          var init = function (){
 
-            function intervalHandler() {
               time = new Date();
               hour.innerHTML = time.getHours();
               min.innerHTML = time.getMinutes();
               sec.innerHTML = time.getSeconds();
+              var hour1 = document.getElementById('hour1');
+              var min1 = document.getElementById('min1');
+              var alarmButton = document.getElementById('alarmButton');
+              var alert = document.getElementById('alert');
+              var audio = new Audio('./images/SHINee_Everybody.mp3');
+
+              var setHour;
+              var setMin;
+              var hour2;
+              var min2;
+              var isRunning = false;
+
+              function addZero(num) {
+                if (num<10) {
+                  return '0'+num;
+                }
+                else {
+                  return num;
+                }
+              }
+              function alarmSetting(){
+                setHour = parseInt(prompt('시간을 입력해주세여'), 10);
+                setMin = parseInt(prompt('분을 입력해주세여'), 10);
+
+                if(typeof setHour === 'number' && typeof setMin === 'number'){
+                  if(setHour>23 || setMin>59){
+                    alert.innerHTML = '숫자를 입력해주세여';//입력 암것돈ㄴ
+                  }else{
+                    hour1.innerHTML = addZero(setHour);
+                    min1.innerHTML= addZero(setMin);
+                    alert.innerHTML = 'Setup is complete';
+                  }
+                }else if(typeof setHour === 'string' || typeof setMin === 'string'){
+                  alert.innerHTML = '숫자만 입력해주세여';
+                }
+              }
+              function GoAlarm(){
+                time = new Date();
+                hour2 = time.getHours();
+                min2 = time.getMinutes();
+                //알람성공
+                if(setHour === hour2 && setMin === min2){
+                  alert.innerHTML = '!!!!!!!!!!!!!!';
+                  audio.play();
+                }
+                alarmButton.addEventListener('click',function(){
+                if(isRunning === false){
+                  alarmSetting();
+                  isRunning = true;
+                }
+                //알람재설정
+                else if(isRunning === true){
+                  alert.innerHTML = 'Please set alarm';
+                  clearInterval();
+                  audio.load();
+                  alarmSetting();
+                }
+              });
             }
-
-            setInterval(intervalHandler,1000);
-            };
-
+          }
             document.addEventListener('DOMContentLoaded',init);
          </script>
-          <p>WHAT TIME IS IT?</p>
+          <p>ALARM</p>
+          <p id="alert">please set alarm</p>
           <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span>
-          <div clas="button"><button id="resetButton">Alram</button></div>
+          <div clas="button"><button id="alarmButton">Alram</button></div>
       </div>
     </div>
   </body>

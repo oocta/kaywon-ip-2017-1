@@ -53,9 +53,6 @@ button{
 	    background-color: transparent;
 	    border: solid 3px #fff;
 }
-.hover{
-	 	hover,background-color: red;
-}
 .watch{
 	/*position: absolute;
 	top: 50%;
@@ -66,7 +63,7 @@ button{
 }
 .watch2{
 	position: relative;
-	top: 40%;
+	top: 25%;
 }
 #lap{font-size: 20px;}
 #alram{
@@ -86,14 +83,23 @@ p{
 	display: inline-block;
 	font-size: 100px;
 	font-weight: bold;
-	margin-top: 20%;
+	margin-top: 150px;
 }
 #mainvisual h2{
 	font-size: 50px;
 	font-weight: bold;
 	margin-top: 20px;
+	margin-bottom: 30px;
 }
 #clock{
 	height: 100vh;
 	background-image: linear-gradient(-225deg, #e73765 0%, #e7bc37 52%, #e77137 100%);
+}
+.wts{
+	display: inline-block;
+	/*border: solid 3px #fff;*/
+	border-radius: 10%;
+}
+.alert{
+	font-size: 20px;
 }
