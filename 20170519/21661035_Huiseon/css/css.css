@@ -109,6 +109,7 @@ body{background-color: #000; overflow: hidden;}
  	#jsalarmclock> input:hover{border: 0px;color:#cdad72; cursor: pointer;background-color: rgba(255, 255, 255, 0.2);}
 	select{font-family: 'DS-DIGIT', cursive;color:#fff;border: 0px;background-color: inherit;font-size: 40px;}
 	select:hover{color: #cdad72;cursor: pointer;}
+	sub{font-size: 20px;}
 /*소리*/
 .sd{display: block;width: 790px; position: relative;top:15px;}
 #BtS{margin: 40px 0 20px 0;}
