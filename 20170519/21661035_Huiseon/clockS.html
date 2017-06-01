@@ -2,9 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="./js/watch.js"></script>
-    <script src="./js/jquery-1.12.4.min.js"></script>
+    <title>타이머</title>
+    <script src="./js/clockS.js"></script>
     <link rel="stylesheet" href="./css/css.css">
   </head>
   <body>
@@ -18,12 +17,18 @@
   </nav>
     <article class="stopwatch">
       <div id="clockS">
-        <span id="hourS">00</span>:<span id="minS">00</span>:<span id="secS">00</span>
+        <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>:<span id="msec">00</span>
+      </div>
       </div>
       <div id="BtS">
         <button id="startButton" >Start</button>
         <button id="stopButton" >Stop</button>
         <button id="resetButton" >Reset</button>
+        <button id="lapButton" >Lap</button>
+      </div>
+      <div class="center">
+        <ul id="laplist">
+        </ul>
       </div>
     </article>
     <footer>

@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="./js/watch.js"></script>
+    <title>알람</title>
+    <script src="./js/clockA.js"></script>
     <script src="./js/jquery-1.12.4.min.js"></script>
     <link rel="stylesheet" href="./css/css.css">
 
@@ -17,22 +17,26 @@
         <li><a href="clockA.html">Alarm Watch</a></li>
       </ul>
     </nav>
-<!--
-    <article class="alarmwatch">
-      <div id="clockA">
-        <span id="hourA">00</span>:<span id="minA">00</span>:<span id="secA">00</span>
+
+    <article class="AlarmWatch">
+      <div id="jsalarmclock">
+        <div><div class="leftcolumn">현재 시간</div> <span id="jsalarm_ct" ></span></div>
+        <div><div class="leftcolumn">시간 설정</div> <span><select></select> Hour</span> <span><select></select> Minutes</span> <span><select></select> Seconds</span></div>
+        <input type="submit" value="알람 시작" id="submitbutton" /> <input type="reset" value="리셋" id="resetbutton" />
+
+
+        <div class="sd"><div class="leftcolumn ">소리</div> <input type="text" id="musicloc"  value="http://www.blueb.co.kr" /></div>
       </div>
-      <div id="BtW">
-        <button id="startButton">Start</button>
-        <button id="stopButton">Stop</button>
-        <button id="resetButton">Reset</button>
-        기능구현에 실패하였습니다.
-      </div>
+      </form>
     </article>
--->
+
+
     <footer>
       <span>ⓒ 2017.21661035.Kim Huiseon.</span>
     </footer>
+    <script type="text/javascript">
+      jsalarm.init()
+    </script>
 
   </body>
 </html>
