@@ -72,10 +72,10 @@ var init = function() {
         geth = time.getHours();
         gets = time.getSeconds();
         getm = time.getMinutes();
-        hour = geth - 5;
+        hourDu = geth - 5;
         box.style.backgroundImage = "url('./images/dubai.jpg')";
 
-        if (hour >= 12) { // 시간이 12보다 클 때 PM으로 세팅
+        if (hourDu >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
         bbb.innerHTML = addZero(hour) + ':' + addZero(getm) + ':' + addZero(gets);
@@ -88,11 +88,11 @@ var init = function() {
         geth = time.getHours();
         gets = time.getSeconds();
         getm = time.getMinutes();
-        hour2 = geth - 1;
+        hourSh = geth - 1;
         box.style.backgroundImage = "url('./images/sh.jpg')";
 
 
-        if (hour2 >= 12) { // 시간이 12보다 클 때 PM으로 세팅
+        if (hourSh >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
         bbb.innerHTML = addZero(hour2) + ':' + addZero(getm) + ':' + addZero(gets);
@@ -122,8 +122,6 @@ var init = function() {
         getm = time.getMinutes();
         hourNy = geth - 13;
         box.style.backgroundImage = "url('./images/newyork.jpg')";
-
-
 
         if (hourNy >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
@@ -228,23 +226,33 @@ document.addEventListener('DOMContentLoaded', init2);
 //알람시계
 //set버튼 누르면 전송되게 하기
 var init3 = function() {
-    var sethour = document.getElementById('hourValue');
-    var setmin = document.getElementById('minValue');
-    var set = document.getElementById('set');
-    var now;
+  var sethour = document.getElementById('hourValue');
+  var setmin = document.getElementById('minValue');
+  var set = document.getElementById('set');
+  var ap = document.getElementById('ap');
+  var abb = document.getElementById('setAlarm');
+  var now;
 
-    function setTime() {
-        var now = new Date();
-        var setH = sethour.options[sethour.selectedIndex].value;
-        var setM = setmin.options[setmin.selectedIndex].value;
-        nowHour = now.getHours();
-        nowMin = now.getMinutes();
-        if (setM == nowMin & setH == nowHour) {
-            alert('!!!!!');
-        }
-        setInterval(setTime, 1000);
+  function setTime() {
+    var now = new Date();
+      var setH = sethour.options[sethour.selectedIndex].value;
+      var setM = setmin.options[setmin.selectedIndex].value;
+      var setap = ap.options[ap.selectedIndex].value;
+      nowHour = now.getHours();
+      nowMin = now.getMinutes();
+
+      abb.innerHTML = setap + ' ' + setH + '시 ' + setM + '분 알람이 설정되었습니다' ;
+
+      if(setap == '오후'){
+        setH = parseInt(setH,10) + 12;
+      }
+      if(setM == nowMin & setH == nowHour){
+      alert('!!!!!');
     }
-    set.addEventListener('click', setTime);
+
+    setInterval(setTime, 1000);
 }
+  set.addEventListener('click', setTime);
+};
 
 document.addEventListener('DOMContentLoaded', init3);

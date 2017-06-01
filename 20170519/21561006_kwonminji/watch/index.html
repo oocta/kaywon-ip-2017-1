@@ -31,15 +31,16 @@
     </nav> -->
     <div class="clock">
     <span id="s_hour">00</span>:<span id="s_min">00</span>:<span id="s_sec">00</span>
-  </div>
-    <div id="stbtns">
+    <div id="btnwrap">
       <button id="startButton" class="bttn-unite bttn-md bttn-primary">Start</button>
       <button id="stopButton" class="bttn-unite bttn-md bttn-primary">Stop</button>
       <button id="lapButton" class="bttn-unite bttn-md bttn-primary">Lap</button>
       <button id="resetButton" class="bttn-unite bttn-md bttn-primary">Reset</button>
+    </div>
       <ul id="lapTimes"></ul>
     </div>
   </div>
+
 
   <div class="section" id="section2">
     <!-- <nav>
@@ -47,9 +48,9 @@
       <span>21561006 KWONMINJI</span>
     </nav> -->
     <div id="alarm">
-      <select>
-        <option value="am">오전</option>
-        <option value="pm">오후</option>
+      <select id="ap">
+        <option value="오전">오전</option>
+        <option value="오후">오후</option>
       </select>
       <select name="hours" id="hourValue">
         <option value="00">시</option>
@@ -77,11 +78,12 @@
         <option value="30">30</option>
         <option value="35">35</option>
         <option value="40">40</option>
-        <option value="45">45</option>
+        <option value="48">45</option>
         <option value="50">50</option>
-        <option value="55">55</option>
+        <option value="59">55</option>
       </select>
       <button id="set">SET</button>
+            <p id="setAlarm"></p>
     </div>
 </div>
 
