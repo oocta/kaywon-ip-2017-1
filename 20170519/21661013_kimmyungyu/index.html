@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>mmyuuu</title>
+    <title>21661013 김명유</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/script.js"></script>
   </head>
@@ -14,6 +14,8 @@
       <label for="button-2"></label>
       <input type="radio" id="button-3" name="controls" />
       <label for="button-3"></label>
+      <input type="radio" id="button-4" name="controls" />
+      <label for="button-4"></label>
       <div id="slideshow-inner">
         <section>
           <article id="clock">
@@ -27,24 +29,91 @@
               <li><p id="ampm">AM</p></li>
             </ul>
           </article>
+          <article id="worldclock">
+            <div>
+              <ul>
+                <li>
+                  <dl>
+                    <dt>Vancouver</dt>
+                    <dd id="vancouver_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>New York</dt>
+                    <dd id="newyork_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>São Paulo</dt>
+                    <dd id="saopaulo_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>London</dt>
+                    <dd id="london_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>Paris</dt>
+                    <dd id="paris_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>Moscow</dt>
+                    <dd id="moscow_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>Beijing</dt>
+                    <dd id="beijing_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>Tokyo</dt>
+                    <dd id="tokyo_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>Wellington</dt>
+                    <dd id="wellington_hour">00</dd>:
+                    <dd class="world_min">00</dd>
+                  </dl>
+                </li>
+              </ul>
+            </div>
+          </article>
           <article id="stopwatch">
-            <div class="box">
-              <div class="box"></div>
-              <div class="box"></div>
+            <div id="div">
               <span id="stop_hour">00</span>
               <span id="stop_min">00</span>
               <span id="stop_sec">00</span>
+              <ul id="button">
+                <li>
+                  <button id="startButton">Start</button>
+                  <button id="stopButton">Stop</button>
+                  <button id="lapButton">Lap</button>
+                  <button id="resetButton">Reset</button>
+                </li>
+              </ul>
+              <ul id="lapbox">
+              </ul>
             </div>
-            <ul id="button">
-              <li>
-                <button id="startButton">Start</button>
-                <button id="stopButton">Stop</button>
-                <button id="lapButton">Lap</button>
-                <button id="resetButton">Reset</button>
-              </li>
-            </ul>
-            <ul id="lapbox">
-            </ul>
           </article>
           <article id="alarm">
             <div>
@@ -55,11 +124,11 @@
             <div id="message">
               <ul>
                 <h2 id="alert">please set alarm</h2>
+                <audio id="alarmsound" src="sound/good_morning.mp3"></audio>
               </ul>
               <div id="effect"></div>
               <div id="before"></div>
             </div>
-
           </article>
         </div>
       </div>

@@ -30,26 +30,27 @@ q:before, q:after {content: ''; content: none;}
 table {border-collapse: collapse; border-spacing: 0;}
 a{display: block; width: 100%; height: 100%;}
 li{list-style: none;}
+button{outline: none;}
 
 body,html{
 	width: 100%;
 	height: 100%;
-	min-width: 600px;
+	min-width: 1100px;
 	font-family: 'Lato', sans-serif;
 }
 section,article{height: 100%;}
 section{
 	position: relative;
-	width: 300%;
+	width: 400%;
 	/*이동 효과*/
 	-webkit-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
 	-moz-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
 	-o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
 	transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
 }
-#slideshow-wrap{width: 100%; height: 100%; overflow: hidden;background: url('../images/background.jpg');}
+#slideshow-wrap{width: 100%; height: 100%; overflow: hidden; background: url('../images/background.jpg');}
 #slideshow-inner{width: 100%;position: relative; height: 100%; overflow: hidden;}
-article{float: left;width: 33.3333%;}
+article{float: left;width: 25%;}
 
 /*clock*/
 
@@ -128,22 +129,54 @@ article{float: left;width: 33.3333%;}
 #clock ul li{float: left; letter-spacing: 10px; font-size: 30px; height: 30px; font-style: italic; color:#fff;}
 #clock ul li:first-child{border-bottom: 1px solid #fff; width: 200px; height: 14px; margin-right: 20px;}
 
+/*worldclock*/
+
+#worldclock{position: relative;}
+#worldclock>div{
+	background: url('../images/map.png')no-repeat center;
+	background-size: cover;
+	width: 1000px; height: 560px;
+	position: absolute;
+	top: 50%; left: 50%;
+	margin: -280px 0 0 -500px;
+}
+#worldclock div ul{height: 100%; position: relative;}
+#worldclock div ul li{
+	width: 100px;
+	/*border: 1px solid #fff;*/
+	color: #fff;
+	font-style: italic;
+	position: absolute;
+}
+#worldclock div ul li:first-child{top: 160px; left: 140px;}
+#worldclock div ul li:nth-child(2){top: 200px; left: 280px;}
+#worldclock div ul li:nth-child(3){bottom: 100px; left: 360px;}
+#worldclock div ul li:nth-child(4){top: 110px; left: 400px;}
+#worldclock div ul li:nth-child(5){top: 175px; left: 485px;}
+#worldclock div ul li:nth-child(6){top: 155px; right: 310px;}
+#worldclock div ul li:nth-child(7){top: 145px; right: 165px;}
+#worldclock div ul li:nth-child(8){top: 220px; right: 35px;}
+#worldclock div ul li:last-child{bottom: 40px; right: -85px;}
+#worldclock div ul li dl dt{text-align: center; line-height: 30px;}
+#worldclock div ul li dl dd{display: inline-block; margin-right: 10px; margin-left: 17px;}
+#worldclock div ul li dl dd:last-child{margin-right: 0; margin-left: 10px;}
+
 /*stopwatch*/
 
 #stopwatch{
-	/*background-color: #47f0f6;*/
 	font-weight: bold;
 	position: relative;
 	min-width: 1100px;
-	background-size: cover;
+	background-size: 70%;
+	text-align: center;
 }
-#stopwatch .box{background-color: rgba(246,148,142,0.08); position: absolute;}
-#stopwatch>div:first-child{width: 660px; height: 520px; top: 50%; margin-top: -300px;}
-#stopwatch div div:first-child{width: 510px; height: 325px; bottom:0; left: 40px;}
-#stopwatch div div:nth-child(2){width: 580px; height: 380px; top:50%; right: -270px; margin-top: -220px;}
-#stopwatch div span{position: absolute;}
-#stopwatch #stop_hour{color: #F62459; font-size: 300px; right: 20px; top: 40px;}
-#stopwatch #stop_min{color: #fff; font-size: 210px; bottom: 140px; right: -240px;}
+#stopwatch div{
+	position: absolute;
+	top:50%; left: 50%;
+	margin: -205px 0 0 -310px;
+}
+#stopwatch #stop_hour{color: #F62459; font-size: 250px;}
+#stopwatch #stop_min{color: #fff; font-size: 160px;}
 #stopwatch #stop_sec{
 	color: #ffe5e3;
 	font-size: 80px;
@@ -154,33 +187,45 @@ article{float: left;width: 33.3333%;}
 	background: url('../images/line.png')no-repeat center;
 	background-position: -20px 40px;
 }
-#stopwatch #button{
-	display: inline-block;
-	background-color: #ed4264;
-	position: absolute;
-	left: 50%;
-	bottom: 40px;
-	margin-left: -315px;
-}
+#stopwatch #button{margin-top: 70px;}
+#stopwatch #button li{display: inline-block;}
 #stopwatch #button li button{
-	width: 155px;
+	width: 125px;
 	height: 40px;
-	background-color: #ed4264;
-	border: none;
+	background-color: rgba(0,0,0,0);
+	border: 1px solid #ed4264;
+	border-radius: 20px;
 	color: #fff;
 	letter-spacing: 1px;
 	padding:0;
-	margin:0;
+	margin: 0 0 0 20px;
+}
+#stopwatch #button li button:active{background-color: #F62459;}
+#stopwatch #button li button:first-child{margin:0;}
+#stopwatch #lapbox{
+	width: 620px;
+	height: 200px;
+	overflow-y: scroll;
+	margin-top: 50px;
 }
 #stopwatch #lapbox li{
-	position: absolute;
-	top: 60px;
-	right: 70px;
 	font-size: 30px;
 	font-weight: 300;
 	letter-spacing: 5px;
 	font-style:italic;
 	color:#fff;
+	margin-top: 20px;
+}
+
+/* 스크롤 바 */
+#lapbox::-webkit-scrollbar{
+	width: 12px;
+	background-color: rgba(255,255,255,0);
+}
+#lapbox::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(237,66,100,0.4);
 }
 
 /*alarm*/
@@ -189,7 +234,8 @@ article{float: left;width: 33.3333%;}
 #alarm div:first-child{
 	position: absolute;
 	top: 50%; left:50%;
-	margin: -50px 0 0 -130px;}
+	margin: -50px 0 0 -130px;
+}
 #alarm div span{
 	display: inline-block;
 	color: #fff;
@@ -219,6 +265,16 @@ article{float: left;width: 33.3333%;}
 }
 #alarm #message ul{width: 500px; text-align: center; color: #fff;}
 #alarm #message ul h2{letter-spacing: 1px; font-style: italic; left: 50%; text-align: center;}
+#alarm #message ul p{
+	display: block;
+	color:#fff;
+	font-size:20px;
+	font-style: italic;
+	margin-top: 15px;
+	background: -webkit-linear-gradient(120deg,#ed4264, #ffedbc);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 #alarm #message ul li{}
 #alarm #message #before{
 	background: url('../images/message.png')no-repeat center;
@@ -272,13 +328,16 @@ article{float: left;width: 33.3333%;}
 #slideshow-wrap input[type=radio]#button-1:checked~label[for=button-1]{background-color: #ff5858; opacity: 1;}
 #slideshow-wrap input[type=radio]#button-2:checked~label[for=button-2]{background-color: #F62459; opacity: 1;}
 #slideshow-wrap input[type=radio]#button-3:checked~label[for=button-3]{background-color: #ffedbc; opacity: 1;}
+#slideshow-wrap input[type=radio]#button-4:checked~label[for=button-4]{background-color: #fff; opacity: 1;}
 
 /*라벨 위치*/
 #slideshow-wrap label[for=button-1] {margin: -60px 0 0;}
 #slideshow-wrap label[for=button-2] {margin: -20px 0 0;}
 #slideshow-wrap label[for=button-3] {margin: 20px 0 0;}
+#slideshow-wrap label[for=button-4] {margin: 60px 0 0;}
 
 /*슬라이드 되는 위치*/
 #slideshow-wrap input[type=radio]#button-1:checked~#slideshow-inner>section{left: 0;}
 #slideshow-wrap input[type=radio]#button-2:checked~#slideshow-inner>section{left: -100%;}
 #slideshow-wrap input[type=radio]#button-3:checked~#slideshow-inner>section{left: -200%;}
+#slideshow-wrap input[type=radio]#button-4:checked~#slideshow-inner>section{left: -300%;}
