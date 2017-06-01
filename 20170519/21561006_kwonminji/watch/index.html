@@ -4,45 +4,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>21561006_권민지</title>
-  <link rel="stylesheet" type="text/css" href="./index.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
   <script type="text/javascript" src="./script.js"></script>
 </head>
 
 <body>
 
   <div class="section" id="section0">
-    <nav>
-      <a>CLOCK</a>
-      <span>21561006 KWONMINJI</span>
-    </nav>
-    <div id="clock">
-      <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+    <div id="btns">
+        <button id="paris" class="bttn-stretch bttn-md bttn-primary">PARIS</button>
+        <button id="dubai" class="bttn-stretch bttn-md bttn-primary">DUBAI</button>
+        <button id="seoul" class="bttn-stretch bttn-md bttn-primary">SEOUL</button>
+        <button id="shanghai" class="bttn-stretch bttn-md bttn-primary">SHANGHAI</button>
+        <button id="ny" class="bttn-stretch bttn-md bttn-primary">NEWYORK</button>
+        </div>
+    <div class="clock">
+      <span id="time"></span>
       <span id="ampm"></span>
     </div>
   </div>
 
   <div class="section" id="section1">
-    <nav>
+    <!-- <nav>
       <a>STOPWATCH</a>
       <span>21561006 KWONMINJI</span>
-    </nav>
+    </nav> -->
+    <div class="clock">
     <span id="s_hour">00</span>:<span id="s_min">00</span>:<span id="s_sec">00</span>
-    <div>
-      <button id="startButton">Start</button>
-      <button id="stopButton">Stop</button>
-      <button id="lapButton">Lap</button>
-      <button id="resetButton">Reset</button>
+  </div>
+    <div id="stbtns">
+      <button id="startButton" class="bttn-unite bttn-md bttn-primary">Start</button>
+      <button id="stopButton" class="bttn-unite bttn-md bttn-primary">Stop</button>
+      <button id="lapButton" class="bttn-unite bttn-md bttn-primary">Lap</button>
+      <button id="resetButton" class="bttn-unite bttn-md bttn-primary">Reset</button>
       <ul id="lapTimes"></ul>
     </div>
   </div>
 
   <div class="section" id="section2">
-    <nav>
+    <!-- <nav>
       <a>ALARM</a>
       <span>21561006 KWONMINJI</span>
-    </nav>
+    </nav> -->
     <div id="alarm">
+      <select>
+        <option value="am">오전</option>
+        <option value="pm">오후</option>
+      </select>
       <select name="hours" id="hourValue">
+        <option value="00">시</option>
         <option value="01">01</option>
         <option value="02">02</option>
         <option value="03">03</option>
@@ -57,6 +67,7 @@
         <option value="12">12</option>
       </select>
       <select name="minutes" id="minValue">
+        <option value="00">분</option>
         <option value="00">00</option>
         <option value="05">05</option>
         <option value="10">10</option>
