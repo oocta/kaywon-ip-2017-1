@@ -43,8 +43,9 @@ var init = function() {
     })
 
     function addZero(number) {
-        if (number < 10) {
-            return '0' + number;
+        if(number < 10){
+          number = Math.abs(number);
+          return '0' + number;
         }
         return number;
     }

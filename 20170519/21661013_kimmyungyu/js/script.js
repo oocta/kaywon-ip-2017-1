@@ -58,6 +58,12 @@ var init = function () {
     }
     return num;
   }
+  function Hour24(hours){
+    if(hours > 24){
+      return hours-24;
+    }
+    return hours;
+  }
 
 
   //worldclock
@@ -75,14 +81,16 @@ var init = function () {
   var worldmin = document.getElementsByClassName('world_min');
   function worldclock(){
     time =new Date();
-    vancouver.innerHTML = addZero(time.getHours()-16);
-    newyork.innerHTML = addZero(time.getHours()-13);
-    saopaulo.innerHTML = addZero(time.getHours()-12);
-    london.innerHTML = addZero(time.getHours()-9);
-    paris.innerHTML = addZero(time.getHours()-8);
-    moscow.innerHTML = addZero(time.getHours()-6);
-    beijing.innerHTML = addZero(time.getHours()-1);
-    tokyo.innerHTML = addZero(time.getHours());
+    hour = time.getHours();
+    vancouver.innerHTML = addZero(Hour24(hour+8));
+    newyork.innerHTML = addZero(Hour24(hour+11));
+    saopaulo.innerHTML = addZero(Hour24(hour+12));
+    london.innerHTML = addZero(Hour24(hour+16));
+    paris.innerHTML = addZero(Hour24(hour+17));
+    moscow.innerHTML = addZero(Hour24(hour+18));
+    beijing.innerHTML = addZero(Hour24(hour+23));
+    tokyo.innerHTML = addZero(hour);
+    wellington.innerHTML = addZero(Hour24(hour+3));
     for(var i = 0; i<10; i++){
       worldmin[i].innerHTML = addZero(time.getMinutes());
     }
