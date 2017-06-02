@@ -1,18 +1,16 @@
 var init = function() {
     var bbb = document.getElementById('time');
-    // var hour = document.getElementById('hour');
-    // var min = document.getElementById('min');
-    // var sec = document.getElementById('sec');
     var aaa = document.getElementById('ampm');
-    var amPm; // 초기값 AM
-    var time;
-    var timer;
+    var date = document.getElementById('date');
     var paris = document.getElementById('paris');
     var dubai = document.getElementById('dubai');
     var shanghai = document.getElementById('shanghai');
     var seoul = document.getElementById('seoul');
     var ny = document.getElementById('ny');
     var box = document.getElementById('section0');
+    var amPm; // 초기값 AM
+    var time;
+    var timer;
 
     timer = setInterval(timeSeoul, 1000)
 
@@ -44,93 +42,103 @@ var init = function() {
 
     function addZero(number) {
         if(number < 10){
-          number = Math.abs(number);
           return '0' + number;
-        }
+        }if(number < 0){
+                return 24 + number;
+              }
+              return number;
         return number;
     }
 
     function timeParis() {
         amPm = 'AM'; // 초기값 AM
         time = new Date();
-        geth = time.getHours();
         gets = time.getSeconds();
         getm = time.getMinutes();
-        hourp = geth - 7;
+        var partime = new Date(time.getTime() - (7 * 60 * 60 * 1000));
+        parti = partime.getHours();
+        console.log(time.getMonth());
+        parishour = partime.getMonth();
+        // part = partime.getDate();
         box.style.backgroundImage = "url('./images/paris.jpg')";
 
-        if (hourp >= 12) { // 시간이 12보다 클 때 PM으로 세팅
+        if (parishour >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
-        bbb.innerHTML = addZero(hourp) + ':' + addZero(getm) + ':' + addZero(gets);
+        bbb.innerHTML = addZero(parishour) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
-
+        date.innerHTML = partime.getFullYear() + '년 ' + (partime.getMonth() + 1) + '월 ' + partime.getDate() + '일';
     }
 
     function timeDubai() {
         amPm = 'AM'; // 초기값 AM
         time = new Date();
-        geth = time.getHours();
         gets = time.getSeconds();
         getm = time.getMinutes();
-        hourDu = geth - 5;
+        var dubaitime = new Date(time.getTime() - (5 * 60 * 60 * 1000));
+        dubaihour = dubaitime.getHours();
         box.style.backgroundImage = "url('./images/dubai.jpg')";
 
-        if (hourDu >= 12) { // 시간이 12보다 클 때 PM으로 세팅
+        if (dubaihour >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
-        bbb.innerHTML = addZero(hourDu) + ':' + addZero(getm) + ':' + addZero(gets);
+        bbb.innerHTML = addZero(dubaihour) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
-    }
-
+        date.innerHTML = dubaitime.getFullYear() + '년 ' + (dubaitime.getMonth() + 1) + '월 ' + dubaitime.getDate() + '일';
+      }
     function timeShanghai() {
         amPm = 'AM'; // 초기값 AM
         time = new Date();
-        geth = time.getHours();
         gets = time.getSeconds();
         getm = time.getMinutes();
-        hourSh = geth - 1;
+        var shtime = new Date(time.getTime() - (1 * 60 * 60 * 1000));
+        shhour = shtime.getHours();
         box.style.backgroundImage = "url('./images/sh.jpg')";
 
 
-        if (hourSh >= 12) { // 시간이 12보다 클 때 PM으로 세팅
+        if (shhour >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
-        bbb.innerHTML = addZero(hourSh) + ':' + addZero(getm) + ':' + addZero(gets);
+        bbb.innerHTML = addZero(shhour) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
+        date.innerHTML = shtime.getFullYear() + '년 ' + (shtime.getMonth() + 1) +'월 ' + shtime.getDate() +'일';
     }
 
     function timeSeoul() {
         amPm = 'AM'; // 초기값 AM
         time = new Date();
-        geth = time.getHours();
+        seoultime = time.getHours();
         gets = time.getSeconds();
         getm = time.getMinutes();
         box.style.backgroundImage = "url('./images/seoul.jpg')";
 
-        if (geth >= 12) { // 시간이 12보다 클 때 PM으로 세팅
+        if (seoultime >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
-        bbb.innerHTML = addZero(geth) + ':' + addZero(getm) + ':' + addZero(gets);
+        bbb.innerHTML = addZero(seoultime) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
+        date.innerHTML = time.getFullYear() + '년 ' + (time.getMonth() + 1) +'월 ' + time.getDate() +'일';
     }
 
     function timeNy() {
         amPm = 'AM'; // 초기값 AM
         time = new Date();
-        geth = time.getHours();
         gets = time.getSeconds();
         getm = time.getMinutes();
-        hourNy = geth - 13;
+        var nytime = new Date(time.getTime() - (13 * 60 * 60 * 1000));
+        nyhour = nytime.getHours();
         box.style.backgroundImage = "url('./images/newyork.jpg')";
 
-        if (hourNy >= 12) { // 시간이 12보다 클 때 PM으로 세팅
+        if (nyhour >= 12) { // 시간이 12보다 클 때 PM으로 세팅
             amPm = 'PM';
         }
-        bbb.innerHTML = addZero(hourNy) + ':' + addZero(getm) + ':' + addZero(gets);
+        bbb.innerHTML = addZero(nyhour) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
+        date.innerHTML = nytime.getFullYear() + '년 ' + (nytime.getMonth() + 1) +'월 ' + nytime.getDate() +'일';
     }
-
+//
+// var nytime = new Date(time.getTime() - (13 * 60 * 60 * 1000));
+// nytime = nytime.getHours();
 
 }
 document.addEventListener('DOMContentLoaded', init);
@@ -231,7 +239,7 @@ var init3 = function() {
   var setmin = document.getElementById('minValue');
   var set = document.getElementById('set');
   var ap = document.getElementById('ap');
-  var abb = document.getElementById('setAlarm');
+  var setAlarm = document.getElementById('setAlarm');
   var audio = new Audio('alarm.mp3');
   var now;
 
@@ -243,7 +251,7 @@ var init3 = function() {
       nowHour = now.getHours();
       nowMin = now.getMinutes();
 
-      abb.innerHTML = setap + ' ' + setH + '시 ' + setM + '분 알람이 설정되었습니다' ;
+      setAlarm.innerHTML = setap + ' ' + setH + '시 ' + setM + '분 알람이 설정되었습니다' ;
 
       if(setap == '오후'){
         setH = parseInt(setH, 10) + 12;
