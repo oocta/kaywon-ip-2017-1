@@ -237,8 +237,10 @@ var init3 = function() {
   var set = document.getElementById('set');
   var ap = document.getElementById('ap');
   var setAlarm = document.getElementById('setAlarm');
+  var stopbb = document.getElementById('stopAlarm');
   var audio = new Audio('alarm.mp3');
   var now;
+  var timer2;
 
   function setTime() {
     var now = new Date();
@@ -254,12 +256,22 @@ var init3 = function() {
         setH = parseInt(setH, 10) + 12;
       }
       if(setM == nowMin & setH == nowHour){
+        stopbb.style.display="block";
         audio.play();
       }
+    }
 
-    setInterval(setTime, 1000);
+    function stopAction() {
+      clearInterval(timer2);
+      audio.stop();
+    }
+
+  set.addEventListener('click', function() {
+     timer2 = setInterval(setTime, 1000)});
+  stopbb.addEventListener('click', function() {
+    clearInterval(timer2);
+
+  });
 }
-  set.addEventListener('click', setTime);
-};
 
 document.addEventListener('DOMContentLoaded', init3);

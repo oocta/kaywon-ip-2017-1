@@ -325,16 +325,41 @@ select {
   border-radius: 0px;
 	background-color: rgba(255, 255, 255, 0.1);
 	color:#fff;
+	margin-bottom:40px;
 }
 
+#section2 button {
+	width:100px;
+	padding:9px 5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border:0;
+	color:#fff;
+	font-size:12px;
+}
 
-button#set {width:100px;
+button#set {
+	width:100px;
 padding:9px 5px;
 background-color: rgba(255, 255, 255, 0.1);
 border:0;
 color:#fff;
 font-size:12px;
+}
 
+#section2 a {
+	/*display:none;*/
+	margin:0 auto;
+	border-radius:20px;
+	border:1px solid #9FA8DA;
+	width:100px;
+	height:30px;
+	line-height:30px;color:#fff;
+	text-align:center;
+	font-size:12px;
+}
+
+#section2 a:hover {
+	background-color: #9FA8DA;
 }
 
 /*section2 end*/
