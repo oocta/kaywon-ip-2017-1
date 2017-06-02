@@ -85,6 +85,9 @@ var init = function () {
   if( hourIs > 12 ){
     timehour.innerHTML = addZero( hourIs - 12 );
     ampm.innerHTML = ' PM'}
+    if( hourIs === 12 ){
+      timehour.innerHTML = addZero( hourIs );
+      ampm.innerHTML = ' PM'}
   else{
     ampm.innerHTML = ' AM'
     timehour.innerHTML =addZero(hourIs);}
@@ -95,6 +98,7 @@ var init = function () {
   //알람  html
   if( sethourIs === hourIs && setminIs === minIs ){
     alarmNow = true;
+    if(secIs == 00){alert("시간이 되었습니다");}
   }
   if( alarmNow === true ){
     alarmtxt.innerHTML = '이 되었습니다!';
@@ -208,8 +212,7 @@ var init = function () {
   var secInterval;
   //초시계 동작 상태를 담고 있는 변수, 동작중이면 true, 멈춘상태면 false
   var isRunning = false;
-
-
+  var ispaulse = false;
 
   //스타트 버튼 클릭시 실행되는 setInterval함수
   function startInterval(){
@@ -229,15 +232,19 @@ var init = function () {
 
   //스타트버튼을 클릭 시 실행되는 함수
   function startAction(){
+      lapTimes.innerHTML='';
+
     if(isRunning ===false){
       secInterval = setInterval(startInterval,10);
       isRunning = true;
+      ispaulse = true;
     }
   }
   //스탑버튼을 클릭 시 실행되는 함수
   function stopAction(){
     clearInterval(secInterval);
     isRunning = false;
+    ispaulse = true;
   }
   //리셋버튼을 클릭 시 실행되는 함수
   function resetAction(){
@@ -249,6 +256,7 @@ var init = function () {
     secNumber = 0;
     sec.innerHTML = addZero(secNumber);
     lapTimes.innerHTML='';
+    ispaulse = false;
   }
   function lapAction(){
     var liNode = document.createElement('li');
@@ -261,6 +269,7 @@ var init = function () {
       liNode.appendChild(txtNode);
       laptimes.appendChild(liNode);
     }
+    else{lapTimes.innerHTML='start를 해주세요!';}
   }
   lapButton.addEventListener('click',lapAction);
   startbtn.addEventListener('click',startAction);
@@ -287,13 +296,23 @@ var init = function () {
   var setmin = document.getElementById('setmin');
   var alarmtxt = document.getElementById('alarmtxt');
   var alarmampm = document.getElementById('alarmampm');
+  var plusButton = document.getElementById('plusButton');
+  var minusButton = document.getElementById('minusButton');
 
 
-
+  function getRadioValue(){
+    var radios = document.getElementsByName('increment');
+    for(var i=0;i<radios.length;++i){
+      var radio = radios[i];
+       if(radio.checked===true){
+         return parseInt(radio.value,10);
+       }
+    }
+  }
   //알람 업다운을 클릭했을때 값을 주는 함수
 
   function hourupBtnAct(){
-    alarmedhour++;
+    alarmedhour = alarmedhour + getRadioValue();
       if(alarmedhour > 23){
         alarmedhour = 0;
         alarmhour.innerHTML = addZero(0);
@@ -309,11 +328,14 @@ var init = function () {
       if (alarmedhour === 12) {
         alarmhour.innerHTML = 12;
         alarmampm.innerHTML = 'pm';
-      }
+      }console.log( alarmedhour);
   }
   function hourdownBtnAct() {
-      if (alarmedhour > 0) {
-        alarmedhour = alarmedhour -1;
+        alarmedhour = alarmedhour - getRadioValue();
+        alarmhour.innerHTML = addZero(0);
+
+      if (alarmedhour < 0) {
+        alarmedhour = alarmedhour + 24;
         alarmhour.innerHTML = addZero(0);
       }
       if (alarmedhour < 12) {
@@ -328,14 +350,14 @@ var init = function () {
         alarmhour.innerHTML = 12;
         alarmampm.innerHTML = 'pm';
       }
-      console.log( alarmedhour );
+      console.log( alarmedhour);
   }
 
-  hourup.addEventListener('click',hourupBtnAct)
-  hourdown.addEventListener('click',hourdownBtnAct)
+  hourup.addEventListener('click',hourupBtnAct);
+  hourdown.addEventListener('click',hourdownBtnAct);
 
   function minupBtnAct() {
-    alarmedmin = alarmedmin + 5;
+    alarmedmin = alarmedmin + getRadioValue();
       if(alarmedmin > 59){
         alarmedmin = 0;
         alarmmin.innerHTML = addZero(0);
@@ -344,11 +366,14 @@ var init = function () {
   }
 
   function mindownBtnAct() {
-      if(alarmedmin  >  0){
-      alarmedmin  =  alarmedmin  -  5;
+      alarmedmin  =  alarmedmin  - getRadioValue();
+      if(alarmedmin<0){
+        alarmedmin = alarmedmin + 60;
       }
     alarmmin.innerHTML  =  addZero(alarmedmin);
   }
+
+
   function amBtnAct() {
       if(alarmedhour  >  12){
         alarmedhour  =  alarmedhour  -  12;

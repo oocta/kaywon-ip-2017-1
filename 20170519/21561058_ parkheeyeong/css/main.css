@@ -74,7 +74,7 @@ article:nth-child(2n) {
 .clock div {
   text-align: center;
 }
-.clo{padding-top: 200px;}
+.clo{padding-top: 150px;}
 
 .timer {
   background: url(image/stopwatch.png) no-repeat;
@@ -98,7 +98,7 @@ article:nth-child(2n) {
   background-position: center;
 }
 .alarms{font-size: 17px;}
-
+.increment{margin-top: 10px;font-size: 5px;}
 .alarmwrp {
   text-align: center;
   padding-top: 170px;
