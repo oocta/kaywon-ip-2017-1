@@ -6,50 +6,114 @@
     <title></title>
     <link rel="stylesheet" href="./css/css.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        boxReposition();
+        
+        var showBox = $('article');
+        var listButton = $('header > nav > ul > li > button');
+        
+        listButton.click(function() {
+          
+          var classValue = $(this).attr('id');
+          
+          if(!$(this).hasClass('active')) {
+            listButton.removeClass('active');
+            $(this).addClass('active');
+            showBox.stop().fadeOut('fast', function() {
+              if($(this).hasClass(classValue)){
+                $(this).hasClass('show');
+                $(this).stop().fadeIn('fast');
+              }
+            })
+          }
+        })
+        
+        listButton.mouseenter(function() {
+          $(this).stop().animate({'font-size':'25px'});
+        })
+        listButton.mouseout(function() {
+          $(this).stop().animate({'font-size':'20px'});
+        })
+      })
+      
+      $(window).resize(function(){
+        boxReposition();
+      })
+      
+      $(window).load(function(){
+        boxReposition();
+      })
+      
+      function boxReposition() {
+        var windowWidth = $(window).width();
+        var windowHeight = $(window).height();
+        var boxWidth = $('#wrapper').width();
+        var boxHeight = $('#wrpper').height();
+        
+        $('#wrapper').css('left', (windowWidth - boxWidth)/2);
+        $('#wrapper').css('top', (windowHeight - boxHeight)/10);
+      }
+    </script>
     <script type="text/javascript" src="./script/script.js"></script>
   </head>
   <body>
-    <header>
-      <h1>WHAMOOP</h1>
-    </header>
-    <section>
-      <article id="realTime">
-        <h2>WHAT TIME IS IT NOW?</h2>
-        <div class="time">
-          <span id="realHour">00</span>:<span id="realMin">00</span>:<span id="realSec">00</span>
-        </div>
-        <div class="date">
-          <span id="realYear">0000</span>.<span id="realMonth">00</span>.<span id="realDate">00</span>.<span id="realDay">DAY</span>
-        </div>
-      </article>
-      <article id="stopWatch">
-        <div class="time">
-          <span id="stopHour">00</span>:<span id="stopMin">00</span>:<span id="stopSec">00</span>:<span id="stopNum">00</span>
-        </div>
-        <p id="state">START 버튼을 눌러 작동합니다.</p>
-        <div class="buttonList">
-          <button id="startButton">START</button>
-          <button id="stopButton">STOP</button>
-          <button id="resetButton">RESET</button>
-          <button id="lapButton">LAPTIME</button>
-        </div>
-        <div class="lapTime">LapTime &#58; <span id="lapHour">00</span>:<span id="lapMin">00</span>:<span id="lapSec">00</span>:<span id="lapNum">00</span></div>
-      </article>
-      <article id="timer">
-        <div class="time">
-          <span id="timerHour">00</span>:<span id="timerMin">00</span>:<span id="timerSec">00</span>
-        </div>
-      </article>
-      <article id="selection">
-        <ul>
-          <li><button id="realTimeButton">TIME</a></li>
-          <li><button id="stopWatchButton">STOPWATCH</a></li>
-          <li><button id="timerButton">TIMER</a></li>
-        </ul>
-      </article>
-    </section>
-    <footer>
+    <div id="wrapper">
+      <header>
+        <h1>WHAMOOP</h1>
+        <nav>
+          <ul>
+            <li><button id="realTimeButton" class="realTime active">TIME</a></li>
+            <li><button id="stopWatchButton" class="stopWatch">STOPWATCH</a></li>
+            <li><button id="timerButton" class="timer">ALARM</a></li>
+            <li><button id="worldTimeButton" class="worldTime">WORLD TIME</button></li>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <article id="realTime" class="realTimeButton show">
+          <div class="date">
+            <span id="realYear">0000</span>.<span id="realMonth">00</span>.<span id="realDate">00</span>.<span id="realDay">DAY</span>
+          </div>
+          <div class="time">
+            <span id="realHour">00</span>:<span id="realMin">00</span>:<span id="realSec">00</span><span id="apm">AM</span>
+          </div>
+        </article>
+        <article id="stopWatch" class="stopWatchButton">
+          <div class="time">
+            <span id="stopHour">00</span>:<span id="stopMin">00</span>:<span id="stopSec">00</span>:<span id="stopNum">00</span>
+          </div>
+          <p id="state">START 버튼을 눌러 작동합니다.</p>
+          <div class="buttonList">
+            <button id="startButton">START</button>
+            <button id="stopButton">STOP</button>
+            <button id="resetButton">RESET</button>
+            <button id="lapButton">LAPTIME</button>
+          </div>
+          <p id="lapTime">00:00:00</p>
+        </article>
+        <article id="timer" class="timerButton">
+          <div class="timeNow">
+            <span>현재시간</span><br />
+            <span id="hourNow">00</span>:<span id="minNow">00</span>
+          </div>
+          <div class="time">
+            <div>
+              <input type="text" id="timerHour" name="timerHour" value="00">:<input type="="text id="timerMin" name="timerMin" value="00">
+            </div>
+            <div>
+              &#45;<span id="remainHour">00</span>:<span id="remainMin">00</span>
+            </div>
+          </div>
+        </article>
+        <article id="worldTime" class="worldTimeButton">
+          
+        </article>
+      </section>
+      <footer>
       
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
