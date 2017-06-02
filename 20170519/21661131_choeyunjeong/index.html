@@ -10,12 +10,22 @@
     <header>
     </header>
     <section>
+    <div class="block">
+    <div id="menu">
+      <h1 class="style"><a href="#clock">CLOCK</a></h1>
+      <h2 class="style"><a href="#stopwatch">STOPWATCH</a></h2>
+      <h3 class="style"><a href="#alarm">ALARM</a></h3>
+    </div>
+
     <div id="clock">
       <h1>CLOCK</h1>
       <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
     </div>
+  </div>
+
+  <article>
     <div id="stopwatch">
-      <h1>STOPWATHCK</h1>
+      <h1>STOPWATCH</h1>
       <span id="swhour">00</span>:<span id="swmin">00</span>:<span id="swsec">00</span>
       <div id="stbt">
         <button id="startButton">START</button>
@@ -23,8 +33,16 @@
         <button id="stopButton">STOP</button>
         <button id="resetButton">RESET</button>
       </div>
+      <div id="swbox">
+      </div>
     </div>
+  </article>
+
     <div id="alarm">
+      <h1>ALARM</h1>
+      <span id="ahour">00</span>:<span id="amin">00</span><br />
+      <button value="몇시!" id="click">HOUR</button>
+      <button value="몇분!" id="click2">MIN</button>
     </div>
   </section>
   </body>
