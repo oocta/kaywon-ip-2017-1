@@ -1,4 +1,4 @@
-var init = function () {
+var init = function () {  
   //realTime
   
   var realHour = document.getElementById('realHour');
@@ -16,6 +16,15 @@ var init = function () {
   var realTimeMonth;
   var realTimeDate;
   var realTimeDay;
+  var apm = document.getElementById('apm')
+  
+  
+  function apmControll (num) {
+    if (num > 12) {
+      apm.innerHTML = 'PM';
+      return (num / 2);
+    }
+  }
   
   function addZero (num) {
     if (num < 10) {
@@ -174,28 +183,13 @@ var init = function () {
   var stopWatchButton = document.getElementById('stopWatchButton');
   var timerButton = document.getElementById('timerButton');
   
-  realTimeButton.addEventListener('click', function(){
-    articleRealTime.style.display = "block";
-    articleStopWatch.style.display = "none";
-    articleTimer.style.display = "none";
-  })
-  
-  stopWatchButton.addEventListener('click', function(){
-    articleRealTime.style.display = "none";
-    articleStopWatch.style.display = "block";
-    articleTimer.style.display = "none";
-  })
-  
-  timerButton.addEventListener('click', function(){
-    articleRealTime.style.display = "none";
-    articleStopWatch.style.display = "none";
-    articleTimer.style.display = "block";
-  })
   
   
   
   
   
 };
+
+      
 
 document.addEventListener('DOMContentLoaded', init);
