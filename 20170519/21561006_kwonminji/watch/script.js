@@ -36,6 +36,7 @@ var init = function() {
         timer = setInterval(timeSeoul, 1000);
     })
 
+
     ny.addEventListener('click', function() {
         clearInterval(timer);
         timer = setInterval(timeNy, 1000);
@@ -129,6 +130,8 @@ var init = function() {
         bbb.innerHTML = addZero(hourNy) + ':' + addZero(getm) + ':' + addZero(gets);
         aaa.innerHTML = amPm;
     }
+
+
 }
 document.addEventListener('DOMContentLoaded', init);
 
@@ -229,6 +232,7 @@ var init3 = function() {
   var set = document.getElementById('set');
   var ap = document.getElementById('ap');
   var abb = document.getElementById('setAlarm');
+  var audio = new Audio('alarm.mp3');
   var now;
 
   function setTime() {
@@ -242,11 +246,11 @@ var init3 = function() {
       abb.innerHTML = setap + ' ' + setH + '시 ' + setM + '분 알람이 설정되었습니다' ;
 
       if(setap == '오후'){
-        setH = parseInt(setH,10) + 12;
+        setH = parseInt(setH, 10) + 12;
       }
       if(setM == nowMin & setH == nowHour){
-      alert('!!!!!');
-    }
+        audio.play();
+      }
 
     setInterval(setTime, 1000);
 }
