@@ -1,4 +1,10 @@
 var init = function(){
+  function addZero(num){
+    if(num < 10){
+       return '0' + num;
+    }
+    return num;
+  }
 
   var hour = document.getElementById('hour');
   var min = document.getElementById('min');
@@ -7,6 +13,7 @@ var init = function(){
   var stopButton = document.getElementById('stopButton');
   var resetButton = document.getElementById('resetButton');
   var lapButton = document.getElementById('lapButton');
+  var lapBox = document.getElementById('lap');
 
   var hourNumber = 0;
   var minNumber = 0;
@@ -27,11 +34,11 @@ var init = function(){
         if(minNumber>59){
           minNumber=0;
           hourNumber++;
-          hour.innerHTML = hourNumber;
+          hour.innerHTML = addZero(hourNumber);
         }
-        min.innerHTML = minNumber;
+        min.innerHTML = addZero(minNumber);
     }
-    sec.innerHTML = secNumber;
+    sec.innerHTML = addZero(secNumber);
   }
 
   function startAction(){
@@ -51,20 +58,21 @@ var init = function(){
     stopAction();
     //초시계 초기화
     secNumber = 0;
-    sec.innerHTML = secNumber;
+    sec.innerHTML = addZero(secNumber);
     minNumber = 0;
-    min.innerHTML = minNumber;
+    min.innerHTML = addZero(minNumber);
     hourNumber = 0;
-    hour.innerHTML =  hourNumber;
+    hour.innerHTML =  addZero(hourNumber);
     //랩타임초기화
-    laptimes = [];
+    lapTime = '';
   }
-  
+
   function lapAction(){
-    var time = {hour: hourNumber, min:minNumber, sec:secNumber};
-    //{hour:0 min:0 sec:0}
-    laptimes.push(time);//push-배열에 원소를 넣겠다.
-    console.log(laptimes);
+    var lapTime = addZero(hourNumber)+':'+addZero(minNumber)+':'+addZero(secNumber);
+    var text = document.createTextNode(lapTime);
+    li = document.createElement('li');
+    li.appendChild(text);
+    lapBox.appendChild(li);
   }
 
   startButton.addEventListener('click',startAction);
