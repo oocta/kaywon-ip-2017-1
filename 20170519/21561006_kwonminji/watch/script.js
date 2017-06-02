@@ -56,10 +56,7 @@ var init = function() {
         gets = time.getSeconds();
         getm = time.getMinutes();
         var partime = new Date(time.getTime() - (7 * 60 * 60 * 1000));
-        parti = partime.getHours();
-        console.log(time.getMonth());
-        parishour = partime.getMonth();
-        // part = partime.getDate();
+        parishour = partime.getHours();
         box.style.backgroundImage = "url('./images/paris.jpg')";
 
         if (parishour >= 12) { // 시간이 12보다 클 때 PM으로 세팅
