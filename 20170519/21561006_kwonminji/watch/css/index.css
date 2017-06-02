@@ -50,13 +50,16 @@ table {
 
 /*--- start ---*/
 
-ul#slide {position:fixed;z-index:999;height:88px;top:45%;margin-left:40px;}
+ul#slide {
+	position:fixed;z-index:999;
+	height:68px;top:0;bottom:0;left:40px;margin:auto;
+}
 
 ul#slide li {display:block;width:10px;font-size:10px;}
 
 ul#slide li a {width:10px;color:#fff;margin-bottom:20px;}
 
-ul#slide li:last-child {margin:0;}
+ul#slide li:last-child a {margin:0;}
 
 body {position:relative;overflow:hidden;}
 
@@ -290,14 +293,11 @@ span#time {padding:0 10px;width:300px;}
 .bttn-unite.bttn-primary:after {
   background:#9FA8DA;
 }
+
 #section1 button {
 	margin-right:8px;
 	width:100px;
 }
-/*#section1 div#stbtns {
-	text-align:center;
-	padding-top:25%;
-}*/
 
 #section1 div.clock {
 	height:176px;
@@ -314,7 +314,8 @@ span#time {padding:0 10px;width:300px;}
 	background:linear-gradient(to left, #9FA8DA, #3949AB);
 }
 
-#section1 ul#lapTimes {margin-top:10px;text-align:center;}
+#section1 ul#lapTimes {margin-top:10px;text-align:center;overflow:auto;
+height:250px;display:inline-block;}
 #section1 ul#lapTimes li {
 	font-size:12px;
 	color:#fff;
