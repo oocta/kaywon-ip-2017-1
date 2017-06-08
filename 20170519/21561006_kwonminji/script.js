@@ -354,7 +354,7 @@ var init3 = function() {
       //stopbtn 버튼을 보이게 해주고
       //오디오를 실행
       //setAlarm 안의 내용을 아래와 같이 변경해주세요.
-      if(setH == nowHour & setM == nowMin){
+      if(setH == nowHour && setM == nowMin){
         stopbtn.style.display="block";
         audio.play();
         setAlarm.innerHTML = '설정한 알람시간 입니다' ;
