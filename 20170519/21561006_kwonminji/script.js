@@ -47,7 +47,6 @@ var init = function() {
         timer = setInterval(timeSeoul, 1000);
     })
 
-
     ny.addEventListener('click', function() {
         clearInterval(timer);
         timer = setInterval(timeNy, 1000);
@@ -61,6 +60,7 @@ var init = function() {
         }
         return number;
     }
+
 
     //paris 버튼을 클릭할 때 실행되는 함수
     function timeParis() {
@@ -320,7 +320,7 @@ var init3 = function() {
   //오전 오후 지정
   var ap = document.getElementById('ap');
   var setAlarm = document.getElementById('setAlarm');
-  var stopbb = document.getElementById('stopAlarm');
+  var stopbtn = document.getElementById('stopAlarm');
   //알람 실행시 울리는 오디오
   var audio = new Audio('alarm.mp3');
   //현재 시간 담기 위함
@@ -351,13 +351,13 @@ var init3 = function() {
       }
 
       //만약 설정한 setH의 값과 현재 시간 nowHour이 같고, setM과 nowMin이 같다면
-      //stopbb 버튼을 보이게 해주고
+      //stopbtn 버튼을 보이게 해주고
       //오디오를 실행
       //setAlarm 안의 내용을 아래와 같이 변경해주세요.
       if(setH == nowHour & setM == nowMin){
-        stopbb.style.display="block";
+        stopbtn.style.display="block";
         audio.play();
-        setAlarm.innerHTML = '설정한 알람시간 ' + setap + ' ' + setH + '시 ' + setM + '분 입니다' ;
+        setAlarm.innerHTML = '설정한 알람시간 입니다' ;
       }
     }
 
@@ -369,7 +369,7 @@ var init3 = function() {
     function stopAction() {
       clearInterval(timer2);
       audio.pause();
-      stopbb.style.display="none";
+      stopbtn.style.display="none";
       setAlarm.innerHTML = '';
     }
 
@@ -377,7 +377,7 @@ var init3 = function() {
   set.addEventListener('click', function() {
      timer2 = setInterval(setTime, 1000)});
   //알람이 실행될 때만 보이는 스탑버튼을 누르면 stopAction실행
-  stopbb.addEventListener('click', stopAction);
+  stopbtn.addEventListener('click', stopAction);
 }
 
 document.addEventListener('DOMContentLoaded', init3);
