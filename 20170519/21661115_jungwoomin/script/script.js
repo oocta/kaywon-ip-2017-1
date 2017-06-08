@@ -20,9 +20,11 @@ var init = function () {
   
   
   function apmControll (num) {
-    if (num > 12) {
+    if (num > 11) {
       apm.innerHTML = 'PM';
-      return (num / 2);
+      return addZero(num - 12);
+    } else {
+      return addZero(num);
     }
   }
   
@@ -49,11 +51,11 @@ var init = function () {
     realTimeMin = realTime.getMinutes();
     realTimeSec = realTime.getSeconds();
     realTimeYear = realTime.getFullYear();
-    realTimeMonth = realTime.getMonth();
+    realTimeMonth = realTime.getMonth() + 1;
     realTimeDate = realTime.getDate();
     realTimeDay = realTime.getDay();
     
-    realHour.innerHTML = addZero(realTimeHour);
+    realHour.innerHTML = apmControll(realTimeHour);
     realMin.innerHTML = addZero(realTimeMin);
     realSec.innerHTML = addZero(realTimeSec);
     realYear.innerHTML = realTimeYear;
@@ -136,6 +138,8 @@ var init = function () {
     }
   })
   
+  var lapNum = 0;
+  
   resetButton.addEventListener('click', function(){
     stopWatchHour = 0;
     stopWatchMin = 0;
@@ -145,10 +149,8 @@ var init = function () {
     stopMin.innerHTML = addZero(stopWatchMin);
     stopSec.innerHTML = addZero(stopWatchSec);
     stopNum.innerHTML = addZero(stopWatchNum);
-    lapHour.innerHTML = addZero(0);
-    lapMin.innerHTML = addZero(0);
-    lapSec.innerHTML = addZero(0);
-    lapNum.innerHTML = addZero(0);
+    document.getElementById('lapTime').innerHTML = '';
+    lapNum = 0;
     clearInterval(interval);
     state = false;
     stateDebug.innerHTML = 'STOPWATCH가 초기화 되었습니다.';
@@ -160,28 +162,78 @@ var init = function () {
   var lapNum = document.getElementById('lapNum');
   
   lapButton.addEventListener('click', function(){
-      lapHour.innerHTML = addZero(stopWatchHour);
-      lapMin.innerHTML = addZero(stopWatchMin);
-      lapSec.innerHTML = addZero(stopWatchSec);
-      lapNum.innerHTML = addZero(stopWatchNum);
-      stateDebug.innerHTML = 'LAPTIME이 기록되었습니다.'
+    if(state === true) {
+      var lapTimes = document.createElement('li');
+      lapNum = lapNum + 1;
+      lapTimes.innerHTML = lapNum + '      ' + addZero(stopWatchHour) + ':' + addZero(stopWatchMin) + ':' + addZero(stopWatchSec) + ':' + addZero(stopWatchNum);
+      document.getElementById('lapTime').appendChild(lapTimes);
+      stateDebug.innerHTML = 'LAPTIME이 기록되었습니다.';
+    } else if (state === false) {
+      stateDebug.innerHTML = 'STOPWATCH가 실행 중이 아닙니다.';
+    }
   })
+  
   
   /*-------------------------------------------------*/
   
   //Timer
   
+  var hourNow = document.getElementById('hourNow');
+  var minNow = document.getElementById('minNow');
   
+  function timeNowHandler() {
+    var timeHourNow = realTime.getHours();
+    var timeMinNow = realTime.getMinutes();
+    hourNow.innerHTML = addZero(timeHourNow);
+    minNow.innerHTML = addZero(timeMinNow);
+  }
   
+  function timeNowInterval() {
+    setInterval(timeNowHandler, 1000);
+  }
+  
+  timeNowInterval();
+  
+  var timerHour = document.getElementById('timerHour');
+  var timerMin = document.getElementById('timerMin');
+  
+  var timerHourSel;
+  for(i = 0; i < timerHour.length; i++){
+    if(timerHour[i].selected == true) {
+      timerHourSel = timerHour.options[i].value;
+      break;
+    }
+  }
+  var timerMinSel;
+  for(o = 0; o < timerMin.length; o++){
+    if(timerMin[o].selected == true) {
+      timerMinSel = timerMin.options[o].value;
+      break;
+    }
+  }
+  
+  function alarmHandler() {
+    if(timerHourSel == timeHourNow && timerMinSel == timeMinNow) {
+      alert('설정된 시간입니다.');
+    } 
+  }
+  var alarmIn;
+  function alarmInterval() {
+    alert('알람이 설정되었습니다.');
+    alarmIn = setInterval(alarmHandler, 1000);
+  }
+  
+  function clearAlarm() {
+    alert('알람이 해제되었습니다.');
+    clearInterval(alarmIn);
+  }
+  
+  var setAlarm = document.getElementById('setAlarm');
+  var resetAlarm = document.getElementById('resetAlarm');
+  setAlarm.addEventListener('click', alarmInterval);  
+  resetAlarm.addEventListener('click', clearAlarm);
   
   /*------------------------------------------------*/
-  
-  var articleRealTime = document.getElementById('realTime');
-  var articleStopWatch = document.getElementById('stopWatch');
-  var articleTimer = document.getElementById('timer');
-  var realTimeButton = document.getElementById('realTimeButton');
-  var stopWatchButton = document.getElementById('stopWatchButton');
-  var timerButton = document.getElementById('timerButton');
   
   
   
