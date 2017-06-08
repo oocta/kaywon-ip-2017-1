@@ -1,0 +1,109 @@
+.overlay{
+	display:none;
+	position:fixed;
+	height:100%;
+	top:0;
+	left:0;
+	background-color:rgba(0,0,0,0.2);
+	z-index:10;
+}
+
+#alarm-dialog, 
+#time-is-up{
+	width:500px;
+	height:375px;
+	background-color:#fff;
+	border-radius:2px;
+	box-shadow: 0 0 8px rgba(0,0,0,0.2);
+	position:fixed;
+	top:200px;
+	left:50%;
+	margin-left:-250px;
+	text-align:center;
+}
+
+#alarm-dialog h2{
+	text-transform: uppercase;
+	font-size:20px;
+	color:#5e6268;
+	padding: 50px 0;
+}
+
+#alarm-dialog label{
+	text-transform: uppercase;
+	background-color: #f4f4f4;
+	width: 80px;
+	height: 62px;
+	font-size: 15px;
+	display: inline-block;
+	padding: 10px;
+	margin: 4px;
+  color: #383838;
+}
+
+#alarm-dialog label input{
+	display: block;
+	border: 0;
+	font: inherit;
+	font-size: 17px;
+	padding: 6px;
+	outline: none;
+	text-align: center;
+	width: 59px;
+	margin: 10px auto;
+	background-color:#fff;
+}
+
+#alarm-dialog .button-holder{
+	padding-top: 50px;
+	padding-bottom:0;
+}
+
+#alarm-dialog .button-holder .button{
+	box-shadow:0 2px 2px #eee;
+	padding:13px 22px;
+	margin:3px;
+}
+a.button{
+	background-color:#b575f1;
+	width: 400px;
+	background-image:linear-gradient(top, #f6a7b3, #f0a3af);
+	border-radius:2px;
+	color:#fff;
+	text-decoration: none !important;
+	padding:15px 20px;
+	display:inline-block;
+	cursor:pointer;
+	position:relative;
+	z-index: 1;
+}
+
+a.button:hover{
+	opacity:0.9;
+}
+
+
+#alarm-dialog .close{
+	width: 36px;
+	height: 36px;
+	background: url(images/close.png);
+	position: absolute;
+	top: -18px;
+	right: -18px;
+	cursor:pointer;
+}
+
+#time-is-up{
+	height: 240px;
+}
+
+#time-is-up h2{
+	padding: 60px 0 40px;
+	font-size: 30px;
+  color: #2d2d2d;
+}
+
+#time-is-up .button{
+	padding: 12px 20px;
+	box-shadow: 0 2px 2px #eee;
+}
