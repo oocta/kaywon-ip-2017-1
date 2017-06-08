@@ -1,0 +1,182 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.hvr-bounce-in {
+  display: inline-block; vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0); box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+  -webkit-transform: scale(1.2); transform: scale(1.2);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.hvr-buzz {
+  display: inline-block; vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0); box-shadow: 0 0 1px transparent;
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+  -webkit-animation-name: hvr-buzz; animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s; animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+/********************/
+
+html,body{height: 100%;	background: linear-gradient(to right, #83a4d4, #b6fbff);}
+
+button{display: inline-block;
+  background-color: #fff; width: 100px; border: 1px solid #fff; border-radius:300px;font-size: 15px;}
+button:hover{border: 1px solid #95c1e4; background-color: #95c1e4;}
+button:active{}
+
+.style a:link{color: #caf0ff; text-decoration: none;}
+.style a:hover{
+  	border: 0 solid rgba(202, 240, 255, 0.2);
+  	background-color: rgba(202, 240, 255, 0.2);
+  	padding: 13px 20px 13px 0;
+  }
+
+
+nav{}
+nav #menu{
+  display: inline-block;
+  position: fixed;
+  height: 300px;
+	float: left;
+	color: #caf0ff; font-size: 20px;
+	padding-left: 20px;
+	padding-top: 100px;
+}
+nav #menu .style{font-size: 30px;  width: 100px;
+  height: 30px;
+  padding-bottom: 50px;}
+nav #menu h1{}
+nav #menu h2{}
+nav #menu h3{}
+nav #menu .style a{color: #caf0ff;}
+
+
+
+section{}
+section .lab{min-height: 100%;margin-top: 200px; margin-bottom: 200px;}
+section #clock{
+  text-align: center; color: #fff; font-size: 100px;
+	margin: 0 auto;
+	border: 1px solid #fff;
+	border-radius:300px;
+	width:500px;
+	height:300px;
+	padding-top: 100px;
+  box-shadow: 25px 25px 3px rgba(0 , 0, 0, 0.1);
+}
+section #clock h1{
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+section #clock span{}
+
+section #stopwatch{
+  min-height: 100%;
+  margin-top: 100px;
+  text-align: center; color: #fff; font-size: 100px;
+  margin: 70px auto;
+  border: 1px solid #fff;
+  border-radius:100px;
+  width:550px;
+  height:300px;
+  padding-top: 100px;
+  box-shadow: 25px 25px 3px rgba(0 , 0, 0, 0.1);
+  background-color: linear-gradient(to right, #83a4d4, #69ffff;);
+
+}
+section #stopwatch h1{
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+section #stopwatch #stbt{}
+
+section #alarm{
+  margin-top: 100px;
+  text-align: center; color: #fff; font-size: 100px;
+  margin: 70px auto;
+  border: 1px solid #fff;
+  border-radius:300px;
+  width:500px;
+  height:300px;
+  padding-top: 100px;
+  box-shadow: 25px 25px 3px rgba(0 , 0, 0, 0.1);
+
+}
+section #alarm h1{
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+section #alarm #abt{margin-top: -30px;}
