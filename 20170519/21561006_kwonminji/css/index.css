@@ -311,12 +311,12 @@ div.clock {
 
 #section2 #alarm {
 	height: 102px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 #section2 p {
@@ -351,11 +351,11 @@ select {
 
 button#set {
 	width:100px;
-padding:9px 5px;
-background-color: rgba(255, 255, 255, 0.1);
-border:0;
-color:#fff;
-font-size:12px;
+	padding:9px 5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border:0;
+	color:#fff;
+	font-size:12px;
 }
 
 #section2 a {
@@ -368,7 +368,6 @@ font-size:12px;
 	line-height:30px;color:#fff;
 	text-align:center;
 	font-size:12px;
-
 }
 
 #section2 a:hover {
