@@ -525,14 +525,26 @@ var init = function() {
     if (alarmedhour > 12) {
       alarmedhour = alarmedhour - 12;
       alarmhour.innerHTML = addZero(alarmedhour);
+      alarmampm.innerHTML = 'am';
     }
+    if (alarmedhour === 12) {
+      alarmedhour = 0;
+      alarmhour.innerHTML = addZero(alarmedhour);
+      alarmampm.innerHTML = 'am';
+    }
+    console.log(alarmedhour);
   }
 
   function pmBtnAct() {
     if (alarmedhour < 13) {
       alarmedhour = alarmedhour + 12;
-      alarmhour.innerHTML = addZero(alarmedhour);
+      alarmhour.innerHTML = addZero(alarmedhour-12);
+      if(alarmedhour === 12){
+        alarmhour.innerHTML = 12;
+      }
+      alarmampm.innerHTML = 'pm';
     }
+    console.log(alarmedhour);
   }
 
   minup.addEventListener('click', minupBtnAct);
@@ -627,6 +639,7 @@ var init = function() {
   lottogo.addEventListener('click', luckyIs)
   lottoreset.addEventListener('click', luckyreset)
 
+  //제일 위로 넘어가는 함수
   function gotop() {
     window.scrollTo(0, 0);
   }
