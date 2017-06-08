@@ -64,7 +64,7 @@ var init = function(){
     hourNumber = 0;
     hour.innerHTML =  addZero(hourNumber);
     //랩타임초기화
-    lapTime = '';
+    lapBox.innerHTML = '';
   }
 
   function lapAction(){

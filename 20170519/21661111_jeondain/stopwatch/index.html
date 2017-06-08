@@ -3,16 +3,58 @@
   <head>
     <meta charset="utf-8">
     <title>Week10 - Homework</title>
-    <style>
-    body {
-      font-size: 5em;
-    }
-    </style>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="../css/stop.css">
+    <link rel="stylesheet" href="../css/main.css">
     <script type="text/javascript" src="./watch.js"></script>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            BoxRePosition();
+        })
+        $(window).resize(function(){
+            BoxRePosition();
+        })
+        $(window).load(function(){
+            BoxRePosition();
+        })
+        function BoxRePosition(){
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+            var boxWidth = $('#box').width();
+            var boxHeight = $('#box').height();
+
+            $('#box').css('left', (windowWidth - boxWidth)/2);
+            $('#box').css('top', (windowHeight - boxHeight)/2);
+        }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+            document.getElementById("main").style.marginLeft ="0";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
   </head>
   <body>
-    <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div id="textbox">
+        <a href="../stopwatch/index.html">STOP WATCH</a>
+        <a href="../local/index.html">LOCAL TIME</a>
+        <a href="../alarm/index.html">ALRAM</a>
+      </div>
+    </div>
+
+    <div id="main">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+    
+    <div id="time">
+      <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+    </div>
+
     <div>
       <button id="startButton">Start</button>
       <button id="stopButton">Stop</button>

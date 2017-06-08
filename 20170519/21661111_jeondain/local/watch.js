@@ -42,15 +42,15 @@ var init = function(){
 
    sec1.innerHTML = addZero(time.getSeconds());
    min1.innerHTML = addZero(time.getMinutes());
-   hour1.innerHTML = addZero(ifsz(time.getHours()-7));
+   hour1.innerHTML = addZero(ifsz(time.getHours()-16));
 
    sec2.innerHTML = addZero(time.getSeconds());
    min2.innerHTML = addZero(time.getMinutes());
-   hour2.innerHTML = addZero(ifsz(time.getHours()-12));
+   hour2.innerHTML = addZero(ifsz(time.getHours()-7));
 
    sec3.innerHTML = addZero(time.getSeconds());
    min3.innerHTML = addZero(time.getMinutes());
-   hour3.innerHTML = addZero(ifsz(time.getHours()-9));
+   hour3.innerHTML = addZero(ifsz(time.getHours()-8));
  }
  intervalHandler();
  time = setInterval(intervalHandler,10);

@@ -6,10 +6,10 @@ var secNum;
 var min;
 var hour;
 var sec;
-var stop;
-var isRunning = true;
+var sound;
 
 var timer = 0;
+var bell = 0;
 function GetTime() {
      min = document.getElementById('min');
      hour = document.getElementById('hour');
@@ -17,11 +17,12 @@ function GetTime() {
 
      function intervalHandler(){
        var time = new Date();
+       sound = document.getElementById('mp3');
        min.innerHTML = time.getMinutes();
        hour.innerHTML = time.getHours();
        sec.innerHTML = time.getSeconds();
        if((time.getHours() == hourNum) && (time.getMinutes() == minNum)){
-         console.log("on");
+         sound.play();
        }
      }
 
@@ -37,10 +38,4 @@ function alarmSet() {
 
     hourNum=alarmHour.value;
     minNum=alarmmin.value;
-}
-
-function stopalarm(){
-  console.log("hello");
-  clearInterval(intervalHandler);
-  var isRunning = false;
 }
