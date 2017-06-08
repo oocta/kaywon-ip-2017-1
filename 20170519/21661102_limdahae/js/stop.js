@@ -70,7 +70,7 @@ var init = function(){
     hour.innerHTML = addZero(hourNumber);
     lap.innerHTML = '';
   }
-  //lapButton click시 실행
+  //lapButton click시 실행되는 함수
   function lapAction(){
     if(isRunning === true){
       var laptimes = addZero(hourNumber) + ':' + addZero(minNumber) + ':' + addZero(secNumber);
@@ -89,3 +89,4 @@ var init = function(){
 };
 
 document.addEventListener('DOMContentLoaded', init);
+
