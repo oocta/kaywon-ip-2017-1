@@ -58,16 +58,22 @@ var init = function () {
     }
     return num;
   }
-  function Hour24(hours){
-    if(hours > 24){
-      return hours-24;
-    }
-    return hours;
-  }
 
 
   //worldclock
 
+
+  function hourSet(num){
+    if(num < 0){
+      num = num+24;
+      return num;
+    }
+    else if(num > 24){
+      num = num%24;
+      return num;
+    }
+    return num;
+  }
 
   var vancouver = document.getElementById('vancouver_hour');
   var newyork = document.getElementById('newyork_hour');
@@ -82,16 +88,16 @@ var init = function () {
   function worldclock(){
     time =new Date();
     hour = time.getHours();
-    vancouver.innerHTML = addZero(Hour24(hour+8));
-    newyork.innerHTML = addZero(Hour24(hour+11));
-    saopaulo.innerHTML = addZero(Hour24(hour+12));
-    london.innerHTML = addZero(Hour24(hour+16));
-    paris.innerHTML = addZero(Hour24(hour+17));
-    moscow.innerHTML = addZero(Hour24(hour+18));
-    beijing.innerHTML = addZero(Hour24(hour+23));
+    vancouver.innerHTML = addZero(hourSet(hour-16));
+    newyork.innerHTML = addZero(hourSet(hour-13));
+    saopaulo.innerHTML = addZero(hourSet(hour-12));
+    london.innerHTML = addZero(hourSet(hour-8));
+    paris.innerHTML = addZero(hourSet(hour-7));
+    moscow.innerHTML = addZero(hourSet(hour-6));
+    beijing.innerHTML = addZero(hourSet(hour-1));
     tokyo.innerHTML = addZero(hour);
-    wellington.innerHTML = addZero(Hour24(hour+3));
-    for(var i = 0; i<10; i++){
+    wellington.innerHTML = addZero(hourSet(hour+3));
+    for(var i = 0; i < worldmin.length; i++){
       worldmin[i].innerHTML = addZero(time.getMinutes());
     }
   }
@@ -107,12 +113,10 @@ var init = function () {
   var hourNumber = 0;
   var minNumber = 0;
   var secNumber = 0;
-
   function hourHandler(){
     hourNumber = hourNumber + 1;
     stopHour.innerHTML = addZero(hourNumber);
   }
-
   function minHandler(){
     minNumber = minNumber+1;
     if(minNumber === 60){
@@ -121,7 +125,6 @@ var init = function () {
     }
     stopMin.innerHTML = addZero(minNumber);
   }
-
   function secHandler(){
     secNumber = secNumber+1;
     if(secNumber === 60){
@@ -211,18 +214,20 @@ var init = function () {
   function alarmSet(){
     setHour = parseInt(prompt('시 입력'), 10);
     setMin = parseInt(prompt('분 입력'), 10);
-    //아무것도 입력하지 않았을 때
     if(typeof setHour === 'number' && typeof setMin === 'number'){
       if(setHour>23 || setMin>59){
         alert.innerHTML = 'Range number in input';
+      }//아무 것도 입력하지 않았을 때 & 문자가 입력되었을 때
+      else if(isNaN(setHour) == true || isNaN(setMin) == true){
+        alert.innerHTML = 'Input only number';
+        alarmHour.innerHTML = '00';
+        alarmMin.innerHTML= '00';
       }else{
         alarmHour.innerHTML = addZero(setHour);
         alarmMin.innerHTML= addZero(setMin);
         alert.innerHTML = 'Setup is complete';
         animation = setInterval(please,1000);
       }
-    }else if(typeof setHour === 'string' || typeof setMin === 'string'){
-      alert.innerHTML = 'Input only number';
     }
   }
   function please(){
@@ -252,6 +257,5 @@ var init = function () {
       alarmSet();
     }
   });
-
 }
 document.addEventListener('DOMContentLoaded', init);
