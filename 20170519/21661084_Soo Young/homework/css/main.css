@@ -67,32 +67,37 @@ html,body{
 }
 
 body{
-	font-family: 'Nanum Gothic', sans-serif;
-	background-color: #E3E2DC;
-	
+	font-family: 'Nanum Gothic', sans-serif;	
 }
 
-#content1{ height:998px; }
-#content2{ height:998px; }
-#content3{ height:998px; }
-#content4{height: 998px;}
+#content1{ height:998px; 	background-color: #E3E2DC;}
+#content3{ height:998px; 	background-color: #E3E2DC;}
+#content4{ height: 998px; 	background-color: #E3E2DC;}
 
 
 nav{ 
 	position: fixed;
+	left: 30px;
+	top: 350px;
+	line-height: 30px;
+}
+nav ul{}
+nav ul li{
+	
+}
+nav ul li a{
+	color: #464646;
+  	text-decoration: none;
+  	font-weight: bold;
+  	font-size: 12px;
+  	cursor: pointer;
+}
+nav ul li a:hover{
+	color: #898989;
+  	cursor: pointer;
+	text-decoration: underline;
 }
 
-a{
-  color: #464646;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 12px;
-  cursor: pointer;
-}
-a:hover{
-  color: #52586A;
-  cursor: pointer;
-}
 
 
 /*
@@ -109,7 +114,7 @@ a:hover{
 
 #main-clock h1 {
   display: inline-block;
-  margin: 3rem auto;
+  margin: 50px auto;
   width: 7em;
   color: #ECEAE8;
   font-size: 40px;
@@ -580,8 +585,8 @@ a:hover{
 
 .inner-frame {
   position: absolute;
-  left: 178px;
-  top: 280px;
+  left: 280px;
+  top: 150px;
   width: 140px;
   height: 140px;
   background-color: #F2F2F2;
@@ -669,6 +674,7 @@ a:hover{
   background-color: black;
   box-shadow: 0 0 0 1px #C42028, 0 0 0 4px #E8352C;
 }
+/*
 
 .battery {
   position: absolute;
@@ -713,7 +719,7 @@ a:hover{
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
   outline: 1px solid transparent;
-  /* 3D antialiasing*/
+  
   -webkit-transform: rotate(50deg);
           transform: rotate(50deg);
 }
@@ -727,9 +733,136 @@ a:hover{
   border-width: 22px 10px 0 10px;
   border-color: white transparent transparent transparent;
   outline: 1px solid transparent;
-  /* 3D antialiasing*/
+  
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
   -webkit-transform: rotate(20deg);
           transform: rotate(20deg);
+}
+*/
+
+
+/******content2******/
+
+#content2{ 
+	height:998px;
+	background-color: #E3E2DC;
+}
+#alarm{
+	padding-top: 280px;
+}
+
+#clock {
+    height:120px;
+    font-size: 40px;
+    font-family: arial;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+	text-align:center;
+
+}
+
+#alarm-container {
+	text-align:center;
+    font-family: Verdana;
+    font-size: 0.6em;
+    padding: 0.7em;
+}
+
+label {
+	display:inline-block;
+}
+
+.timeofday {
+    background-color: #eee;
+}
+
+.bigger {
+    font-weight:bold;
+    font-size: 18px;
+}
+
+#sounds {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#setButton {
+    background-color:#aecfc8;
+    margin-top:10px;
+}
+#clearButton {
+    background-color:#f2f2f2;
+    margin-top:10px;
+}
+
+
+/******content3******/
+
+#stop h1 {
+  display: inline-block;
+  margin: 230px auto 20px;
+  width: 300px;
+  color: #ECEAE8;
+  font-size: 40px;
+  line-height: 2;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.1) -1px 0, rgba(0, 0, 0, 0.1) 0 -1px, rgba(255, 255, 255, 0.3) 1px 0, rgba(255, 255, 255, 0.3) 0 1px, rgba(0, 0, 0, 0.1) -1px -1px, rgba(255, 255, 255, 0.3) 1px 1px;
+  background-color: #CFCFCF;
+  border: 3px solid #CFCFCF;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px #898989, 0 -1px 3px #898989;
+}
+
+#startButton , #stopButton, #resetButton, #lapButton{
+	text-align: center;
+	padding: 10px;
+}
+
+#stop ul{
+	margin-top: 30px;
+	overflow: scroll;
+	width: 400px;
+	height: 200px;
+	margin:30px auto 0;
+}
+#stop ul li{
+	border: 1px solid #CECECE;
+	text-align: center;
+	font-size: 15px;
+	width: 100px;
+	height: 20px;
+	margin: auto;
+	padding-bottom: 10px;
+	line-height: 30px;
+	border-radius: 5px;
+}
+
+
+/*content4*/
+
+div.clock-container {
+  top: 50%;
+  text-align: center;
+  width: 100%;
+}
+div.clock-container > ul {
+  display: inline-block;
+  font-size: 1.3rem;
+	margin-top: 350px;
+}
+div.clock-container > ul > li {
+  float: left;
+  color: #000000;
+  overflow: hidden;
+  list-style: none;
+}
+div.clock-container > ul > li > span {
+  display: block;
+  padding: 20px;
 }

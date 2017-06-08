@@ -7,8 +7,11 @@
     <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Tulpen+One" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <div id="app"></div>
+    <script src="https://fb.me/react-15.1.0.min.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       $(function(){
 			/*
@@ -40,7 +43,7 @@
  <section id="content1">
   <div id="main-clock">
     <h1 class="the-time">
-    <span class="the-hour"></span>:<span class="the-minute"></span>:<span class="the-second"></span>
+      <span class="the-hour"></span>:<span class="the-minute"></span>:<span class="the-second"></span>
     </h1>
   </div>
   <div class="watch">
@@ -133,16 +136,85 @@
   </div>
 </div>
 </section>
-<section id="content2">알람</section>
-<section id="content3">
- <div id="stop">
-    <h1 class="">
-    <span class=""></span>:<span class=""></span>:<span class=""></span>
-    </h1>
+<section id="content2">
+  <div id="alarm">
+		<div id="main-container">
+			<h2 id="clock"></h2>
+		</div>
+
+		<div id="alarm-container">
+			<h3>Set Alarm Time</h3>
+				<label>
+					<div>
+					<select id="alarmhrs" ></select>
+					</div>
+				</label>
+				<label>
+					<div>
+					<select id="alarmmins" ></select>
+					</div>
+				</label>
+				<label>
+					<div>
+					<select id="alarmsecs" ></select>
+					</div>
+				</label>
+				<label>
+					<div>
+						<select id="ampm">
+							<option value="AM">AM</option>
+							<option value="PM">PM</option>
+						</select>
+					</div>
+				</label>
+				</div>
+		</div>
+
+		<div id="buttonHolder">
+			<div>
+				<button  id="setButton" onClick="alarmSet()">Set Alarm</button>
+			</div>
+
+			<div>
+				<button  id="clearButton" onClick="alarmClear()">Clear Alarm</button>
+			</div>
+		</div>
+
+		</div>
   </div>
 </section>
-<section id="content4">도전</section>
+<section id="content3">
+ <div id="stop">
+    <h1 class="stop-watch">
+      <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+    </h1>
+    <div>
+        <button id="startButton">START</button>
+        <button id="stopButton">STOP</button>
+        <button id="resetButton">RESET</button>
+        <button id="lapButton">LAP</button>
+        <ul id="lap">
+          
+        </ul>
+    </div>
+  </div>
+</section>
+<section id="content4">
+  <div id="map">
+     <div class="clock-container">
+        <ul>
+          <li>Los Angeles<span>12:00</span></li>
+          <li>London<span>12:00</span></li>
+          <li>Paris<span>12:00</span></li>
+          <li>Rome<span>12:00</span></li>
+          <li>Tokyo<span>12:00</span></li>
+        </ul>
+      </div>
+
+  </div>
+</section>
   
      <script type="text/javascript" src="js/watch.js"></script>
+      <script type="text/javascript" src="js/alarm.js"></script>
   </body>
 </html>
