@@ -248,7 +248,7 @@ var init2 = function() {
       //isRunning === false 이면 실행시켜주세요.
       //그리고 isRunning을 true 로 변경해주세요.
         if (isRunning === false) {
-            secInterval = setInterval(startInterval, 1000);
+            secInterval = setInterval(startInterval, 10);
             isRunning = true;
         }
     }
