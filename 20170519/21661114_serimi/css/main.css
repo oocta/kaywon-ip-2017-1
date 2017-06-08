@@ -42,7 +42,7 @@ nav ul{position:absolute;top:50%;margin-top:-56px;}
 nav li{display:inline-block;;padding-top:6px;padding-bottom:6px}
 nav li a{display:block;width:10px;height:10px;background-color:#a8a8a8;border-radius:50%;-webkit-transition:background-color 180ms ease}
 nav li a:hover, nav li a.selected{background-color:#fff}
-
+a{color: #fff}
 button{
 	font-family: 'Amatic SC', cursive;
 	    text-align: center;
@@ -90,10 +90,6 @@ p{
 	font-weight: bold;
 	margin-top: 20px;
 	margin-bottom: 30px;
-}
-#clock{
-	height: 100vh;
-	background-image: linear-gradient(-225deg, #e73765 0%, #e7bc37 52%, #e77137 100%);
 }
 .wts{
 	display: inline-block;

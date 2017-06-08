@@ -12,7 +12,7 @@
         var HYGGE = {
           _aniBool:false,
           _cuNum:0,
-          _max:6,
+          _max:2,
           init:function(){
             var _this = this;
             _this.layout();
@@ -72,10 +72,6 @@
       <ul>
         <li data-menuanchor="page1"><a href="#mainvisual" class="selected"><b>&nbsp;</b></a></li>
         <li data-menuanchor="page2"><a href="#alram"><b>&nbsp;</b></a></li>
-        <li data-menuanchor="page3"><a href="#clock"><b>&nbsp;</b></a></li>
-      <!--   <li data-menuanchor="page4"><a href="#"><b>&nbsp;</b></a></li>
-        <li data-menuanchor="page5"><a href="#"><b>&nbsp;</b></a></li>
-        <li data-menuanchor="page6"><a href="#"><b>&nbsp;</b></a></li> -->
       </ul>
     </nav>
   </header>
@@ -127,85 +123,9 @@
               <button id="stopButton">Stop</button>
               <button id="resetButton">Reset</button>
               <button id="lapButton">Lap</button>
+              <button id="AlarmButton"><a href="alarm.html">GO Alarm</a></button>
             </div>
         <ul id="lap"></ul>
-      </div>
-    </div>
-    <div id="clock">
-      <div class="watch2">
-        <script>
-          var init = function (){
-
-              time = new Date();
-              hour.innerHTML = time.getHours();
-              min.innerHTML = time.getMinutes();
-              sec.innerHTML = time.getSeconds();
-              var hour1 = document.getElementById('hour1');
-              var min1 = document.getElementById('min1');
-              var alarmButton = document.getElementById('alarmButton');
-              var alert = document.getElementById('alert');
-              var audio = new Audio('./images/SHINee_Everybody.mp3');
-
-              var setHour;
-              var setMin;
-              var hour2;
-              var min2;
-              var isRunning = false;
-
-              function addZero(num) {
-                if (num<10) {
-                  return '0'+num;
-                }
-                else {
-                  return num;
-                }
-              }
-              function alarmSetting(){
-                setHour = parseInt(prompt('시간을 입력해주세여'), 10);
-                setMin = parseInt(prompt('분을 입력해주세여'), 10);
-
-                if(typeof setHour === 'number' && typeof setMin === 'number'){
-                  if(setHour>23 || setMin>59){
-                    alert.innerHTML = '숫자를 입력해주세여';//입력 암것돈ㄴ
-                  }else{
-                    hour1.innerHTML = addZero(setHour);
-                    min1.innerHTML= addZero(setMin);
-                    alert.innerHTML = 'Setup is complete';
-                  }
-                }else if(typeof setHour === 'string' || typeof setMin === 'string'){
-                  alert.innerHTML = '숫자만 입력해주세여';
-                }
-              }
-              function GoAlarm(){
-                time = new Date();
-                hour2 = time.getHours();
-                min2 = time.getMinutes();
-                //알람성공
-                if(setHour === hour2 && setMin === min2){
-                  alert.innerHTML = '!!!!!!!!!!!!!!';
-                  audio.play();
-                }
-                alarmButton.addEventListener('click',function(){
-                if(isRunning === false){
-                  alarmSetting();
-                  isRunning = true;
-                }
-                //알람재설정
-                else if(isRunning === true){
-                  alert.innerHTML = 'Please set alarm';
-                  clearInterval();
-                  audio.load();
-                  alarmSetting();
-                }
-              });
-            }
-          }
-            document.addEventListener('DOMContentLoaded',init);
-         </script>
-          <p>ALARM</p>
-          <p id="alert">please set alarm</p>
-          <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span>
-          <div clas="button"><button id="alarmButton">Alram</button></div>
       </div>
     </div>
   </body>
