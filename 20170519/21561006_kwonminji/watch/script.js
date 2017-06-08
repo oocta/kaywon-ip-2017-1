@@ -10,7 +10,7 @@ var init = function() {
     var houris = document.getElementById('hour');
     var minis = document.getElementById('min');
     var secis = document.getElementById('sec');
-    var aaa = document.getElementById('ampm');
+    var ampmis = document.getElementById('ampm');
     var date = document.getElementById('date');
     var paris = document.getElementById('paris');
     var dubai = document.getElementById('dubai');
@@ -90,7 +90,7 @@ var init = function() {
         houris.innerHTML = addZero(parishour);
         minis.innerHTML = addZero(getm);
         secis.innerHTML = addZero(gets);
-        aaa.innerHTML = amPm;
+        ampmis.innerHTML = amPm;
         //년월일을 담아줌
         date.innerHTML = partime.getFullYear() + '년 ' + (partime.getMonth() + 1) + '월 ' + partime.getDate() + '일';
     }
@@ -115,7 +115,7 @@ var init = function() {
           houris.innerHTML = addZero(dubaihour);
           minis.innerHTML = addZero(getm);
           secis.innerHTML = addZero(gets);
-          aaa.innerHTML = amPm;
+          ampmis.innerHTML = amPm;
           date.innerHTML = dubaitime.getFullYear() + '년 ' + (dubaitime.getMonth() + 1) + '월 ' + dubaitime.getDate() + '일';
       }
 
@@ -140,7 +140,7 @@ var init = function() {
           houris.innerHTML = addZero(shhour);
           minis.innerHTML = addZero(getm);
           secis.innerHTML = addZero(gets);
-          aaa.innerHTML = amPm;
+          ampmis.innerHTML = amPm;
           date.innerHTML = shtime.getFullYear() + '년 ' + (shtime.getMonth() + 1) +'월 ' + shtime.getDate() +'일';
     }
 
@@ -163,7 +163,7 @@ var init = function() {
           houris.innerHTML = addZero(seoultime);
           minis.innerHTML = addZero(getm);
           secis.innerHTML = addZero(gets);
-          aaa.innerHTML = amPm;
+          ampmis.innerHTML = amPm;
           date.innerHTML = time.getFullYear() + '년 ' + (time.getMonth() + 1) +'월 ' + time.getDate() +'일';
     }
 
@@ -187,7 +187,7 @@ var init = function() {
           houris.innerHTML = addZero(nyhour);
           minis.innerHTML = addZero(getm);
           secis.innerHTML = addZero(gets);
-          aaa.innerHTML = amPm;
+          ampmis.innerHTML = amPm;
           date.innerHTML = nytime.getFullYear() + '년 ' + (nytime.getMonth() + 1) +'월 ' + nytime.getDate() +'일';
     }
 }
