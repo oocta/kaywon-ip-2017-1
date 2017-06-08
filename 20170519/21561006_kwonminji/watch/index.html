@@ -26,7 +26,9 @@
         </div>
     <div class="clock">
       <p id="date"></p>
-      <span id="time"></span>
+      <span id="hour"></span><span class="colon">:</span>
+      <span id="min"></span><span class="colon">:</span>
+      <span id="sec"></span>
       <span id="ampm"></span>
     </div>
   </div>
@@ -68,13 +70,13 @@
       </select>
       <select name="minutes" id="minValue">
         <option value="00">분</option>
-        <option value="00">01</option>
-        <option value="09">05</option>
+        <option value="00">00</option>
+        <option value="05">05</option>
         <option value="10">10</option>
-        <option value="19">15</option>
+        <option value="15">15</option>
         <option value="20">20</option>
         <option value="25">25</option>
-        <option value="32">30</option>
+        <option value="30">30</option>
         <option value="35">35</option>
         <option value="40">40</option>
         <option value="45">45</option>
@@ -82,11 +84,9 @@
         <option value="55">55</option>
       </select>
       <button id="set">SET</button>
-    <a id="stopAlarm">STOP</a>
-    <p id="setAlarm"></p>
+      <a id="stopAlarm">STOP</a>
+      <p id="setAlarm"></p>
     </div>
 </div>
-
 </body>
-
 </html>

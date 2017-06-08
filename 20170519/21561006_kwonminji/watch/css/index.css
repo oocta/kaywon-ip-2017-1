@@ -52,25 +52,23 @@ table {
 
 ul#slide {
 	position:fixed;z-index:999;
-	height:68px;top:0;bottom:0;left:40px;margin:auto;
+	height:79px;top:0;bottom:0;left:40px;margin:auto;
 }
 
-ul#slide li {display:block;width:10px;font-size:10px;}
+ul#slide li {display:block;font-size:13px;}
 
-ul#slide li a {width:10px;color:#fff;margin-bottom:20px;}
+ul#slide li a {color:#fff;margin-bottom:20px;}
 
 ul#slide li:last-child a {margin:0;}
 
 body {position:relative;overflow:hidden;}
 
 a {display:block;width:100%;height:100%;cursor:pointer;text-decoration:none;}
-/*
-a:visited, a:focus {text-decoration:none;}*/
 
 div.section {width:100%;height:100%;}
 
 div#section0 {
-	display:inline-block;
+		display:inline-block;
     background-image:url('../images/seoul.jpg');
     height:100%;
 		background-size:cover;
@@ -103,6 +101,12 @@ div.clock {
 #section0 span{
 	display:inline-block;
 	color:#fff;
+	width:100px;
+}
+
+#section0 span.colon {
+	width:20px;
+	opacity:0.7;
 }
 
 #section0 button {
@@ -114,8 +118,6 @@ div.clock {
 	text-align:center;
 	padding-top:50px;
 }
-
-span#time {margin:0 10px;width:300px;}
 
 #section0 .bttn-stretch {
   margin: 0;
@@ -198,7 +200,10 @@ span#time {margin:0 10px;width:300px;}
 	margin-bottom:20px;
 }
 
-/*section1*/
+/*section0 end*/
+
+
+/*section1 start*/
 
 .bttn-unite {
   background: transparent;
@@ -267,21 +272,25 @@ span#time {margin:0 10px;width:300px;}
 
 #section1 div.clock {
 	height:176px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-		color:#fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+	color:#fff;
 }
 
 #section1,#section2 {
 	background:linear-gradient(to left, #9FA8DA, #3949AB);
 }
 
-#section1 ul#lapTimes {margin-top:10px;text-align:center;overflow:auto;
-height:250px;display:inline-block;}
+#section1 ul#lapTimes {
+	margin-top:10px;
+	text-align:center;overflow:auto;
+	height:250px;display:inline-block;
+}
+
 #section1 ul#lapTimes li {
 	font-size:12px;
 	color:#fff;
@@ -294,6 +303,9 @@ height:250px;display:inline-block;}
 #section1 ul#lapTimes li:nth-child(2n) {
 	background-color: rgba(0, 0, 0, 0.2);
 }
+
+/*section1 end*/
+
 
 /*section2 start*/
 
@@ -356,7 +368,7 @@ font-size:12px;
 	line-height:30px;color:#fff;
 	text-align:center;
 	font-size:12px;
-	
+
 }
 
 #section2 a:hover {
