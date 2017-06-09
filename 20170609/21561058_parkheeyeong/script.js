@@ -47,7 +47,7 @@ var init = function() {
       document .getElementById('loginCounter').style.display = 'block';
       timer = setInterval(intervalHandeler, 100);
       secNum = 60;
-      minNum = 5;
+      minNum = 4;
     }
   }
 
