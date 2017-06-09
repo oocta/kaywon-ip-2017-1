@@ -15,24 +15,24 @@ var init = function() {
   var userDisplay = document.getElementById('userDisplay');
   
   function logInProcess() {
-    if(username.value != false) {       //username의 값이 있을 경우
-      if(userpass.value != false) {     //userpass의 값이 있을 경우
-        alert('로그인 되었습니다.');       //로그인 되었다는 창이 뜬다.
-        loginForm.style.display = "none"; //로그인폼은 숨기고
-        userDisplay.innerHTML = username.value; //userDisplay에 username의 value값을 넣는다.
-        loginCounter.style.display = "inline-block"; //그리고 loginCounter를 보이게 한다.
+    if(username.value != false) {                                        //username의 값이 있을 경우
+      if(userpass.value != false) {                                      //userpass의 값이 있을 경우
+        alert('로그인 되었습니다.');                                       //로그인 되었다는 창이 뜬다.
+        loginForm.style.display = "none";                                 //로그인폼은 숨기고
+        userDisplay.innerHTML = username.value;                           //userDisplay에 username의 value값을 넣는다.
+        loginCounter.style.display = "inline-block";                      //그리고 loginCounter를 보이게 한다.
         countDownInterval();
-      } else {                            //userpass의 값이 없을 경우
-        alert('패스워드를 입력해주세요.');    //패스워드를 입력하라는 창이 뜬다.
+      } else {                                                            //userpass의 값이 없을 경우
+        alert('패스워드를 입력해주세요.');                                  //패스워드를 입력하라는 창이 뜬다.
       }
-    } else {                              //username의 값이 없을 경우
-      alert('아이디를 입력해주세요.');        //아이디를 입력하라는 창이 뜬다.
+    } else {                                                              //username의 값이 없을 경우
+      alert('아이디를 입력해주세요.');                                      //아이디를 입력하라는 창이 뜬다.
     }
   }
   
   var login = document.getElementById('login');
   
-  login.addEventListener('click', logInProcess);    //로그인 버튼을 누르면 함수 실행.
+  login.addEventListener('click', logInProcess);                          //로그인 버튼을 누르면 함수 실행.
 
   /*
   #2 로그인 연장 로직 = 총 15점
@@ -61,17 +61,19 @@ var init = function() {
   
   //카운터 다운
   function countDownHandler() {
-    cntSec = cntSec - 1;                          //cntSec의 값을 1씩 감소시킨다.
-    if(cntSec < 0){                             //만약 cntSec의 값이 0보다 작아지면
-      cntSec = 59;                      //cntSec을 59로 바꾸고
-      cntMin = cntMin - 1;              //cntMin의 값을 1 감소시킨다.
-      if(cntMin < 0){                   //만약 cntMin의 값이 0보다 작아지면
-        alert('로그아웃 되었습니다.');     //로그아웃되었다는 창이 뜨고
-        cntMin = 5;                     //초와 분 값이 초기화되며
+    cntSec = cntSec - 1;                                                     //cntSec의 값을 1씩 감소시킨다.
+    if(cntSec < 0){                                                          //만약 cntSec의 값이 0보다 작아지면
+      cntSec = 59;                                                           //cntSec을 59로 바꾸고
+      cntMin = cntMin - 1;                                                   //cntMin의 값을 1 감소시킨다.
+      if(cntMin < 0){                                                        //만약 cntMin의 값이 0보다 작아지면
+        alert('로그아웃 되었습니다.');                                         //로그아웃되었다는 창이 뜨고
+        cntMin = 5;                                                           //초와 분 값이 초기화되며
         cntSec = 0;
-        clearInterval(cntInterval);       //타이머는 멈추고
-        loginForm.style.display = 'inline-block'; //loginForm이 보이고
-        loginCounter.style.display = 'none'; //loginCounter는 숨긴다.
+        clearInterval(cntInterval);                                           //타이머는 멈추고
+        loginForm.style.display = 'inline-block';                             //loginForm이 보이고
+        loginCounter.style.display = 'none';                                  //loginCounter는 숨긴다.
+        username.value = '';
+        userpass.value = '';                                                  //loginForm 초기화
       }
     }
     counter.innerHTML = cntMin + ':' + addZero(cntSec);
@@ -80,13 +82,13 @@ var init = function() {
   var cntInterval;
   
   function countDownInterval() {
-    cntInterval = setInterval(countDownHandler, 1000); //1초마다 실행
+    cntInterval = setInterval(countDownHandler, 1000);                        //1초마다 실행
   }
 
   //로그인 연장
   function extensionTime() {
-    cntMin = 5;       //cntMin의 값을 5로
-    cntSec = 0;       //cntSec의 값을 0으로 초기화
+    cntMin = 5;                                                               //cntMin의 값을 5로
+    cntSec = 0;                                                               //cntSec의 값을 0으로 초기화
     counter.innerHTML = cntMin + ':' + addZero(cntSec);
   }
   
