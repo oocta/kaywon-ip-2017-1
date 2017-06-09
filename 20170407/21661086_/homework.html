@@ -18,7 +18,7 @@
         메서드를 작성해주세요. li 의 내용은 숫자를 포함합니다.
         */
 
-         /*  저는 버튼을 누를 때 마다 li가 누적?해서 추가가 되는 것 밖에 못하고.... 
+         /*  저는 버튼을 누를 때 마다 li가 누적?해서 추가가 되는 것 밖에 못하고....
          < 매 함수 동작시 li 추가 대상엘리먼트의 내용은 초기화 되어야 합니다. > 이 부분은 아직 해결하지 못했습니다 ㅜㅜ
          해결하면, 수정해서 올리겠습니당!!! */
 
@@ -50,9 +50,9 @@
         { document.getElementById('buttonStart');}
 
         function startList(){
-        
+
         //Q) 교수님! var timer;를 function startList() 안에 쓰지 않으면, buttonStop이 실행되지 않던데, 왜 그런건가요 ?????
-        
+
           var timer;
           var number = Math.floor((Math.random() * 100) +1);
           var ul = document.getElementById('numberList');
@@ -63,6 +63,7 @@
           buttonStart.onclick = function(){
         // 500밀리 세컨즈 주기를 가진 startList함수를 timer라는 변수에 넣는다.
           timer = setInterval(function(){ startList() }, 500);
+          }
         }
         window.onload = function()
         { document.getElementById('buttonStop');}

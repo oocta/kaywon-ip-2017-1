@@ -95,6 +95,19 @@ abbr,acronym { border: 0;}
    border-bottom: 2px solid #fff;
    padding-bottom: 15px;
  }
+ button#worldTime{
+     width: 115px;
+     border: 3px solid #fff;
+     border-radius: 50%;
+     background-color: rgba(0, 0, 255, 0);
+     font-size: 80px;
+     transition: all 0.5s ease;
+ }
+  button#worldTime:hover{
+      width: 145px;
+      font-size: 100px;
+      transition: all 0.5s ease;
+  }
  button{
       cursor: pointer;
       padding: 10px;
