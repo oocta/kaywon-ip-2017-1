@@ -6,6 +6,7 @@
 //4. 국가별 변수 만들기
 //5. 시차 적용 계산
 
+// FIXME 들여쓰기 및 작성완료 시 세미콜론(;)을 꼭 확인해주세요.
 var init = function() {
     var houris = document.getElementById('hour');
     var minis = document.getElementById('min');
@@ -63,6 +64,7 @@ var init = function() {
 
 
     //paris 버튼을 클릭할 때 실행되는 함수
+    // FIXME 시간 초기화 관련해서 반복사용되는 코드들이 많군요. 함수화해서 재사용성을 높여봅시다!
     function timeParis() {
         //초기값 am
         amPm = 'AM';
@@ -108,7 +110,7 @@ var init = function() {
         if (dubaihour >= 12) {
             amPm = 'PM';
           }if (gets >= 50) {
-            secis.style.color="#ef2020";
+            secis.style.color="#ef2020"; // FIXME 연산자의 앞뒤로는 1 space 공백을 주는 것이 가독성 확보에 좋습니다. 다른 코드들도 확인해주세요.
           }else if (gets < 60) {
             secis.style.color="white";
           }
@@ -346,7 +348,7 @@ var init3 = function() {
       setAlarm.innerHTML = setap + ' ' + setH + '시 ' + setM + '분 알람이 설정되었습니다' ;
 
       //만약 위에서 받은 setap의 밸류값이 '오후' 이면 setH를 10진수로 바꿔주고 +12를 더해주세요.
-      if(setap == '오후'){
+      if(setap == '오후'){ // FIXME 되도록 === 를 사용하도록 습관하시면 좋겠습니다.
         setH = parseInt(setH, 10) + 12;
       }
 
@@ -375,7 +377,9 @@ var init3 = function() {
 
   //set버튼을 누르면 setInterval 실행
   set.addEventListener('click', function() {
-     timer2 = setInterval(setTime, 1000)});
+     timer2 = setInterval(setTime, 1000);
+  });
+  // FIXME 익명함수 선언시 줄바꿈은 정확히 하시는 것이 좋습니다.
   //알람이 실행될 때만 보이는 스탑버튼을 누르면 stopAction실행
   stopbtn.addEventListener('click', stopAction);
 }
