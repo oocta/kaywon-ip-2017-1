@@ -1,6 +1,8 @@
 var init = function () {
 
+
   //clock
+
 
   var clockHour = document.getElementById('clock_hour');
   var clockMin = document.getElementById('clock_min');
@@ -37,7 +39,7 @@ var init = function () {
     /* IE 9 */
     document.getElementById("circle_min").style.MsTransform = "rotate(" + dm + "deg)";
     document.getElementById("circle_sec").style.MsTransform = "rotate(" + ds + "deg)";
-    //숫자도 같이 돌어가는 현상 방지
+    //숫자도 같이 돌아가는 현상 방지
     clockMin.style.MsTransform = "rotate(" + -dm + "deg)";
     clockSec.style.MsTransform = "rotate(" + -ds + "deg)";
 
@@ -58,7 +60,52 @@ var init = function () {
   }
 
 
+  //worldclock
+
+
+  function hourSet(num){
+    if(num < 0){
+      num = num+24;
+      return num;
+    }
+    else if(num > 24){
+      num = num%24;
+      return num;
+    }
+    return num;
+  }
+
+  var vancouver = document.getElementById('vancouver_hour');
+  var newyork = document.getElementById('newyork_hour');
+  var saopaulo = document.getElementById('saopaulo_hour');
+  var london = document.getElementById('london_hour');
+  var paris = document.getElementById('paris_hour');
+  var moscow = document.getElementById('moscow_hour');
+  var beijing = document.getElementById('beijing_hour');
+  var tokyo = document.getElementById('tokyo_hour');
+  var wellington = document.getElementById('wellington_hour');
+  var worldmin = document.getElementsByClassName('world_min');
+  function worldclock(){
+    time =new Date();
+    hour = time.getHours();
+    vancouver.innerHTML = addZero(hourSet(hour-16));
+    newyork.innerHTML = addZero(hourSet(hour-13));
+    saopaulo.innerHTML = addZero(hourSet(hour-12));
+    london.innerHTML = addZero(hourSet(hour-8));
+    paris.innerHTML = addZero(hourSet(hour-7));
+    moscow.innerHTML = addZero(hourSet(hour-6));
+    beijing.innerHTML = addZero(hourSet(hour-1));
+    tokyo.innerHTML = addZero(hour);
+    wellington.innerHTML = addZero(hourSet(hour+3));
+    for(var i = 0; i < worldmin.length; i++){
+      worldmin[i].innerHTML = addZero(time.getMinutes());
+    }
+  }
+  setInterval(worldclock,1000);
+
+
   //stopwatch
+
 
   var stopHour = document.getElementById('stop_hour');
   var stopMin = document.getElementById('stop_min');
@@ -66,12 +113,10 @@ var init = function () {
   var hourNumber = 0;
   var minNumber = 0;
   var secNumber = 0;
-
   function hourHandler(){
     hourNumber = hourNumber + 1;
     stopHour.innerHTML = addZero(hourNumber);
   }
-
   function minHandler(){
     minNumber = minNumber+1;
     if(minNumber === 60){
@@ -80,7 +125,6 @@ var init = function () {
     }
     stopMin.innerHTML = addZero(minNumber);
   }
-
   function secHandler(){
     secNumber = secNumber+1;
     if(secNumber === 60){
@@ -98,9 +142,10 @@ var init = function () {
   var lap = document.getElementById('lapButton');
   var reset = document.getElementById('resetButton');
   var lapBox = document.getElementById('lapbox');
-  var li = document.createElement('li');
+  var article = document.getElementById('stopwatch');
+  var div = document.getElementById('div');
   var isRunning = false;
-  var lapTimes = [];
+  var li;
 
   var timer = 0;
   function watchStart(){
@@ -114,12 +159,15 @@ var init = function () {
     isRunning = false;
   }
   function watchLap(){
-    //var lapTime = {stopHour : hourNumber, stopMin : minNumber, stopSec : secNumber};
-    //lapTimes.push(lapTime);
-    //push : 배열에 원소를 넣음
     var lapTime = addZero(hourNumber)+':'+addZero(minNumber)+':'+addZero(secNumber);
-    li.innerHTML = lapTime;
+    var text = document.createTextNode(lapTime);
+    li = document.createElement('li');
+    li.appendChild(text);
     lapBox.appendChild(li);
+    //lap버튼 클릭 시 시계와 버튼 위로 이동
+    div.style.marginTop = "-305px";
+    div.style.transition = "all 1s";
+    div.style.WebkitTransition = "all 1s";
   }
   function watchReset(){
     //초시계 중지
@@ -133,14 +181,20 @@ var init = function () {
     secNumber = 0;
     isRunning = false;
     //랩타임 초기화
-    lapTimes = [];
+    lapBox.innerHTML = '';
+    //reset버튼 클릭 시 시계와 버튼 위치 초기화
+    div.style.marginTop = "-205px";
+    div.style.transition = "all 1s";
+    div.style.WebkitTransition = "all 1s";
   }
   start.addEventListener('click',watchStart);
   stop.addEventListener('click',watchStop);
   lap.addEventListener('click',watchLap);
   reset.addEventListener('click',watchReset);
 
+
   //alarm
+
 
   var alarmHour = document.getElementById('alarm_hour');
   var alarmMin = document.getElementById('alarm_min');
@@ -149,44 +203,59 @@ var init = function () {
   var effect = document.getElementById('effect');
   var circle = document.getElementById('before');
   var alert = document.getElementById('alert');
+  var alarmSound = document.getElementById('alarmsound');
 
-
-  function alarmintervalHandler(){
-    time = new Date();
-    var hour2 = time.getHours();
-    var min2 = time.getMinutes();
-    alarmHour.innerHTML = addZero(hour2);
-    alarmMin.innerHTML = addZero(min2);
-  }
-  setInterval(alarmintervalHandler,1000);
+  var setHour;
+  var setMin;
+  var hour2;
+  var min2;
+  var isRunning2 = false;
+  var animation;
   function alarmSet(){
-    var setHour = prompt('시간을 입력해주세요');
-    var setMin = prompt('분 입력');
-    if(setHour>23 || setMin>59){
-      alert.innerHTML = 'range number in input';
-    }
-    /*if(typeof setHour === 'number' && typeof setMin === 'number'){
-      alert.innerHTML = 'setup is complete';
-    } /*<--이거 왜 안 될까요..?
-    else if(typeof setHour === 'string' || typeof setMin === 'string'){
-      alert.innerHTML = 'input only number';
-    }<--얘는 숫자 넣어도 뜹니다..*/
-    else{
-      alert.innerHTML = 'input only number';
-    }
-    function please(){
-      var hour2 = time.getHours();
-      var min2 = time.getMinutes();
-      if(setHour == hour2 && setMin == min2){
-        effect.style.display = 'block';
-        circle.style.display = 'none';
-        alert.innerHTML = 'Alarm Message';
+    setHour = parseInt(prompt('시 입력'), 10);
+    setMin = parseInt(prompt('분 입력'), 10);
+    if(typeof setHour === 'number' && typeof setMin === 'number'){
+      if(setHour>23 || setMin>59){
+        alert.innerHTML = 'Range number in input';
+      }//아무 것도 입력하지 않았을 때 & 문자가 입력되었을 때
+      else if(isNaN(setHour) == true || isNaN(setMin) == true){
+        alert.innerHTML = 'Input only number';
+        alarmHour.innerHTML = '00';
+        alarmMin.innerHTML= '00';
+      }else{
+        alarmHour.innerHTML = addZero(setHour);
+        alarmMin.innerHTML= addZero(setMin);
+        alert.innerHTML = 'Setup is complete';
+        animation = setInterval(please,1000);
       }
     }
-    setInterval(please,1000);
   }
-
-  set.addEventListener('click',alarmSet);
-
+  function please(){
+    time = new Date();
+    hour2 = time.getHours();
+    min2 = time.getMinutes();
+    //설정한 시간과 현재 시간이 같을 때
+    if(setHour === hour2 && setMin === min2){
+      effect.style.display = 'block';
+      circle.style.display = 'none';
+      alert.innerHTML = 'Alarm Message';
+      alarmSound.play();
+    }
+  }
+  set.addEventListener('click',function(){
+    if(isRunning2 === false){
+      alarmSet();
+      isRunning2 = true;
+    }
+    //알람 다시 설정 시
+    else if(isRunning2 === true){
+      effect.style.display = 'none';
+      circle.style.display = 'block';
+      alert.innerHTML = 'Please set alarm';
+      clearInterval(animation);
+      alarmSound.load();
+      alarmSet();
+    }
+  });
 }
 document.addEventListener('DOMContentLoaded', init);

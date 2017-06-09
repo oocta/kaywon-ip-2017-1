@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>연습연습</title>
+        <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+          body{
+            font-family: 'Amatic SC', cursive;
+          	text-align: center;
+          	color: #fff;
+            color: #FFF;
+            height: 100vh;
+            background-image: linear-gradient(-225deg, #e73765 0%, #e7bc37 52%, #e77137 100%);
+          }
+          .time { border-width: 0px; }
+          tr,td,input,#msg{ text-align: center;}
+          p{
+          	font-size: 100px;
+          	font-weight: bold;
+          	margin-bottom: 40px;
+          }
+          a{
+            color: #fff
+          }
+          button{
+          	    font-family: 'Amatic SC', cursive;
+          	    text-align: center;
+          	    font-size: 30px;
+          	    border-radius: 20px;
+          	    padding: 0 20px;
+          			color: #fff;
+          	    background-color: transparent;
+          	    border: solid 3px #fff;
+          }
+          #alert{
+          	font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+          }
+        </style>
+        <script type="text/javascript">
+        var set=0;
+        ver=parseInt(navigator.appVersion);
+        ie4=(ver>3 && navigator.appName!="Netscape")?1:0;
+
+        function setv(){
+          var hr2
+          = document.getElementById('hour2').value;
+          var min2
+          = document.getElementById('min2').value;
+          var sec2
+          = document.getElementById('sec2').value;
+          if(hr2<10)
+          hr2='0'+hr2;
+          if(min2<10)min2='0'+min2;
+          if(sec2<10)sec2='0'+sec2;
+          document.getElementById('d2').value=hr2+'*'+min2+'*'+sec2;
+          set=1;
+          document.getElementById('msg').innerHTML='Success Setting Alarm';
+        }
+
+        function dis(){
+          var audio = new Audio('./images/SHINee_Everybody.mp3');
+          var dat= new Date();
+          var hr=dat.getHours();
+          var min=dat.getMinutes();
+          var sec=dat.getSeconds();
+          if(hr<10)hr='0'+hr;
+          if(min<10)min='0'+min;
+          if(sec<10)sec='0'+sec;
+          document.getElementById('hour').value=hr;
+          document.getElementById('min').value=min;
+          document.getElementById('sec').value=sec;
+          var dat2v=document.getElementById('d2').value;
+          var dats =hr+'*'+min+'*'+sec;
+
+        if(dat2v==dats && set){
+          audio.play();
+          alert("!!!!!!!!!!!!!!");
+          set=0;
+          document.getElementById('msg').innerHTML='Please Set Alarm!!';
+        }
+          setTimeout("dis()",500);
+        }
+        function prtsel(x){
+          for(var i=0;i<x;i++)
+          document.write("<option value="+i+">"+i+"</option>");
+        }
+        </script>
+  </head>
+    <table align=center width=45%>
+    <tr><td>
+    <body onload=dis()>
+    <p>ALARM</p>
+    <input type=hidden id=d2 name=d2>
+    <input type=text id=hour name=hour size=1 class=time> :
+    <input type=text id=min name=min size=1 class=time> :
+    <input type=text id=sec name=sec size=1 class=time>
+    <br/>
+    <select id=hour2 name=hour2 onChange="setv()">
+    <script type='text/javascript'>prtsel(25);</script>
+    </select>
+    <select id=min2 name=min2 onChange="setv()">
+    <script type='text/javascript'>prtsel(61);</script>
+    </select>
+    <select id=sec2 name=sec2 onChange="setv()">
+    <script type='text/javascript'>prtsel(61);</script>
+    </select>
+    <div id="alert">Please Set Alarm!!</div>
+    <button id="IndexButton"><a href="index.html">GO INDEX</a></button>
+    </body>
+    </td></tr></table>
+</html>

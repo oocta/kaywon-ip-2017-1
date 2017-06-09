@@ -13,12 +13,12 @@ var init = function(){
   sec.innerHTML = time.getSeconds();
   min.innerHTML = time.getMinutes();
   hour.innerHTML = time.getHours();
-  month.innerHTML = time.getMonth()+1+'월';
-  date.innerHTML = time.getDate()+'일';
+  //month.innerHTML = time.getMonth()+1+'월';
+  //date.innerHTML = time.getDate()+'일';
   }
   setInterval(intervalHandler,1000);
 
-  //초시계
+  /****************초시계****************/
 
   var swhour = document.getElementById('swhour');
   var swmin = document.getElementById('swmin');
@@ -27,6 +27,7 @@ var init = function(){
   var stop = document.getElementById('stopButton');
   var lap = document.getElementById('lapButton');
   var reset = document.getElementById('resetButton');
+  var swbox = document.getElementById('swbox');
 
   var hourNumber = 0;
   var minNumber = 0;
@@ -35,7 +36,6 @@ var init = function(){
   //초시계 동작 상태를 담고 있는 변수. 동작중이면 true, 멈춘상태면 false
   var isRunning = false;
   var lapTimes = [];
-
 
   //start 버튼 클릭시 실행되는 setInterval 함수
   function startInterval(){
@@ -85,18 +85,71 @@ var init = function(){
   }
 
   function lapAction(){
+    var time = { hour: '00', min: '00', sec: '00'};
     if(isRunning === true){
-      var time = { hour: hourNumber, min: minNumber, sec: secNumber};
+      // time = { hour: hourNumber, min: minNumber, sec: secNumber};
+      time.hour = hourNumber;
+      time.min = minNumber;
+      time.sec = secNumber;
       //{hour:0, min:0, sec:10}
     };
     lapTimes.push(time);
-    console.log(lapTimes);
+    swbox.innerHTML = time.hour + ':' + time.min + ':' + time.sec;
   }
 
   start.addEventListener('click', startAction);
   stop.addEventListener('click', stopAction);
   lap.addEventListener('click', lapAction);
   reset.addEventListener('click', resetAction);
+
+  /****************알람****************/
+
+
+  var ahour = document.getElementById('ahour');
+  var amin = document.getElementById('amin');
+  var click = document.getElementById('click');
+
+  var hourprom = 0;
+  var minprom = 0;
+  //알람 설정 여부.
+  //a아니면 b일 경우 boolean 값으로 조절하면 된다!
+  var isAlarmSet = false;
+
+  function hourstartClick(){
+    hourprom = prompt('시간설정');
+    if(hourprom !== ''){
+      isAlarmSet = true;
+      ahour.innerHTML = hourprom;
+    }
+  }
+
+  function minstartClick(){
+    minprom = prompt('시간설정');
+    if (minprom !== '') {
+      isAlarmSet = true;
+      amin.innerHTML = minprom;
+    }
+  }
+
+  function checkClick(){
+    time = new Date();
+    var ahourr = time.getHours();
+    var aminn = time.getMinutes();
+
+    if(Number(hourprom) === ahourr && Number(minprom) === aminn && isAlarmSet){
+      alert('알람!');
+      hourprom = '00';
+      ahour.innerHTML = hourprom;
+      minprom = '00';
+      amin.innerHTML = minprom;
+    }
+  }
+
+  setInterval(checkClick, 1000);
+
+  click.addEventListener('click', hourstartClick);
+  click2.addEventListener('click', minstartClick);
+
 
 };
 

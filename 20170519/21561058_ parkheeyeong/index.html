@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
+    <h1>희영이의 도구페이지</h1>
     <div class="wrp">
       <section>
         <article class="clock">
@@ -28,7 +29,7 @@
               <button id="resetButton">Reset</button>
             </div>
             <div>
-            <ul id="lapTimes">
+            <ul id="lapTimes">타이머
               <li id="lapedtimes"></li>
             </ul>
             </div>
@@ -49,6 +50,14 @@
                 <a id="minup">minup</a><br />
                 <a id="hourdown">hourdown</a>
                 <a id="mindown">mindown</a><br />
+                <div class="increment">
+                  <label>
+                    <input type="radio" name="increment" value="1" checked="checked" />1
+                  </label>
+                  <label>
+                    <input type="radio" name="increment" value="5" />5
+                  </label>
+                </div>
                 <div id="setbtns">
                   <a id="am">am</a>
                   <a id="pm">pm</a>
@@ -57,8 +66,25 @@
               </div>
               </div>
 
+        </article>
+        <article class="lotto">
+          <span>이번주 로또 예상 번호</span>
+          <ul class="lottoNums">
+            <li id="lotto1">1</li>
+            <li id="lotto2">2</li>
+            <li id="lotto3">3</li>
+            <li id="lotto4">4</li>
+            <li id="lotto5">5</li>
+            <li id="lotto6">6</li>
+            <li id="lotto">+</li>
+            <li id="lotto7">bonus</li>
+          </ul>
+          <span id="nooo">인생은 한방이다!</span>
 
-
+          <ul class="lottoBtn">
+            <li><a id=lottogobtn>추첨!</a></li>
+            <li><a id=lottoresetbtn>리셋!</a></li>
+          </ul>
         </article>
         <article class="world">
           <div class="worldwrp">
@@ -76,33 +102,35 @@
             </div>
             <div class="worldsettime">
               <span id="worldhour">00</span>:<span id="worldmin">00</span>:<span id="worldsec">00</span>
+                <p class="pp">한국시간을 가져온 후 차이를 구한 시계시간</p>
             </div>
           </div>
         </article>
-        <article class="lotto">
-          <span>이번주 로또 예상 번호</span>
-          <ul class="lottoNums">
-            <li id="lotto1">1</li>
-            <li id="lotto2">2</li>
-            <li id="lotto3">3</li>
-            <li id="lotto4">4</li>
-            <li id="lotto5">5</li>
-            <li id="lotto6">6</li>
-            <li id="lotto">+</li>
-            <li id="lotto7">7</li>
-          </ul>
-          <span id="nooo">인생은 한방이다!</span>
-
-          <ul class="lottoBtn">
-            <li><a id=lottogobtn>추첨!</a></li>
-            <li><a id=lottoresetbtn>리셋!</a></li>
-          </ul>
+        <article class="world2">
+          <div class="worldwrp">
+            <div class="worlds">
+              <a id="china2">베이징</a>
+              <a id="tiwan2">방콕</a>
+              <a id="ger2">베를린</a>
+              <a id="england2">런던</a>
+              <a id="france2">파리</a>
+              <a id="sau2">사우디</a>
+              <a id="newy2">뉴욕</a>
+              <a id="canada2">벤쿠버</a>
+              <a id="mex2">멕시코</a>
+              <a id="aus2">시드니</a>
+            </div>
+            <div class="worldsettime">
+              <span id="worldhour2">00</span>:<span id="worldmin2">00</span>:<span id="worldsec2">00</span>
+                <p class="pp">한국시간차를 빼고 가져온 세계시간</p>
+            </div>
+          </div>
         </article>
 
-
+<!--
         <article class="cal">
           <div class="calbuttons">
-            <p id="calIs">e</p>
+            <p id="calIs"></p>
             <div class="notnum">
               <ul>
                 <li><a id="calplus">+</a></li>
@@ -124,15 +152,19 @@
                 <li><a id="cal9">9</a></li>
                 <li><a id="cal0">0</a></li>
                 <li><a id="cal00">00</a></li>
-                <a id="AC">AC</a></div>
+                <li><a id="AC">AC</a></li>
               </ul>
+              <a id="total"> = </a>
+              </div>
           </div>
         </article>
-        <article class="s">
+        <article class="user">
 
-        </article>
-        <article class="s">
-          21561058_박희영
+
+        </article> -->
+        <article class="me">
+          <a id="scrolltop">top으로</a>
+           <span>21561058_박희영</span>
         </article>
       </section>
     </div>

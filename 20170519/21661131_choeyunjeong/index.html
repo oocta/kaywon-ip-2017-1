@@ -4,28 +4,49 @@
     <meta charset="utf-8">
     <title>Interaction Programmin - week 10</title>
     <script src="js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
   </head>
   <body>
-    <header>
-    </header>
+    <nav>
+      <div id="menu">
+        <h1 class="style"><a href="#clock">CLOCK</a></h1>
+        <h2 class="style"><a href="#stopwatch">STOPWATCH</a></h2>
+        <h3 class="style"><a href="#alarm">ALARM</a></h3>
+      </div>
+    </nav>
     <section>
+    <div class="lab">
     <div id="clock">
       <h1>CLOCK</h1>
       <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
     </div>
+  </div>
+
+    <div class="lab">
     <div id="stopwatch">
-      <h1>STOPWATHCK</h1>
+      <h1>STOPWATCH</h1>
       <span id="swhour">00</span>:<span id="swmin">00</span>:<span id="swsec">00</span>
       <div id="stbt">
-        <button id="startButton">START</button>
-        <button id="lapButton">LAP</button>
-        <button id="stopButton">STOP</button>
-        <button id="resetButton">RESET</button>
+        <button id="startButton" class="hvr-bounce-in">START</button>
+        <button id="lapButton" class="hvr-bounce-in">LAP</button>
+        <button id="stopButton" class="hvr-bounce-in">STOP</button>
+        <button id="resetButton" class="hvr-bounce-in">RESET</button>
+      </div>
+      <div id="swbox">
       </div>
     </div>
+  </div>
+
+  <div class="lab">
     <div id="alarm">
+      <h1>ALARM</h1>
+      <span id="ahour">00</span>:<span id="amin">00</span><br />
+      <div id="abt">
+      <button value="몇시!" id="click" class="hvr-buzz">HOUR</button>
+      <button value="몇분!" id="click2" class="hvr-buzz">MIN</button>
     </div>
+    </div>
+  </div>
   </section>
   </body>
 </html>

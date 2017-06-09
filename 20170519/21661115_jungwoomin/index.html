@@ -6,50 +6,201 @@
     <title></title>
     <link rel="stylesheet" href="./css/css.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        boxReposition();
+        
+        var showBox = $('article');
+        var listButton = $('header > nav > ul > li > button');
+        
+        listButton.click(function() {
+          
+          var classValue = $(this).attr('id');
+          
+          if(!$(this).hasClass('active')) {
+            listButton.removeClass('active');
+            $(this).addClass('active');
+            showBox.stop().fadeOut('fast', function() {
+              if($(this).hasClass(classValue)){
+                $(this).hasClass('show');
+                $(this).stop().fadeIn('fast');
+              }
+            })
+          }
+        })
+        
+        listButton.mouseenter(function() {
+          $(this).stop().animate({'font-size':'25px'});
+        })
+        listButton.mouseout(function() {
+          $(this).stop().animate({'font-size':'20px'});
+        })
+      })
+      
+      $(window).resize(function(){
+        boxReposition();
+      })
+      
+      $(window).load(function(){
+        boxReposition();
+      })
+      
+      function boxReposition() {
+        var windowWidth = $(window).width();
+        var windowHeight = $(window).height();
+        var boxWidth = $('#wrapper').width();
+        var boxHeight = $('#wrpper').height();
+        
+        $('#wrapper').css('left', (windowWidth - boxWidth)/2);
+        $('#wrapper').css('top', (windowHeight - boxHeight)/10);
+      }
+    </script>
     <script type="text/javascript" src="./script/script.js"></script>
   </head>
   <body>
-    <header>
-      <h1>WHAMOOP</h1>
-    </header>
-    <section>
-      <article id="realTime">
-        <h2>WHAT TIME IS IT NOW?</h2>
-        <div class="time">
-          <span id="realHour">00</span>:<span id="realMin">00</span>:<span id="realSec">00</span>
-        </div>
-        <div class="date">
-          <span id="realYear">0000</span>.<span id="realMonth">00</span>.<span id="realDate">00</span>.<span id="realDay">DAY</span>
-        </div>
-      </article>
-      <article id="stopWatch">
-        <div class="time">
-          <span id="stopHour">00</span>:<span id="stopMin">00</span>:<span id="stopSec">00</span>:<span id="stopNum">00</span>
-        </div>
-        <p id="state">START 버튼을 눌러 작동합니다.</p>
-        <div class="buttonList">
-          <button id="startButton">START</button>
-          <button id="stopButton">STOP</button>
-          <button id="resetButton">RESET</button>
-          <button id="lapButton">LAPTIME</button>
-        </div>
-        <div class="lapTime">LapTime &#58; <span id="lapHour">00</span>:<span id="lapMin">00</span>:<span id="lapSec">00</span>:<span id="lapNum">00</span></div>
-      </article>
-      <article id="timer">
-        <div class="time">
-          <span id="timerHour">00</span>:<span id="timerMin">00</span>:<span id="timerSec">00</span>
-        </div>
-      </article>
-      <article id="selection">
-        <ul>
-          <li><button id="realTimeButton">TIME</a></li>
-          <li><button id="stopWatchButton">STOPWATCH</a></li>
-          <li><button id="timerButton">TIMER</a></li>
-        </ul>
-      </article>
-    </section>
-    <footer>
-      
-    </footer>
+    <div id="wrapper">
+      <header>
+        <h1>WHAMOOP</h1>
+        <nav>
+          <ul>
+            <li><button id="realTimeButton" class="realTime active">TIME</a></li>
+            <li><button id="stopWatchButton" class="stopWatch">STOPWATCH</a></li>
+            <li><button id="timerButton" class="timer">ALARM</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <article id="realTime" class="realTimeButton show">
+          <div class="date">
+            <span id="realYear">0000</span>.<span id="realMonth">00</span>.<span id="realDate">00</span>.<span id="realDay">DAY</span>
+          </div>
+          <div class="time">
+            <span id="realHour">00</span>:<span id="realMin">00</span>:<span id="realSec">00</span><span id="apm">AM</span>
+          </div>
+        </article>
+        <article id="stopWatch" class="stopWatchButton">
+          <div class="time">
+            <span id="stopHour">00</span>:<span id="stopMin">00</span>:<span id="stopSec">00</span>:<span id="stopNum">00</span>
+          </div>
+          <p id="state">START 버튼을 눌러 작동합니다.</p>
+          <div class="buttonList">
+            <button id="startButton">START</button>
+            <button id="stopButton">STOP</button>
+            <button id="resetButton">RESET</button>
+            <button id="lapButton">LAPTIME</button>
+          </div>
+          <ul id="lapTime" -ms-overflow-style: none;>
+          
+          </ul>
+        </article>
+        <article id="timer" class="timerButton">
+          <div class="timeNow">
+            <span>현재시간</span><br />
+            <span id="hourNow">00</span>:<span id="minNow">00</span>
+          </div>
+          <div class="time">
+            <div>
+              <select name="timerHour" id="timerHour">
+                <option value="0" selected>00</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+              </select>:
+              <select name="timerMin" id="timerMin">
+                <option value="0" selected>00</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+              </select>
+            </div>
+          </div>
+          <button id="setAlarm">SET ALARM</button>
+          <button id="resetAlarm">RESET</button>
+        </article>
+      </section>
+      <footer>
+        <p>
+          Kaywon University of Art &amp; Design<br />
+          JUNG WOO MIN
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

@@ -35,10 +35,9 @@ table {
 
 
 /*start*/
-
+h1{margin: 0 auto;width: 368px;height: 250px;background: url(image/hh.png)no-repeat;background-size: contain;font-size: 19px;line-height: 250px;text-align: center;}
 body {
   width: 100%;
-  height: 100%;
   background-color: #d7dbe7;
   font-size: 50px;
   font-family: sans-serif;
@@ -54,6 +53,9 @@ body {
 section {}
 
 article {
+  /*margin-top: 30px;padding-top: 50px;
+  border-top: 1px solid #fff;*/
+  margin-top: 30px;
   float: left;
   width: 410px;
   height: 400px;
@@ -73,7 +75,7 @@ article:nth-child(2n) {
 .clock div {
   text-align: center;
 }
-.clo{padding-top: 200px;}
+.clo{padding-top: 150px;}
 
 .timer {
   background: url(image/stopwatch.png) no-repeat;
@@ -97,7 +99,7 @@ article:nth-child(2n) {
   background-position: center;
 }
 .alarms{font-size: 17px;}
-
+.increment{margin-top: 10px;font-size: 5px;}
 .alarmwrp {
   text-align: center;
   padding-top: 170px;
@@ -122,6 +124,11 @@ article:nth-child(2n) {
   background-size: contain;
   background-position: center;
 }
+.world2{
+  background: url(image/world2.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
 
 .worlds {
   margin: 0 auto;
@@ -142,6 +149,7 @@ article:nth-child(2n) {
   font-size: 40px;
   margin-top: 140px;
 }
+.pp{padding-top: 35px;font-size: 20px;text-align: center; color:#000;}
 
 .cal {
   background: url(image/calculator.png) no-repeat;
@@ -156,6 +164,25 @@ article:nth-child(2n) {
   width: 320px;
 }
 #calIs{text-align: right;height:50px;margin-left:13px;margin-bottom: 37px;width: 260px;overflow:hidden;line-height: 50px;}
+
+#total {
+  margin-top: 50px;
+  text-align: center;
+  line-height: 340px;
+  background-color: #8ca8ab;
+  width: 50px;
+  height: 600px;
+  border-radius: 36%;padding:30px 18px;margin-left: 15px;
+}
+/*.totalli{list-style: none;  margin-left: 15px;
+  float: left;
+  text-align: center;
+  line-height: 58px;
+  background-color: #8ca8ab;
+  width: 50px;
+  height: 40px;
+  border-radius: 45%;}*/
+
 .notnum li {
   margin-left: 15px;
   float: left;
@@ -198,8 +225,8 @@ article:nth-child(2n) {
 
 
 /*로또*/
-.lotto{display: block;padding-top: 100px;}
-.lotto span{
+.lotto{display: block;}
+.lotto span{padding-top: 100px;
   display:block;text-align: center;margin: 0 auto;
   font-size: 25px;
 }
@@ -226,3 +253,14 @@ article:nth-child(2n) {
 .lottoBtn li a:hover{
   background-color: #fff3ca;
 }
+.user{}
+#scrolltop{cursor: pointer;display:block;margin: 0 auto;padding: 20px;width: 60px;height: 60px;border: 1px solid #fff;border-radius: 50%;font-size:0px;text-indent: -9999px;background: url(image/top.png) no-repeat;background-size: cover;margin-bottom: 50px;}
+.me{text-align: center;
+  font-size: 20px;
+  padding-top: 150px;
+  width: 100%;
+}
+
+
+
+.fin>span{display: inline-block;text-align: center;padding-top: 60px;}

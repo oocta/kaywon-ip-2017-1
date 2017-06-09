@@ -1,5 +1,7 @@
 * {padding: 0;margin: 0;}
 #wrapper {}
+* {padding: 0;margin: 0;}
+#wrapper {}
 #wrapper .vid-container {
     position: relative;
     overflow: hidden;
@@ -86,11 +88,30 @@
 }
 #stopWatch {
     color: #fff;
-    font-size: 50px;
+    font-size: 145px;
     margin-top: 100px;
     margin-left: 50px;
+    width: 400px;
+    height: 200px;
 }
-#st_container {
-    margin-left: 50px;
-    margin-top: 40px;
+#stopWatch button {
+    font-size: 5px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 4px solid #fff;
+    color: #fff;
+}
+#laptime {
+    position: absolute;
+    left: 860px;
+    top: 150px;
+    width: 400px;
+    height: 300px;
+    color: #fff;
+    list-style: inside;
+    font-size: 15px;
+    line-height: 30px;
 }

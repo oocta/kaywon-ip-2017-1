@@ -12,7 +12,7 @@
         var HYGGE = {
           _aniBool:false,
           _cuNum:0,
-          _max:6,
+          _max:2,
           init:function(){
             var _this = this;
             _this.layout();
@@ -72,10 +72,6 @@
       <ul>
         <li data-menuanchor="page1"><a href="#mainvisual" class="selected"><b>&nbsp;</b></a></li>
         <li data-menuanchor="page2"><a href="#alram"><b>&nbsp;</b></a></li>
-        <li data-menuanchor="page3"><a href="#clock"><b>&nbsp;</b></a></li>
-      <!--   <li data-menuanchor="page4"><a href="#"><b>&nbsp;</b></a></li>
-        <li data-menuanchor="page5"><a href="#"><b>&nbsp;</b></a></li>
-        <li data-menuanchor="page6"><a href="#"><b>&nbsp;</b></a></li> -->
       </ul>
     </nav>
   </header>
@@ -89,6 +85,10 @@
         var year = document.getElementById('year');
         var month = document.getElementById('month');
         var date = document.getElementById('date');
+
+        var hour =document.getElementById('hour1');
+        var min =document.getElementById('min1');
+        var sec =document.getElementById('sec1');
         var time;
 
         function intervalHandler(){
@@ -96,6 +96,10 @@
         year.innerHTML = time.getFullYear()+'.';
         month.innerHTML = time.getMonth()+1+'.';
         date.innerHTML = time.getDate()+'.';
+
+        hour.innerHTML = time.getHours();
+        min.innerHTML = time.getMinutes();
+        sec.innerHTML = time.getSeconds();
         }
 
         setInterval(intervalHandler,1000);
@@ -104,7 +108,10 @@
       </script>
         <h1>HELLO MALANG97 WORLD</h1>
         <h2>TODAY IS..</h2>
-        <span id="year"></span><span id="month"></span><span id="date"></span>
+        <div class="wts">
+          <span id="year"></span><span id="month"></span><span id="date"></span><br>
+          <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span><br>
+        </div>
     </div>
     <div id="alram">
       <div class="watch">
@@ -116,34 +123,9 @@
               <button id="stopButton">Stop</button>
               <button id="resetButton">Reset</button>
               <button id="lapButton">Lap</button>
+              <button id="AlarmButton"><a href="alarm.html">GO Alarm</a></button>
             </div>
         <ul id="lap"></ul>
-      </div>
-    </div>
-    <div id="clock">
-      <div class="watch2">
-        <script>
-          var init = function () {
-            var hour =document.getElementById('hour1');
-            var min =document.getElementById('min1');
-            var sec =document.getElementById('sec1');
-            var time;
-
-            function intervalHandler() {
-              time = new Date();
-              hour.innerHTML = time.getHours();
-              min.innerHTML = time.getMinutes();
-              sec.innerHTML = time.getSeconds();
-            }
-
-            setInterval(intervalHandler,1000);
-            };
-
-            document.addEventListener('DOMContentLoaded',init);
-         </script>
-          <p>WHAT TIME IS IT?</p>
-          <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span>
-          <div clas="button"><button id="resetButton">Alram</button></div>
       </div>
     </div>
   </body>

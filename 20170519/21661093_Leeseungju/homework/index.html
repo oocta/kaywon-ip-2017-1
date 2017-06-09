@@ -5,36 +5,349 @@
     <title>Week10 - Homework</title>
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:600" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+    <script src="https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-3762305523564574.js"></script>
+    <script type="text/javascript" src="images/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="moment.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <div id="clock">
-      <div id="clock_L">
+      <div id="button">
+        <div id="nowTimebt">현재시간</div>
+        <div id="alrambt">알람</div>
+        <div id="lapTimebt">타이머</div>
+      </div>
+      <div id="clock_L1">
         <div id="week">
-          <span class="active">MON</span>
-          <span>TUE</span>
-          <span>WED</span> 
-          <span>THU</span>
-          <span>FRI</span>
-          <span>SAT</span>
-          <span>SUN</span>
+          <span class="whatDay">SUN</span>
+          <span class="whatDay">MON</span>
+          <span class="whatDay">TUE</span>
+          <span class="whatDay">WED</span> 
+          <span class="whatDay">THU</span>
+          <span class="whatDay">FRI</span>
+          <span class="whatDay">SAT</span>
         </div>
-        <div id="time">
-          <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+        <div id="time1" class="time">
+          <span id="hour1">00</span>:<span id="min1">00</span>:<span id="sec1">00</span>
           <span id="ampm">am</span>
         </div>
+        <div id="date">
+          <span id="year"> 0000 </span> / 
+          <span id="month"> 00 </span> / 
+          <span id="day"> 00</span>
+        </div>
       </div>
-      <div id="button">
-        <div id="nowTime">현재시간</div>
-        <div id="alram">알람</div>
-        <div id="lapTime">타임랩</div>
+      <div id="clock_L2">
+        <div id="week2">
+          <span class="what2Day">SUN</span>
+          <span class="what2Day">MON</span>
+          <span class="what2Day">TUE</span>
+          <span class="what2Day">WED</span> 
+          <span class="what2Day">THU</span>
+          <span class="what2Day">FRI</span>
+          <span class="what2Day">SAT</span>
+        </div>
+        <div id="time2" class="time">
+          <span id="hour2">00</span>:<span id="min2">00</span>:<span id="sec2">00</span><span id="ampm2">am</span>
+        </div>
+        <div class="addBt">
+          <div class="alarm">알람 설정하기</div>
+        </div>
+        
+       
+	<div id="page">
+<div class="section">
+	<div class="overlay" id="settime" style="display: block;">
+		<div id="alarm-dialog">
+			<h2>알람을 설정하세요.</h2>
+			<label class="hours">시간<input type="number" value="0" min="0">
+			</label>
+			<label class="minutes">분<input type="number" value="0" min="0">
+			</label>
+			<label class="seconds">초<input type="number" value="0" min="0">
+			</label>
+			<div class="button-holder">
+				<a id="alarm-set" class="button blue">설정</a>
+			</div>
+          <a class="close"></a>
+		</div>
+	</div>
+	
+	<div class="overlay" id="timeisup">
+		<div id="time-is-up">
+			<h2>시간이 되었습니다!!!</h2>
+			<div class="button-holder">
+				<a class="button blue">확인</a>
+			</div>
+		</div>
+	</div>
+    <audio id="ring" preload="">
+		<source src="images/ticktac.mp3" type="audio/mpeg">
+	</audio>
+      <script>
+      $(function(){
+          var clock = $('#clock');
+          //array 0-9
+          var digit_to_name = ['zero','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+          //week
+          var weekday = ['Sun','Mon','Tus','Wed','Thu','Fri','Sat'];
+
+          var digits = {};
+
+          //h m s position
+          var positions = [
+              'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
+          ];
+
+          //building a digital clock
+
+          var digit_holder = clock.find('.digits');
+
+          $.each(positions, function(){
+
+              if(this == ':'){
+                  digit_holder.append('<div class="dots">');
+              }
+              else{
+
+                  var pos = $('<div>');
+
+                  for(var i=1; i<8; i++){
+                      pos.append('<span class="d' + i + '">');
+                  }
+
+                  digits[this] = pos;
+
+                  digit_holder.append(pos);
+              }
+
+          });
+
+          var alarm_counter = -1;
+
+
+          // let it run
+          (function update_time(){
+
+              //call moment.js to format time
+              var now = moment().format("HHmmss");
+
+              digits.h1.attr('class', digit_to_name[now[0]]);
+              digits.h2.attr('class', digit_to_name[now[1]]);
+              digits.m1.attr('class', digit_to_name[now[2]]);
+              digits.m2.attr('class', digit_to_name[now[3]]);
+              digits.s1.attr('class', digit_to_name[now[4]]);
+              digits.s2.attr('class', digit_to_name[now[5]]);
+
+              var date = moment().format("MM-DD-YYYY");
+              var week = weekday[moment().format('d')];
+              $(".date").html(date + ' ' + week);
+
+              //alarm
+              var alarm = $(".alarm");
+              if(alarm_counter > 0){
+                  alarm_counter--;
+                  alarm.addClass('active');
+              }
+              else if(alarm_counter == 0){
+
+                  $("#timeisup").fadeIn();
+                  //play sound on browser supporting html audio 
+                  try{
+                      $("#ring")[0].play();
+                  }
+                  catch(e){}
+
+                  alarm_counter--;
+                  alarm.removeClass('active');
+              }
+              else{
+                  alarm.removeClass('active');
+              }
+
+              // run per sec
+              setTimeout(update_time, 1000);
+          })();
+
+          $('.alarm').click(function(){
+              $("#settime").show();
+          });
+
+          $('a.close').click(function(){
+              $("#settime").hide();
+          });
+
+          $("#alarm-set").click(function(){
+              var valid = true, after = 0,
+                  to_seconds = [3600, 60, 1];
+
+              $("#settime").find('input').each(function(i){
+                  if(this.validity && !this.validity.valid){
+
+                      valid = false;
+                      this.focus();
+
+                      return false;
+                  }
+                  after += to_seconds[i] * parseInt(parseInt(this.value));
+              });
+
+              if(!valid){
+                  alert('Please enter a valid number');
+                  return;
+              }
+
+              if(after < 1){
+                  alert('Please enter a valid time');
+                  return;	
+              }
+
+              alarm_counter = after;
+              $("#settime").hide();
+          });
+
+          $("#timeisup").click(function(){
+              $("#timeisup").fadeOut();
+              $("#settime").find('input').attr('value','0');
+          });
+      });
+        </script>	
+        </div>
+        </div>
+     <script>
+             $(function(){
+          var clock = $('#clock');
+          //array 0-9
+          var digit_to_name = ['zero','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+          //week
+          var weekday = ['Sun','Mon','Tus','Wed','Thu','Fri','Sat'];
+
+          var digits = {};
+
+          //h m s position
+          var positions = [
+              'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
+          ];
+
+          //building a digital clock
+
+          var digit_holder = clock.find('.digits');
+
+          $.each(positions, function(){
+
+              if(this == ':'){
+                  digit_holder.append('<div class="dots">');
+              }
+              else{
+
+                  var pos = $('<div>');
+
+                  for(var i=1; i<8; i++){
+                      pos.append('<span class="d' + i + '">');
+                  }
+
+                  digits[this] = pos;
+
+                  digit_holder.append(pos);
+              }
+
+          });
+
+          var alarm_counter = -1;
+
+
+          // let it run
+          (function update_time(){
+              //alarm
+              var alarm = $(".alarm");
+              if(alarm_counter > 0){
+                  alarm_counter--;
+                  alarm.addClass('active');
+              }
+              else if(alarm_counter == 0){
+
+                  $("#timeisup").fadeIn();
+                  //play sound on browser supporting html audio 
+                  try{
+                      $("#ring")[0].play();
+                  }
+                  catch(e){}
+
+                  alarm_counter--;
+                  alarm.removeClass('active');
+              }
+              else{
+                  alarm.removeClass('active');
+              }
+
+              // run per sec
+              setTimeout(update_time, 1000);
+          })();
+
+          $('.alarm').click(function(){
+              $("#settime").show();
+          });
+
+          $('a.close').click(function(){
+              $("#settime").hide();
+          });
+
+          $("#alarm-set").click(function(){
+              var valid = true, after = 0,
+                  to_seconds = [3600, 60, 1];
+
+              $("#settime").find('input').each(function(i){
+                  if(this.validity && !this.validity.valid){
+
+                      valid = false;
+                      this.focus();
+
+                      return false;
+                  }
+                  after += to_seconds[i] * parseInt(parseInt(this.value));
+              });
+
+              if(!valid){
+                  alert('Please enter a valid number');
+                  return;
+              }
+
+              if(after < 1){
+                  alert('Please enter a valid time');
+                  return;	
+              }
+
+              alarm_counter = after;
+              $("#settime").hide();
+          });
+
+          $("#timeisup").click(function(){
+              $("#timeisup").fadeOut();
+              $("#settime").find('input').attr('value','0');
+          });
+      });
+      </script>    
+    <audio id="ring" preload>
+		<source src="audio/ticktac.mp3" type="audio/mpeg" />
+	</audio>
+
       </div>
-      <div id="addBt">
+      <div id="clock_L3">
+        <div id="time" class="time">
+          <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+        </div>
+        <div class="addBt">
         <button id="startButton">Start</button>
         <button id="stopButton">Stop</button>
         <button id="resetButton">Reset</button>
         <button id="lapButton">lap</button>
+        <ul id="lap"></ul>
+        </div>
       </div>
     </div>
-  </body>
+    <div style="display:none"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253486628'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D1253486628%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1253486628"><a href="http://www.cnzz.com/stat/website.php?web_id=1253486628" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif"></a></span><script src=" http://s23.cnzz.com/stat.php?id=1253486628&amp;show=pic" type="text/javascript"></script><script src="http://c.cnzz.com/core.php?web_id=1253486628&amp;show=pic&amp;t=z" charset="utf-8" type="text/javascript"></script>
+    </div>
+    <script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
+    </body>
 </html>

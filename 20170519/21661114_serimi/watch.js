@@ -96,5 +96,5 @@ var init =function functionName() {
      resetHandler();
    })
    lapButton.addEventListener('click',lapHandler);
- }
-document.addEventListener('DOMContentLoaded',init);
+  }
+   document.addEventListener('DOMContentLoaded',init);

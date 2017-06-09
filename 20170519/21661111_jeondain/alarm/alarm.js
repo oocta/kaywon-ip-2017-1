@@ -2,33 +2,40 @@ var alarmTime;
 var curTime;
 var hourNum;
 var minNum;
+var secNum;
 var min;
 var hour;
-function GetTime() {
- var min = document.getElementById('min');
- var hour = document.getElementById('hour');
- var time;
+var sec;
+var sound;
 
- function intervalHandler(){
-   time = new Date();
-   min.innerHTML = time.getMinutes();
-   hour.innerHTML = time.getHours();
- }
- intervalHandler();
- time = setInterval(intervalHandler,10);
+var timer = 0;
+var bell = 0;
+function GetTime() {
+     min = document.getElementById('min');
+     hour = document.getElementById('hour');
+     sec = document.getElementById('sec');
+
+     function intervalHandler(){
+       var time = new Date();
+       sound = document.getElementById('mp3');
+       min.innerHTML = time.getMinutes();
+       hour.innerHTML = time.getHours();
+       sec.innerHTML = time.getSeconds();
+       if((time.getHours() == hourNum) && (time.getMinutes() == minNum)){
+         sound.play();
+       }
+     }
+
+     intervalHandler();
+     timer = setInterval(intervalHandler,10);
 }
 
 document.addEventListener('DOMContentLoaded', GetTime);
 
 function alarmSet() {
-    hourNum = document.clock.hourOpt[document.clock.hourOpt.selectedIndex].value;
-    minNum = document.clock.minOpt[document.clock.minOpt.selectedIndex].value;
-    alarmTime = hourNum + ":" + minNum;
-    if (alarmTime == time) {
-      alertFunc();
-    }
+    var alarmHour = document.getElementById('alarmHour');
+    var alarmmin = document.getElementById('alarmmin');
+
+    hourNum=alarmHour.value;
+    minNum=alarmmin.value;
 }
-function alertFunc() {
-  alert("Hello!");
-}
-document.addEventListener('DOMContentLoaded', alarmSet);

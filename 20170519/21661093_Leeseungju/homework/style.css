@@ -62,23 +62,32 @@ body {
 #clock{width:795px; height: 420px; background: #fff;
         margin: 20% auto; border-radius: 15px; }
 
-#clock_L{width: 640px; height: 300px; background: #343434;
-      float: left; margin:30px 0 0 25px; border-radius: 20px;}
-#button { float: left; margin: 30px; }    
-#week { font-size: 25px;margin: 40px 0 ; }
-#week span{margin: 0 20px; color: #656565;}
-#week .active{color: #a5a5a5; }
-#time{font-size: 8.5em;}
-#time span{margin: 0 5px; }
-#ampm{font-size: 20px; text-transform: uppercase; display: inline-block;}
-#button div{ margin:30px 0;  color:transparent; font-size: 0; }
-#nowTime{ width:62px ; height: 62px; background:url(/now_off.png);}
-#nowTime:hover { width:62px ; height: 62px; background:url(/now_on.png);}
-#alram{ width:62px ; height: 62px; background:url(/alram_off.png);}
-#alram:hover{ width:62px ; height: 62px; background:url(/alram_on.png);}
-#lapTime{ width:62px ; height: 62px; background:url(/lap_off.png);}
-#lapTime:hover{ width:62px ; height: 62px; background:url(/lap_on.png);}
-
-#addBt{ }
-#addBt button{background: #e6e6e6; border:none; padding: 10px 20px; margin: -10px 15px; }
-  
+#clock_L1{width: 640px; height: 300px; background: #343434;
+      float: left; margin:30px 0 0 25px; border-radius: 20px;display: block;}
+#clock_L2{width: 640px; height: 300px; background: #343434;
+      float: left; margin:30px 0 0 25px; border-radius: 20px;display:none;}
+#clock_L3{width: 640px; height: 230px; background: #343434;
+      float: left; margin:30px 0 0 25px; border-radius: 20px;display:none;padding-top: 70px;}
+#button { float: right; margin: 30px; }    
+#week,#week2 { font-size: 25px;margin: 40px 0 ; }
+#week span,#week2 span{margin: 0 20px; color: #656565;}
+#week .active,#week2 .active{color: #bebebe; }
+.time{font-size: 8.5em; margin-top: -15px;}
+#time, #time2{font-size: 8.5em; margin-top: -20px;margin-bottom: 10px; }
+.time span{margin:0  2px;width: 150px;display: inline-block; }
+#ampm, #ampm2{font-size: 20px; text-transform: uppercase;  width: 50px; margin-left: -10px;}
+#button div{ margin:30px 0; color:transparent; font-size: 0; }
+#nowTimebt{ width:62px ; height: 62px; background:url(images/now_off.png);}
+#nowTimebt:hover { width:62px ; height: 62px; background:url(images/now_on.png);}
+#alrambt{ width:62px ; height: 62px; background:url(images/alram_off.png);}
+#alrambt:hover{ width:62px ; height: 62px; background:url(images/alram_on.png);}
+#lapTimebt{ width:62px ; height: 62px; background:url(images/lap_off.png);}
+#lapTimebt:hover{ width:62px ; height: 62px; background:url(images/lap_on.png);}
+#date{font-size: 25px; margin-top: 10px;}
+#lap{margin: 42px 10px; color: #aaaaaa; height: 70px; overflow: auto}
+#lap li{float: left; margin-left: 20px;margin-bottom: 10px; width: 80px;}
+.addBt{ }
+.addBt button{background: #343434; border:3px solid #d7d7d7; padding: 10px 20px; margin: 15px 15px; border-radius: 10px; color:#d7d7d7;text-transform:uppercase;}
+.addBt button:hover {background: #4f4f4f; border:3px solid #d7d7d7; padding: 10px 20px; margin: -5px 15px; border-radius: 10px; color:#d7d7d7;text-transform:uppercase;}
+.alarm{background: #343434; border:3px solid #d7d7d7; padding: 10px 20px; margin: 15px 15px; border-radius: 10px; color:#d7d7d7;text-transform:uppercase;}
+.alarm:hover{background: #4f4f4f; border:3px solid #d7d7d7; padding: 10px 20px; margin: 15px 15px; border-radius: 10px; color:#d7d7d7;text-transform:uppercase;}
