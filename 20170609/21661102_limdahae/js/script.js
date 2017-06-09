@@ -20,3 +20,27 @@ Requirement
 동점자 및 등급 우열이 어려울 경우 13주차 과제의 완성도를 기준으로 가중치를 판단하여, 우열을 가립니다.
 참고 바랍니다.
 */
+
+// 1.
+function login(){
+    var id = document.getElementById('username');
+    var pw = document.getElementById('userpass');
+    var btn = document.getElementById('extension');
+    var display = document.getElementById('userDisplay');
+    
+    if(id.value == ""){
+        alert("아이디를 입력해주세요....");
+        id.focus();
+        return;
+    }else if(pw.value == ""){
+        alert("패스워드를 입력해주세요....");
+        pw.focus();
+        return;
+    }else{
+        alert("로그인 되었습니다....");
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("loginCounter").style.display = "block";
+        display.appendChild(id);
+    }
+    
+};
