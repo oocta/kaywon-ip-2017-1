@@ -14,8 +14,7 @@
       color: #ff6600;
     }
     </style>
-    <script type="text/javascript" src="script.js">
-    </script>
+    <script type="text/javascript" src="../finaltest/script.js"></script>
   </head>
   <body>
     <section id="loginForm">
@@ -25,7 +24,7 @@
         <label for="userpass">PASSWORD</label>
         <input id="userpass" name="userpass" type="password" placeholder="패스워드" />
       </div>
-      <button id="login">로그인</button>
+      <button id="login" onchange="isSame()">로그인</button>
     </section>
     <section id="loginCounter" style="display: none;">
       <div id="userDisplay">

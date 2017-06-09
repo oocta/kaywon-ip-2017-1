@@ -43,6 +43,7 @@ function minHandler(){
     hourHandler();
     minNumber = 0;
   }
+  //FIXME $min.innerHTML 프로퍼티를 꼭 두번 할당해야할까요?
   $min.innerHTML = addZero(minNumber);
 }
 
@@ -77,6 +78,7 @@ var intervalHandler = function(){
 }
 
 //인터벌 그자체
+// FIXME setInterval 을 즉시실행하는 패턴은 매우 위험합니다. 사용자의 조작에 따라 동적으로 작성되도록 수정해주세요.
 setInterval(intervalHandler,16.666666);
 
 //시작버튼을 눌렀다면 셋인터벌!
@@ -88,6 +90,7 @@ var startTime = function(){
   }else{
     $notice.innerHTML = '스톱워치가 돌아갑니다.';
   }
+  //FIXME phase가 1이 아닌 경우에 startTime 이 실행되면 phase가 1로 무조건 변경되는군요?
   phase = 1;
   console.log(phase + ' 페이즈로!');
   console.log('START!!!');
@@ -111,6 +114,7 @@ var stopTime = function(){
 //리셋버튼을 눌렀다면 리셋 (클리어인터벌 x)
 var resetTime = function(){
   if(phase === 0){
+    // FIXME phase 가 0 인 경우 아래 코드가 실행되지 않아도 되므로 return 문등을 통해서 불필요한 실행 동작을 제어해주세요.
     $notice.innerHTML = '이미 리셋 상태입니다. START를 눌러주세요.';
   }
   else{

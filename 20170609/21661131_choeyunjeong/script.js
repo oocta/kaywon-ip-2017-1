@@ -4,8 +4,8 @@ Requirement
 1. id를 입력하지 않고 로그인 버튼을 클릭할 경우 "아이디를 입력해주세요" alert 출력
 2. id는 입력했으나 password를 입력하지 않은 경우 "패스워드를 입력해주세요" alert 출력
 3. id, 패스워드를 모두 입력시 "로그인 되었습니다" alert 후 section#loginForm 영역은 감춰진다.
-4. 3번 프로세스에서 입력된 id를 div#userDisplay 영역에 자식 노드로 추가한다.
-4. 4번 프로세스 수행 후 section#loginCounter 영역이 화면에 표시되도록 한다.
+4. 3번 프로세스에서 입력된 id를 div#userDispla y 영역에 자식 노드로 추가한다.
+5. 4번 프로세스 수행 후 section#loginCounter 영역이 화면에 표시되도록 한다.
 
 #2 로그인 연장 로직 = 총 15점
 1. 최초 페이지 접근 시 5분의 카운트다운이 진행
@@ -19,3 +19,62 @@ Requirement
 동점자 및 등급 우열이 어려울 경우 13주차 과제의 완성도를 기준으로 가중치를 판단하여, 우열을 가립니다.
 참고 바랍니다.
 */
+
+var init = function(){
+  var username = document.getElementById('username');
+  var userpass = document.getElementById('userpass');
+  var login = document.getElementById('login');
+  var loginForm = document.getElementById('loginForm');
+  var loginCounter = document.getElementById('loginCounter');
+  var userDisplay = document.getElementById('userDisplay');
+  var counter = document.getElementById('counter');
+  var extension = document.getElementById('extension');
+  var name;
+  var pass;
+
+  function noname(){
+    var username = document.getElementById('username').value;
+    var userpass = document.getElementById('userpass').value;
+
+    pass = userpass;
+    name = username;
+    if(name === ''){
+      alert('아이디를 입력해주세요');
+    }else if(pass === ''){
+      alert('패스워드를 입력해주세요');
+    }else{
+      alert('로그인 되었습니다');
+      loginForm.style.display = 'none';
+      loginCounter.style.display = 'inline-block';
+
+      var userDisplay = document.createElement('h3');
+      var node = document.createTextNode(name);
+      userDisplay.appendChild(node);
+    }
+  }
+  var Settime = 300;
+
+  function countdown(){
+    time = Math.floor(Settime / 60) + '분' + (Settime % 60) + '초';
+    counter.innerHTML = time;
+    Settime--;
+
+    if(Settime < 0 ){
+      alert('로그아웃 되었습니다');
+      loginForm.style.display = 'inline-block';
+      loginCounter.style.display = 'none';
+    }
+  }
+  var t = setInterval(countdown,1000);
+
+  function counterbt(){
+    clearInterval(t);
+  }
+
+
+login.addEventListener('click', noname);
+extension.addEventListener('click', counterbt);
+
+};
+
+document.addEventListener('DOMContentLoaded',init);
