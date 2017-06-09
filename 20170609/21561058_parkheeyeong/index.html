@@ -13,15 +13,19 @@
     .counter {
       color: #ff6600;
     }
+    p {
+      display: inline-block;
+    }
     </style>
+    <script src="./script.js"></script>
   </head>
   <body>
     <section id="loginForm">
       <div class="inline">
         <label for="usename">ID</label>
-        <input id="username" name="username" type="email" placeholder="이메일주소" />
+        <input id="username" name="username" type="email" placeholder="이메일주소" value="" />
         <label for="userpass">PASSWORD</label>
-        <input id="userpass" name="userpass" type="password" placeholder="패스워드" />
+        <input id="userpass" name="userpass" type="password" placeholder="패스워드" value="" />
       </div>
       <button id="login">로그인</button>
     </section>
@@ -30,7 +34,7 @@
         사용자ID
       </div>
       <div id="counter" class="inline counter">
-        5:00
+        <p id = "min">5</p>:<p id = "sec">00</p>
       </div>
       <button id="extension">로그인 연장</button>
     </section>
