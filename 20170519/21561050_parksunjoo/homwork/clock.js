@@ -12,6 +12,7 @@ var alarmHour;
 var alarmMinute;
 var audio = new Audio('alarm.mp3');
 
+
 var init1 = function() {
 
     var sec1 = document.getElementById('sec1');
@@ -28,6 +29,20 @@ var init1 = function() {
         var currentsec1 = sec1.innerHTML = addZeros(time.getSeconds(), 2);
         currentmin1 = min1.innerHTML = addZeros(time.getMinutes(), 2);
         currenthour1 = hour1.innerHTML = addZeros(time.getHours(), 2);
+        // var hour0 = document.getElementById('hour0');
+        // var min0 = document.getElementById('min0');
+        //
+        // function alarmAction() {
+        //     //hour와 min을 설정할 수 있는 기능
+        //     alarmHour = prompt('시를 입력해주세요');
+        //     alarmMinute = prompt('분을 입력해주세요');
+        //     //설정한 시분을 저장한다.적용한다.
+        //     hour0.innerHTML = addZeros(alarmHour);
+        //     min0.innerHTML = addZeros(alarmMinute);
+        //     //현재시간과 설정 시간과 동일 하면 실행
+        // };
+        // settime.addEventListener('click', alarmAction);
+
 
         // 시간이 12보다 클 때 PM으로 세팅, 12를 빼줌
         if (currenthour1 >= 12) {
@@ -35,32 +50,12 @@ var init1 = function() {
         } else {
             amPm.innerHTML = 'AM';
         }
-        if (alarmHour == currenthour1 && alarmMinute == currentmin1) {
-            audio.play();
-        }
     }
     intervalHandler();
+
 };
-setInterval("init1()", 1000);
+setInterval(init1, 1000);
 document.addEventListener('DOMContentLoaded', init1);
-
-var init2 = function() {
-    var settime = document.getElementById('setTimeButton');
-    var hour0 = document.getElementById('hour0');
-    var min0 = document.getElementById('min0');
-
-    function alarmAction() {
-        //hour와 min을 설정할 수 있는 기능
-        alarmHour = prompt('시를 입력해주세요');
-        alarmMinute = prompt('분을 입력해주세요');
-        //설정한 시분을 저장한다.적용한다.
-        hour0.innerHTML = addZeros(alarmHour);
-        min0.innerHTML = addZeros(alarmMinute);
-        //현재시간과 설정 시간과 동일 하면 실행
-    };
-    settime.addEventListener('click', alarmAction);
-}
-document.addEventListener('DOMContentLoaded', init2);
 
 
 var init3 = function() {
@@ -80,9 +75,6 @@ var init3 = function() {
     var resetbtn = document.getElementById('resetButton');
     var lapbtn = document.getElementById('lapButton');
     var lapul = document.getElementById('laplist');
-    var lapreset = document.getElementById('lapButton');
-
-
 
 
     //start버튼 클릭시 실행되는 setInterval 함수
@@ -120,6 +112,7 @@ var init3 = function() {
         min2.innerHTML = minNumber + '0';
         hourNumber = 0;
         hour2.innerHTML = hourNumber + '0';
+        laplist.innerHTML = '';
     }
     //랩 버튼을 누를 때 실행되는 함수
     function lapAction() {
@@ -136,11 +129,28 @@ var init3 = function() {
     }
     //랩리셋 버튼을 누를 때 실행되는 함수
 
-
     startbtn.addEventListener('click', startAction);
     stopbtn.addEventListener('click', stopAction);
     resetbtn.addEventListener('click', resetAction);
     lapbtn.addEventListener('click', lapAction);
+
+
+
+
+    var settime = document.getElementById('setTimeButton');
+
+    settime.addEventListener('click',function(){
+        var hourp = addZeros(prompt('시를입력해주세요'));
+        var minp = addZeros(prompt('분을 입력해주세요'));
+        var hourA = document.getElementById('hour0');
+        var minA = document.getElementById('min0');
+        hourA.innerHTML = hourp;
+        minA.innerHTML = minp;
+        if(hourp == currenthour1 && minp == currentmin1){
+            audio.play();
+        }
+
+    })
 };
 
 document.addEventListener('DOMContentLoaded', init3);
