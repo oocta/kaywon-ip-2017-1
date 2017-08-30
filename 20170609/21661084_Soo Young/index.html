@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>2017년 1학기 기말고사</title>
-    <script type="text/javascript" src="js/script.js"></script>
     <style>
     section {
       display: inline-block;
@@ -19,21 +18,25 @@
   <body>
     <section id="loginForm">
       <div class="inline">
+        <form name="form1" action="#">
         <label for="usename">ID</label>
-        <input id="username" name="username" type="email" placeholder="이메일주소" />
+        <input id="username" name="username" type="email" placeholder="이메일주소" maxlength="15" />
         <label for="userpass">PASSWORD</label>
         <input id="userpass" name="userpass" type="password" placeholder="패스워드" />
+        </form>
       </div>
-      <button id="login">로그인</button>
+      <button id="login" onclick="Login();">로그인</button>
     </section>
-    <section id="loginCounter" style="display: none;">
+    
+    <section id="loginCounter" style="">
       <div id="userDisplay">
         사용자ID
       </div>
       <div id="counter" class="inline counter">
         5:00
       </div>
-      <button id="extension" onclick="ex()">로그인 연장</button>
+      <button id="extension">로그인 연장</button>
     </section>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

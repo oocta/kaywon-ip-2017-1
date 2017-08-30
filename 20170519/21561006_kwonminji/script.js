@@ -19,40 +19,54 @@ var init = function() {
     var seoul = document.getElementById('seoul');
     var ny = document.getElementById('ny');
     var box = document.getElementById('section0');
-    var amPm;// 초기값 AM
+    var amPm;
     var time;
     var timer;//setInterval,clearInterval 제어하기 위해 밖에서 선언
 
     //초기에 먼저 서울 실행하기 위해서
-    timer = setInterval(timeSeoul, 1000)
+    timer = setInterval(timeSeoul, 1000);
 
     //페이지 이동 시 국가 전환하기 위해서 기존에 실행되고 있는 timer를 clearInterval시키고
     //클릭한 국가의 변수를 setInterval 시켜주세요.
     paris.addEventListener('click', function() {
         clearInterval(timer);
         timer = setInterval(timeParis, 1000);
-    })
+    });
 
     dubai.addEventListener('click', function() {
         clearInterval(timer);
         timer = setInterval(timeDubai, 1000);
-    })
+    });
 
     shanghai.addEventListener('click', function() {
         clearInterval(timer);
         timer = setInterval(timeShanghai, 1000);
-    })
+    });
 
     seoul.addEventListener('click', function() {
         clearInterval(timer);
         timer = setInterval(timeSeoul, 1000);
-    })
+    });
 
     ny.addEventListener('click', function() {
         clearInterval(timer);
         timer = setInterval(timeNy, 1000);
-    })
+    });
 
+
+    function timeOption() {
+      amPm = 'AM';
+      time = new Date();
+      gets = time.getSeconds();
+      getm = time.getMinutes();
+      if (gets >= 50) {
+          //초의 값이 50이 되는 순간부터 색상 빨갛게 변경
+          secis.style.color = "#ef2020";
+        }else if (gets < 60) {
+          //60이 되는 순간 하얀색으로
+          secis.style.color = "white";
+    } // FIXME 연산자의 앞뒤로는 1 space 공백을 주는 것이 가독성 확보에 좋습니다. 다른 코드들도 확인해주세요.
+  }
 
     //숫자가 10보다 작을 때(한자리일때) 앞에 0을 추가하는 함수
     function addZero(number) {
@@ -62,57 +76,46 @@ var init = function() {
         return number;
     }
 
+    // 
+    // function ampmis(hour) {
+    //   amPm = 'AM';
+    //   if(hour >= 12){
+    //     amPm = 'PM';
+    //   }
+    // }
+
 
     //paris 버튼을 클릭할 때 실행되는 함수
     // FIXME 시간 초기화 관련해서 반복사용되는 코드들이 많군요. 함수화해서 재사용성을 높여봅시다!
     function timeParis() {
-        //초기값 am
-        amPm = 'AM';
-        time = new Date();
-        gets = time.getSeconds();
-        getm = time.getMinutes();
-        //time.getTime 시간에서 - (7 * 60 * 60 * 1000)
-        //파리와 -7시간 차이나기때문에 계산 하면 파리의 시간.
-        var partime = new Date(time.getTime() - (7 * 60 * 60 * 1000));
-        parishour = partime.getHours();
-        //배경인 box의 배경이미지를 국가별 이미지로 변경해주기 위함.
-        box.style.backgroundImage = "url('./images/paris.jpg')";
+         timeOption();
+         var partime = new Date(time.getTime() - (7 * 60 * 60 * 1000));
+         parishour = partime.getHours();
+         //배경인 box의 배경이미지를 국가별 이미지로 변경해주기 위함.
+         box.style.backgroundImage = "url('./images/paris.jpg')";
 
-        //시간이 12보다 클 때 ampm 값을 PM으로 변경
-        if (parishour >= 12) {
-            amPm = 'PM';
-        }if (gets >= 50) {
-          //초의 값이 50이 되는 순간부터 색상 빨갛게 변경
-          secis.style.color="#ef2020";
-        }else if (gets < 60) {
-          //60이 되는 순간 하얀색으로
-          secis.style.color="white";
-        }
-        //시간을 담아줌
-        houris.innerHTML = addZero(parishour);
-        minis.innerHTML = addZero(getm);
-        secis.innerHTML = addZero(gets);
-        ampmis.innerHTML = amPm;
-        //년월일을 담아줌
-        date.innerHTML = partime.getFullYear() + '년 ' + (partime.getMonth() + 1) + '월 ' + partime.getDate() + '일';
-    }
+         //시간이 12보다 클 때 ampm 값을 PM으로 변경
+         if (parishour >= 12) {
+             amPm = 'PM';
+         }
+         //시간을 담아줌
+         houris.innerHTML = addZero(parishour);
+         minis.innerHTML = addZero(getm);
+         secis.innerHTML = addZero(gets);
+         ampmis.innerHTML = amPm;
+         //년월일을 담아줌
+         date.innerHTML = partime.getFullYear() + '년 ' + (partime.getMonth() + 1) + '월 ' + partime.getDate() + '일';
+     }
 
     //Dubai 버튼을 클릭할 때 실행되는 함수
     function timeDubai() {
-        amPm = 'AM';
-        time = new Date();
-        gets = time.getSeconds();
-        getm = time.getMinutes();
+        timeOption();
         var dubaitime = new Date(time.getTime() - (5 * 60 * 60 * 1000));
         dubaihour = dubaitime.getHours();
         box.style.backgroundImage = "url('./images/dubai.jpg')";
 
         if (dubaihour >= 12) {
             amPm = 'PM';
-          }if (gets >= 50) {
-            secis.style.color="#ef2020"; // FIXME 연산자의 앞뒤로는 1 space 공백을 주는 것이 가독성 확보에 좋습니다. 다른 코드들도 확인해주세요.
-          }else if (gets < 60) {
-            secis.style.color="white";
           }
           houris.innerHTML = addZero(dubaihour);
           minis.innerHTML = addZero(getm);
@@ -123,10 +126,7 @@ var init = function() {
 
     //shanghai 버튼을 누를 때 실행되는 함수
     function timeShanghai() {
-        amPm = 'AM';
-        time = new Date();
-        gets = time.getSeconds();
-        getm = time.getMinutes();
+        timeOption();
         var shtime = new Date(time.getTime() - (1 * 60 * 60 * 1000));
         shhour = shtime.getHours();
         box.style.backgroundImage = "url('./images/sh.jpg')";
@@ -134,10 +134,6 @@ var init = function() {
 
         if (shhour >= 12) {
             amPm = 'PM';
-          }if (gets >= 50) {
-            secis.style.color="#ef2020";
-          }else if (gets < 60) {
-            secis.style.color="white";
           }
           houris.innerHTML = addZero(shhour);
           minis.innerHTML = addZero(getm);
@@ -148,19 +144,12 @@ var init = function() {
 
     //Seoul 버튼을 누를 때 실행되는 함수
     function timeSeoul() {
-        amPm = 'AM';
-        time = new Date();
+        timeOption();
         seoultime = time.getHours();
-        gets = time.getSeconds();
-        getm = time.getMinutes();
         box.style.backgroundImage = "url('./images/seoul.jpg')";
 
         if (seoultime >= 12) {
             amPm = 'PM';
-          }if (gets >= 50) {
-            secis.style.color="#ef2020";
-          }else if (gets < 60) {
-            secis.style.color="white";
           }
           houris.innerHTML = addZero(seoultime);
           minis.innerHTML = addZero(getm);
@@ -171,20 +160,13 @@ var init = function() {
 
     //New york 버튼을 누를 때 실행되는 함수
     function timeNy() {
-        amPm = 'AM';
-        time = new Date();
-        gets = time.getSeconds();
-        getm = time.getMinutes();
+        timeOption();
         var nytime = new Date(time.getTime() - (13 * 60 * 60 * 1000));
         nyhour = nytime.getHours();
         box.style.backgroundImage = "url('./images/newyork.jpg')";
 
         if (nyhour >= 12) {
             amPm = 'PM';
-          }if (gets >= 50) {
-            secis.style.color="#ef2020";
-          }else if (gets < 60) {
-            secis.style.color="white";
           }
           houris.innerHTML = addZero(nyhour);
           minis.innerHTML = addZero(getm);
@@ -334,7 +316,7 @@ var init3 = function() {
   function setTime() {
       var now = new Date();
       //위에서 지정한 sethour 중 선택된 option의 value 값을 가져와서 setH에 담음.
-      var setH = sethour.options[sethour.selectedIndex].value
+      var setH = sethour.options[sethour.selectedIndex].value;
       //위에서 지정한 setmin 중 선택된 option의 value 값을 가져와서 setM에 담음.
       var setM = setmin.options[setmin.selectedIndex].value;
       //ap 중 선택된 option의 value 값을 담음 (오전, 오후)
@@ -348,7 +330,7 @@ var init3 = function() {
       setAlarm.innerHTML = setap + ' ' + setH + '시 ' + setM + '분 알람이 설정되었습니다' ;
 
       //만약 위에서 받은 setap의 밸류값이 '오후' 이면 setH를 10진수로 바꿔주고 +12를 더해주세요.
-      if(setap == '오후'){ // FIXME 되도록 === 를 사용하도록 습관하시면 좋겠습니다.
+      if(setap === '오후'){ // FIXME 되도록 === 를 사용하도록 습관하시면 좋겠습니다.
         setH = parseInt(setH, 10) + 12;
       }
 
@@ -357,7 +339,7 @@ var init3 = function() {
       //오디오를 실행
       //setAlarm 안의 내용을 아래와 같이 변경해주세요.
       if(setH == nowHour && setM == nowMin){
-        stopbtn.style.display="block";
+        stopbtn.style.display = "block";
         audio.play();
         setAlarm.innerHTML = '설정한 알람시간 입니다' ;
       }
@@ -371,14 +353,14 @@ var init3 = function() {
     function stopAction() {
       clearInterval(timer2);
       audio.pause();
-      stopbtn.style.display="none";
+      stopbtn.style.display = "none";
       setAlarm.innerHTML = '';
     }
 
   //set버튼을 누르면 setInterval 실행
   set.addEventListener('click', function() {
      timer2 = setInterval(setTime, 1000);
-  });
+   });
   // FIXME 익명함수 선언시 줄바꿈은 정확히 하시는 것이 좋습니다.
   //알람이 실행될 때만 보이는 스탑버튼을 누르면 stopAction실행
   stopbtn.addEventListener('click', stopAction);
